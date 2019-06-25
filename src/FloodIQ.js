@@ -10,7 +10,6 @@ class FloodIQ {
     if (!apiKey) {
       throw new Error('Missing API Key.');
     ***REMOVED***
-
   ***REMOVED***
 ***REMOVED***
 

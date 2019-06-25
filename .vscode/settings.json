@@ -1,0 +1,11 @@
+{
+  // Show the path in the top window bar.
+  "window.title": "${rootName***REMOVED***${separator***REMOVED***${activeEditorMedium***REMOVED***",
+
+  // Formatting
+  "editor.formatOnSave": true,
+  "beautify.ignore": ["**/*.js", "**/*.md"],
+
+  // Extension settings
+  "eslint.autoFixOnSave": true,
+***REMOVED***

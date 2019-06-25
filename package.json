@@ -1,0 +1,36 @@
+{
+  "name": "floodiq-javascript",
+  "version": "1.0.0",
+  "description": "\"A Javascript API Client for FloodIQ\"",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon src/index.js",
+    "test:dev": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FirstStreet/floodiq-javascript.git"
+  },
+  "keywords": [
+    "floodiq"
+  ],
+  "author": "Firstreet Dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FirstStreet/floodiq-javascript/issues"
+  },
+  "homepage": "https://github.com/FirstStreet/floodiq-javascript#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "jest": "^24.8.0",
+    "jsdoc": "^3.6.2",
+    "nodemon": "^1.19.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

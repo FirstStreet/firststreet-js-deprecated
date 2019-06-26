@@ -1,11 +1,12 @@
 const fetch = require('node-fetch');
 const isArray = require('lodash/isArray');
 const isPlainObject = require('lodash/isPlainObject');
-const { UNKNOWN, UNAUTHORIZED } = require('./Errors');
+const {
+  UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL, NO_BODY, OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR,
+} = require('./Errors');
 
 const defaults = {
   host: process.env.HTTP_HOST,
-  region: process.env.HTTP_REGION,
   statusUrl: process.env.STATUS_URL,
   title: 'floodiq-javascript-sdk',
 };
@@ -19,8 +20,6 @@ const defaults = {
 export default class Http {
   constructor(apiKey = null, options = defaults) {
     const requestOptions = { ...defaults, ...options };
-    this._tempRegion = null;
-    this._region = requestOptions.region.toLowerCase();
     this.options = {
       url: `${requestOptions.host}`,
       status: requestOptions.statusUrl,
@@ -33,34 +32,6 @@ export default class Http {
         'X-TITLE-ID': requestOptions.title,
       },
     };
-  }
-
-  /**
-   * Return a region from the request options
-   *
-   * @return {String} A request region
-  */
-  getRequestRegion() {
-    return this.tempRegion ? this.tempRegion : this.region;
-  }
-
-  /**
-   * Set a new request region
-   *
-   * @return {String} A new request region
-  */
-  set tempRegion(newTempRegion) {
-    this._tempRegion = newTempRegion;
-    return this;
-  }
-
-  /**
-   * Get request region
-   *
-   * @return {String} A request region
-  */
-  get region() {
-    return this._region;
   }
 
   /**
@@ -104,16 +75,35 @@ export default class Http {
   parseErrors(res, requestOptions, rateLimit) {
     const { status } = res;
     const err = { errors: true };
-    const region = this.getRequestedRegion();
 
     switch (status) {
       case 401:
         return {
-          ...err, messages: UNAUTHORIZED, region, debug: requestOptions, rateLimit, ...res,
+          ...err, messages: UNAUTHORIZED, debug: requestOptions, rateLimit, ...res,
+        };
+      case 404:
+        return {
+          ...err, messages: NOT_FOUND, debug: requestOptions, rateLimit, ...res,
+        };
+      case 500:
+        return {
+          ...err, messages: INTERNAL, debug: requestOptions, rateLimit, ...res,
+        };
+      case 429:
+        return {
+          ...err, messages: RATE_LIMIT, debug: requestOptions, rateLimit, ...res,
+        };
+      case 503:
+        return {
+          ...err, messages: OFFLINE, debug: requestOptions, rateLimit, ...res,
+        };
+      case 406:
+        return {
+          ...err, messages: NOT_ACCEPTABLE, debug: requestOptions, rateLimit, ...res,
         };
       default:
         return {
-          ...err, messages: UNKNOWN, region, debug: requestOptions, rateLimit, ...res,
+          ...err, messages: UNKNOWN, debug: requestOptions, rateLimit, ...res,
         };
     }
   }
@@ -138,5 +128,64 @@ export default class Http {
       reset: headers.get('x-ratelimit-reset'),
       requestId: headers.get('x-request-id'),
     };
+  }
+
+  /**
+   * Perform get request to api
+   * @param {String} endpoint - request URL endpoint
+   * @param {Object} query - the query??
+  */
+  execute(endpoint = null, query = null) {
+    const requestOptions = { ...this.options };
+    if (endpoint === null) {
+      return new Error('HTTP Error: No endpoint to provide a request to.');
+    }
+
+    requestOptions.url += endpoint;
+
+    if (query) {
+      requestOptions.url += `?${this.serialize(query)}`;
+    }
+
+    return new Promise((resolve, reject) => {
+      let rateLimit = null;
+
+      fetch(requestOptions.url, {
+        method: requestOptions.method,
+        headers: requestOptions.headers,
+      }).then((res) => {
+        rateLimit = this.parseRateLimit(res.headers);
+        if (res.status !== 200) {
+          return this.parseErrors(res, requestOptions, rateLimit);
+        }
+        return res.json();
+      }).then((body) => {
+        // Empty responses
+        if (!body) {
+          return reject({
+            errors: true, messages: NO_BODY, debug: requestOptions, rateLimit,
+          });
+        }
+        // Status code not 200
+        if (body.errors) {
+          return reject({
+            ...body, debug: requestOptions, rateLimit,
+          });
+        }
+
+        return resolve({
+          errors: null,
+          body,
+          debug: requestOptions,
+          rateLimit,
+        });
+      }).catch(err => reject({
+        errors: true,
+        messages: NETWORK_ERROR,
+        details: err,
+        debug: requestOptions,
+        rateLimit,
+      }));
+    });
   }
 }

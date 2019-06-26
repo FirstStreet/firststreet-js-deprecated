@@ -35,5 +35,9 @@
   ***REMOVED***,
   "jest": {
     "testEnvironment": "node"
+  ***REMOVED***,
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "node-fetch": "^2.6.0"
   ***REMOVED***
 ***REMOVED***

@@ -12,6 +12,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-underscore-dangle': 'off',
     'no-restricted-syntax': 'off',
+    'prefer-promise-reject-errors': 'off',
   ***REMOVED***,
   plugins: [
     'prettier'

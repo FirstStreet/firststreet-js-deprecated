@@ -96,37 +96,42 @@
     
 
     
-        <h3 class="subsection-title">Methods</h3>
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
 
         
-            
+                
+<h4 class="name" id="ParcelCity">ParcelCity</h4>
 
-    
-
-    
-    <h4 class="name" id="sum"><span class="type-signature"></span>sum<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {number***REMOVED***</span></h4>
-    
-
-    
 
 
 
 <div class="description">
-    A function that sums two numbers.
+    A Parcel City
 </div>
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
 
 
 
 
 
+    <h5 class="subsection-title">Properties:</h5>
 
-    <h5>Parameters:</h5>
     
 
-<table class="params">
+<table class="props">
     <thead>
     <tr>
         
@@ -148,7 +153,7 @@
 
         <tr>
             
-                <td class="name"><code>a</code></td>
+                <td class="name"><code>ID</code></td>
             
 
             <td class="type">
@@ -164,20 +169,20 @@
 
             
 
-            <td class="description last">The first number to be added</td>
+            <td class="description last">The city unique identifier</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>b</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">string</span>
 
 
             
@@ -187,14 +192,58 @@
 
             
 
-            <td class="description last">The second number to be added</td>
+            <td class="description last">The city name</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The city state</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>geometry</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ParcelGeometry">ParcelGeometry</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The viewport and bounding box of a location</td>
         </tr>
 
     
     </tbody>
 </table>
-
-
 
 
 
@@ -228,7 +277,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sum.js.html">sum.js</a>, <a href="sum.js.html#line8">line 8</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -244,45 +293,772 @@
 
 
 
+            
+                
+<h4 class="name" id="ParcelCityForProperty">ParcelCityForProperty</h4>
 
 
 
 
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The result
+<div class="description">
+    A City property on the parcel
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
         
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ID</code></td>
+            
+
+            <td class="type">
+            
+                
 <span class="param-type">number</span>
 
 
-    </dd>
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The city unique identifier</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The city name</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
 </dl>
 
+
+
+
+
+
+            
+                
+<h4 class="name" id="ParcelGeometry">ParcelGeometry</h4>
+
+
+
+
+<div class="description">
+    A ParcelGeometry which contains a polygon (boundingbox) and the Bound (viewport) of a location
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
     
 
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-
-
+        <th>Type</th>
 
         
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
+        <tr>
+            
+                <td class="name"><code>polygon</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The bounding box of the location</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>center</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The center of the location</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bounds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The bounds of the location</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ParcelProperty">ParcelProperty</h4>
+
+
+
+
+<div class="description">
+    A Property
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The parcel unique identifier</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>primaryNumber</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The street number</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>streetName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The street number</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>predirection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">an address element placed before the street
+name that indicates its the geographic location</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>postdirection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">an address element placed after the street
+name as a trailing designator such as ST for street or RD for road</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>zipCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The property zip code</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>city</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ParcelCityForProperty">ParcelCityForProperty</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The property city</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The property state</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>geometry</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ParcelGeometry">ParcelGeometry</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The viewport and bounding box of a location</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>elevation</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The elevation of a property</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lotSize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The size of the property</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>floorArea</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The size of the home</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>landUse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The lot land use designator</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>countyFips</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The county federal information processing standards code</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>distance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The distance</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
     
 
     
@@ -296,13 +1072,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="FloodIQ.html">FloodIQ</a></li></ul><h3>Global</h3><ul><li><a href="global.html#sum">sum</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Tue Jun 25 2019 14:56:47 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Thu Jun 27 2019 12:09:59 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

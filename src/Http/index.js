@@ -2,8 +2,9 @@ const fetch = require('node-fetch');
 const isArray = require('lodash/isArray');
 const isPlainObject = require('lodash/isPlainObject');
 const {
-  UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL, NO_BODY, OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR,
-***REMOVED*** = require('./Errors');
+  UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,
+  NO_BODY, OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR,
+***REMOVED*** = require('../Error');
 
 const defaults = {
   host: process.env.HTTP_HOST,
@@ -17,9 +18,10 @@ const defaults = {
  * @param {string***REMOVED*** apiKey - A string with the base URL for account.
  * @param {Object***REMOVED*** options - A configuration object.
 */
-export default class Http {
+class Http {
   constructor(apiKey = null, options = defaults) {
     const requestOptions = { ...defaults, ...options ***REMOVED***;
+    this.key = apiKey;
     this.options = {
       url: `${requestOptions.host***REMOVED***`,
       status: requestOptions.statusUrl,
@@ -34,10 +36,14 @@ export default class Http {
     ***REMOVED***;
   ***REMOVED***
 
+  getKey() {
+    return this.key;
+  ***REMOVED***
+
   /**
    * Serialize request object into a list of URL query parameters
    * @param {Object***REMOVED*** obj - the request object
-   * @return {String***REMOVED*** - the joined query parameters
+   * @return {string***REMOVED*** - the joined query parameters
   */
   serialize(obj) {
     const queries = [];
@@ -69,7 +75,7 @@ export default class Http {
    * Return errors for common error code scenarios
    * @param {Object***REMOVED*** res - the response object
    * @param {Object***REMOVED*** requestOptions - the request options object
-   * @param {Number***REMOVED*** rateLimit - rate limit constant
+   * @param {number***REMOVED*** rateLimit - rate limit constant
    * @return {Object***REMOVED*** - request object with error messaging added
   */
   parseErrors(res, requestOptions, rateLimit) {
@@ -110,7 +116,7 @@ export default class Http {
 
   /**
    * Return request status
-   * @return {String***REMOVED*** - Status
+   * @return {string***REMOVED*** - Status
   */
   status() {
     return fetch(this.options.status);
@@ -132,7 +138,7 @@ export default class Http {
 
   /**
    * Perform get request to api
-   * @param {String***REMOVED*** endpoint - request URL endpoint
+   * @param {string***REMOVED*** endpoint - request URL endpoint
    * @param {Object***REMOVED*** query - the query??
   */
   execute(endpoint = null, query = null) {
@@ -189,3 +195,5 @@ export default class Http {
     ***REMOVED***);
   ***REMOVED***
 ***REMOVED***
+
+module.exports = Http;

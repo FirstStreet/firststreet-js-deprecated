@@ -1,0 +1,72 @@
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.4
+  kubernetes: circleci/kubernetes@0.1.0
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-pkg-cache
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Login to Docker Hub
+          command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Build & Push floodiq-javascript
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "parcel" ]; then
+              export TAG="latest" >> $BASH_ENV
+            else
+              export TAG="${CIRCLE_BRANCH//\//-}" >> $BASH_ENV
+            fi
+            export VERSION_TAG="$TAG"_"$CIRCLE_SHA1" >> $BASH_ENV
+            source $BASH_ENV
+            echo $VERSION_TAG
+            docker pull $DOCKER_REPO:$TAG || true
+            docker build --cache-from=firststreet/floodiq-javascript -t $DOCKER_REPO:$VERSION_TAG .
+            docker tag $DOCKER_REPO:$VERSION_TAG $DOCKER_REPO:$TAG
+            docker push $DOCKER_REPO:$VERSION_TAG
+            docker push $DOCKER_REPO:$TAG
+  deploy:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - kubernetes/install
+      - deploy:
+          name: Rollout
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              export TAG="latest"
+              export NAMESPACE="noop"
+            elif [ "$CIRCLE_BRANCH" == "master" ]; then
+              export TAG="${CIRCLE_BRANCH//\//-}"
+              export NAMESPACE="noop"
+            elif [ "$CIRCLE_BRANCH" == "qa" ]; then
+              export TAG="${CIRCLE_BRANCH//\//-}"
+              export NAMESPACE="noop"
+            elif [ "$CIRCLE_BRANCH" == "beta" ]; then
+              export TAG="${CIRCLE_BRANCH//\//-}"
+              export NAMESPACE="noop"
+            else
+              export NAMESPACE="noop"
+            fi
+            export VERSION_TAG="$TAG"_"$CIRCLE_SHA1"
+            if [[ "${NAMESPACE}" == "noop" ]] ; then exit 0 ; fi
+            echo $GPG_KEY | gpg -d --passphrase-fd 0  --batch --yes kubeconfig.enc > kubeconfig
+            kubectl set image -n $NAMESPACE deployments/api-server floodiq-javascript=$DOCKER_REPO:$VERSION_TAG --kubeconfig kubeconfig
+            kubectl rollout status -n $NAMESPACE deployments/api-server --kubeconfig kubeconfig
+workflows:
+  version: 2
+  "Test, Build, Deploy":
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build

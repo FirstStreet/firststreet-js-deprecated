@@ -20,20 +20,17 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" ***REMOVED******REMOVED***
           paths:
             - ./node_modules
-      - run: # run tests
-          name: test
-          command: npm test
       - run: # run code coverage
           name: code-coverage
-          command: npm test --coverage
+          command: npm run test:coverage
+      - codecov/upload:
+          token: aab11a0b-e97e-47a2-8d21-310175cdd607
+          file: coverage/lcov.info
       - store_artifacts: # save test results
           path: test-results.xml
       - store_artifacts: # save coverage results
           path: coverage
       - store_test_results:
           path: test-results.xml
-      - codecov/upload:
-          token: aab11a0b-e97e-47a2-8d21-310175cdd607
-          file: coverage/lcov.info
 
 

@@ -20,20 +20,25 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+  test:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
       - run: # run tests
           name: test
           command: npm test
       - run: # run code coverage
           name: code-coverage
           command: npm test --coverage
-      - store_artifacts: # save test results
-          path: test-results.xml
-      - store_artifacts: # save coverage results
-          path: coverage
-      - store_test_results:
-          path: test-results.xml
       - codecov/upload:
           token: 11496673-9497-42a3-b3a4-3646b53e7027
           file: coverage/lcov.info
+      # - store_artifacts: # save test results
+      #     path: test-results.xml
+      # - store_artifacts: # save coverage results
+      #     path: coverage
+      # - store_test_results:
+      #     path: test-results.xml
 
 

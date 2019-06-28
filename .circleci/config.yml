@@ -33,7 +33,7 @@ jobs:
       - store_test_results:
           path: test-results.xml
       - codecov/upload:
-          token: 11496673-9497-42a3-b3a4-3646b53e7027
+          token: aab11a0b-e97e-47a2-8d21-310175cdd607
           file: coverage/lcov.info
 
 

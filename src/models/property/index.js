@@ -21,12 +21,12 @@ const BaseModel = require('../index');
  * @property {number***REMOVED*** countyFips - The county federal information processing standards code
  * @property {number***REMOVED*** distance - The distance
 */
-// class Property extends BaseModel {
-//   constructor(data) {
-//     super(data);
-//   ***REMOVED***
 
+class Property extends BaseModel {
+  constructor(data) {
+    super(data);
+    this.data = data;
+  ***REMOVED***
+***REMOVED***
 
-// ***REMOVED***
-
-// module.exports = Property;
+module.exports = Property;

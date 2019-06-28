@@ -1,3 +1,5 @@
+const BaseModel = require('../index');
+
 /**
  * A Property
  * @typedef {Object***REMOVED*** ParcelProperty
@@ -19,3 +21,12 @@
  * @property {number***REMOVED*** countyFips - The county federal information processing standards code
  * @property {number***REMOVED*** distance - The distance
 */
+// class Property extends BaseModel {
+//   constructor(data) {
+//     super(data);
+//   ***REMOVED***
+
+
+// ***REMOVED***
+
+// module.exports = Property;

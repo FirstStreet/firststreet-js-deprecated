@@ -1,0 +1,39 @@
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.4
+jobs:
+  build:
+    working_directory: ~/floodiq-javascript
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache: # restrore dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm-wee
+          command: npm install
+      - save_cache: # save dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run: # run tests
+          name: test
+          command: npm test
+      - run: # run code coverage
+          name: code-coverage
+          command: npm test --coverage
+      - store_artifacts: # save test results
+          path: test-results.xml
+      - store_artifacts: # save coverage results
+          path: coverage
+      - store_test_results:
+          path: test-results.xml
+      - codecov/upload:
+          token: 11496673-9497-42a3-b3a4-3646b53e7027
+          file: coverage/lcov.info
+
+

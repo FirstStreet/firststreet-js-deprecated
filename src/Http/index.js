@@ -2,8 +2,9 @@ const fetch = require('node-fetch');
 const isArray = require('lodash/isArray');
 const isPlainObject = require('lodash/isPlainObject');
 const {
-  UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL, NO_BODY, OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR,
-} = require('./Errors');
+  UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,
+  NO_BODY, OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR,
+} = require('../Error');
 
 const defaults = {
   host: process.env.HTTP_HOST,
@@ -17,9 +18,10 @@ const defaults = {
  * @param {string} apiKey - A string with the base URL for account.
  * @param {Object} options - A configuration object.
 */
-export default class Http {
+class Http {
   constructor(apiKey = null, options = defaults) {
     const requestOptions = { ...defaults, ...options };
+    this.key = apiKey;
     this.options = {
       url: `${requestOptions.host}`,
       status: requestOptions.statusUrl,
@@ -34,10 +36,14 @@ export default class Http {
     };
   }
 
+  getKey() {
+    return this.key;
+  }
+
   /**
    * Serialize request object into a list of URL query parameters
    * @param {Object} obj - the request object
-   * @return {String} - the joined query parameters
+   * @return {string} - the joined query parameters
   */
   serialize(obj) {
     const queries = [];
@@ -69,7 +75,7 @@ export default class Http {
    * Return errors for common error code scenarios
    * @param {Object} res - the response object
    * @param {Object} requestOptions - the request options object
-   * @param {Number} rateLimit - rate limit constant
+   * @param {number} rateLimit - rate limit constant
    * @return {Object} - request object with error messaging added
   */
   parseErrors(res, requestOptions, rateLimit) {
@@ -110,7 +116,7 @@ export default class Http {
 
   /**
    * Return request status
-   * @return {String} - Status
+   * @return {string} - Status
   */
   status() {
     return fetch(this.options.status);
@@ -132,7 +138,7 @@ export default class Http {
 
   /**
    * Perform get request to api
-   * @param {String} endpoint - request URL endpoint
+   * @param {string} endpoint - request URL endpoint
    * @param {Object} query - the query??
   */
   execute(endpoint = null, query = null) {
@@ -189,3 +195,5 @@ export default class Http {
     });
   }
 }
+
+module.exports = Http;

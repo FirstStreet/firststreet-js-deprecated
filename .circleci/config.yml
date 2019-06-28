@@ -28,10 +28,8 @@ jobs:
           command: npm test --coverage
       - store_artifacts: # save test results
           path: test-results.xml
-          prefix: tests
       - store_artifacts: # save coverage results
           path: coverage
-          prefix: coverage
       - store_test_results:
           path: test-results.xml
 

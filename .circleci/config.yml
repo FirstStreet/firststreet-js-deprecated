@@ -1,6 +1,6 @@
 version: 2.1
-# orbs:
-#   # codecov: codecov/codecov@1.0.4
+orbs:
+  codecov: codecov/codecov@1.0.4
 jobs:
   build:
     working_directory: ~/floodiq-javascript
@@ -26,11 +26,5 @@ jobs:
       - codecov/upload:
           token: aab11a0b-e97e-47a2-8d21-310175cdd607
           file: coverage/lcov.info
-      - store_artifacts: # save test results
-          path: test-results.xml
-      - store_artifacts: # save coverage results
-          path: coverage
-      - store_test_results:
-          path: test-results.xml
 
 

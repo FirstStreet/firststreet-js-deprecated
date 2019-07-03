@@ -1,4 +1,5 @@
 const { normalizeError } = require('../../Error');
+const Property = require('../../models/property');
 
 /**
  * @typedef {import('../models/property').default} ParcelProperty
@@ -29,62 +30,57 @@ const { normalizeError } = require('../../Error');
  * @property {string} bounds - The bounds of the location
  */
 
-const ENDPOINT_PREFIX = '/data/parcel/';
+const ENDPOINT_PREFIX = 'http://apidev.firststreet.org/data/1.0/parcel/';
 
-const parcel = (http) => {
+const parcel = http =>
   /**
    * getPropertyByID retrieves a property parcel by its unique identifier
    * @param {string} id - parcel unique identifier
    * @returns {ParcelProperty}
   */
   // eslint-disable-next-line
-  async function getPropertyByID(id) {
-    if (!id) {
-      return normalizeError('Expected required id. Usage: .getPropertyByID([id])');
-    }
-
-    const path = `${ENDPOINT_PREFIX}${id}?type=property&key=${http.getKey()}`;
-
-    try {
-      const response = await http.execute('GET', path);
-
-      const { errors, messages } = response;
-
-      if (errors) {
-        return normalizeError(messages);
+   ({
+    async getPropertyByID(id) {
+      if (!id) {
+        return normalizeError('Expected required id. Usage: .getPropertyByID([id])');
       }
 
-      return response;
-    } catch (e) {
-      return normalizeError(null, e);
-    }
-  }
+      const path = `${ENDPOINT_PREFIX}${id}?type=property&key=${http.getKey()}`;
 
-  /**
-   * getCityByID retreives a Parcel City by its unique identifier
-   * @param {string} id
-   * @returns {ParcelCity}
-  */
-  // eslint-disable-next-line
-  async function getCityByID(id) {
-    if (!id) {
-      return normalizeError('Expected required id. Usage: .getCityByID([id])');
-    }
+      try {
+        const response = await http.execute('GET', path);
+        const { errors, messages } = response;
 
-    const path = `${ENDPOINT_PREFIX}${id}?type=city&key=${http.getKey()}`;
+        if (errors) {
+          return normalizeError(messages);
+        }
 
-    try {
-      const response = await http.excecute('GET', path);
-
-      const { errors, messages } = response;
-
-      if (errors) {
-        return normalizeError(messages);
+        const model = new Property(response.body);
+        return model;
+      } catch (e) {
+        return normalizeError(null, e);
       }
-    } catch (e) {
-      return normalizeError(null, e);
-    }
-  }
-};
+    },
+    async getCityByID(id) {
+      if (!id) {
+        return normalizeError('Expected required id. Usage: .getCityByID([id])');
+      }
 
+      const path = `${ENDPOINT_PREFIX}${id}?type=city&key=${http.getKey()}`;
+
+      try {
+        const response = await http.excecute('GET', path);
+
+        const { errors, messages } = response;
+
+        if (errors) {
+          return normalizeError(messages);
+        }
+
+        return response;
+      } catch (e) {
+        return normalizeError(null, e);
+      }
+    },
+  });
 module.exports = parcel;

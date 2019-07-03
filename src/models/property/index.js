@@ -6,6 +6,7 @@ const BaseModel = require('../index');
  * @property {number} ID - The parcel unique identifier
  * @property {string} primaryNumber - The street number
  * @property {string} streetName - The street number
+ * @property {string} lastUpdated - date property data last updated
  * @property {string} predirection - an address element placed before the street
  * name that indicates its the geographic location
  * @property {string} postdirection - an address element placed after the street
@@ -26,6 +27,72 @@ class Property extends BaseModel {
   constructor(data) {
     super(data);
     this.data = data;
+  }
+
+  get primaryNumber() {
+    return this.data.primaryNumber;
+  }
+
+  get lastUpdated() {
+    return this.data.lastUpdated;
+  }
+
+  get streetName() {
+    return this.data.streetName;
+  }
+
+  get zipCode() {
+    return this.data.zipCode;
+  }
+
+  get city() {
+    return this.data.city.name;
+  }
+
+  get state() {
+    return this.data.state;
+  }
+
+  get polygon() {
+    // todo: parse nested coordinates arrays
+    return this.data.geometry.polygon.coordinates;
+  }
+
+  get center() {
+    return this.data.geometry.center.coordinates;
+  }
+
+  get bounds() {
+    // todo: parse nested coordinates arrays
+    return this.data.geometry.bounds.coordinates;
+  }
+
+  get elevation() {
+    return this.data.elevation;
+  }
+
+  get femaZone() {
+    return this.data.femaZone;
+  }
+
+  get lotSize() {
+    return this.data.lotSize;
+  }
+
+  get floorArea() {
+    return this.data.floorArea;
+  }
+
+  get landUse() {
+    return this.data.landUse;
+  }
+
+  get countyFips() {
+    return this.data.countyFips;
+  }
+
+  get distance() {
+    return this.data.distance;
   }
 }
 

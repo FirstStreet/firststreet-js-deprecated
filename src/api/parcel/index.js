@@ -1,4 +1,5 @@
 const { normalizeError ***REMOVED*** = require('../../Error');
+const Property = require('../../models/property');
 
 /**
  * @typedef {import('../models/property').default***REMOVED*** ParcelProperty
@@ -29,62 +30,57 @@ const { normalizeError ***REMOVED*** = require('../../Error');
  * @property {string***REMOVED*** bounds - The bounds of the location
  */
 
-const ENDPOINT_PREFIX = '/data/parcel/';
+const ENDPOINT_PREFIX = 'http://apidev.firststreet.org/data/1.0/parcel/';
 
-const parcel = (http) => {
+const parcel = http =>
   /**
    * getPropertyByID retrieves a property parcel by its unique identifier
    * @param {string***REMOVED*** id - parcel unique identifier
    * @returns {ParcelProperty***REMOVED***
   */
   // eslint-disable-next-line
-  async function getPropertyByID(id) {
-    if (!id) {
-      return normalizeError('Expected required id. Usage: .getPropertyByID([id])');
-    ***REMOVED***
-
-    const path = `${ENDPOINT_PREFIX***REMOVED***${id***REMOVED***?type=property&key=${http.getKey()***REMOVED***`;
-
-    try {
-      const response = await http.execute('GET', path);
-
-      const { errors, messages ***REMOVED*** = response;
-
-      if (errors) {
-        return normalizeError(messages);
+   ({
+    async getPropertyByID(id) {
+      if (!id) {
+        return normalizeError('Expected required id. Usage: .getPropertyByID([id])');
       ***REMOVED***
 
-      return response;
-    ***REMOVED*** catch (e) {
-      return normalizeError(null, e);
-    ***REMOVED***
-  ***REMOVED***
+      const path = `${ENDPOINT_PREFIX***REMOVED***${id***REMOVED***?type=property&key=${http.getKey()***REMOVED***`;
 
-  /**
-   * getCityByID retreives a Parcel City by its unique identifier
-   * @param {string***REMOVED*** id
-   * @returns {ParcelCity***REMOVED***
-  */
-  // eslint-disable-next-line
-  async function getCityByID(id) {
-    if (!id) {
-      return normalizeError('Expected required id. Usage: .getCityByID([id])');
-    ***REMOVED***
+      try {
+        const response = await http.execute('GET', path);
+        const { errors, messages ***REMOVED*** = response;
 
-    const path = `${ENDPOINT_PREFIX***REMOVED***${id***REMOVED***?type=city&key=${http.getKey()***REMOVED***`;
+        if (errors) {
+          return normalizeError(messages);
+        ***REMOVED***
 
-    try {
-      const response = await http.excecute('GET', path);
-
-      const { errors, messages ***REMOVED*** = response;
-
-      if (errors) {
-        return normalizeError(messages);
+        const model = new Property(response.body);
+        return model;
+      ***REMOVED*** catch (e) {
+        return normalizeError(null, e);
       ***REMOVED***
-    ***REMOVED*** catch (e) {
-      return normalizeError(null, e);
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***;
+    ***REMOVED***,
+    async getCityByID(id) {
+      if (!id) {
+        return normalizeError('Expected required id. Usage: .getCityByID([id])');
+      ***REMOVED***
 
+      const path = `${ENDPOINT_PREFIX***REMOVED***${id***REMOVED***?type=city&key=${http.getKey()***REMOVED***`;
+
+      try {
+        const response = await http.excecute('GET', path);
+
+        const { errors, messages ***REMOVED*** = response;
+
+        if (errors) {
+          return normalizeError(messages);
+        ***REMOVED***
+
+        return response;
+      ***REMOVED*** catch (e) {
+        return normalizeError(null, e);
+      ***REMOVED***
+    ***REMOVED***,
+  ***REMOVED***);
 module.exports = parcel;

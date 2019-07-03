@@ -6,6 +6,7 @@ const BaseModel = require('../index');
  * @property {number***REMOVED*** ID - The parcel unique identifier
  * @property {string***REMOVED*** primaryNumber - The street number
  * @property {string***REMOVED*** streetName - The street number
+ * @property {string***REMOVED*** lastUpdated - date property data last updated
  * @property {string***REMOVED*** predirection - an address element placed before the street
  * name that indicates its the geographic location
  * @property {string***REMOVED*** postdirection - an address element placed after the street
@@ -26,6 +27,72 @@ class Property extends BaseModel {
   constructor(data) {
     super(data);
     this.data = data;
+  ***REMOVED***
+
+  get primaryNumber() {
+    return this.data.primaryNumber;
+  ***REMOVED***
+
+  get lastUpdated() {
+    return this.data.lastUpdated;
+  ***REMOVED***
+
+  get streetName() {
+    return this.data.streetName;
+  ***REMOVED***
+
+  get zipCode() {
+    return this.data.zipCode;
+  ***REMOVED***
+
+  get city() {
+    return this.data.city.name;
+  ***REMOVED***
+
+  get state() {
+    return this.data.state;
+  ***REMOVED***
+
+  get polygon() {
+    // todo: parse nested coordinates arrays
+    return this.data.geometry.polygon.coordinates;
+  ***REMOVED***
+
+  get center() {
+    return this.data.geometry.center.coordinates;
+  ***REMOVED***
+
+  get bounds() {
+    // todo: parse nested coordinates arrays
+    return this.data.geometry.bounds.coordinates;
+  ***REMOVED***
+
+  get elevation() {
+    return this.data.elevation;
+  ***REMOVED***
+
+  get femaZone() {
+    return this.data.femaZone;
+  ***REMOVED***
+
+  get lotSize() {
+    return this.data.lotSize;
+  ***REMOVED***
+
+  get floorArea() {
+    return this.data.floorArea;
+  ***REMOVED***
+
+  get landUse() {
+    return this.data.landUse;
+  ***REMOVED***
+
+  get countyFips() {
+    return this.data.countyFips;
+  ***REMOVED***
+
+  get distance() {
+    return this.data.distance;
   ***REMOVED***
 ***REMOVED***
 

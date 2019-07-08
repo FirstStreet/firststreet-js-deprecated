@@ -1,6 +1,7 @@
 const mockedSDK = require('../../__mocks__/api');
 
 const PROPERTY_ID = 100032470544;
+jest.setTimeout(20000);
 
 describe('Parcel', () => {
   it('returns parcel data for a property by id', async () => {

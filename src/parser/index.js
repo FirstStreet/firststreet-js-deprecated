@@ -1,4 +1,4 @@
-const Property = require('../models/property');
+const Property = require('../models/Property');
 
 const map = {
   property: Property,

@@ -30,7 +30,7 @@ const Property = require('../../models/property');
  * @property {string***REMOVED*** bounds - The bounds of the location
  */
 
-const ENDPOINT_PREFIX = 'http://apidev.firststreet.org/data/1.0/parcel/';
+const ENDPOINT_PREFIX = `${process.env.HTTP_HOST***REMOVED***/data/${process.env.VERSION***REMOVED***/parcel/`;
 
 const parcel = http =>
   /**

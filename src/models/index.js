@@ -6,17 +6,12 @@ class BaseModel {
     this.relationships = null;
   ***REMOVED***
 
-  set id(id) {
-    this.data.id = id;
-    return this;
-  ***REMOVED***
-
   get type() {
     return this.data.type;
   ***REMOVED***
 
   get id() {
-    return this.data.id;
+    return this.data.ID;
   ***REMOVED***
 
   get raw() {

@@ -1,0 +1,14 @@
+const mockedSDK = require('../../__mocks__/api');
+
+const PROPERTY_ID = 100032470544;
+
+describe('Parcel', () => {
+  it('returns parcel data for a property by id', async () => {
+    const data = await mockedSDK.parcel.getPropertyByID(PROPERTY_ID);
+
+    expect(data.streetName).toEqual('APPOQUIN');
+    expect(data.primaryNumber).toEqual('212');
+    expect(data.landUse).toEqual('residential');
+    expect(data.state).toEqual('Delaware');
+  ***REMOVED***);
+***REMOVED***);

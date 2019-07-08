@@ -47,6 +47,7 @@ const parcel = http =>
 
       const path = `${ENDPOINT_PREFIX}${id}?type=property&key=${http.getKey()}`;
 
+
       try {
         const response = await http.execute('GET', path);
         const { errors, messages } = response;

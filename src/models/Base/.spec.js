@@ -1,5 +1,5 @@
 const BaseModel = require('./index');
-const propertyById = require('../__mocks__/propertyDataById');
+const propertyById = require('../../__mocks__/propertyDataById');
 
 describe('baseModel', () => {
   let baseModel = null;

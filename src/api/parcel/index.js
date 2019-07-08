@@ -1,5 +1,5 @@
 const { normalizeError ***REMOVED*** = require('../../Error');
-const Property = require('../../models/property');
+const Property = require('../../models/Property');
 
 /**
  * @typedef {import('../models/property').default***REMOVED*** ParcelProperty

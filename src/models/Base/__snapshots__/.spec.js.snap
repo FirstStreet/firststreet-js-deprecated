@@ -124,6 +124,5 @@ BaseModel {
     "streetName": "APPOQUIN",
     "zipCode": 19734,
   },
-  "relationships": null,
 }
 `;

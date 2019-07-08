@@ -6,17 +6,12 @@ class BaseModel {
     this.relationships = null;
   }
 
-  set id(id) {
-    this.data.id = id;
-    return this;
-  }
-
   get type() {
     return this.data.type;
   }
 
   get id() {
-    return this.data.id;
+    return this.data.ID;
   }
 
   get raw() {

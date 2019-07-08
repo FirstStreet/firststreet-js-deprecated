@@ -46,7 +46,12 @@ class Property extends BaseModel {
   }
 
   get city() {
-    return this.data.city.name;
+    // this field is a relationship to a city parcel
+    return this.data.city.Name;
+  }
+
+  get cityID() {
+    return this.data.city.ID;
   }
 
   get state() {

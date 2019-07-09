@@ -1,6 +1,10 @@
 const BaseModel = require('../Base/index');
 
 /**
+ * @typedef {import('../../Api/parcel').default} ParcelGeometry
+*/
+
+/**
  * A Property
  * @typedef {Object} ParcelProperty
  * @property {number} ID - The parcel unique identifier
@@ -63,13 +67,25 @@ class Property extends BaseModel {
     return this.data.geometry.polygon.coordinates;
   }
 
+  get polygonGeoJSON() {
+    return this.data.geometry.polygon;
+  }
+
   get center() {
     return this.data.geometry.center.coordinates;
+  }
+
+  get centerGeoJSON() {
+    return this.data.geometry.center;
   }
 
   get bounds() {
     // todo: parse nested coordinates arrays
     return this.data.geometry.bounds.coordinates;
+  }
+
+  get boundsGeoJSON() {
+    return this.data.geometry.bounds;
   }
 
   get elevation() {

@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require('node-fetch').default;
 const isArray = require('lodash/isArray');
 const isPlainObject = require('lodash/isPlainObject');
 const {
@@ -147,15 +147,12 @@ class Http {
       return new Error('HTTP Error: No endpoint to provide a request to.');
     ***REMOVED***
 
-    requestOptions.url += endpoint;
-
     if (query) {
-      requestOptions.url += `?${this.serialize(query)***REMOVED***`;
+      requestOptions.url = query;
     ***REMOVED***
 
     return new Promise((resolve, reject) => {
       let rateLimit = null;
-
       fetch(requestOptions.url, {
         method: requestOptions.method,
         headers: requestOptions.headers,

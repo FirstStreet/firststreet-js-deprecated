@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require('node-fetch').default;
 const isArray = require('lodash/isArray');
 const isPlainObject = require('lodash/isPlainObject');
 const {

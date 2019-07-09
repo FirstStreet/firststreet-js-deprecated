@@ -31,16 +31,36 @@ describe('Property', () => {
     expect(propertyModel.city).toBeDefined();
   ***REMOVED***);
 
+  it('should have city ID', () => {
+    expect(propertyModel.cityID).toBeDefined();
+  ***REMOVED***);
+
+  it('should have state', () => {
+    expect(propertyModel.state).toBeDefined();
+  ***REMOVED***);
+
   it('should have polygon data', () => {
     expect(propertyModel.polygon).toBeDefined();
+  ***REMOVED***);
+
+  it('should have polygon geoJSON', () => {
+    expect(propertyModel.polygonGeoJSON).toBeDefined();
   ***REMOVED***);
 
   it('should have center data', () => {
     expect(propertyModel.center).toBeDefined();
   ***REMOVED***);
 
+  it('should have center geoJSON', () => {
+    expect(propertyModel.centerGeoJSON).toBeDefined();
+  ***REMOVED***);
+
   it('should have bounds data', () => {
     expect(propertyModel.bounds).toBeDefined();
+  ***REMOVED***);
+
+  it('should have bounds geoJSON', () => {
+    expect(propertyModel.boundsGeoJSON).toBeDefined();
   ***REMOVED***);
 
   it('should have elevation', () => {
@@ -60,7 +80,7 @@ describe('Property', () => {
   ***REMOVED***);
 
   it('should have landUse', () => {
-    expect(propertyModel.floorArea).toBeDefined();
+    expect(propertyModel.landUse).toBeDefined();
   ***REMOVED***);
 
   it('should have countyFips', () => {

@@ -2,7 +2,8 @@ const { normalizeError } = require('../../Error');
 const Property = require('../../models/Property');
 
 /**
- * @typedef {import('../models/property').default} ParcelProperty
+ * @typedef {import('../models/Property').default} ParcelProperty
+ * @typedef {import('../models/City').default} ParcelCity
 */
 
 
@@ -12,15 +13,6 @@ const Property = require('../../models/Property');
  * @property {number} ID - The city unique identifier
  * @property {string} name - The city name
 */
-
-/**
- * A Parcel City
- * @typedef {Object} ParcelCity
- * @property {number} ID - The city unique identifier
- * @property {string} name - The city name
- * @property {string} state - The city state
- * @property {ParcelGeometry} geometry - The viewport and bounding box of a location
- */
 
 /**
  * A ParcelGeometry which contains a polygon (boundingbox) and the Bound (viewport) of a location

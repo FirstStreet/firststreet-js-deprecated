@@ -1,5 +1,6 @@
 const { normalizeError ***REMOVED*** = require('../../Error');
 const Property = require('../../models/Property');
+const City = require('../../models/City');
 
 /**
  * @typedef {import('../models/Property').default***REMOVED*** ParcelProperty
@@ -34,7 +35,7 @@ const parcel = http =>
    ({
     async getPropertyByID(id) {
       if (!id) {
-        return normalizeError('Expected required id. Usage: .getPropertyByID([id])');
+        return normalizeError('Expected required id. Usage: .getPropertyByID(id)');
       ***REMOVED***
 
       const path = `${ENDPOINT_PREFIX***REMOVED***${id***REMOVED***?type=property&key=${http.getKey()***REMOVED***`;
@@ -56,13 +57,14 @@ const parcel = http =>
     ***REMOVED***,
     async getCityByID(id) {
       if (!id) {
-        return normalizeError('Expected required id. Usage: .getCityByID([id])');
+        return normalizeError('Expected required id. Usage: .getCityByID(id)');
       ***REMOVED***
 
       const path = `${ENDPOINT_PREFIX***REMOVED***${id***REMOVED***?type=city&key=${http.getKey()***REMOVED***`;
 
       try {
-        const response = await http.excecute('GET', path);
+        const response = await http.execute('GET', path);
+
 
         const { errors, messages ***REMOVED*** = response;
 
@@ -70,7 +72,8 @@ const parcel = http =>
           return normalizeError(messages);
         ***REMOVED***
 
-        return response;
+        const model = new City(response.body);
+        return model;
       ***REMOVED*** catch (e) {
         return normalizeError(null, e);
       ***REMOVED***

@@ -16,6 +16,6 @@ describe('baseModel', () => {
   });
 
   it('should return the correct id', () => {
-    expect(baseModel.id).toBe(100032470544);
+    expect(baseModel.id).toBe(propertyById.ID);
   });
 });

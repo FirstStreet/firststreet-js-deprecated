@@ -1,5 +1,6 @@
 const { normalizeError } = require('../../Error');
 const Property = require('../../models/Property');
+const City = require('../../models/City');
 
 /**
  * @typedef {import('../models/Property').default} ParcelProperty
@@ -34,7 +35,7 @@ const parcel = http =>
    ({
     async getPropertyByID(id) {
       if (!id) {
-        return normalizeError('Expected required id. Usage: .getPropertyByID([id])');
+        return normalizeError('Expected required id. Usage: .getPropertyByID(id)');
       }
 
       const path = `${ENDPOINT_PREFIX}${id}?type=property&key=${http.getKey()}`;
@@ -56,13 +57,14 @@ const parcel = http =>
     },
     async getCityByID(id) {
       if (!id) {
-        return normalizeError('Expected required id. Usage: .getCityByID([id])');
+        return normalizeError('Expected required id. Usage: .getCityByID(id)');
       }
 
       const path = `${ENDPOINT_PREFIX}${id}?type=city&key=${http.getKey()}`;
 
       try {
-        const response = await http.excecute('GET', path);
+        const response = await http.execute('GET', path);
+
 
         const { errors, messages } = response;
 
@@ -70,7 +72,8 @@ const parcel = http =>
           return normalizeError(messages);
         }
 
-        return response;
+        const model = new City(response.body);
+        return model;
       } catch (e) {
         return normalizeError(null, e);
       }

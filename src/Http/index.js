@@ -147,19 +147,17 @@ class Http {
       return new Error('HTTP Error: No endpoint to provide a request to.');
     }
 
-    // requestOptions.url += endpoint;
-
     if (query) {
       requestOptions.url = query;
     }
 
     return new Promise((resolve, reject) => {
-      const rateLimit = null;
+      let rateLimit = null;
       fetch(requestOptions.url, {
         method: requestOptions.method,
         headers: requestOptions.headers,
       }).then((res) => {
-        // rateLimit = this.parseRateLimit(res.headers);
+        rateLimit = this.parseRateLimit(res.headers);
         if (res.status !== 200) {
           return this.parseErrors(res, requestOptions, rateLimit);
         }

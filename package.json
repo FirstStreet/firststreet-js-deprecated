@@ -39,8 +39,9 @@
   ***REMOVED***,
   "jest": {
     "testEnvironment": "node",
-    "modulePaths": [
-      "<rootDir>"
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/__mocks__/",
+      "<rootDir>/node_modules/"
     ]
   ***REMOVED***,
   "dependencies": {

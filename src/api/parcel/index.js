@@ -74,7 +74,7 @@ const parcel = http =>
         return normalizeError(null, e);
       }
     },
-    async getParcelByLatLng(lat, lng, type = 'property', range = 100) {
+    async getParcelByLatLng(lat, lng, type = 'property') {
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
       }

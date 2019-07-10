@@ -1,7 +1,7 @@
 const BaseModel = require('../Base');
 
 /**
- * @typedef {import('../../api/parcel').default} ParcelGeometry
+ * @typedef {import('../../Api/parcel').default} ParcelGeometry
  */
 
 /**

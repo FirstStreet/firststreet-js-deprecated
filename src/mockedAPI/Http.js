@@ -4,8 +4,8 @@ const {
 } = require('../Error');
 
 // Mock Data
-const propertyById = require('./propertyDataById');
-const cityById = require('./cityDataById');
+const propertyById = require('../__mocks__/propertyDataById');
+const cityById = require('../__mocks__/cityDataById');
 
 const defaults = {
   host: 'https://FAKE-HOST-FOR-TESTING.com/',

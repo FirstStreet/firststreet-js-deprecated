@@ -1,4 +1,4 @@
-const Api = require('./Api');
+const Api = require('./Api/api');
 const Http = require('./Http');
 
 /**

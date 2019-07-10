@@ -1,4 +1,4 @@
-const FloodIQ = require('../../__mocks__/FloodIQ.js');
+const FloodIQ = require('../../mockedAPI/FloodIQ');
 const propertyByID = require('../../__mocks__/propertyDataById');
 const cityByID = require('../../__mocks__/cityDataById');
 

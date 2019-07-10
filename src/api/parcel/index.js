@@ -1,5 +1,5 @@
-const Property = require('../../models/Property');
-const City = require('../../models/City');
+const Property = require('../../models/Property/index.js');
+const City = require('../../models/City/index.js');
 const { normalizeError ***REMOVED*** = require('../../Error');
 
 /**

@@ -23,7 +23,7 @@ const City = require('../../models/City');
  * @property {string***REMOVED*** bounds - The bounds of the location
  */
 
-const ENDPOINT_PREFIX = `${process.env.HTTP_HOST***REMOVED***/data/${process.env.VERSION***REMOVED***/parcel/`;
+const ENDPOINT_PREFIX = '/data/1.0/parcel';
 
 const parcel = http =>
   /**
@@ -38,17 +38,13 @@ const parcel = http =>
         return normalizeError('Expected required id. Usage: .getPropertyByID(id)');
       ***REMOVED***
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***${id***REMOVED***?type=property&key=${http.getKey()***REMOVED***`;
-
-
+      const path = `${ENDPOINT_PREFIX***REMOVED***/${id***REMOVED***?type=property&key=${http.getKey()***REMOVED***`;
       try {
         const response = await http.execute('GET', path);
         const { errors, messages ***REMOVED*** = response;
-
         if (errors) {
           return normalizeError(messages);
         ***REMOVED***
-
         const model = new Property(response.body);
         return model;
       ***REMOVED*** catch (e) {
@@ -60,7 +56,7 @@ const parcel = http =>
         return normalizeError('Expected required id. Usage: .getCityByID(id)');
       ***REMOVED***
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***${id***REMOVED***?type=city&key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX***REMOVED***/${id***REMOVED***?type=city&key=${http.getKey()***REMOVED***`;
 
       try {
         const response = await http.execute('GET', path);
@@ -73,6 +69,40 @@ const parcel = http =>
         ***REMOVED***
 
         const model = new City(response.body);
+        return model;
+      ***REMOVED*** catch (e) {
+        return normalizeError(null, e);
+      ***REMOVED***
+    ***REMOVED***,
+    async getParcelByLatLng(lat, lng, type = 'property', range = 100) {
+      if (!lat) {
+        return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
+      ***REMOVED***
+
+      if (!lng) {
+        return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
+      ***REMOVED***
+
+      const path = `${ENDPOINT_PREFIX***REMOVED***?lat=${lat***REMOVED***&lng=${lng***REMOVED***&type=${type***REMOVED***&key=${http.getKey()***REMOVED***`;
+
+      try {
+        const response = await http.execute('GET', path);
+
+        const {
+          errors,
+          message,
+        ***REMOVED*** = response;
+
+        if (errors) {
+          return normalizeError(message);
+        ***REMOVED***
+
+        if (type === 'city') {
+          const model = new City(response.body);
+          return model;
+        ***REMOVED***
+
+        const model = new Property(response.body);
         return model;
       ***REMOVED*** catch (e) {
         return normalizeError(null, e);

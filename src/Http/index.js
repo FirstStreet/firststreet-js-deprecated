@@ -3,7 +3,7 @@ const isArray = require('lodash/isArray');
 const isPlainObject = require('lodash/isPlainObject');
 const {
   UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,
-  NO_BODY, OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR,
+  OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR, NO_BODY,
 ***REMOVED*** = require('../Error');
 
 const defaults = {
@@ -141,18 +141,17 @@ class Http {
    * @param {string***REMOVED*** endpoint - request URL endpoint
    * @param {Object***REMOVED*** query - the query??
   */
-  execute(endpoint = null, query = null) {
-    const requestOptions = { ...this.options ***REMOVED***;
+  execute(method = 'GET', endpoint = null) {
+    const requestOptions = { ...this.options, method ***REMOVED***;
     if (endpoint === null) {
       return new Error('HTTP Error: No endpoint to provide a request to.');
     ***REMOVED***
 
-    if (query) {
-      requestOptions.url = query;
-    ***REMOVED***
+    requestOptions.url += endpoint;
 
     return new Promise((resolve, reject) => {
       let rateLimit = null;
+
       fetch(requestOptions.url, {
         method: requestOptions.method,
         headers: requestOptions.headers,
@@ -166,13 +165,18 @@ class Http {
         // Empty responses
         if (!body) {
           return reject({
-            errors: true, messages: NO_BODY, debug: requestOptions, rateLimit,
+            errors: true,
+            messages: NO_BODY,
+            debug: requestOptions,
+            rateLimit,
           ***REMOVED***);
         ***REMOVED***
         // Status code not 200
         if (body.errors) {
           return reject({
-            ...body, debug: requestOptions, rateLimit,
+            ...body,
+            debug: requestOptions,
+            rateLimit,
           ***REMOVED***);
         ***REMOVED***
 
@@ -192,5 +196,6 @@ class Http {
     ***REMOVED***);
   ***REMOVED***
 ***REMOVED***
+
 
 module.exports = Http;

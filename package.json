@@ -39,6 +39,7 @@
   },
   "jest": {
     "testEnvironment": "node",
+    "rootDir": "src",
     "modulePaths": [
       "src",
       "mockedAPI"

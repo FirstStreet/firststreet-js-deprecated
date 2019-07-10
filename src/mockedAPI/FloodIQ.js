@@ -1,5 +1,5 @@
-const Api = require('../Api');
 const Http = require('../mockedAPI/Http');
+const Api = require('../Api/api');
 
 class FloodIQ {
   constructor(apiKey = null, options = {***REMOVED***) {

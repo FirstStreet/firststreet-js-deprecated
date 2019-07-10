@@ -230,14 +230,14 @@ eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"floodiq-javascript\\\",\\\
 
 /***/ }),
 
-/***/ "./src/Api/index.js":
-/*!**************************!*\
-  !*** ./src/Api/index.js ***!
-  \**************************/
+/***/ "./src/Api/api.js":
+/*!************************!*\
+  !*** ./src/Api/api.js ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const pkg = __webpack_require__(/*! ../../package.json */ \"./package.json\");\nconst parcel = __webpack_require__(/*! ./parcel/index.js */ \"./src/Api/parcel/index.js\");\n\n/**\n * api wrapper\n * @constructor\n * @param {Object} http - Http request module\n*/\nclass Api {\n  constructor(http) {\n    this.http = http;\n  }\n\n  status() {\n    return new Promise((resolve, reject) => {\n      this.http\n        .status()\n        .then(res => res.json())\n        .then((body) => {\n          if (body && body.data) {\n            return resolve({\n              id: body.data.id,\n              releasedAt: body.attributes.releasedAt,\n              version: body.data.attributes.version,\n              clientVersion: pkg.version,\n            });\n          }\n          return resolve(body);\n        })\n        .catch((err) => {\n          reject(err);\n        });\n    });\n  }\n\n  bindTo(context) {\n    const ctx = context;\n\n    ctx.status = this.status.bind(this, context);\n    ctx.parcel = parcel(this.http);\n  }\n}\n\nmodule.exports = Api;\n\n\n//# sourceURL=webpack:///./src/Api/index.js?");
+eval("const pkg = __webpack_require__(/*! ../../package.json */ \"./package.json\");\nconst parcel = __webpack_require__(/*! ./parcel/index.js */ \"./src/Api/parcel/index.js\");\n\n/**\n * api wrapper\n * @constructor\n * @param {Object} http - Http request module\n*/\nclass Api {\n  constructor(http) {\n    this.http = http;\n  }\n\n  status() {\n    return new Promise((resolve, reject) => {\n      this.http\n        .status()\n        .then(res => res.json())\n        .then((body) => {\n          if (body && body.data) {\n            return resolve({\n              id: body.data.id,\n              releasedAt: body.attributes.releasedAt,\n              version: body.data.attributes.version,\n              clientVersion: pkg.version,\n            });\n          }\n          return resolve(body);\n        })\n        .catch((err) => {\n          reject(err);\n        });\n    });\n  }\n\n  bindTo(context) {\n    const ctx = context;\n\n    ctx.status = this.status.bind(this, context);\n    ctx.parcel = parcel(this.http);\n  }\n}\n\nmodule.exports = Api;\n\n\n//# sourceURL=webpack:///./src/Api/api.js?");
 
 /***/ }),
 
@@ -270,7 +270,7 @@ eval("const RATE_LIMIT = 'Request rate limited. Free for non-commercial use for 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Api = __webpack_require__(/*! ./Api */ \"./src/Api/index.js\");\nconst Http = __webpack_require__(/*! ./Http */ \"./src/Http/index.js\");\n\n/**\n * Create a FloodIQ class\n * @constructor\n * @param {string} apiKey - A string with the base URL for account.\n * @param {Object} options - A configuration object.\n*/\nclass FloodIQ {\n  constructor(apiKey = null, options = {}) {\n    if (!apiKey) {\n      throw new Error('Missing API Key.');\n    }\n\n    const api = new Api(new Http(apiKey, options));\n    api.bindTo(this);\n  }\n}\n\nmodule.exports = FloodIQ;\n\n\n//# sourceURL=webpack:///./src/FloodIQ.js?");
+eval("const Api = __webpack_require__(/*! ./Api/api */ \"./src/Api/api.js\");\nconst Http = __webpack_require__(/*! ./Http */ \"./src/Http/index.js\");\n\n/**\n * Create a FloodIQ class\n * @constructor\n * @param {string} apiKey - A string with the base URL for account.\n * @param {Object} options - A configuration object.\n*/\nclass FloodIQ {\n  constructor(apiKey = null, options = {}) {\n    if (!apiKey) {\n      throw new Error('Missing API Key.');\n    }\n\n    const api = new Api(new Http(apiKey, options));\n    api.bindTo(this);\n  }\n}\n\nmodule.exports = FloodIQ;\n\n\n//# sourceURL=webpack:///./src/FloodIQ.js?");
 
 /***/ }),
 

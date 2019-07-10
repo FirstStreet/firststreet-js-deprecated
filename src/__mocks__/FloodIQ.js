@@ -1,4 +1,5 @@
-const Api = require('../Api/index.js');
+// lowercase
+const Api = require('../api/index.js');
 const Http = require('./Http');
 
 class FloodIQ {

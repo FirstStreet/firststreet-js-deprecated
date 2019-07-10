@@ -1,5 +1,5 @@
 const pkg = require('../../package.json');
-const parcel = require('./parcel');
+const parcel = require('./parcel/index.js');
 
 /**
  * api wrapper

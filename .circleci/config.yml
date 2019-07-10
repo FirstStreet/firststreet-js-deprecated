@@ -11,8 +11,8 @@ jobs:
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
-      - restore_cache: # restrore dependency cache
-          key: dependency-cache-{{ checksum "package.json" }}
+      # - restore_cache: # restrore dependency cache
+      #     key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm-wee
           command: npm install

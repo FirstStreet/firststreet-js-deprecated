@@ -1,6 +1,6 @@
 const { normalizeError } = require('../../Error');
-const Property = require('../../models/Property');
-const City = require('../../models/City');
+const Property = require('../../models/property');
+const City = require('../../models/city');
 
 /**
  * @typedef {import('../models/Property').default} ParcelProperty

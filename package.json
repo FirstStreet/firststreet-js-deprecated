@@ -38,12 +38,7 @@
     "webpack-cli": "^3.3.5"
   ***REMOVED***,
   "jest": {
-    "testEnvironment": "node",
-    "rootDir": "src",
-    "modulePaths": [
-      "src",
-      "mockedAPI"
-    ]
+    "testEnvironment": "node"
   ***REMOVED***,
   "dependencies": {
     "lodash": "^4.17.11",

@@ -1,6 +1,4 @@
 const fetch = require('node-fetch').default;
-const isArray = require('lodash/isArray');
-const isPlainObject = require('lodash/isPlainObject');
 const {
   UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,
   OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR, NO_BODY,
@@ -8,8 +6,6 @@ const {
 
 const defaults = {
   host: process.env.HTTP_HOST,
-  statusUrl: process.env.STATUS_URL,
-  title: 'floodiq-javascript-sdk',
 ***REMOVED***;
 
 /**
@@ -24,7 +20,6 @@ class Http {
     this.key = apiKey;
     this.options = {
       url: `${requestOptions.host***REMOVED***`,
-      status: requestOptions.statusUrl,
       headers: {
         'Content-Encoding': 'gzip',
         'Content-Type': 'application/json',
@@ -38,37 +33,6 @@ class Http {
 
   getKey() {
     return this.key;
-  ***REMOVED***
-
-  /**
-   * Serialize request object into a list of URL query parameters
-   * @param {Object***REMOVED*** obj - the request object
-   * @return {string***REMOVED*** - the joined query parameters
-  */
-  serialize(obj) {
-    const queries = [];
-    const loop = (object, prefix = null) => {
-      for (const property of Object.keys(object)) {
-        if (Object.prototype.hasOwnProperty.call(object, property)) {
-          if (isPlainObject(object[property])) {
-            loop(object[property], property);
-          ***REMOVED*** else if (isArray(object[property])) {
-            if (prefix) {
-              queries.push(`${prefix***REMOVED***[${encodeURIComponent(property)***REMOVED***]=${object[property].join(',')***REMOVED***`);
-            ***REMOVED*** else {
-              queries.push(`${encodeURIComponent(property)***REMOVED***=${object[property].join(',')***REMOVED***`);
-            ***REMOVED***
-          ***REMOVED*** else if (prefix) {
-            queries.push(`${prefix***REMOVED***[${encodeURIComponent(property)***REMOVED***]=${object[property]***REMOVED***`);
-          ***REMOVED*** else {
-            queries.push(`${encodeURIComponent(property)***REMOVED***=${object[property]***REMOVED***`);
-          ***REMOVED***
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***;
-
-    loop(obj);
-    return queries.join('&');
   ***REMOVED***
 
   /**
@@ -112,14 +76,6 @@ class Http {
           ...err, messages: UNKNOWN, debug: requestOptions, rateLimit, ...res,
         ***REMOVED***;
     ***REMOVED***
-  ***REMOVED***
-
-  /**
-   * Return request status
-   * @return {string***REMOVED*** - Status
-  */
-  status() {
-    return fetch(this.options.status);
   ***REMOVED***
 
   /**

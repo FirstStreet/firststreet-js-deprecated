@@ -9,8 +9,6 @@ const cityById = require('../__mocks__/cityDataById');
 
 const defaults = {
   host: 'https://FAKE-HOST-FOR-TESTING.com/',
-  statusUrl: 'https://FAKE-HOST-FOR-TESTING.com/',
-  title: 'floodiq',
 ***REMOVED***;
 
 class Http {
@@ -19,7 +17,6 @@ class Http {
     this.key = apiKey;
     this.options = {
       url: requestOptions.host,
-      status: requestOptions.statusUrl,
       headers: {
         'Content-Encoding': 'gzip',
         'Content-Type': 'application/json',

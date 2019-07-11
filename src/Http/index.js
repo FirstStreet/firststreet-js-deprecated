@@ -1,6 +1,4 @@
 const fetch = require('node-fetch').default;
-const isArray = require('lodash/isArray');
-const isPlainObject = require('lodash/isPlainObject');
 const {
   UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,
   OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR, NO_BODY,
@@ -8,8 +6,6 @@ const {
 
 const defaults = {
   host: process.env.HTTP_HOST,
-  statusUrl: process.env.STATUS_URL,
-  title: 'floodiq-javascript-sdk',
 };
 
 /**
@@ -24,7 +20,6 @@ class Http {
     this.key = apiKey;
     this.options = {
       url: `${requestOptions.host}`,
-      status: requestOptions.statusUrl,
       headers: {
         'Content-Encoding': 'gzip',
         'Content-Type': 'application/json',
@@ -38,37 +33,6 @@ class Http {
 
   getKey() {
     return this.key;
-  }
-
-  /**
-   * Serialize request object into a list of URL query parameters
-   * @param {Object} obj - the request object
-   * @return {string} - the joined query parameters
-  */
-  serialize(obj) {
-    const queries = [];
-    const loop = (object, prefix = null) => {
-      for (const property of Object.keys(object)) {
-        if (Object.prototype.hasOwnProperty.call(object, property)) {
-          if (isPlainObject(object[property])) {
-            loop(object[property], property);
-          } else if (isArray(object[property])) {
-            if (prefix) {
-              queries.push(`${prefix}[${encodeURIComponent(property)}]=${object[property].join(',')}`);
-            } else {
-              queries.push(`${encodeURIComponent(property)}=${object[property].join(',')}`);
-            }
-          } else if (prefix) {
-            queries.push(`${prefix}[${encodeURIComponent(property)}]=${object[property]}`);
-          } else {
-            queries.push(`${encodeURIComponent(property)}=${object[property]}`);
-          }
-        }
-      }
-    };
-
-    loop(obj);
-    return queries.join('&');
   }
 
   /**
@@ -112,14 +76,6 @@ class Http {
           ...err, messages: UNKNOWN, debug: requestOptions, rateLimit, ...res,
         };
     }
-  }
-
-  /**
-   * Return request status
-   * @return {string} - Status
-  */
-  status() {
-    return fetch(this.options.status);
   }
 
   /**

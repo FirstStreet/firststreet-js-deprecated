@@ -39,6 +39,10 @@
   },
   "jest": {
     "testEnvironment": "node",
+    "roots": [
+      "<rootDir>",
+      "/src"
+    ],
     "modulePaths": [
       "<rootDir>",
       "<rootDir>/src"

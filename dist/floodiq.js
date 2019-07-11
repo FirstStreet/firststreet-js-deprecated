@@ -86,127 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/lodash/_Symbol.js":
-/*!****************************************!*\
-  !*** ./node_modules/lodash/_Symbol.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var root = __webpack_require__(/*! ./_root */ \"./node_modules/lodash/_root.js\");\n\n/** Built-in value references. */\nvar Symbol = root.Symbol;\n\nmodule.exports = Symbol;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/_Symbol.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/_baseGetTag.js":
-/*!********************************************!*\
-  !*** ./node_modules/lodash/_baseGetTag.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var Symbol = __webpack_require__(/*! ./_Symbol */ \"./node_modules/lodash/_Symbol.js\"),\n    getRawTag = __webpack_require__(/*! ./_getRawTag */ \"./node_modules/lodash/_getRawTag.js\"),\n    objectToString = __webpack_require__(/*! ./_objectToString */ \"./node_modules/lodash/_objectToString.js\");\n\n/** `Object#toString` result references. */\nvar nullTag = '[object Null]',\n    undefinedTag = '[object Undefined]';\n\n/** Built-in value references. */\nvar symToStringTag = Symbol ? Symbol.toStringTag : undefined;\n\n/**\n * The base implementation of `getTag` without fallbacks for buggy environments.\n *\n * @private\n * @param {*} value The value to query.\n * @returns {string} Returns the `toStringTag`.\n */\nfunction baseGetTag(value) {\n  if (value == null) {\n    return value === undefined ? undefinedTag : nullTag;\n  }\n  return (symToStringTag && symToStringTag in Object(value))\n    ? getRawTag(value)\n    : objectToString(value);\n}\n\nmodule.exports = baseGetTag;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/_baseGetTag.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/_freeGlobal.js":
-/*!********************************************!*\
-  !*** ./node_modules/lodash/_freeGlobal.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("/** Detect free variable `global` from Node.js. */\nvar freeGlobal = typeof global == 'object' && global && global.Object === Object && global;\n\nmodule.exports = freeGlobal;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/_freeGlobal.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/_getPrototype.js":
-/*!**********************************************!*\
-  !*** ./node_modules/lodash/_getPrototype.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var overArg = __webpack_require__(/*! ./_overArg */ \"./node_modules/lodash/_overArg.js\");\n\n/** Built-in value references. */\nvar getPrototype = overArg(Object.getPrototypeOf, Object);\n\nmodule.exports = getPrototype;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/_getPrototype.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/_getRawTag.js":
-/*!*******************************************!*\
-  !*** ./node_modules/lodash/_getRawTag.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var Symbol = __webpack_require__(/*! ./_Symbol */ \"./node_modules/lodash/_Symbol.js\");\n\n/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/**\n * Used to resolve the\n * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)\n * of values.\n */\nvar nativeObjectToString = objectProto.toString;\n\n/** Built-in value references. */\nvar symToStringTag = Symbol ? Symbol.toStringTag : undefined;\n\n/**\n * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.\n *\n * @private\n * @param {*} value The value to query.\n * @returns {string} Returns the raw `toStringTag`.\n */\nfunction getRawTag(value) {\n  var isOwn = hasOwnProperty.call(value, symToStringTag),\n      tag = value[symToStringTag];\n\n  try {\n    value[symToStringTag] = undefined;\n    var unmasked = true;\n  } catch (e) {}\n\n  var result = nativeObjectToString.call(value);\n  if (unmasked) {\n    if (isOwn) {\n      value[symToStringTag] = tag;\n    } else {\n      delete value[symToStringTag];\n    }\n  }\n  return result;\n}\n\nmodule.exports = getRawTag;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/_getRawTag.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/_objectToString.js":
-/*!************************************************!*\
-  !*** ./node_modules/lodash/_objectToString.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/**\n * Used to resolve the\n * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)\n * of values.\n */\nvar nativeObjectToString = objectProto.toString;\n\n/**\n * Converts `value` to a string using `Object.prototype.toString`.\n *\n * @private\n * @param {*} value The value to convert.\n * @returns {string} Returns the converted string.\n */\nfunction objectToString(value) {\n  return nativeObjectToString.call(value);\n}\n\nmodule.exports = objectToString;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/_objectToString.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/_overArg.js":
-/*!*****************************************!*\
-  !*** ./node_modules/lodash/_overArg.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("/**\n * Creates a unary function that invokes `func` with its argument transformed.\n *\n * @private\n * @param {Function} func The function to wrap.\n * @param {Function} transform The argument transform.\n * @returns {Function} Returns the new function.\n */\nfunction overArg(func, transform) {\n  return function(arg) {\n    return func(transform(arg));\n  };\n}\n\nmodule.exports = overArg;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/_overArg.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/_root.js":
-/*!**************************************!*\
-  !*** ./node_modules/lodash/_root.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ \"./node_modules/lodash/_freeGlobal.js\");\n\n/** Detect free variable `self`. */\nvar freeSelf = typeof self == 'object' && self && self.Object === Object && self;\n\n/** Used as a reference to the global object. */\nvar root = freeGlobal || freeSelf || Function('return this')();\n\nmodule.exports = root;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/_root.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/isArray.js":
-/*!****************************************!*\
-  !*** ./node_modules/lodash/isArray.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("/**\n * Checks if `value` is classified as an `Array` object.\n *\n * @static\n * @memberOf _\n * @since 0.1.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is an array, else `false`.\n * @example\n *\n * _.isArray([1, 2, 3]);\n * // => true\n *\n * _.isArray(document.body.children);\n * // => false\n *\n * _.isArray('abc');\n * // => false\n *\n * _.isArray(_.noop);\n * // => false\n */\nvar isArray = Array.isArray;\n\nmodule.exports = isArray;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/isArray.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/isObjectLike.js":
-/*!*********************************************!*\
-  !*** ./node_modules/lodash/isObjectLike.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("/**\n * Checks if `value` is object-like. A value is object-like if it's not `null`\n * and has a `typeof` result of \"object\".\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is object-like, else `false`.\n * @example\n *\n * _.isObjectLike({});\n * // => true\n *\n * _.isObjectLike([1, 2, 3]);\n * // => true\n *\n * _.isObjectLike(_.noop);\n * // => false\n *\n * _.isObjectLike(null);\n * // => false\n */\nfunction isObjectLike(value) {\n  return value != null && typeof value == 'object';\n}\n\nmodule.exports = isObjectLike;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/isObjectLike.js?");
-
-/***/ }),
-
-/***/ "./node_modules/lodash/isPlainObject.js":
-/*!**********************************************!*\
-  !*** ./node_modules/lodash/isPlainObject.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ \"./node_modules/lodash/_baseGetTag.js\"),\n    getPrototype = __webpack_require__(/*! ./_getPrototype */ \"./node_modules/lodash/_getPrototype.js\"),\n    isObjectLike = __webpack_require__(/*! ./isObjectLike */ \"./node_modules/lodash/isObjectLike.js\");\n\n/** `Object#toString` result references. */\nvar objectTag = '[object Object]';\n\n/** Used for built-in method references. */\nvar funcProto = Function.prototype,\n    objectProto = Object.prototype;\n\n/** Used to resolve the decompiled source of functions. */\nvar funcToString = funcProto.toString;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/** Used to infer the `Object` constructor. */\nvar objectCtorString = funcToString.call(Object);\n\n/**\n * Checks if `value` is a plain object, that is, an object created by the\n * `Object` constructor or one with a `[[Prototype]]` of `null`.\n *\n * @static\n * @memberOf _\n * @since 0.8.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.\n * @example\n *\n * function Foo() {\n *   this.a = 1;\n * }\n *\n * _.isPlainObject(new Foo);\n * // => false\n *\n * _.isPlainObject([1, 2, 3]);\n * // => false\n *\n * _.isPlainObject({ 'x': 0, 'y': 0 });\n * // => true\n *\n * _.isPlainObject(Object.create(null));\n * // => true\n */\nfunction isPlainObject(value) {\n  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {\n    return false;\n  }\n  var proto = getPrototype(value);\n  if (proto === null) {\n    return true;\n  }\n  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;\n  return typeof Ctor == 'function' && Ctor instanceof Ctor &&\n    funcToString.call(Ctor) == objectCtorString;\n}\n\nmodule.exports = isPlainObject;\n\n\n//# sourceURL=webpack:///./node_modules/lodash/isPlainObject.js?");
-
-/***/ }),
-
 /***/ "./node_modules/node-fetch/lib/index.mjs":
 /*!***********************************************!*\
   !*** ./node_modules/node-fetch/lib/index.mjs ***!
@@ -226,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! exports provided: name, version, description, main, scripts, repository, bugs:, keywords, author, license, bugs, homepage, devDependencies, jest, dependencies, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"floodiq-javascript\\\",\\\"version\\\":\\\"1.0.0\\\",\\\"description\\\":\\\"\\\\\\\"A Javascript API Client for FloodIQ\\\\\\\"\\\",\\\"main\\\":\\\"index.js\\\",\\\"scripts\\\":{\\\"dev\\\":\\\"NODE_ENV=development webpack --watch --mode=development\\\",\\\"test:dev\\\":\\\"jest --watch\\\",\\\"test:coverage\\\":\\\"jest --coverage -u\\\",\\\"test\\\":\\\"jest --coverage\\\",\\\"build\\\":\\\"NODE_ENV=production rm -rf dist && webpack -p --config ./webpack.config.js --mode=production\\\",\\\"lint\\\":\\\"eslint src\\\"},\\\"repository\\\":{\\\"type\\\":\\\"git\\\",\\\"url\\\":\\\"git+https://github.com/FirstStreet/floodiq-javascript.git\\\"},\\\"bugs:\\\":\\\"https://github.com/firststreet/floodiq-javascript/issues\\\",\\\"keywords\\\":[\\\"floodiq\\\"],\\\"author\\\":\\\"Firstreet Dev\\\",\\\"license\\\":\\\"MIT\\\",\\\"bugs\\\":{\\\"url\\\":\\\"https://github.com/FirstStreet/floodiq-javascript/issues\\\"},\\\"homepage\\\":\\\"https://github.com/FirstStreet/floodiq-javascript#readme\\\",\\\"devDependencies\\\":{\\\"eslint\\\":\\\"^5.16.0\\\",\\\"eslint-config-airbnb-base\\\":\\\"^13.1.0\\\",\\\"eslint-plugin-import\\\":\\\"^2.18.0\\\",\\\"eslint-plugin-prettier\\\":\\\"^3.1.0\\\",\\\"jest\\\":\\\"^24.8.0\\\",\\\"jsdoc\\\":\\\"^3.6.2\\\",\\\"nodemon-webpack-plugin\\\":\\\"^4.0.8\\\",\\\"prettier\\\":\\\"^1.18.2\\\",\\\"webpack\\\":\\\"^4.35.3\\\",\\\"webpack-cli\\\":\\\"^3.3.5\\\"},\\\"jest\\\":{\\\"testEnvironment\\\":\\\"node\\\",\\\"modulePaths\\\":[\\\"<rootDir>\\\",\\\"<rootDir>/src\\\"]},\\\"dependencies\\\":{\\\"lodash\\\":\\\"^4.17.11\\\",\\\"node-fetch\\\":\\\"^2.6.0\\\"}}\");\n\n//# sourceURL=webpack:///./package.json?");
+eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"floodiq-javascript\\\",\\\"version\\\":\\\"1.0.0\\\",\\\"description\\\":\\\"\\\\\\\"A Javascript API Client for FloodIQ\\\\\\\"\\\",\\\"main\\\":\\\"index.js\\\",\\\"scripts\\\":{\\\"dev\\\":\\\"NODE_ENV=development webpack --watch --mode=development\\\",\\\"test:dev\\\":\\\"jest --watch\\\",\\\"test:coverage\\\":\\\"jest --coverage -u\\\",\\\"test\\\":\\\"jest --coverage\\\",\\\"build\\\":\\\"NODE_ENV=production rm -rf dist && webpack -p --config ./webpack.config.js --mode=production\\\",\\\"lint\\\":\\\"eslint src\\\"},\\\"repository\\\":{\\\"type\\\":\\\"git\\\",\\\"url\\\":\\\"git+https://github.com/FirstStreet/floodiq-javascript.git\\\"},\\\"bugs:\\\":\\\"https://github.com/firststreet/floodiq-javascript/issues\\\",\\\"keywords\\\":[\\\"floodiq\\\"],\\\"author\\\":\\\"Firstreet Dev\\\",\\\"license\\\":\\\"MIT\\\",\\\"bugs\\\":{\\\"url\\\":\\\"https://github.com/FirstStreet/floodiq-javascript/issues\\\"},\\\"homepage\\\":\\\"https://github.com/FirstStreet/floodiq-javascript#readme\\\",\\\"devDependencies\\\":{\\\"eslint\\\":\\\"^5.16.0\\\",\\\"eslint-config-airbnb-base\\\":\\\"^13.1.0\\\",\\\"eslint-plugin-import\\\":\\\"^2.18.0\\\",\\\"eslint-plugin-prettier\\\":\\\"^3.1.0\\\",\\\"jest\\\":\\\"^24.8.0\\\",\\\"jsdoc\\\":\\\"^3.6.2\\\",\\\"nodemon-webpack-plugin\\\":\\\"^4.0.8\\\",\\\"prettier\\\":\\\"^1.18.2\\\",\\\"webpack\\\":\\\"^4.35.3\\\",\\\"webpack-cli\\\":\\\"^3.3.5\\\"},\\\"jest\\\":{\\\"testEnvironment\\\":\\\"node\\\",\\\"testPathIgnorePatterns\\\":[\\\"<rootDir>/src/__mockes__/\\\",\\\"<rootDir>/node_modules/\\\"]},\\\"dependencies\\\":{\\\"lodash\\\":\\\"^4.17.11\\\",\\\"node-fetch\\\":\\\"^2.6.0\\\"}}\");\n\n//# sourceURL=webpack:///./package.json?");
 
 /***/ }),
 
@@ -281,7 +160,7 @@ eval("const Api = __webpack_require__(/*! ./Api */ \"./src/Api/index.js\");\ncon
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const fetch = __webpack_require__(/*! node-fetch */ \"./node_modules/node-fetch/lib/index.mjs\").default;\nconst isArray = __webpack_require__(/*! lodash/isArray */ \"./node_modules/lodash/isArray.js\");\nconst isPlainObject = __webpack_require__(/*! lodash/isPlainObject */ \"./node_modules/lodash/isPlainObject.js\");\nconst {\n  UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,\n  OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR, NO_BODY,\n} = __webpack_require__(/*! ../Error */ \"./src/Error/index.js\");\n\nconst defaults = {\n  host: \"http://apidev.firststreet.org\",\n  statusUrl: process.env.STATUS_URL,\n  title: 'floodiq-javascript-sdk',\n};\n\n/**\n* http wrapper\n* @constructor\n * @param {string} apiKey - A string with the base URL for account.\n * @param {Object} options - A configuration object.\n*/\nclass Http {\n  constructor(apiKey = null, options = defaults) {\n    const requestOptions = { ...defaults, ...options };\n    this.key = apiKey;\n    this.options = {\n      url: `${requestOptions.host}`,\n      status: requestOptions.statusUrl,\n      headers: {\n        'Content-Encoding': 'gzip',\n        'Content-Type': 'application/json',\n        'User-Agent': 'js/floodiq',\n        Accept: 'application/vnd.api+json',\n        Authorization: `Bearer ${apiKey}`,\n        'X-TITLE-ID': requestOptions.title,\n      },\n    };\n  }\n\n  getKey() {\n    return this.key;\n  }\n\n  /**\n   * Serialize request object into a list of URL query parameters\n   * @param {Object} obj - the request object\n   * @return {string} - the joined query parameters\n  */\n  serialize(obj) {\n    const queries = [];\n    const loop = (object, prefix = null) => {\n      for (const property of Object.keys(object)) {\n        if (Object.prototype.hasOwnProperty.call(object, property)) {\n          if (isPlainObject(object[property])) {\n            loop(object[property], property);\n          } else if (isArray(object[property])) {\n            if (prefix) {\n              queries.push(`${prefix}[${encodeURIComponent(property)}]=${object[property].join(',')}`);\n            } else {\n              queries.push(`${encodeURIComponent(property)}=${object[property].join(',')}`);\n            }\n          } else if (prefix) {\n            queries.push(`${prefix}[${encodeURIComponent(property)}]=${object[property]}`);\n          } else {\n            queries.push(`${encodeURIComponent(property)}=${object[property]}`);\n          }\n        }\n      }\n    };\n\n    loop(obj);\n    return queries.join('&');\n  }\n\n  /**\n   * Return errors for common error code scenarios\n   * @param {Object} res - the response object\n   * @param {Object} requestOptions - the request options object\n   * @param {number} rateLimit - rate limit constant\n   * @return {Object} - request object with error messaging added\n  */\n  parseErrors(res, requestOptions, rateLimit) {\n    const { status } = res;\n    const err = { errors: true };\n\n    switch (status) {\n      case 401:\n        return {\n          ...err, messages: UNAUTHORIZED, debug: requestOptions, rateLimit, ...res,\n        };\n      case 404:\n        return {\n          ...err, messages: NOT_FOUND, debug: requestOptions, rateLimit, ...res,\n        };\n      case 500:\n        return {\n          ...err, messages: INTERNAL, debug: requestOptions, rateLimit, ...res,\n        };\n      case 429:\n        return {\n          ...err, messages: RATE_LIMIT, debug: requestOptions, rateLimit, ...res,\n        };\n      case 503:\n        return {\n          ...err, messages: OFFLINE, debug: requestOptions, rateLimit, ...res,\n        };\n      case 406:\n        return {\n          ...err, messages: NOT_ACCEPTABLE, debug: requestOptions, rateLimit, ...res,\n        };\n      default:\n        return {\n          ...err, messages: UNKNOWN, debug: requestOptions, rateLimit, ...res,\n        };\n    }\n  }\n\n  /**\n   * Return request status\n   * @return {string} - Status\n  */\n  status() {\n    return fetch(this.options.status);\n  }\n\n  /**\n   * format rate limit headers\n   * @param {Object} headers - rate limit headers\n   * @return {Object} formatted rate limit headers\n   */\n  parseRateLimit(headers) {\n    return {\n      limit: headers.get('x-ratelimit-limit'),\n      remaining: headers.get('x-ratelimit-remaining'),\n      reset: headers.get('x-ratelimit-reset'),\n      requestId: headers.get('x-request-id'),\n    };\n  }\n\n  /**\n   * Perform get request to api\n   * @param {string} endpoint - request URL endpoint\n   * @param {Object} query - the query??\n  */\n  execute(method = 'GET', endpoint = null) {\n    const requestOptions = { ...this.options, method };\n    if (endpoint === null) {\n      return new Error('HTTP Error: No endpoint to provide a request to.');\n    }\n\n    requestOptions.url += endpoint;\n\n    return new Promise((resolve, reject) => {\n      let rateLimit = null;\n\n      fetch(requestOptions.url, {\n        method: requestOptions.method,\n        headers: requestOptions.headers,\n      }).then((res) => {\n        rateLimit = this.parseRateLimit(res.headers);\n        if (res.status !== 200) {\n          return this.parseErrors(res, requestOptions, rateLimit);\n        }\n        return res.json();\n      }).then((body) => {\n        // Empty responses\n        if (!body) {\n          return reject({\n            errors: true,\n            messages: NO_BODY,\n            debug: requestOptions,\n            rateLimit,\n          });\n        }\n        // Status code not 200\n        if (body.errors) {\n          return reject({\n            ...body,\n            debug: requestOptions,\n            rateLimit,\n          });\n        }\n\n        return resolve({\n          errors: null,\n          body,\n          debug: requestOptions,\n          rateLimit,\n        });\n      }).catch(err => reject({\n        errors: true,\n        messages: NETWORK_ERROR,\n        details: err,\n        debug: requestOptions,\n        rateLimit,\n      }));\n    });\n  }\n}\n\n\nmodule.exports = Http;\n\n\n//# sourceURL=webpack:///./src/Http/index.js?");
+eval("const fetch = __webpack_require__(/*! node-fetch */ \"./node_modules/node-fetch/lib/index.mjs\").default;\nconst {\n  UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,\n  OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR, NO_BODY,\n} = __webpack_require__(/*! ../Error */ \"./src/Error/index.js\");\n\nconst defaults = {\n  host: \"http://apidev.firststreet.org\",\n};\n\n/**\n* http wrapper\n* @constructor\n * @param {string} apiKey - A string with the base URL for account.\n * @param {Object} options - A configuration object.\n*/\nclass Http {\n  constructor(apiKey = null, options = defaults) {\n    const requestOptions = { ...defaults, ...options };\n    this.key = apiKey;\n    this.options = {\n      url: `${requestOptions.host}`,\n      headers: {\n        'Content-Encoding': 'gzip',\n        'Content-Type': 'application/json',\n        'User-Agent': 'js/floodiq',\n        Accept: 'application/vnd.api+json',\n        Authorization: `Bearer ${apiKey}`,\n        'X-TITLE-ID': requestOptions.title,\n      },\n    };\n  }\n\n  getKey() {\n    return this.key;\n  }\n\n  /**\n   * Return errors for common error code scenarios\n   * @param {Object} res - the response object\n   * @param {Object} requestOptions - the request options object\n   * @param {number} rateLimit - rate limit constant\n   * @return {Object} - request object with error messaging added\n  */\n  parseErrors(res, requestOptions, rateLimit) {\n    const { status } = res;\n    const err = { errors: true };\n\n    switch (status) {\n      case 401:\n        return {\n          ...err, messages: UNAUTHORIZED, debug: requestOptions, rateLimit, ...res,\n        };\n      case 404:\n        return {\n          ...err, messages: NOT_FOUND, debug: requestOptions, rateLimit, ...res,\n        };\n      case 500:\n        return {\n          ...err, messages: INTERNAL, debug: requestOptions, rateLimit, ...res,\n        };\n      case 429:\n        return {\n          ...err, messages: RATE_LIMIT, debug: requestOptions, rateLimit, ...res,\n        };\n      case 503:\n        return {\n          ...err, messages: OFFLINE, debug: requestOptions, rateLimit, ...res,\n        };\n      case 406:\n        return {\n          ...err, messages: NOT_ACCEPTABLE, debug: requestOptions, rateLimit, ...res,\n        };\n      default:\n        return {\n          ...err, messages: UNKNOWN, debug: requestOptions, rateLimit, ...res,\n        };\n    }\n  }\n\n  /**\n   * format rate limit headers\n   * @param {Object} headers - rate limit headers\n   * @return {Object} formatted rate limit headers\n   */\n  parseRateLimit(headers) {\n    return {\n      limit: headers.get('x-ratelimit-limit'),\n      remaining: headers.get('x-ratelimit-remaining'),\n      reset: headers.get('x-ratelimit-reset'),\n      requestId: headers.get('x-request-id'),\n    };\n  }\n\n  /**\n   * Perform get request to api\n   * @param {string} endpoint - request URL endpoint\n   * @param {Object} query - the query??\n  */\n  execute(method = 'GET', endpoint = null) {\n    const requestOptions = { ...this.options, method };\n    if (endpoint === null) {\n      return new Error('HTTP Error: No endpoint to provide a request to.');\n    }\n\n    requestOptions.url += endpoint;\n\n    return new Promise((resolve, reject) => {\n      let rateLimit = null;\n\n      fetch(requestOptions.url, {\n        method: requestOptions.method,\n        headers: requestOptions.headers,\n      }).then((res) => {\n        rateLimit = this.parseRateLimit(res.headers);\n        if (res.status !== 200) {\n          return this.parseErrors(res, requestOptions, rateLimit);\n        }\n        return res.json();\n      }).then((body) => {\n        // Empty responses\n        if (!body) {\n          return reject({\n            errors: true,\n            messages: NO_BODY,\n            debug: requestOptions,\n            rateLimit,\n          });\n        }\n        // Status code not 200\n        if (body.errors) {\n          return reject({\n            ...body,\n            debug: requestOptions,\n            rateLimit,\n          });\n        }\n\n        return resolve({\n          errors: null,\n          body,\n          debug: requestOptions,\n          rateLimit,\n        });\n      }).catch(err => reject({\n        errors: true,\n        messages: NETWORK_ERROR,\n        details: err,\n        debug: requestOptions,\n        rateLimit,\n      }));\n    });\n  }\n}\n\n\nmodule.exports = Http;\n\n\n//# sourceURL=webpack:///./src/Http/index.js?");
 
 /***/ }),
 

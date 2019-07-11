@@ -1,4 +1,4 @@
-const Http = require('../mockedAPI/Http');
+const Http = require('./Http');
 const Api = require('../Api');
 
 class FloodIQ {

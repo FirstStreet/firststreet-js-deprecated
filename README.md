@@ -18,7 +18,7 @@ npm install floodiq-javascript
 Next, import it into your project
 
 ```javascript
-import Floodiq from 'floodiq-javascript';
+import FloodIQ from 'floodiq-javascript';
 ```
 
 ## Documentation

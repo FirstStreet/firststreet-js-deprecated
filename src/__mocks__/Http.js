@@ -20,10 +20,7 @@ class Http {
       headers: {
         'Content-Encoding': 'gzip',
         'Content-Type': 'application/json',
-        'User-Agent': 'js/vainglory',
-        Accept: 'application/vnd.api+json',
-        Authorization: `Bearer ${apiKey***REMOVED***`,
-        'X-TITLE-ID': requestOptions.title,
+        'User-Agent': 'js/floodiq',
       ***REMOVED***,
     ***REMOVED***;
   ***REMOVED***

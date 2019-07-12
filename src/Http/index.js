@@ -1,15 +1,11 @@
 const fetch = require('node-fetch').default;
-const isArray = require('lodash/isArray');
-const isPlainObject = require('lodash/isPlainObject');
 const {
   UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,
-  NO_BODY, OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR,
+  OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR, NO_BODY,
 } = require('../Error');
 
 const defaults = {
   host: process.env.HTTP_HOST,
-  statusUrl: process.env.STATUS_URL,
-  title: 'floodiq-javascript-sdk',
 };
 
 /**
@@ -24,7 +20,6 @@ class Http {
     this.key = apiKey;
     this.options = {
       url: `${requestOptions.host}`,
-      status: requestOptions.statusUrl,
       headers: {
         'Content-Encoding': 'gzip',
         'Content-Type': 'application/json',
@@ -38,37 +33,6 @@ class Http {
 
   getKey() {
     return this.key;
-  }
-
-  /**
-   * Serialize request object into a list of URL query parameters
-   * @param {Object} obj - the request object
-   * @return {string} - the joined query parameters
-  */
-  serialize(obj) {
-    const queries = [];
-    const loop = (object, prefix = null) => {
-      for (const property of Object.keys(object)) {
-        if (Object.prototype.hasOwnProperty.call(object, property)) {
-          if (isPlainObject(object[property])) {
-            loop(object[property], property);
-          } else if (isArray(object[property])) {
-            if (prefix) {
-              queries.push(`${prefix}[${encodeURIComponent(property)}]=${object[property].join(',')}`);
-            } else {
-              queries.push(`${encodeURIComponent(property)}=${object[property].join(',')}`);
-            }
-          } else if (prefix) {
-            queries.push(`${prefix}[${encodeURIComponent(property)}]=${object[property]}`);
-          } else {
-            queries.push(`${encodeURIComponent(property)}=${object[property]}`);
-          }
-        }
-      }
-    };
-
-    loop(obj);
-    return queries.join('&');
   }
 
   /**
@@ -115,14 +79,6 @@ class Http {
   }
 
   /**
-   * Return request status
-   * @return {string} - Status
-  */
-  status() {
-    return fetch(this.options.status);
-  }
-
-  /**
    * format rate limit headers
    * @param {Object} headers - rate limit headers
    * @return {Object} formatted rate limit headers
@@ -141,18 +97,17 @@ class Http {
    * @param {string} endpoint - request URL endpoint
    * @param {Object} query - the query??
   */
-  execute(endpoint = null, query = null) {
-    const requestOptions = { ...this.options };
+  execute(method = 'GET', endpoint = null) {
+    const requestOptions = { ...this.options, method };
     if (endpoint === null) {
       return new Error('HTTP Error: No endpoint to provide a request to.');
     }
 
-    if (query) {
-      requestOptions.url = query;
-    }
+    requestOptions.url += endpoint;
 
     return new Promise((resolve, reject) => {
       let rateLimit = null;
+
       fetch(requestOptions.url, {
         method: requestOptions.method,
         headers: requestOptions.headers,
@@ -166,13 +121,18 @@ class Http {
         // Empty responses
         if (!body) {
           return reject({
-            errors: true, messages: NO_BODY, debug: requestOptions, rateLimit,
+            errors: true,
+            messages: NO_BODY,
+            debug: requestOptions,
+            rateLimit,
           });
         }
         // Status code not 200
         if (body.errors) {
           return reject({
-            ...body, debug: requestOptions, rateLimit,
+            ...body,
+            debug: requestOptions,
+            rateLimit,
           });
         }
 
@@ -192,5 +152,6 @@ class Http {
     });
   }
 }
+
 
 module.exports = Http;

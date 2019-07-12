@@ -1,6 +1,6 @@
+const Property = require('../../models/property/index.js');
+const City = require('../../models/City/index.js');
 const { normalizeError } = require('../../Error');
-const Property = require('../../models/Property');
-const City = require('../../models/City');
 
 /**
  * @typedef {import('../models/Property').default} ParcelProperty
@@ -23,7 +23,7 @@ const City = require('../../models/City');
  * @property {string} bounds - The bounds of the location
  */
 
-const ENDPOINT_PREFIX = `${process.env.HTTP_HOST}/data/${process.env.VERSION}/parcel/`;
+const ENDPOINT_PREFIX = '/data/1.0/parcel';
 
 const parcel = http =>
   /**
@@ -38,17 +38,13 @@ const parcel = http =>
         return normalizeError('Expected required id. Usage: .getPropertyByID(id)');
       }
 
-      const path = `${ENDPOINT_PREFIX}${id}?type=property&key=${http.getKey()}`;
-
-
+      const path = `${ENDPOINT_PREFIX}/${id}?type=property&key=${http.getKey()}`;
       try {
         const response = await http.execute('GET', path);
         const { errors, messages } = response;
-
         if (errors) {
           return normalizeError(messages);
         }
-
         const model = new Property(response.body);
         return model;
       } catch (e) {
@@ -60,7 +56,7 @@ const parcel = http =>
         return normalizeError('Expected required id. Usage: .getCityByID(id)');
       }
 
-      const path = `${ENDPOINT_PREFIX}${id}?type=city&key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/${id}?type=city&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -73,6 +69,40 @@ const parcel = http =>
         }
 
         const model = new City(response.body);
+        return model;
+      } catch (e) {
+        return normalizeError(null, e);
+      }
+    },
+    async getParcelByLatLng(lat, lng, type = 'property') {
+      if (!lat) {
+        return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
+      }
+
+      if (!lng) {
+        return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
+      }
+
+      const path = `${ENDPOINT_PREFIX}?lat=${lat}&lng=${lng}&type=${type}&key=${http.getKey()}`;
+
+      try {
+        const response = await http.execute('GET', path);
+
+        const {
+          errors,
+          message,
+        } = response;
+
+        if (errors) {
+          return normalizeError(message);
+        }
+
+        if (type === 'city') {
+          const model = new City(response.body);
+          return model;
+        }
+
+        const model = new Property(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);

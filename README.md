@@ -35,7 +35,7 @@ const fiq = new FloodIQ("api-key");
 ### Parcel
 
 ```javascript
-fiq.Parcel.<method>
+fiq.parcel.<method>
 ```
 
 #### Property

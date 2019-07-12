@@ -1,4 +1,4 @@
-const BaseModel = require('../Base/index');
+const BaseModel = require('../Base');
 
 /**
  * @typedef {import('../../Api/parcel').default***REMOVED*** ParcelGeometry

@@ -38,7 +38,11 @@
     "webpack-cli": "^3.3.5"
   ***REMOVED***,
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/__mockes__/",
+      "<rootDir>/node_modules/"
+    ]
   ***REMOVED***,
   "dependencies": {
     "lodash": "^4.17.11",

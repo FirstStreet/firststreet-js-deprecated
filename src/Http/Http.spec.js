@@ -9,22 +9,6 @@ describe('Http', () => {
 
   const http = new Http(key, options);
 
-  it('Correctly serializes objects', () => {
-    const testObj = {
-      Isflooded: true,
-      bounds: {
-        a: 100,
-        b: 200,
-      ***REMOVED***,
-      addressName: 'Howard Street',
-    ***REMOVED***;
-
-    const serialized = 'Isflooded=true&bounds[a]=100&bounds[b]=200&addressName=Howard Street';
-
-    const serialTest = http.serialize(testObj);
-    expect(serialTest).toEqual(serialized);
-  ***REMOVED***);
-
   it('Parses the right error messages based on different error status codes', () => {
     const errorDefault = {
       errors: true,
@@ -47,5 +31,9 @@ describe('Http', () => {
 
     const testCase401 = http.parseErrors({ status: 401 ***REMOVED***, options);
     expect(testCase401).toEqual(error401);
+  ***REMOVED***);
+
+  it('.getKey should return the user API key', () => {
+    expect(http.getKey()).toBe(key);
   ***REMOVED***);
 ***REMOVED***);

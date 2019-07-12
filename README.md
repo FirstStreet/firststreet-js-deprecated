@@ -41,12 +41,12 @@ fiq.Parcel.<method>
 #### Property
 
 * GetPropertyByID(ID `string`) - Retrieves a `ParcelProperty` by specific ID
-* GetPropertyByLatLng(lat `float64`, lng `float64`) - Retrieves a `ParcelProperty` by a coordinate
+* GetParcelByLatLng(lat `number`, lng `number`, type `string`) - Retrieves a `ParcelProperty` by a coordinate
 
 #### City
 
 * GetCityByID(ID `string`) - Retrieves a `ParcelProperty`  by specific ID
-* GetCityByLatLng(lat `float64`, lng `float64`) - Retrieves a `ParcelProperty` by a coordinate
+* GetParcelByLatLng(lat `number`, lng `number`, type `string`) - Retrieves a `ParcelProperty` by a coordinate
 
 #### Hurricane
 

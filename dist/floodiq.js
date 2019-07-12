@@ -98,17 +98,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./package.json":
-/*!**********************!*\
-  !*** ./package.json ***!
-  \**********************/
-/*! exports provided: name, version, description, main, scripts, repository, bugs:, keywords, author, license, bugs, homepage, devDependencies, jest, dependencies, default */
-/***/ (function(module) {
-
-eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"floodiq-javascript\\\",\\\"version\\\":\\\"1.0.0\\\",\\\"description\\\":\\\"\\\\\\\"A Javascript API Client for FloodIQ\\\\\\\"\\\",\\\"main\\\":\\\"index.js\\\",\\\"scripts\\\":{\\\"dev\\\":\\\"NODE_ENV=development webpack --watch --mode=development\\\",\\\"test:dev\\\":\\\"jest --watch\\\",\\\"test:coverage\\\":\\\"jest --coverage -u\\\",\\\"test\\\":\\\"jest --coverage\\\",\\\"build\\\":\\\"NODE_ENV=production rm -rf dist && webpack -p --config ./webpack.config.js --mode=production\\\",\\\"lint\\\":\\\"eslint src\\\"},\\\"repository\\\":{\\\"type\\\":\\\"git\\\",\\\"url\\\":\\\"git+https://github.com/FirstStreet/floodiq-javascript.git\\\"},\\\"bugs:\\\":\\\"https://github.com/firststreet/floodiq-javascript/issues\\\",\\\"keywords\\\":[\\\"floodiq\\\"],\\\"author\\\":\\\"Firstreet Dev\\\",\\\"license\\\":\\\"MIT\\\",\\\"bugs\\\":{\\\"url\\\":\\\"https://github.com/FirstStreet/floodiq-javascript/issues\\\"},\\\"homepage\\\":\\\"https://github.com/FirstStreet/floodiq-javascript#readme\\\",\\\"devDependencies\\\":{\\\"eslint\\\":\\\"^5.16.0\\\",\\\"eslint-config-airbnb-base\\\":\\\"^13.1.0\\\",\\\"eslint-plugin-import\\\":\\\"^2.18.0\\\",\\\"eslint-plugin-prettier\\\":\\\"^3.1.0\\\",\\\"jest\\\":\\\"^24.8.0\\\",\\\"jsdoc\\\":\\\"^3.6.2\\\",\\\"nodemon-webpack-plugin\\\":\\\"^4.0.8\\\",\\\"prettier\\\":\\\"^1.18.2\\\",\\\"webpack\\\":\\\"^4.35.3\\\",\\\"webpack-cli\\\":\\\"^3.3.5\\\"},\\\"jest\\\":{\\\"testEnvironment\\\":\\\"node\\\",\\\"testPathIgnorePatterns\\\":[\\\"<rootDir>/src/__mockes__/\\\",\\\"<rootDir>/node_modules/\\\"]},\\\"dependencies\\\":{\\\"lodash\\\":\\\"^4.17.11\\\",\\\"node-fetch\\\":\\\"^2.6.0\\\"}}\");\n\n//# sourceURL=webpack:///./package.json?");
-
-/***/ }),
-
 /***/ "./src/Api/index.js":
 /*!**************************!*\
   !*** ./src/Api/index.js ***!
@@ -116,7 +105,7 @@ eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"floodiq-javascript\\\",\\\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const pkg = __webpack_require__(/*! ../../package.json */ \"./package.json\");\nconst parcel = __webpack_require__(/*! ./parcel */ \"./src/Api/parcel/index.js\");\n\n/**\n * api wrapper\n * @constructor\n * @param {Object} http - Http request module\n*/\nclass Api {\n  constructor(http) {\n    this.http = http;\n  }\n\n  status() {\n    return new Promise((resolve, reject) => {\n      this.http\n        .status()\n        .then(res => res.json())\n        .then((body) => {\n          if (body && body.data) {\n            return resolve({\n              id: body.data.id,\n              releasedAt: body.attributes.releasedAt,\n              version: body.data.attributes.version,\n              clientVersion: pkg.version,\n            });\n          }\n          return resolve(body);\n        })\n        .catch((err) => {\n          reject(err);\n        });\n    });\n  }\n\n  bindTo(context) {\n    const ctx = context;\n\n    ctx.status = this.status.bind(this, context);\n    ctx.parcel = parcel(this.http);\n  }\n}\n\nmodule.exports = Api;\n\n\n//# sourceURL=webpack:///./src/Api/index.js?");
+eval("const parcel = __webpack_require__(/*! ./parcel */ \"./src/Api/parcel/index.js\");\n\n/**\n * api wrapper\n * @constructor\n * @param {Object} http - Http request module\n*/\nclass Api {\n  constructor(http) {\n    this.http = http;\n  }\n\n  bindTo(context) {\n    const ctx = context;\n\n    ctx.parcel = parcel(this.http);\n  }\n}\n\nmodule.exports = Api;\n\n\n//# sourceURL=webpack:///./src/Api/index.js?");
 
 /***/ }),
 

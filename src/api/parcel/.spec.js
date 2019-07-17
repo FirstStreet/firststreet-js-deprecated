@@ -2,7 +2,7 @@ const FloodIQ = require('../../__mocks__/FloodIQ');
 const propertyByID = require('../../__mocks__/propertyDataById');
 const cityByID = require('../../__mocks__/cityDataById');
 
-const validMethods = ['getPropertyByID', 'getCityByID', 'getParcelByLatLng'];
+const validMethods = ['getPropertyByID', 'getCityByID', 'getPropertyByLatLng', 'getCityByLatLng'];
 
 describe('parcel', () => {
   const floodIQ = new FloodIQ('aa.bb.cc', {
@@ -29,16 +29,15 @@ describe('parcel', () => {
     expect(city.name).toBe(cityByID.name);
   ***REMOVED***);
 
-  it('.getParcelByLatLng should get property by lat, lng', async () => {
-    const property = await floodIQ.parcel.getParcelByLatLng(propertyByID.geometry.center.coordinates[1], propertyByID.geometry.center.coordinates[0]);
+  it('.getPropertyByLatLng should get property by lat, lng', async () => {
+    const property = await floodIQ.parcel.getPropertyByLatLng(propertyByID.geometry.center.coordinates[1], propertyByID.geometry.center.coordinates[0]);
 
     expect(property).toMatchSnapshot();
     expect(property.primaryNumber).toBe(propertyByID.primaryNumber)
   ***REMOVED***);
 
-  it('.getParcelByLatLng should get city by lat, lng', async () => {
-    const city = await floodIQ.parcel.getParcelByLatLng(propertyByID.geometry.center.coordinates[1], propertyByID.geometry.center.coordinates[0], 'city');
-
+  it('.getCityByLatLng should get city by lat, lng', async () => {
+    const city = await floodIQ.parcel.getCityByLatLng(cityByID.geometry.center.coordinates[1], cityByID.geometry.center.coordinates[0]);
     expect(city).toMatchSnapshot();
     expect(city.name).toBe(cityByID.name);
   ***REMOVED***);

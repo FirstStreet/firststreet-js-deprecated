@@ -43,7 +43,7 @@ describe('parcel', () => {
   ***REMOVED***);
 
   it('.getPropertyByAddress should get property by address lookup', async () => {
-    const property = await floodIQ.parcel.getPropertyByAddress("212 APPOQUIN appoquin s, middletown, delware")
+    const property = await floodIQ.parcel.getPropertyByAddress("212 appoquin s, middletown, delware")
 
     expect(property).toMatchSnapshot();
     expect(property.primaryNumber).toBe(propertyByID.primaryNumber);

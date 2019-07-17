@@ -74,7 +74,7 @@ const parcel = http =>
         return normalizeError(null, e);
       ***REMOVED***
     ***REMOVED***,
-    async getParcelByLatLng(lat, lng, type = 'property') {
+    async getPropertyByLatLng(lat, lng) {
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
       ***REMOVED***
@@ -83,7 +83,7 @@ const parcel = http =>
         return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
       ***REMOVED***
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***?lat=${lat***REMOVED***&lng=${lng***REMOVED***&type=${type***REMOVED***&key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX***REMOVED***?lat=${lat***REMOVED***&lng=${lng***REMOVED***&type=property&key=${http.getKey()***REMOVED***`;
 
       try {
         const response = await http.execute('GET', path);
@@ -97,12 +97,36 @@ const parcel = http =>
           return normalizeError(message);
         ***REMOVED***
 
-        if (type === 'city') {
-          const model = new City(response.body);
-          return model;
+        const model = new Property(response.body);
+        return model;
+      ***REMOVED*** catch (e) {
+        return normalizeError(null, e);
+      ***REMOVED***
+    ***REMOVED***,
+    async getCityByLatLng(lat, lng) {
+      if (!lat) {
+        return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
+      ***REMOVED***
+
+      if (!lng) {
+        return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
+      ***REMOVED***
+
+      const path = `${ENDPOINT_PREFIX***REMOVED***?lat=${lat***REMOVED***&lng=${lng***REMOVED***&type=city&key=${http.getKey()***REMOVED***`;
+
+      try {
+        const response = await http.execute('GET', path);
+
+        const {
+          errors,
+          message,
+        ***REMOVED*** = response;
+
+        if (errors) {
+          return normalizeError(message);
         ***REMOVED***
 
-        const model = new Property(response.body);
+        const model = new City(response.body);
         return model;
       ***REMOVED*** catch (e) {
         return normalizeError(null, e);

@@ -615,7 +615,7 @@ City {
 }
 `;
 
-exports[`parcel .getParcelByLatLng should get city by lat, lng 1`] = `
+exports[`parcel .getCityByLatLng should get city by lat, lng 1`] = `
 City {
   "data": Object {
     "ID": 1001400,
@@ -1230,7 +1230,7 @@ City {
 }
 `;
 
-exports[`parcel .getParcelByLatLng should get property by lat, lng 1`] = `
+exports[`parcel .getPropertyByID should get property by ID 1`] = `
 Property {
   "data": Object {
     "ID": 100032470544,
@@ -1357,7 +1357,7 @@ Property {
 }
 `;
 
-exports[`parcel .getPropertyByID should get property by ID 1`] = `
+exports[`parcel .getPropertyByLatLng should get property by lat, lng 1`] = `
 Property {
   "data": Object {
     "ID": 100032470544,

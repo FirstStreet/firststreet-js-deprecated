@@ -74,7 +74,7 @@ const parcel = http =>
         return normalizeError(null, e);
       }
     },
-    async getParcelByLatLng(lat, lng, type = 'property') {
+    async getPropertyByLatLng(lat, lng) {
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
       }
@@ -83,7 +83,7 @@ const parcel = http =>
         return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
       }
 
-      const path = `${ENDPOINT_PREFIX}?lat=${lat}&lng=${lng}&type=${type}&key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}?lat=${lat}&lng=${lng}&type=property&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -97,12 +97,36 @@ const parcel = http =>
           return normalizeError(message);
         }
 
-        if (type === 'city') {
-          const model = new City(response.body);
-          return model;
+        const model = new Property(response.body);
+        return model;
+      } catch (e) {
+        return normalizeError(null, e);
+      }
+    },
+    async getCityByLatLng(lat, lng) {
+      if (!lat) {
+        return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
+      }
+
+      if (!lng) {
+        return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
+      }
+
+      const path = `${ENDPOINT_PREFIX}?lat=${lat}&lng=${lng}&type=city&key=${http.getKey()}`;
+
+      try {
+        const response = await http.execute('GET', path);
+
+        const {
+          errors,
+          message,
+        } = response;
+
+        if (errors) {
+          return normalizeError(message);
         }
 
-        const model = new Property(response.body);
+        const model = new City(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);

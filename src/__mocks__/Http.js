@@ -131,7 +131,7 @@ class Http {
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/1.0/parcel?address=212%20APPOQUIN%20appoquin%20s,%20middletown,%20delware&type=property&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/1.0/parcel?address=212%20appoquin%20s,%20middletown,%20delware&type=property&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: propertyById,

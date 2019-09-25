@@ -1,11 +1,11 @@
-const FloodIQ = require('../../__mocks__/FloodIQ');
+const FirstStreet = require('../../__mocks__/FirstStreet');
 const propertyByID = require('../../__mocks__/propertyDataById');
 const cityByID = require('../../__mocks__/cityDataById');
 
 const validMethods = ['getPropertyByID', 'getCityByID', 'getPropertyByLatLng', 'getCityByLatLng', 'getPropertyByAddress', 'getCityByAddress'];
 
-describe('parcel', () => {
-  const floodIQ = new FloodIQ('aa.bb.cc', {
+describe('summary', () => {
+  const fsf = new FirstStreet('aa.bb.cc', {
     host: 'https://FAKE-HOST-FOR-TESTING.com'
   ***REMOVED***);
 

@@ -1,4 +1,4 @@
-const Response = require('../Response');
+const BaseModel = require('../Base');
 
 /**
  * @typedef {import('../../Api/parcel').default} ParcelGeometry
@@ -27,102 +27,93 @@ const Response = require('../Response');
  * @property {number} distance - The distance
 */
 
-class Property extends Response {
+class Property extends BaseModel {
   constructor(data) {
     super(data);
     this.data = data;
-    this.location = this.results().location;
-  }
-
-  get FSID() {
-    return this.location.FSID;
   }
 
   get primaryNumber() {
-    return this.location.primaryNumber;
+    return this.data.primaryNumber;
   }
 
   get lastUpdated() {
-    return this.location.lastUpdated;
+    return this.data.lastUpdated;
   }
 
   get streetName() {
-    return this.location.streetName;
+    return this.data.streetName;
   }
 
   get zipCode() {
-    return this.location.zipCode;
+    return this.data.zipCode;
   }
 
   get city() {
     // this field is a relationship to a city parcel
-    return this.location.city.Name;
+    return this.data.city.Name;
   }
 
   get cityID() {
-    return this.location.city.ID;
+    return this.data.city.ID;
   }
 
   get state() {
-    return this.location.state;
-  }
-
-  get geometry() {
-    return this.location.geometry;
+    return this.data.state;
   }
 
   get polygon() {
     // todo: parse nested coordinates arrays
-    return this.location.geometry.polygon.coordinates;
+    return this.data.geometry.polygon.coordinates;
   }
 
   get polygonGeoJSON() {
-    return this.location.geometry.polygon;
+    return this.data.geometry.polygon;
   }
 
   get center() {
-    return this.location.geometry.center.coordinates;
+    return this.data.geometry.center.coordinates;
   }
 
   get centerGeoJSON() {
-    return this.location.geometry.center;
+    return this.data.geometry.center;
   }
 
   get bounds() {
     // todo: parse nested coordinates arrays
-    return this.location.geometry.bounds.coordinates;
+    return this.data.geometry.bounds.coordinates;
   }
 
   get boundsGeoJSON() {
-    return this.location.geometry.bounds;
+    return this.data.geometry.bounds;
   }
 
   get elevation() {
-    return this.location.elevation;
+    return this.data.elevation;
   }
 
   get femaZone() {
-    return this.location.femaZone;
+    return this.data.femaZone;
   }
 
   get lotSize() {
-    return this.location.lotSize;
+    return this.data.lotSize;
   }
 
   get floorArea() {
-    return this.location.floorArea;
+    return this.data.floorArea;
   }
 
   get landUse() {
-    return this.location.landUse;
+    return this.data.landUse;
   }
 
   get countyFips() {
-    return this.location.countyFips;
+    return this.data.countyFips;
   }
 
   get distance() {
-    return this.location.distance;
+    return this.data.distance;
   }
 }
 

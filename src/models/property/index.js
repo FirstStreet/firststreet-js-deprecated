@@ -31,7 +31,7 @@ class Property extends Response {
   constructor(data) {
     super(data);
     this.data = data;
-    this.location = this.results().location;
+    this.location = this.results.location;
   ***REMOVED***
 
   get FSID() {

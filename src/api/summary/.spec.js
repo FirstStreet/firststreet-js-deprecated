@@ -1,8 +1,7 @@
 const FirstStreet = require('../../__mocks__/FirstStreet');
-const propertyByID = require('../../__mocks__/propertyDataById');
-const cityByID = require('../../__mocks__/cityDataById');
+const summaryMock = require('../../__mocks__/summary');
 
-const validMethods = ['getPropertyByID', 'getCityByID', 'getPropertyByLatLng', 'getCityByLatLng', 'getPropertyByAddress', 'getCityByAddress'];
+const validMethods = ['getPropertyByFSID', 'getCityByID', 'getPropertyByLatLng', 'getCityByLatLng', 'getPropertyByAddress', 'getCityByAddress'];
 
 describe('summary', () => {
   const fsf = new FirstStreet('aa.bb.cc', {
@@ -11,42 +10,42 @@ describe('summary', () => {
 
   it('should contain valid methods', () => {
     validMethods.forEach((method) => {
-      expect(floodIQ.parcel[method]).toBeDefined();
+      expect(fsf.summary[method]).toBeDefined();
     ***REMOVED***);
   ***REMOVED***);
 
-  it('.getPropertyByID should get property by ID', async () => {
-    const property = await floodIQ.parcel.getPropertyByID(propertyByID.ID);
+  it('.getPropertyByFSID should get property by ID', async () => {
+    const property = await fsf.summary.getPropertyByFSID(summaryMock.FSID);
 
     expect(property).toMatchSnapshot();
-    expect(property.primaryNumber).toBe(propertyByID.primaryNumber);
+    expect(property.primaryNumber).toBe(summaryMock.primaryNumber);
   ***REMOVED***);
 
   it('.getCityById should get city by ID', async () => {
-    const city = await floodIQ.parcel.getCityByID(cityByID.ID);
+    const city = await fsf.summary.getCityByID(summaryMock.ID);
 
     expect(city).toMatchSnapshot();
-    expect(city.name).toBe(cityByID.name);
+    expect(city.name).toBe(summaryMock.name);
   ***REMOVED***);
 
   it('.getPropertyByLatLng should get property by lat, lng', async () => {
-    const property = await floodIQ.parcel.getPropertyByLatLng(propertyByID.geometry.center.coordinates[1], propertyByID.geometry.center.coordinates[0]);
+    const property = await fsf.summary.getPropertyByLatLng(summaryMock.results.location.geometry.center.coordinates[1], summaryMock.results.location.geometry.center.coordinates[0]);
 
     expect(property).toMatchSnapshot();
-    expect(property.primaryNumber).toBe(propertyByID.primaryNumber)
+    expect(property.primaryNumber).toBe(summaryMock.primaryNumber)
   ***REMOVED***);
 
   it('.getCityByLatLng should get city by lat, lng', async () => {
-    const city = await floodIQ.parcel.getCityByLatLng(cityByID.geometry.center.coordinates[1], cityByID.geometry.center.coordinates[0]);
+    const city = await fsf.summary.getCityByLatLng(summaryMock.results.location.geometry.center.coordinates[1], summaryMock.results.location.geometry.center.coordinates[0]);
     expect(city).toMatchSnapshot();
-    expect(city.name).toBe(cityByID.name);
+    expect(city.name).toBe(summaryMock.name);
   ***REMOVED***);
 
   it('.getPropertyByAddress should get property by address lookup', async () => {
-    const property = await floodIQ.parcel.getPropertyByAddress("212 appoquin s, middletown, delware")
+    const property = await fsf.summary.getPropertyByAddress("212 appoquin s, middletown, delware")
 
     expect(property).toMatchSnapshot();
-    expect(property.primaryNumber).toBe(propertyByID.primaryNumber);
+    expect(property.primaryNumber).toBe(summaryMock.primaryNumber);
   ***REMOVED***);
 
 ***REMOVED***);

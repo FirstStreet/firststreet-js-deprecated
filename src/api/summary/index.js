@@ -134,5 +134,52 @@ const summary = http =>
         return normalizeError(null, e);
       ***REMOVED***
     ***REMOVED***,
+    async getPropertyByAddress(address) {
+      if (!address) {
+        return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
+      ***REMOVED***
+
+      const path = `${ENDPOINT_PREFIX***REMOVED***?address=${encodeURI(address)***REMOVED***&type=property&key=${http.getKey()***REMOVED***`;
+
+      try {
+        const response = await http.execute('GET', path);
+
+        const {
+          errors,
+          message,
+        ***REMOVED*** = response;
+
+        if (errors) {
+          return normalizeError(message);
+        ***REMOVED***
+
+        const model = new Property(response.body);
+        return model;
+      ***REMOVED*** catch (e) {
+        return normalizeError(null, e);
+      ***REMOVED***
+    ***REMOVED***,
+    async getCityByAddress(address) {
+      if (!address) {
+        return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
+      ***REMOVED***
+
+      const path = `${ENDPOINT_PREFIX***REMOVED***?address=${encodeURI(address)***REMOVED***&type=city&key=${http.getKey()***REMOVED***`;
+
+      try {
+        const response = await http.execute('GET', path);
+
+        const { errors, message ***REMOVED*** = response;
+
+        if (errors) {
+          return normalizeError(message);
+        ***REMOVED***
+
+        const model = new City(response.body);
+        return model;
+      ***REMOVED*** catch (e) {
+        return normalizeError(null, e);
+      ***REMOVED***
+    ***REMOVED***,
   ***REMOVED***);
 module.exports = summary;

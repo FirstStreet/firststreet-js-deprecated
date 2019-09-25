@@ -7,7 +7,7 @@ const BaseModel = require('../Base');
 /**
  * A Property
  * @typedef {Object***REMOVED*** ParcelProperty
- * @property {number***REMOVED*** ID - The parcel unique identifier
+ * @property {number***REMOVED*** FSID - The parcel unique identifier
  * @property {string***REMOVED*** primaryNumber - The street number
  * @property {string***REMOVED*** streetName - The street number
  * @property {string***REMOVED*** lastUpdated - date property data last updated

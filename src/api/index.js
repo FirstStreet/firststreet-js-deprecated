@@ -1,4 +1,4 @@
-const parcel = require('./parcel');
+const summary = require('./summary');
 
 /**
  * api wrapper
@@ -13,7 +13,7 @@ class Api {
   bindTo(context) {
     const ctx = context;
 
-    ctx.parcel = parcel(this.http);
+    ctx.summary = summary(this.http);
   ***REMOVED***
 ***REMOVED***
 

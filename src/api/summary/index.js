@@ -1,6 +1,8 @@
-const Property = require('../../models/property/index.js');
+const Property = require('../../models/Property/index.js');
 const City = require('../../models/City/index.js');
 const { normalizeError ***REMOVED*** = require('../../Error');
+
+const SUMMARY_VERSION = '1.0';
 
 /**
  * @typedef {import('../models/Property').default***REMOVED*** ParcelProperty
@@ -23,19 +25,19 @@ const { normalizeError ***REMOVED*** = require('../../Error');
  * @property {string***REMOVED*** bounds - The bounds of the location
  */
 
-const ENDPOINT_PREFIX = '/data/1.0/parcel';
+const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION***REMOVED***/summary`;
 
-const parcel = http =>
+const summary = http =>
   /**
-   * getPropertyByID retrieves a property parcel by its unique identifier
+   * getPropertyByFSID retrieves a property parcel by its unique identifier
    * @param {string***REMOVED*** id - parcel unique identifier
    * @returns {ParcelProperty***REMOVED***
   */
   // eslint-disable-next-line
    ({
-    async getPropertyByID(id) {
+    async getPropertyByFSID(id) {
       if (!id) {
-        return normalizeError('Expected required id. Usage: .getPropertyByID(id)');
+        return normalizeError('Expected required FSID. Usage: .getPropertyByFSID(fsid)');
       ***REMOVED***
 
       const path = `${ENDPOINT_PREFIX***REMOVED***/${id***REMOVED***?type=property&key=${http.getKey()***REMOVED***`;
@@ -133,4 +135,4 @@ const parcel = http =>
       ***REMOVED***
     ***REMOVED***,
   ***REMOVED***);
-module.exports = parcel;
+module.exports = summary;

@@ -1,4 +1,4 @@
-const Response = require('../Response');
+const BaseModel = require('../Base');
 
 /**
  * @typedef {import('../../Api/parcel').default***REMOVED*** ParcelGeometry
@@ -27,102 +27,93 @@ const Response = require('../Response');
  * @property {number***REMOVED*** distance - The distance
 */
 
-class Property extends Response {
+class Property extends BaseModel {
   constructor(data) {
     super(data);
     this.data = data;
-    this.location = this.results().location;
-  ***REMOVED***
-
-  get FSID() {
-    return this.location.FSID;
   ***REMOVED***
 
   get primaryNumber() {
-    return this.location.primaryNumber;
+    return this.data.primaryNumber;
   ***REMOVED***
 
   get lastUpdated() {
-    return this.location.lastUpdated;
+    return this.data.lastUpdated;
   ***REMOVED***
 
   get streetName() {
-    return this.location.streetName;
+    return this.data.streetName;
   ***REMOVED***
 
   get zipCode() {
-    return this.location.zipCode;
+    return this.data.zipCode;
   ***REMOVED***
 
   get city() {
     // this field is a relationship to a city parcel
-    return this.location.city.Name;
+    return this.data.city.Name;
   ***REMOVED***
 
   get cityID() {
-    return this.location.city.ID;
+    return this.data.city.ID;
   ***REMOVED***
 
   get state() {
-    return this.location.state;
-  ***REMOVED***
-
-  get geometry() {
-    return this.location.geometry;
+    return this.data.state;
   ***REMOVED***
 
   get polygon() {
     // todo: parse nested coordinates arrays
-    return this.location.geometry.polygon.coordinates;
+    return this.data.geometry.polygon.coordinates;
   ***REMOVED***
 
   get polygonGeoJSON() {
-    return this.location.geometry.polygon;
+    return this.data.geometry.polygon;
   ***REMOVED***
 
   get center() {
-    return this.location.geometry.center.coordinates;
+    return this.data.geometry.center.coordinates;
   ***REMOVED***
 
   get centerGeoJSON() {
-    return this.location.geometry.center;
+    return this.data.geometry.center;
   ***REMOVED***
 
   get bounds() {
     // todo: parse nested coordinates arrays
-    return this.location.geometry.bounds.coordinates;
+    return this.data.geometry.bounds.coordinates;
   ***REMOVED***
 
   get boundsGeoJSON() {
-    return this.location.geometry.bounds;
+    return this.data.geometry.bounds;
   ***REMOVED***
 
   get elevation() {
-    return this.location.elevation;
+    return this.data.elevation;
   ***REMOVED***
 
   get femaZone() {
-    return this.location.femaZone;
+    return this.data.femaZone;
   ***REMOVED***
 
   get lotSize() {
-    return this.location.lotSize;
+    return this.data.lotSize;
   ***REMOVED***
 
   get floorArea() {
-    return this.location.floorArea;
+    return this.data.floorArea;
   ***REMOVED***
 
   get landUse() {
-    return this.location.landUse;
+    return this.data.landUse;
   ***REMOVED***
 
   get countyFips() {
-    return this.location.countyFips;
+    return this.data.countyFips;
   ***REMOVED***
 
   get distance() {
-    return this.location.distance;
+    return this.data.distance;
   ***REMOVED***
 ***REMOVED***
 

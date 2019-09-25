@@ -132,5 +132,52 @@ const parcel = http =>
         return normalizeError(null, e);
       }
     },
+    async getPropertyByAddress(address) {
+      if (!address) {
+        return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
+      }
+
+      const path = `${ENDPOINT_PREFIX}?address=${encodeURI(address)}&type=property&key=${http.getKey()}`;
+
+      try {
+        const response = await http.execute('GET', path);
+
+        const {
+          errors,
+          message,
+        } = response;
+
+        if (errors) {
+          return normalizeError(message);
+        }
+
+        const model = new Property(response.body);
+        return model;
+      } catch (e) {
+        return normalizeError(null, e);
+      }
+    },
+    async getCityByAddress(address) {
+      if (!address) {
+        return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
+      }
+
+      const path = `${ENDPOINT_PREFIX}?address=${encodeURI(address)}&type=city&key=${http.getKey()}`;
+
+      try {
+        const response = await http.execute('GET', path);
+
+        const { errors, message } = response;
+
+        if (errors) {
+          return normalizeError(message);
+        }
+
+        const model = new City(response.body);
+        return model;
+      } catch (e) {
+        return normalizeError(null, e);
+      }
+    },
   });
 module.exports = parcel;

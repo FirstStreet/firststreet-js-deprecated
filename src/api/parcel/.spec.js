@@ -2,7 +2,7 @@ const FloodIQ = require('../../__mocks__/FloodIQ');
 const propertyByID = require('../../__mocks__/propertyDataById');
 const cityByID = require('../../__mocks__/cityDataById');
 
-const validMethods = ['getPropertyByID', 'getCityByID', 'getPropertyByLatLng', 'getCityByLatLng'];
+const validMethods = ['getPropertyByID', 'getCityByID', 'getPropertyByLatLng', 'getCityByLatLng', 'getPropertyByAddress', 'getCityByAddress'];
 
 describe('parcel', () => {
   const floodIQ = new FloodIQ('aa.bb.cc', {
@@ -40,6 +40,13 @@ describe('parcel', () => {
     const city = await floodIQ.parcel.getCityByLatLng(cityByID.geometry.center.coordinates[1], cityByID.geometry.center.coordinates[0]);
     expect(city).toMatchSnapshot();
     expect(city.name).toBe(cityByID.name);
+  });
+
+  it('.getPropertyByAddress should get property by address lookup', async () => {
+    const property = await floodIQ.parcel.getPropertyByAddress("212 appoquin s, middletown, delware")
+
+    expect(property).toMatchSnapshot();
+    expect(property.primaryNumber).toBe(propertyByID.primaryNumber);
   });
 
 });

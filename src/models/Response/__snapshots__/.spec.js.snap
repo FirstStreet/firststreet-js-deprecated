@@ -126,3 +126,9 @@ BaseModel {
   ***REMOVED***,
 ***REMOVED***
 `;
+
+exports[`summaryMock should initialize a base model 1`] = `
+Response {
+  "data": null,
+***REMOVED***
+`;

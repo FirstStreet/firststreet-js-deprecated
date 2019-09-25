@@ -1,9 +1,9 @@
-# Flood iQ JavaScript
+# First Street JavaScript
 
 [![CircleCI](https://circleci.com/gh/FirstStreet/floodiq-javascript.svg?style=svg&circle-token=168be542d7448e05f502e123f0f3dbe0f9f8f66b)](https://circleci.com/gh/FirstStreet/floodiq-javascript)
 [![codecov](https://codecov.io/gh/firststreet/floodiq-javascript/branch/master/graph/badge.svg?token=TATSnMXhTx)](https://codecov.io/gh/firststreet/floodiq-javascript)
 
-This is the official implementation of the Flood iQ API in JavaScript. Please use this client if you are using JavaScript to interact with the Flood iQ API.
+This is the official implementation of the First Street Foundation API in JavaScript. Please use this client if you are using JavaScript to interact with the First Street Foundation API.
 
 For more in-depth guides, usage and API access, please see the documentation at [docs.floodiq.dev](https://docs.floodiq.dev)
 
@@ -23,12 +23,12 @@ import FloodIQ from 'floodiq-javascript';
 
 ## Documentation
 
-In order to use the Flood iQ API, you must register for an API key at [https://floodiq.dev](https://floodiq.dev).
+In order to use the First Street Foundation API, you must register for an API key at [https://floodiq.dev](https://floodiq.dev).
 
 ### Intializing Client
 
 ```javascript
-// Create a new Flood iQ API Client
+// Create a new First Street Foundation API Client
 const fiq = new FloodIQ("api-key");
 ```
 

@@ -1,7 +1,7 @@
 const Http = require('./Http');
 const Api = require('../api');
 
-class FloodIQ {
+class FirstStreet {
   constructor(apiKey = null, options = {}) {
     if (!apiKey) {
       throw new Error('Missing API Key.');
@@ -12,4 +12,4 @@ class FloodIQ {
   }
 }
 
-module.exports = FloodIQ;
+module.exports = FirstStreet;

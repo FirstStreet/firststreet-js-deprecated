@@ -1,8 +1,9 @@
 const BaseModel = require('./index');
 const summaryMock = require('../../__mocks__/summary');
 
+let summary = null;
+
 describe('summaryMock', () => {
-  let summaryMock = null;
   beforeEach(() => {
     summary = new BaseModel(summaryMock);
   });
@@ -17,5 +18,8 @@ describe('summaryMock', () => {
 
   it('should return the correct id', () => {
     expect(summary.FSID).toBe(summaryMock.FSID);
+  });
+  it('should return the correct results', () => {
+    expect(summary.results).toBe(summaryMock.results);
   });
 });

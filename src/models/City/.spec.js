@@ -1,45 +1,45 @@
 const City = require('./index');
-const cityById = require('../../__mocks__/cityDataById');
+const summaryMock = require('../../__mocks__/summary');
 
+let summary = null;
 describe('City', () => {
-  let cityModel = null;
   beforeEach(() => {
-    cityModel = new City(cityById);
+    summary = new City(summaryMock);
   ***REMOVED***);
 
   it('should initialize', () => {
-    expect(cityModel).toMatchSnapshot();
+    expect(summary).toMatchSnapshot();
   ***REMOVED***);
 
   it('should have name', () => {
-    expect(cityModel.name).toBeDefined();
+    expect(summary.name).toBeDefined();
   ***REMOVED***);
 
   it('should have state', () => {
-    expect(cityModel.state).toBeDefined();
+    expect(summary.state).toBeDefined();
   ***REMOVED***);
 
   it('should have polygon data', () => {
-    expect(cityModel.polygon).toBeDefined();
+    expect(summary.polygon).toBeDefined();
   ***REMOVED***);
 
   it('should have polygon geoJSON', () => {
-    expect(cityModel.polygonGeoJSON).toBeDefined();
+    expect(summary.polygonGeoJSON).toBeDefined();
   ***REMOVED***);
 
   it('should have center data', () => {
-    expect(cityModel.center).toBeDefined();
+    expect(summary.center).toBeDefined();
   ***REMOVED***);
 
   it('should have center geoJSON', () => {
-    expect(cityModel.centerGeoJSON).toBeDefined();
+    expect(summary.centerGeoJSON).toBeDefined();
   ***REMOVED***);
 
   it('should have bounds data', () => {
-    expect(cityModel.bounds).toBeDefined();
+    expect(summary.bounds).toBeDefined();
   ***REMOVED***);
 
   it('should have bounds geoJSON', () => {
-    expect(cityModel.boundsGeoJSON).toBeDefined();
+    expect(summary.boundsGeoJSON).toBeDefined();
   ***REMOVED***);
 ***REMOVED***);

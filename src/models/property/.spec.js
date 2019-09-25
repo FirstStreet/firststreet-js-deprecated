@@ -1,93 +1,89 @@
 const Property = require('./index');
-const propertyById = require('../../__mocks__/propertyDataById');
+const summaryMock = require('../../__mocks__/summary');
+let summary = null;
 
 describe('Property', () => {
-  let propertyModel = null;
   beforeEach(() => {
-    propertyModel = new Property(propertyById);
+    summary = new Property(summaryMock);
   ***REMOVED***);
 
   it('should initalize', () => {
-    expect(propertyModel).toMatchSnapshot();
+    expect(summary).toMatchSnapshot();
   ***REMOVED***);
 
   it('should have primaryNumber', () => {
-    expect(propertyModel.primaryNumber).toBeDefined();
+    expect(summary.primaryNumber).toBeDefined();
   ***REMOVED***);
 
   it('should have lastUpdated', () => {
-    expect(propertyModel.lastUpdated).toBeDefined();
+    expect(summary.lastUpdated).toBeDefined();
   ***REMOVED***);
 
   it('should have streetName', () => {
-    expect(propertyModel.streetName).toBeDefined();
+    expect(summary.streetName).toBeDefined();
   ***REMOVED***);
 
   it('should have zipCode', () => {
-    expect(propertyModel.zipCode).toBeDefined();
+    expect(summary.zipCode).toBeDefined();
   ***REMOVED***);
 
   it('should have city', () => {
-    expect(propertyModel.city).toBeDefined();
-  ***REMOVED***);
-
-  it('should have city ID', () => {
-    expect(propertyModel.cityID).toBeDefined();
+    expect(summary.city).toBeDefined();
   ***REMOVED***);
 
   it('should have state', () => {
-    expect(propertyModel.state).toBeDefined();
+    expect(summary.state).toBeDefined();
   ***REMOVED***);
 
   it('should have polygon data', () => {
-    expect(propertyModel.polygon).toBeDefined();
+    expect(summary.polygon).toBeDefined();
   ***REMOVED***);
 
   it('should have polygon geoJSON', () => {
-    expect(propertyModel.polygonGeoJSON).toBeDefined();
+    expect(summary.polygonGeoJSON).toBeDefined();
   ***REMOVED***);
 
   it('should have center data', () => {
-    expect(propertyModel.center).toBeDefined();
+    expect(summary.center).toBeDefined();
   ***REMOVED***);
 
   it('should have center geoJSON', () => {
-    expect(propertyModel.centerGeoJSON).toBeDefined();
+    expect(summary.centerGeoJSON).toBeDefined();
   ***REMOVED***);
 
   it('should have bounds data', () => {
-    expect(propertyModel.bounds).toBeDefined();
+    expect(summary.bounds).toBeDefined();
   ***REMOVED***);
 
   it('should have bounds geoJSON', () => {
-    expect(propertyModel.boundsGeoJSON).toBeDefined();
+    expect(summary.boundsGeoJSON).toBeDefined();
   ***REMOVED***);
 
   it('should have elevation', () => {
-    expect(propertyModel.elevation).toBeDefined();
+    expect(summary.elevation).toBeDefined();
   ***REMOVED***);
 
   it('should have femaZone', () => {
-    expect(propertyModel.femaZone).toBeDefined();
+    expect(summary.femaZone).toBeDefined();
   ***REMOVED***);
 
   it('should have lotSize', () => {
-    expect(propertyModel.lotSize).toBeDefined();
+    expect(summary.lotSize).toBeDefined();
   ***REMOVED***);
 
   it('should have floorArea', () => {
-    expect(propertyModel.floorArea).toBeDefined();
+    expect(summary.floorArea).toBeDefined();
   ***REMOVED***);
 
   it('should have landUse', () => {
-    expect(propertyModel.landUse).toBeDefined();
+    expect(summary.landUse).toBeDefined();
   ***REMOVED***);
 
   it('should have countyFips', () => {
-    expect(propertyModel.countyFips).toBeDefined();
+    expect(summary.countyFips).toBeDefined();
   ***REMOVED***);
 
   it('should have distance', () => {
-    expect(propertyModel.distance).toBeDefined();
+    expect(summary.distance).toBeDefined();
   ***REMOVED***);
 ***REMOVED***);

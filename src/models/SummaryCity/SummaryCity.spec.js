@@ -1,5 +1,5 @@
 const City = require('./index');
-const summaryMock = require('../../__mocks__/summary');
+const summaryMock = require('../../__mocks__/cityByID');
 
 let summary = null;
 describe('City', () => {
@@ -9,6 +9,10 @@ describe('City', () => {
 
   it('should initialize', () => {
     expect(summary).toMatchSnapshot();
+  ***REMOVED***);
+
+  it('should have FSID', () => {
+    expect(summary.FSID).toBeDefined();
   ***REMOVED***);
 
   it('should have name', () => {

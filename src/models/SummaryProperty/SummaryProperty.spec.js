@@ -1,5 +1,6 @@
 const Property = require('./index');
 const summaryMock = require('../../__mocks__/summary');
+
 let summary = null;
 
 describe('Property', () => {
@@ -9,6 +10,10 @@ describe('Property', () => {
 
   it('should initalize', () => {
     expect(summary).toMatchSnapshot();
+  });
+
+  it('should have FSID', () => {
+    expect(summary.FSID).toBeDefined();
   });
 
   it('should have primaryNumber', () => {
@@ -71,19 +76,15 @@ describe('Property', () => {
     expect(summary.lotSize).toBeDefined();
   });
 
-  it('should have floorArea', () => {
-    expect(summary.floorArea).toBeDefined();
-  });
-
-  it('should have landUse', () => {
-    expect(summary.landUse).toBeDefined();
-  });
-
   it('should have countyFips', () => {
     expect(summary.countyFips).toBeDefined();
   });
 
-  it('should have distance', () => {
-    expect(summary.distance).toBeDefined();
+  it('should have firstFloodRisk', () => {
+    expect(summary.firstFloodRisk).toBeDefined();
+  });
+
+  it('should have floodRisks', () => {
+    expect(summary.floodRisks).toBeDefined();
   });
 });

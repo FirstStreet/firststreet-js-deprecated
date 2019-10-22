@@ -1,12 +1,30 @@
 const Response = require('../Response');
 
 /**
- * @typedef {import('../../Api/parcel').default} ParcelGeometry
+ * @typedef {import('../../Api/summary').default} LocationGeometry
+*/
+
+/**
+ * FirstFloodRisk defines a first risk for a location
+ * @typedef {Object} FirstFloodRisk
+ * @property {string} floodID
+ * @property {number} year
+*/
+
+/**
+ * @typedef {Object} FloodRisk
+ * @property {number} year
+ * @property {string} floodID
+ */
+
+/**
+ * @typedef {Array} FloodRisks
+ * @property {FloodRisk} floodRisks
 */
 
 /**
  * A Property
- * @typedef {Object} ParcelProperty
+ * @typedef {Object} SummaryProperty
  * @property {number} FSID - The parcel unique identifier
  * @property {string} primaryNumber - The street number
  * @property {string} streetName - The street number
@@ -19,15 +37,13 @@ const Response = require('../Response');
  * @property {ParcelCityForProperty} city - The property city
  * @property {string} state - The property state
  * @property {ParcelGeometry} geometry - The viewport and bounding box of a location
+ * @property {string} femaZone - FEMA Zone
  * @property {number} elevation - The elevation of a property
  * @property {number} lotSize - The size of the property
- * @property {number} floorArea - The size of the home
- * @property {string} landUse - The lot land use designator
  * @property {number} countyFips - The county federal information processing standards code
- * @property {number} distance - The distance
 */
 
-class Property extends Response {
+class SummaryProperty extends Response {
   constructor(data) {
     super(data);
     this.data = data;
@@ -109,21 +125,17 @@ class Property extends Response {
     return this.location.lotSize;
   }
 
-  get floorArea() {
-    return this.location.floorArea;
-  }
-
-  get landUse() {
-    return this.location.landUse;
-  }
-
   get countyFips() {
     return this.location.countyFips;
   }
 
-  get distance() {
-    return this.location.distance;
+  get firstFloodRisk() {
+    return this.results.firstFloodRisk;
+  }
+
+  get floodRisks() {
+    return this.results.floodRisks;
   }
 }
 
-module.exports = Property;
+module.exports = SummaryProperty;

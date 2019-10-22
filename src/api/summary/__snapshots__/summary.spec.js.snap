@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dataSummary .getCityById should get city by ID 1`] = `
+Object {
+  "errors": true,
+  "messages": "Expected required FSID. Usage: .getCityByFSID(fsid)",
+}
+`;
+
+exports[`dataSummary .getCityByLatLng should get city by lat, lng 1`] = `
+Object {
+  "error": "data not found",
+  "errors": true,
+  "messages": null,
+}
+`;
+
+exports[`dataSummary .getPropertyByAddress should get property by address lookup 1`] = `
+Object {
+  "error": "data not found",
+  "errors": true,
+  "messages": null,
+}
+`;
+
+exports[`dataSummary .getPropertyByFSID should get property by ID 1`] = `
+Object {
+  "error": "data not found",
+  "errors": true,
+  "messages": null,
+}
+`;
+
+exports[`dataSummary .getPropertyByLatLng should get property by lat, lng 1`] = `
+Object {
+  "error": "data not found",
+  "errors": true,
+  "messages": null,
+}
+`;

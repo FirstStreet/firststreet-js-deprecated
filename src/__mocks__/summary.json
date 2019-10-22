@@ -11,8 +11,8 @@
       "postdirection": "S",
       "zipCode": 19734,
       "city": {
-        "FSID": null,
-        "Name": null
+        "FSID": 1222175,
+        "Name": "Fernandina Beach"
       },
       "state": "Delaware",
       "geometry": {
@@ -124,7 +124,46 @@
       "countyFips": 10003,
       "distance": 0
     },
-    "firstFloodRisk": null,
-    "floodRisks": null
+    "firstFloodRisk": {
+      "floodID": "kt",
+      "year": 2018
+    },
+    "floodRisks": [{
+      "year": 2023,
+      "floodID": [
+        "em",
+        "kt",
+        "c5",
+        "c3",
+        "c1"
+      ]
+    }, {
+      "year": 2028,
+      "floodID": [
+        "em",
+        "kt",
+        "c5",
+        "c3",
+        "c1"
+      ]
+    }, {
+      "year": 2033,
+      "floodID": [
+        "em",
+        "kt",
+        "c5",
+        "c3",
+        "c1"
+      ]
+    }, {
+      "year": 2018,
+      "floodID": [
+        "em",
+        "kt",
+        "c5",
+        "c3",
+        "c1"
+      ]
+    }]
   }
 }

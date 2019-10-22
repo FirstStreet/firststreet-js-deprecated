@@ -1,22 +1,26 @@
-const BaseModel = require('../Response');
+const Response = require('../Response');
 
 /**
- * @typedef {import('../../Api/parcel').default***REMOVED*** ParcelGeometry
+ * @typedef {import('../../Api/parcel').default***REMOVED*** LocationGeometry
  */
 
 /**
- * A Parcel City
- * @typedef {Object***REMOVED*** ParcelCity
- * @property {number***REMOVED*** ID - The city unique identifier
+ * A city property
+ * @typedef {Object***REMOVED*** CityProperty
+ * @property {number***REMOVED*** FSID - The city unique identifier
  * @property {string***REMOVED*** name - The city name
  * @property {string***REMOVED*** state - The city state
- * @property {ParcelGeometry***REMOVED*** geometry - The viewport and bounding box of a location
+ * @property {LocationGeometry***REMOVED*** geometry - The viewport and bounding box of a location
  */
 
-class City extends BaseModel {
+class City extends Response {
   constructor(data) {
     super(data);
     this.data = data;
+  ***REMOVED***
+
+  get FSID() {
+    return this.data.FSID;
   ***REMOVED***
 
   get name() {

@@ -8,7 +8,8 @@ const getHost = () => {
     return JSON.stringify('http://api.firststreet.org');
   ***REMOVED***
   // * for dev: return JSON.stringify('http://10.1.0.5');
-  return JSON.stringify('http://apidev.firststreet.org');
+  // return JSON.stringify('http://apidev.firststreet.org');
+  return JSON.stringify('http://api.firststreet.org');
 ***REMOVED***;
 
 module.exports = {
@@ -17,7 +18,7 @@ module.exports = {
   ***REMOVED***,
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'floodiq.js',
+    filename: 'firststreet.js',
     publicPath: '/',
   ***REMOVED***,
   target: 'node',

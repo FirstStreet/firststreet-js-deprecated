@@ -1,12 +1,30 @@
 const Response = require('../Response');
 
 /**
- * @typedef {import('../../Api/parcel').default***REMOVED*** ParcelGeometry
+ * @typedef {import('../../Api/summary').default***REMOVED*** LocationGeometry
+*/
+
+/**
+ * FirstFloodRisk defines a first risk for a location
+ * @typedef {Object***REMOVED*** FirstFloodRisk
+ * @property {string***REMOVED*** floodID
+ * @property {number***REMOVED*** year
+*/
+
+/**
+ * @typedef {Object***REMOVED*** FloodRisk
+ * @property {number***REMOVED*** year
+ * @property {string***REMOVED*** floodID
+ */
+
+/**
+ * @typedef {Array***REMOVED*** FloodRisks
+ * @property {FloodRisk***REMOVED*** floodRisks
 */
 
 /**
  * A Property
- * @typedef {Object***REMOVED*** ParcelProperty
+ * @typedef {Object***REMOVED*** SummaryProperty
  * @property {number***REMOVED*** FSID - The parcel unique identifier
  * @property {string***REMOVED*** primaryNumber - The street number
  * @property {string***REMOVED*** streetName - The street number
@@ -19,15 +37,13 @@ const Response = require('../Response');
  * @property {ParcelCityForProperty***REMOVED*** city - The property city
  * @property {string***REMOVED*** state - The property state
  * @property {ParcelGeometry***REMOVED*** geometry - The viewport and bounding box of a location
+ * @property {string***REMOVED*** femaZone - FEMA Zone
  * @property {number***REMOVED*** elevation - The elevation of a property
  * @property {number***REMOVED*** lotSize - The size of the property
- * @property {number***REMOVED*** floorArea - The size of the home
- * @property {string***REMOVED*** landUse - The lot land use designator
  * @property {number***REMOVED*** countyFips - The county federal information processing standards code
- * @property {number***REMOVED*** distance - The distance
 */
 
-class Property extends Response {
+class SummaryProperty extends Response {
   constructor(data) {
     super(data);
     this.data = data;
@@ -109,21 +125,17 @@ class Property extends Response {
     return this.location.lotSize;
   ***REMOVED***
 
-  get floorArea() {
-    return this.location.floorArea;
-  ***REMOVED***
-
-  get landUse() {
-    return this.location.landUse;
-  ***REMOVED***
-
   get countyFips() {
     return this.location.countyFips;
   ***REMOVED***
 
-  get distance() {
-    return this.location.distance;
+  get firstFloodRisk() {
+    return this.results.firstFloodRisk;
+  ***REMOVED***
+
+  get floodRisks() {
+    return this.results.floodRisks;
   ***REMOVED***
 ***REMOVED***
 
-module.exports = Property;
+module.exports = SummaryProperty;

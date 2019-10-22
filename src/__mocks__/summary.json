@@ -14,6 +14,10 @@
         "FSID": 1222175,
         "Name": "Fernandina Beach"
       },
+      "uspsCity": {
+        "Name": "Fernandina Beach",
+        "State": "Delaware"
+      },
       "state": "Delaware",
       "geometry": {
         "polygon": {

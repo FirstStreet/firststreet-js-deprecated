@@ -23,19 +23,29 @@ const Response = require('../Response');
 */
 
 /**
+ * The recommended city of which is based on the property's zip code from the United States
+ * Postal Service
+ * @typedef {Object} USPSCity
+ * @property {string} name
+ * @property {string} state
+*/
+
+/**
  * A Property
  * @typedef {Object} SummaryProperty
  * @property {number} FSID - The parcel unique identifier
- * @property {string} primaryNumber - The street number
- * @property {string} streetName - The street number
- * @property {string} lastUpdated - date property data last updated
- * @property {string} predirection - an address element placed before the street
- * name that indicates its the geographic location
- * @property {string} postdirection - an address element placed after the street
- * name as a trailing designator such as ST for street or RD for road
- * @property {number} zipCode - The property zip code
- * @property {ParcelCityForProperty} city - The property city
+ * @property {string} primaryNumber - Address primary number
+ * @property {string} streetName - Address street name
+ * @property {string} lastUpdated - Last time parcel data was updated in the First Street
+ * Foundation * API database
+ * @property {string} predirection - Address predirection
+ * @property {string} postdirection - Address postdirection
+ * @property {number} zipCode - Address zip code
+ * @property {Object} city - A City is associated with the requested Property. This
+ * property may be `null` if the City has not been modeled in our database. If you require a city
+ * name for display purposes, use uspsCity
  * @property {string} state - The property state
+ * @property {USPSCity} uspsCity
  * @property {ParcelGeometry} geometry - The viewport and bounding box of a location
  * @property {string} femaZone - FEMA Zone
  * @property {number} elevation - The elevation of a property
@@ -77,6 +87,10 @@ class SummaryProperty extends Response {
 
   get cityID() {
     return this.location.city.ID;
+  }
+
+  get uspsCity() {
+    return this.location.uspsCity;
   }
 
   get state() {

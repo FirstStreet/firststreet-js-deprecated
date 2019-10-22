@@ -171,6 +171,10 @@ SummaryProperty {
         "primaryNumber": "212",
         "state": "Delaware",
         "streetName": "APPOQUIN",
+        "uspsCity": Object {
+          "Name": "Fernandina Beach",
+          "State": "Delaware",
+        },
         "zipCode": 19734,
       },
     },
@@ -296,6 +300,10 @@ SummaryProperty {
     "primaryNumber": "212",
     "state": "Delaware",
     "streetName": "APPOQUIN",
+    "uspsCity": Object {
+      "Name": "Fernandina Beach",
+      "State": "Delaware",
+    },
     "zipCode": 19734,
   },
 }

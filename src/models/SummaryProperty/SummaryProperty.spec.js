@@ -36,6 +36,10 @@ describe('Property', () => {
     expect(summary.city).toBeDefined();
   });
 
+  it('should have uspsCity', () => {
+    expect(summary.uspsCity).toBeDefined();
+  });
+
   it('should have state', () => {
     expect(summary.state).toBeDefined();
   });

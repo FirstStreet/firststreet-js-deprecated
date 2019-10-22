@@ -23,19 +23,29 @@ const Response = require('../Response');
 */
 
 /**
+ * The recommended city of which is based on the property's zip code from the United States
+ * Postal Service
+ * @typedef {Object***REMOVED*** USPSCity
+ * @property {string***REMOVED*** name
+ * @property {string***REMOVED*** state
+*/
+
+/**
  * A Property
  * @typedef {Object***REMOVED*** SummaryProperty
  * @property {number***REMOVED*** FSID - The parcel unique identifier
- * @property {string***REMOVED*** primaryNumber - The street number
- * @property {string***REMOVED*** streetName - The street number
- * @property {string***REMOVED*** lastUpdated - date property data last updated
- * @property {string***REMOVED*** predirection - an address element placed before the street
- * name that indicates its the geographic location
- * @property {string***REMOVED*** postdirection - an address element placed after the street
- * name as a trailing designator such as ST for street or RD for road
- * @property {number***REMOVED*** zipCode - The property zip code
- * @property {ParcelCityForProperty***REMOVED*** city - The property city
+ * @property {string***REMOVED*** primaryNumber - Address primary number
+ * @property {string***REMOVED*** streetName - Address street name
+ * @property {string***REMOVED*** lastUpdated - Last time parcel data was updated in the First Street
+ * Foundation * API database
+ * @property {string***REMOVED*** predirection - Address predirection
+ * @property {string***REMOVED*** postdirection - Address postdirection
+ * @property {number***REMOVED*** zipCode - Address zip code
+ * @property {Object***REMOVED*** city - A City is associated with the requested Property. This
+ * property may be `null` if the City has not been modeled in our database. If you require a city
+ * name for display purposes, use uspsCity
  * @property {string***REMOVED*** state - The property state
+ * @property {USPSCity***REMOVED*** uspsCity
  * @property {ParcelGeometry***REMOVED*** geometry - The viewport and bounding box of a location
  * @property {string***REMOVED*** femaZone - FEMA Zone
  * @property {number***REMOVED*** elevation - The elevation of a property
@@ -77,6 +87,10 @@ class SummaryProperty extends Response {
 
   get cityID() {
     return this.location.city.ID;
+  ***REMOVED***
+
+  get uspsCity() {
+    return this.location.uspsCity;
   ***REMOVED***
 
   get state() {

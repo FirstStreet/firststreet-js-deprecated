@@ -11,7 +11,7 @@ const Response = require('../Response');
  * @property {string***REMOVED*** name - The city name
  * @property {string***REMOVED*** state - The city state
  * @property {LocationGeometry***REMOVED*** geometry - The viewport and bounding box of a location
- */
+*/
 
 class City extends Response {
   constructor(data) {

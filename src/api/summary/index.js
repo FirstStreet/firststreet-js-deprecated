@@ -1,38 +1,32 @@
-const Property = require('../../models/Property/index.js');
-const City = require('../../models/City/index.js');
+const Property = require('../../models/SummaryProperty/index.js');
+const City = require('../../models/SummaryCity/index.js');
 const { normalizeError } = require('../../Error');
 
-const SUMMARY_VERSION = '1.0';
+const SUMMARY_VERSION = 'v1.0';
 
 /**
- * @typedef {import('../models/Property').default} ParcelProperty
- * @typedef {import('../models/City').default} ParcelCity
+ * @typedef {import('../models/Property').default} SummaryProperty
+ * @typedef {import('../models/City').default} CityProperty
 */
 
-
 /**
- * A City property on the parcel
- * @typedef {Object} ParcelCityForProperty
- * @property {number} ID - The city unique identifier
+ * A City
+ * @typedef {Object} PropertyCity
+ * @property {number} FSID - The city unique identifier
  * @property {string} name - The city name
 */
 
 /**
- * A ParcelGeometry which contains a polygon (boundingbox) and the Bound (viewport) of a location
- * @typedef {Object} ParcelGeometry
+ * A LocationGeometry which contains a polygon (boundingbox) and the Bound (viewport) of a location
+ * @typedef {Object} LocationGeometry
  * @property {string} polygon - The bounding box of the location
  * @property {string} center - The center of the location
  * @property {string} bounds - The bounds of the location
- */
+*/
 
 const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION}/summary`;
 
-const summary = http =>
-  /**
-   * getPropertyByFSID retrieves a property parcel by its unique identifier
-   * @param {string} id - parcel unique identifier
-   * @returns {ParcelProperty}
-  */
+const dataSummary = http =>
   // eslint-disable-next-line
    ({
     async getPropertyByFSID(id) {
@@ -40,30 +34,32 @@ const summary = http =>
         return normalizeError('Expected required FSID. Usage: .getPropertyByFSID(fsid)');
       }
 
-      const path = `${ENDPOINT_PREFIX}/${id}?type=property&key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/property/${id}?key=${http.getKey()}`;
       try {
         const response = await http.execute('GET', path);
         const { errors, messages } = response;
+
         if (errors) {
           return normalizeError(messages);
         }
+
+
         const model = new Property(response.body);
+
         return model;
       } catch (e) {
         return normalizeError(null, e);
       }
     },
-    async getCityByID(id) {
+    async getCityByFSID(id) {
       if (!id) {
-        return normalizeError('Expected required id. Usage: .getCityByID(id)');
+        return normalizeError('Expected required FSID. Usage: .getCityByFSID(fsid)');
       }
 
-      const path = `${ENDPOINT_PREFIX}/${id}?type=city&key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/city/${id}?key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
-
-
         const { errors, messages } = response;
 
         if (errors) {
@@ -85,7 +81,7 @@ const summary = http =>
         return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
       }
 
-      const path = `${ENDPOINT_PREFIX}?lat=${lat}&lng=${lng}&type=property&key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/property?lat=${lat}&lng=${lng}&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -107,14 +103,14 @@ const summary = http =>
     },
     async getCityByLatLng(lat, lng) {
       if (!lat) {
-        return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
+        return normalizeError('Expected required lat. Usage: .getCityByLatLng(lat, lng)');
       }
 
       if (!lng) {
-        return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
+        return normalizeError('Expected required lng. Usage: .getCityByLatLng(lat, lng)');
       }
 
-      const path = `${ENDPOINT_PREFIX}?lat=${lat}&lng=${lng}&type=city&key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/city?lat=${lat}&lng=${lng}&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -136,10 +132,10 @@ const summary = http =>
     },
     async getPropertyByAddress(address) {
       if (!address) {
-        return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
+        return normalizeError('Expected required address. Usage: .getPropertyByAddress(address)');
       }
 
-      const path = `${ENDPOINT_PREFIX}?address=${encodeURI(address)}&type=property&key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/property?address=${encodeURI(address)}&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -164,7 +160,7 @@ const summary = http =>
         return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
       }
 
-      const path = `${ENDPOINT_PREFIX}?address=${encodeURI(address)}&type=city&key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/city?address=${encodeURI(address)}&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -182,4 +178,5 @@ const summary = http =>
       }
     },
   });
-module.exports = summary;
+
+module.exports = dataSummary;

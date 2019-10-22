@@ -1,4 +1,4 @@
-const summary = require('./summary');
+const dataSummary = require('./summary');
 
 /**
  * api wrapper
@@ -13,7 +13,7 @@ class Api {
   bindTo(context) {
     const ctx = context;
 
-    ctx.summary = summary(this.http);
+    ctx.dataSummary = dataSummary(this.http);
   }
 }
 

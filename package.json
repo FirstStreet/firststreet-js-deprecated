@@ -1,6 +1,6 @@
 {
   "name": "floodiq-javascript",
-  "version": "1.0.0",
+  "version": "0.1",
   "description": "\"A Javascript API Client for FloodIQ\"",
   "main": "index.js",
   "scripts": {

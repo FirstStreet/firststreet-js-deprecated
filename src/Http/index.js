@@ -23,7 +23,7 @@ class Http {
       headers: {
         'Content-Encoding': 'gzip',
         'Content-Type': 'application/json',
-        'User-Agent': 'js/floodiq',
+        'User-Agent': 'js/firststreet',
         Accept: 'application/vnd.api+json',
         Authorization: `Bearer ${apiKey}`,
         'X-TITLE-ID': requestOptions.title,
@@ -116,6 +116,7 @@ class Http {
         if (res.status !== 200) {
           return this.parseErrors(res, requestOptions, rateLimit);
         }
+
         return res.json();
       }).then((body) => {
         // Empty responses
@@ -152,6 +153,5 @@ class Http {
     });
   }
 }
-
 
 module.exports = Http;

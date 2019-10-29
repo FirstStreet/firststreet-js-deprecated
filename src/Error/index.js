@@ -1,4 +1,4 @@
-const RATE_LIMIT = 'Request rate limited. Free for non-commercial use for up to 10 requests per minute! To increase your rate limit, please contact api@floodiq.com';
+const RATE_LIMIT = 'Request rate limited. Free for non-commercial use for up to 10 requests per minute! To increase your rate limit, please contact api@firststreet.com';
 const UNAUTHORIZED = 'Unauthorized Access. invalid API key provided.';
 const UNKNOWN = 'Unknown error, please check your request and try again.';
 const INTERNAL = 'Internal Server Error.';

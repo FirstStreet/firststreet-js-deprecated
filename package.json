@@ -1,7 +1,7 @@
 {
-  "name": "floodiq-javascript",
+  "name": "firststreet-js",
   "version": "1.0.0",
-  "description": "\"A Javascript API Client for FloodIQ\"",
+  "description": "\"A Javascript API Client for the First Street Foundation API\"",
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack --watch --mode=development",
@@ -13,18 +13,18 @@
   ***REMOVED***,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FirstStreet/floodiq-javascript.git"
+    "url": "git+https://github.com/FirstStreet/firststreet-js.git"
   ***REMOVED***,
-  "bugs:": "https://github.com/firststreet/floodiq-javascript/issues",
+  "bugs:": "https://github.com/firststreet/firststreet-js/issues",
   "keywords": [
-    "floodiq"
+    "firststreet"
   ],
-  "author": "Firstreet Dev",
+  "author": "First Street Foundation",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FirstStreet/floodiq-javascript/issues"
+    "url": "https://github.com/FirstStreet/firststreet-js/issues"
   ***REMOVED***,
-  "homepage": "https://github.com/FirstStreet/floodiq-javascript#readme",
+  "homepage": "https://github.com/FirstStreet/firststreet-js#readme",
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",

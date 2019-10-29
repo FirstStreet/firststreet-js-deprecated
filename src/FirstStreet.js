@@ -1,13 +1,13 @@
-const Api = require('./Api');
+const Api = require('./api');
 const Http = require('./Http');
 
 /**
- * Create a FloodIQ class
+ * Create a FirstStreet class
  * @constructor
  * @param {string***REMOVED*** apiKey - A string with the base URL for account.
  * @param {Object***REMOVED*** options - A configuration object.
 */
-class FloodIQ {
+class FirstStreet {
   constructor(apiKey = null, options = {***REMOVED***) {
     if (!apiKey) {
       throw new Error('Missing API Key.');
@@ -18,4 +18,4 @@ class FloodIQ {
   ***REMOVED***
 ***REMOVED***
 
-module.exports = FloodIQ;
+module.exports = FirstStreet;

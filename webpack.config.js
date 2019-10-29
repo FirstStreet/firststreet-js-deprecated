@@ -17,7 +17,7 @@ module.exports = {
   ***REMOVED***,
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'floodiq.js',
+    filename: 'firststreet.js',
     publicPath: '/',
   ***REMOVED***,
   target: 'node',

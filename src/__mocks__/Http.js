@@ -4,8 +4,8 @@ const {
 ***REMOVED*** = require('../Error');
 
 // Mock Data
-const propertyById = require('../__mocks__/propertyDataById');
-const cityById = require('../__mocks__/cityDataById');
+const summaryMockData = require('./summary');
+const cityById = require('./cityByID');
 
 const defaults = {
   host: 'https://FAKE-HOST-FOR-TESTING.com/',
@@ -20,7 +20,7 @@ class Http {
       headers: {
         'Content-Encoding': 'gzip',
         'Content-Type': 'application/json',
-        'User-Agent': 'js/floodiq',
+        'User-Agent': 'js/firststreet',
       ***REMOVED***,
     ***REMOVED***;
   ***REMOVED***
@@ -103,38 +103,38 @@ class Http {
     requestOptions.url += endpoint;
 
     return new Promise((resolve, reject) => {
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/1.0/parcel/100032470544?type=property&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/property/100032470544?key=aa.bb.cc') {
         return resolve({
           error: false,
-          body: propertyById,
+          body: summaryMockData,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/1.0/parcel/1001400?type=city&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/property/1001400?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: cityById,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/1.0/parcel?lat=39.4419892114799&lng=-75.6453718684964&type=property&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/property?lat=39.4419892114799&lng=-75.6453718684964&key=aa.bb.cc') {
         return resolve({
           error: false,
-          body: propertyById,
+          body: summaryMockData,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/1.0/parcel?lat=39.811250630443&lng=-75.4886086625372&type=city&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: cityById,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/1.0/parcel?address=212%20appoquin%20s,%20middletown,%20delware&type=property&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
         return resolve({
           error: false,
-          body: propertyById,
+          body: summaryMockData,
         ***REMOVED***);
       ***REMOVED***
 

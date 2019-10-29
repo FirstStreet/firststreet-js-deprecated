@@ -17,44 +17,53 @@ class City extends Response {
   constructor(data) {
     super(data);
     this.data = data;
+    this.location = this.results.location;
   }
 
   get FSID() {
-    return this.data.FSID;
+    return this.location.FSID;
   }
 
   get name() {
-    return this.data.name;
+    return this.location.name;
   }
 
   get state() {
-    return this.data.state;
+    return this.location.state;
   }
 
   get polygon() {
     // todo: parse nested coordinates arrays
-    return this.data.geometry.polygon.coordinates;
+    return this.location.geometry.polygon.coordinates;
   }
 
   get polygonGeoJSON() {
-    return this.data.geometry.polygon;
+    return this.location.geometry.polygon;
   }
 
   get center() {
-    return this.data.geometry.center.coordinates;
+    return this.location.geometry.center.coordinates;
   }
 
   get centerGeoJSON() {
-    return this.data.geometry.center;
+    return this.location.geometry.center;
   }
 
   get bounds() {
     // todo: parse nested coordinates arrays
-    return this.data.geometry.bounds.coordinates;
+    return this.location.geometry.bbox.coordinates;
   }
 
   get boundsGeoJSON() {
-    return this.data.geometry.bounds;
+    return this.location.geometry.bbox;
+  }
+
+  get firstFloodRisk() {
+    return this.results.firstFloodRisk;
+  }
+
+  get floodRisks() {
+    return this.results.floodRisks;
   }
 }
 

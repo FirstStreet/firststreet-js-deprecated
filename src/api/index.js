@@ -1,4 +1,7 @@
 const dataSummary = require('./summary');
+const hurricane = require('./hurricane');
+const tidal = require('./tidal');
+const mvi = require('./marketValueImpact');
 
 /**
  * api wrapper
@@ -14,6 +17,9 @@ class Api {
     const ctx = context;
 
     ctx.dataSummary = dataSummary(this.http);
+    ctx.hurricane = hurricane(this.http);
+    ctx.tidal = tidal(this.http);
+    ctx.mvi = mvi(this.http);
   ***REMOVED***
 ***REMOVED***
 

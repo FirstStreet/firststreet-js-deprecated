@@ -34,7 +34,7 @@ const fs = new FirstStreet("api-key");
 
 ### Risk Summary
 
-The risk summary API provides metadata and risks summary for a given `location`.
+The Risk Summary API provides metadata and risk summary for a given `location`.
 
 ```javascript
 fs.dataSummary.<method>
@@ -54,7 +54,7 @@ fs.dataSummary.<method>
 
 ### Hurricane
 
-The hurricane risk API provides hurricane risk data for a given `location`.
+The Hurricane Risk API provides hurricane risk data for a given `location`.
 
 ```javascript
 fs.hurricane.<method>
@@ -74,7 +74,7 @@ fs.hurricane.<method>
 
 ### Tidal
 
-The tidal risk API provides tidal risk data for a given `location`.
+The Tidal Risk API provides tidal risk data for a given `location`.
 
 ```javascript
 fs.tidal.<method>

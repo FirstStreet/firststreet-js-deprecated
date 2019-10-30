@@ -52,6 +52,66 @@ fs.dataSummary.<method>
 * GetCityByLatLng(lat `number`, lng `number`) - Retrieves a `City` by a coordinate
 * GetCityByAddress(address `string`) - Retrieves a `City` by address lookup
 
+### Hurricane
+
+The hurricane risk API provides hurricane risk data for a given `location`.
+
+```javascript
+fs.hurricane.<method>
+```
+
+#### Property
+
+* GetPropertyByFSID(FSID `string`) - Retrieves Hurricane Risk data for a `Property` by specific ID
+* GetPropertyByLatLng(lat `number`, lng `number`) - Retrieves Hurricane Risk data for a `Property` by a coordinate
+* GetPropertyByAddress(address `string`) - Retrieves Hurricane Risk data for a `Property` by address lookup
+
+#### City
+
+* GetCityByFSID(FSID `string`) - Retrieves Hurricane Risk data for a `City` by specific ID
+* GetCityByLatLng(lat `number`, lng `number`) - Retrieves Hurricane Risk data for a `City` by a coordinate
+* GetCityByAddress(address `string`) - Retrieves Hurricane Risk data for a `City` by address lookup
+
+### Tidal
+
+The tidal risk API provides tidal risk data for a given `location`.
+
+```javascript
+fs.tidal.<method>
+```
+
+#### Property
+
+* GetPropertyByFSID(FSID `string`) - Retrieves Tidal Risk data for a `Property` by specific ID
+* GetPropertyByLatLng(lat `number`, lng `number`) - Retrieves Tidal Risk data for a `Property` by a coordinate
+* GetPropertyByAddress(address `string`) - Retrieves Tidal Risk data for a `Property` by address lookup
+
+#### City
+
+* GetCityByFSID(FSID `string`) - Retrieves Tidal Risk data for a `City` by specific ID
+* GetCityByLatLng(lat `number`, lng `number`) - Retrieves Tidal Risk data for a `City` by a coordinate
+* GetCityByAddress(address `string`) - Retrieves Tidal Risk data for a `City` by address lookup
+
+### Market Value Impact
+
+The Market Value Impact API provides market data for a given `location`.
+
+```javascript
+fs.mvi.<method>
+```
+
+#### Property
+
+* GetPropertyByFSID(FSID `string`) - Retrieves Market Value Impact data for a `Property` by specific ID
+* GetPropertyByLatLng(lat `number`, lng `number`) - Retrieves Market Value Impact data for a `Property` by a coordinate
+* GetPropertyByAddress(address `string`) - Retrieves Market Value Impact data for a `Property` by address lookup
+
+#### City
+
+* GetCityByFSID(FSID `string`) - Retrieves Market Value Impact data for a `City` by specific ID
+* GetCityByLatLng(lat `number`, lng `number`) - Retrieves Market Value Impact data for a `City` by a coordinate
+* GetCityByAddress(address `string`) - Retrieves Market Value Impact data for a `City` by address lookup
+
 #### Errors
 
 All errors will have a `Code`, `Status` and `Message` attached to it.

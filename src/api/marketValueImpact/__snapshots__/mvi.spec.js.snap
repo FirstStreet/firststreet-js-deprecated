@@ -6,7 +6,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -29,7 +29,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "kt",
-        "floodType": "tidal flooding",
       ***REMOVED***,
     ],
   ***REMOVED***,
@@ -42,7 +41,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -65,7 +64,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "kt",
-        "floodType": "tidal flooding",
       ***REMOVED***,
     ],
   ***REMOVED***,
@@ -78,7 +76,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -101,7 +99,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "kt",
-        "floodType": "tidal flooding",
       ***REMOVED***,
     ],
   ***REMOVED***,

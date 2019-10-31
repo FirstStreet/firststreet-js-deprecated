@@ -6,7 +6,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -109,7 +109,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "em",
-        "floodType": "tidal flooding",
       ***REMOVED***,
       Object {
         "data": Array [
@@ -228,7 +227,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -331,7 +330,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "em",
-        "floodType": "tidal flooding",
       ***REMOVED***,
       Object {
         "data": Array [
@@ -450,7 +448,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -553,7 +551,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "em",
-        "floodType": "tidal flooding",
       ***REMOVED***,
       Object {
         "data": Array [

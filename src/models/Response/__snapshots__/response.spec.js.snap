@@ -5,13 +5,57 @@ Response {
   "data": Object {
     "FSID": 100032470544,
     "results": Object {
-      "firstFloodRisk": null,
-      "floodRisks": null,
+      "firstFloodRisk": Object {
+        "floodID": "kt",
+        "year": 2018,
+      ***REMOVED***,
+      "floodRisks": Array [
+        Object {
+          "floodID": Array [
+            "em",
+            "kt",
+            "c5",
+            "c3",
+            "c1",
+          ],
+          "year": 2023,
+        ***REMOVED***,
+        Object {
+          "floodID": Array [
+            "em",
+            "kt",
+            "c5",
+            "c3",
+            "c1",
+          ],
+          "year": 2028,
+        ***REMOVED***,
+        Object {
+          "floodID": Array [
+            "em",
+            "kt",
+            "c5",
+            "c3",
+            "c1",
+          ],
+          "year": 2033,
+        ***REMOVED***,
+        Object {
+          "floodID": Array [
+            "em",
+            "kt",
+            "c5",
+            "c3",
+            "c1",
+          ],
+          "year": 2018,
+        ***REMOVED***,
+      ],
       "location": Object {
         "FSID": 100032470544,
         "city": Object {
-          "FSID": null,
-          "Name": null,
+          "FSID": 1222175,
+          "Name": "Fernandina Beach",
         ***REMOVED***,
         "countyFips": 10003,
         "distance": 0,
@@ -127,6 +171,10 @@ Response {
         "primaryNumber": "212",
         "state": "Delaware",
         "streetName": "APPOQUIN",
+        "uspsCity": Object {
+          "Name": "Fernandina Beach",
+          "State": "Delaware",
+        ***REMOVED***,
         "zipCode": 19734,
       ***REMOVED***,
     ***REMOVED***,

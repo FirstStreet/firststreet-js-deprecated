@@ -1,4 +1,4 @@
-const Response = require('../../models/Response');
+const Hurricane = require('../../models/Hurricane');
 const { normalizeError } = require('../../Error');
 
 const SUMMARY_VERSION = 'v1.0';
@@ -21,7 +21,7 @@ const hurricane = http =>
           return normalizeError(messages);
         }
 
-        const model = new Response(response.body);
+        const model = new Hurricane(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -42,7 +42,7 @@ const hurricane = http =>
           return normalizeError(messages);
         }
 
-        const model = new Response(response.body);
+        const model = new Hurricane(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -71,7 +71,7 @@ const hurricane = http =>
           return normalizeError(message);
         }
 
-        const model = new Response(response.body);
+        const model = new Hurricane(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -100,7 +100,7 @@ const hurricane = http =>
           return normalizeError(message);
         }
 
-        const model = new Response(response.body);
+        const model = new Hurricane(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -125,7 +125,7 @@ const hurricane = http =>
           return normalizeError(message);
         }
 
-        const model = new Response(response.body);
+        const model = new Hurricane(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -147,7 +147,7 @@ const hurricane = http =>
           return normalizeError(message);
         }
 
-        const model = new Response(response.body);
+        const model = new Hurricane(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);

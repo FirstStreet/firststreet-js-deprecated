@@ -6,7 +6,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -109,7 +109,6 @@ Response {
           },
         ],
         "floodID": "c1",
-        "floodType": "hurricane storm surge",
       },
       Object {
         "data": Array [
@@ -334,7 +333,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -437,7 +436,6 @@ Response {
           },
         ],
         "floodID": "c1",
-        "floodType": "hurricane storm surge",
       },
       Object {
         "data": Array [
@@ -662,7 +660,7 @@ Response {
     "FSID": 450350219571,
     "results": Array [
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -765,7 +763,6 @@ Response {
           },
         ],
         "floodID": "c1",
-        "floodType": "hurricane storm surge",
       },
       Object {
         "data": Array [

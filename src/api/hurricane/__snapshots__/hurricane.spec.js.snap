@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`hurricane .getPropertyByAddress should get property by address lookup 1`] = `
-Response {
+Hurricane {
   "data": Object {
     "FSID": 450350219571,
     "results": Array [
@@ -111,7 +111,7 @@ Response {
         "floodID": "c1",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -214,10 +214,9 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "c5",
-        "floodType": "hurricane storm surge",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -320,7 +319,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "c3",
-        "floodType": "hurricane storm surge",
       ***REMOVED***,
     ],
   ***REMOVED***,
@@ -328,7 +326,7 @@ Response {
 `;
 
 exports[`hurricane .getPropertyByFSID should get property by ID 1`] = `
-Response {
+Hurricane {
   "data": Object {
     "FSID": 450350219571,
     "results": Array [
@@ -438,7 +436,7 @@ Response {
         "floodID": "c1",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -541,10 +539,9 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "c5",
-        "floodType": "hurricane storm surge",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -647,7 +644,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "c3",
-        "floodType": "hurricane storm surge",
       ***REMOVED***,
     ],
   ***REMOVED***,
@@ -655,7 +651,7 @@ Response {
 `;
 
 exports[`hurricane .getPropertyByLatLng should get property by lat, lng 1`] = `
-Response {
+Hurricane {
   "data": Object {
     "FSID": 450350219571,
     "results": Array [
@@ -765,7 +761,7 @@ Response {
         "floodID": "c1",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -868,10 +864,9 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "c5",
-        "floodType": "hurricane storm surge",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -974,7 +969,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "c3",
-        "floodType": "hurricane storm surge",
       ***REMOVED***,
     ],
   ***REMOVED***,

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`tidal .getPropertyByAddress should get property by address lookup 1`] = `
-Response {
+Tidal {
   "data": Object {
     "FSID": 450350219571,
     "results": Array [
@@ -111,7 +111,7 @@ Response {
         "floodID": "em",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -214,7 +214,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "kt",
-        "floodType": "tidal flooding",
       ***REMOVED***,
     ],
   ***REMOVED***,
@@ -222,7 +221,7 @@ Response {
 `;
 
 exports[`tidal .getPropertyByFSID should get property by ID 1`] = `
-Response {
+Tidal {
   "data": Object {
     "FSID": 450350219571,
     "results": Array [
@@ -332,7 +331,7 @@ Response {
         "floodID": "em",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -435,7 +434,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "kt",
-        "floodType": "tidal flooding",
       ***REMOVED***,
     ],
   ***REMOVED***,
@@ -443,7 +441,7 @@ Response {
 `;
 
 exports[`tidal .getPropertyByLatLng should get property by lat, lng 1`] = `
-Response {
+Tidal {
   "data": Object {
     "FSID": 450350219571,
     "results": Array [
@@ -553,7 +551,7 @@ Response {
         "floodID": "em",
       ***REMOVED***,
       Object {
-        "data": Array [
+        "floodData": Array [
           Object {
             "data": Array [
               Object {
@@ -656,7 +654,6 @@ Response {
           ***REMOVED***,
         ],
         "floodID": "kt",
-        "floodType": "tidal flooding",
       ***REMOVED***,
     ],
   ***REMOVED***,

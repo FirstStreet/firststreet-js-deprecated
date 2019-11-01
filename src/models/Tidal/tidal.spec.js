@@ -13,18 +13,18 @@ describe('Tidal', () => {
   });
 
   it('should have maxDepth', () => {
-    expect(data.maxDepth).toBeDefined();
+    expect(data.maxDepth('em', 2023)).toBeDefined();
   });
 
   it('should have lot', () => {
-    expect(data.lot).toBeDefined();
+    expect(data.lot('kt', 2018)).toBeDefined();
   });
 
   it('should have neighborhood', () => {
-    expect(data.neighborhood).toBeDefined();
+    expect(data.neighborhood('em', 2033)).toBeDefined();
   });
 
   it('should have road', () => {
-    expect(data.road).toBeDefined();
+    expect(data.road('kt', 2023)).toBeDefined();
   });
 });

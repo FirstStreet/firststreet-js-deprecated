@@ -6,31 +6,20 @@ class Tidal extends Response {
     this.data = data;
   ***REMOVED***
 
-  getData(key) {
-    const results = this.results.map(item => item.floodData.map(floodData => floodData.data.find((data) => {
-      if (data.type === key) {
-        return data;
-      ***REMOVED***
-      return null;
-    ***REMOVED***)));
-
-    return results[0];
+  maxDepth(floodID, year) {
+    return this.getData('maxdepth', floodID, year);
   ***REMOVED***
 
-  get maxDepth() {
-    return this.getData('maxdepth');
+  lot(floodID, year) {
+    return this.getData('lot', floodID, year);
   ***REMOVED***
 
-  get lot() {
-    return this.getData('lot');
+  neighborhood(floodID, year) {
+    return this.getData('neighborhood', floodID, year);
   ***REMOVED***
 
-  get neighborhood() {
-    return this.getData('neighborhood');
-  ***REMOVED***
-
-  get road() {
-    return this.getData('road');
+  road(floodID, year) {
+    return this.getData('road', floodID, year);
   ***REMOVED***
 ***REMOVED***
 

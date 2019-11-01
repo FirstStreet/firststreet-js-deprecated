@@ -13,6 +13,6 @@ describe('MarketValueImpact', () => {
   ***REMOVED***);
 
   it('should have loss totals', () => {
-    expect(data.lossTotals).toBeDefined();
+    expect(data.lossTotals('kt', 2033)).toBeDefined();
   ***REMOVED***);
 ***REMOVED***);

@@ -6,19 +6,8 @@ class MarketValueImpact extends Response {
     this.data = data;
   ***REMOVED***
 
-  getData(key) {
-    const results = this.results.map(item => item.floodData.map(floodData => floodData.data.find((data) => {
-      if (data.type === key) {
-        return data;
-      ***REMOVED***
-      return null;
-    ***REMOVED***)));
-
-    return results[0];
-  ***REMOVED***
-
-  get lossTotals() {
-    return this.getData('loss_total');
+  lossTotals(floodID, year) {
+    return this.getData('loss_total', floodID, year);
   ***REMOVED***
 ***REMOVED***
 

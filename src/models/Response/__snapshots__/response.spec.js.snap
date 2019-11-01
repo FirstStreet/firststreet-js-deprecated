@@ -1,184 +1,326 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`summaryMock should initialize a base model 1`] = `
+exports[`mock should initialize a base model 1`] = `
 Response {
   "data": Object {
-    "FSID": 100032470544,
-    "results": Object {
-      "firstFloodRisk": Object {
-        "floodID": "kt",
-        "year": 2018,
+    "FSID": 450350219571,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 0,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 0,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.17557,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.09307,
+              },
+            ],
+            "year": 2018,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 0,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 0,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.18321,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.09554,
+              },
+            ],
+            "year": 2023,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 0,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 0,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.19847,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.09909,
+              },
+            ],
+            "year": 2028,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 0,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 0,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.20992,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.10318,
+              },
+            ],
+            "year": 2033,
+          },
+        ],
+        "floodID": "c1",
       },
-      "floodRisks": Array [
-        Object {
-          "floodID": Array [
-            "em",
-            "kt",
-            "c5",
-            "c3",
-            "c1",
-          ],
-          "year": 2023,
-        },
-        Object {
-          "floodID": Array [
-            "em",
-            "kt",
-            "c5",
-            "c3",
-            "c1",
-          ],
-          "year": 2028,
-        },
-        Object {
-          "floodID": Array [
-            "em",
-            "kt",
-            "c5",
-            "c3",
-            "c1",
-          ],
-          "year": 2033,
-        },
-        Object {
-          "floodID": Array [
-            "em",
-            "kt",
-            "c5",
-            "c3",
-            "c1",
-          ],
-          "year": 2018,
-        },
-      ],
-      "location": Object {
-        "FSID": 100032470544,
-        "city": Object {
-          "FSID": 1222175,
-          "Name": "Fernandina Beach",
-        },
-        "countyFips": 10003,
-        "distance": 0,
-        "elevation": 1085,
-        "femaZone": null,
-        "floorArea": 2228,
-        "geometry": Object {
-          "bounds": Object {
-            "coordinates": Array [
-              Array [
-                Array [
-                  -75.6456815054783,
-                  39.4418499120952,
-                ],
-                Array [
-                  -75.6451478217579,
-                  39.4418499120952,
-                ],
-                Array [
-                  -75.6451478217579,
-                  39.4421122701503,
-                ],
-                Array [
-                  -75.6456815054783,
-                  39.4421122701503,
-                ],
-                Array [
-                  -75.6456815054783,
-                  39.4418499120952,
-                ],
-              ],
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 11,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 1,
+              },
             ],
-            "type": "Polygon",
+            "year": 2018,
           },
-          "center": Object {
-            "coordinates": Array [
-              -75.6453718684964,
-              39.4419892114799,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 11,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 1,
+              },
             ],
-            "type": "Point",
+            "year": 2023,
           },
-          "polygon": Object {
-            "coordinates": Array [
-              Array [
-                Array [
-                  Array [
-                    -75.6451595133313,
-                    39.4418499120952,
-                  ],
-                  Array [
-                    -75.6451533032778,
-                    39.4418767064764,
-                  ],
-                  Array [
-                    -75.6451494009962,
-                    39.441903761694,
-                  ],
-                  Array [
-                    -75.6451478217579,
-                    39.4419309570368,
-                  ],
-                  Array [
-                    -75.6451485745461,
-                    39.4419581780373,
-                  ],
-                  Array [
-                    -75.6451516539709,
-                    39.4419852949662,
-                  ],
-                  Array [
-                    -75.6451570483542,
-                    39.4420121947438,
-                  ],
-                  Array [
-                    -75.6451647325431,
-                    39.442038758741,
-                  ],
-                  Array [
-                    -75.6451746733001,
-                    39.4420648697161,
-                  ],
-                  Array [
-                    -75.6451868239126,
-                    39.442090409734,
-                  ],
-                  Array [
-                    -75.6452018185913,
-                    39.4421122701503,
-                  ],
-                  Array [
-                    -75.645658659524,
-                    39.4420479376122,
-                  ],
-                  Array [
-                    -75.6456815054783,
-                    39.4419626061836,
-                  ],
-                  Array [
-                    -75.6451595133313,
-                    39.4418499120952,
-                  ],
-                ],
-              ],
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 11,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 1,
+              },
             ],
-            "type": "MultiPolygon",
+            "year": 2028,
           },
-        },
-        "landUse": "residential",
-        "lastUpdated": "2019-06-04T15:55:08.566254Z",
-        "lotSize": 861,
-        "postdirection": "S",
-        "predirection": null,
-        "primaryNumber": "212",
-        "state": "Delaware",
-        "streetName": "APPOQUIN",
-        "uspsCity": Object {
-          "Name": "Fernandina Beach",
-          "State": "Delaware",
-        },
-        "zipCode": 19734,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 11,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 1,
+              },
+            ],
+            "year": 2033,
+          },
+        ],
+        "floodID": "c5",
       },
-    },
-    "type": "property",
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 7,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.98092,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.90534,
+              },
+            ],
+            "year": 2018,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 7,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.98092,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.9098,
+              },
+            ],
+            "year": 2023,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 7,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.98092,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.91659,
+              },
+            ],
+            "year": 2028,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 7,
+              },
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              },
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.98473,
+              },
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.92386,
+              },
+            ],
+            "year": 2033,
+          },
+        ],
+        "floodID": "c3",
+      },
+    ],
   },
 }
 `;

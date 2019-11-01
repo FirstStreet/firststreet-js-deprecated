@@ -1,25 +1,35 @@
 const BaseModel = require('./index');
-const summaryMock = require('../../__mocks__/summary');
+const mock = require('../../__mocks__/hurricaneProperty');
 
-let summary = null;
+let response = null;
 
-describe('summaryMock', () => {
+describe('mock', () => {
   beforeEach(() => {
-    summary = new BaseModel(summaryMock);
+    response = new BaseModel(mock);
   });
 
   it('should initialize a base model', () => {
-    expect(summary).toMatchSnapshot();
+    expect(response).toMatchSnapshot();
   });
 
   it('should return a raw response', () => {
-    expect(summary.raw).toBe(summaryMock);
+    expect(response.raw).toBe(mock);
   });
 
   it('should return the correct id', () => {
-    expect(summary.FSID).toBe(summaryMock.FSID);
+    expect(response.FSID).toBe(mock.FSID);
   });
+
   it('should return the correct results', () => {
-    expect(summary.results).toBe(summaryMock.results);
+    expect(response.results).toBe(mock.results);
+  });
+
+  it('getData() should return the correct results', () => {
+    const mockedData = {
+      type: 'maxdepth',
+      unit: 'meters',
+      value: 0,
+    };
+    expect(response.getData('maxdepth', 'c1', 2023)).toEqual(mockedData);
   });
 });

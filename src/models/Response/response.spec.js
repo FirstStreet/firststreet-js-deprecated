@@ -24,6 +24,18 @@ describe('mock', () => {
     expect(response.results).toBe(mock.results);
   });
 
+  it('getDataByYear should return the correct results', () => {
+    expect(response.getDataByYear(2023).val).toBeDefined();
+  });
+
+  it('getDataByFloodID should return the correct results', () => {
+    expect(response.getDataByFloodID('c1').val).toBeDefined();
+  });
+
+  it('method chaining should return the correct results', () => {
+    expect(response.getDataByYear(2023).getDataByFloodID('c1').val).toBeDefined();
+  });
+
   it('getData() should return the correct results', () => {
     const mockedData = {
       type: 'maxdepth',

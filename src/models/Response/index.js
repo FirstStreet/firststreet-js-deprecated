@@ -8,25 +8,25 @@
 */
 class Response {
   constructor(data) {
-    this.data = data;
-    this.currentData = this.data.results;
+    this.response = data;
+    this.currentData = this.response.results;
   }
 
   get FSID() {
-    return this.data.FSID;
+    return this.response.FSID;
   }
 
   // results is an object of data that is associated with the data call
   get results() {
-    return this.data.results;
+    return this.response.results;
   }
 
   // raw is the literal response
   get raw() {
-    return this.data;
+    return this.response;
   }
 
-  get val() {
+  get data() {
     return this.currentData;
   }
 
@@ -62,33 +62,6 @@ class Response {
 
     this.currentData = filteredData;
     return this;
-  }
-
-  getData(key, floodID, year) {
-    const matchingFloodIdData = this.results.find(results => results.floodID === floodID);
-
-    if (!matchingFloodIdData) {
-      return null;
-    }
-
-    const correctYearData = matchingFloodIdData.floodData.find((data) => {
-      if (data.year === year) {
-        return data;
-      }
-      return null;
-    });
-
-    if (!correctYearData) {
-      return null;
-    }
-    const results = correctYearData.data.find((item) => {
-      if (item.type === key) {
-        return item;
-      }
-      return null;
-    });
-
-    return results;
   }
 }
 

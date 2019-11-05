@@ -1,12 +1,12 @@
 // readonly
 
 /**
- * Response Model
+ * Response Model Summary
  * @typedef {Object} Response
  * @property {number} FSID - The location unique identifier
  * @property {Object} results - Results of the query
 */
-class Response {
+class ResponseSummary {
   constructor(data) {
     this.data = data;
   }
@@ -26,4 +26,4 @@ class Response {
   }
 }
 
-module.exports = Response;
+module.exports = ResponseSummary;

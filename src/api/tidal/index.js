@@ -1,4 +1,4 @@
-const Tidal = require('../../models/Tidal');
+const Response = require('../../models/Response');
 const { normalizeError } = require('../../Error');
 
 const SUMMARY_VERSION = 'v1.0';
@@ -21,7 +21,7 @@ const tidal = http =>
           return normalizeError(messages);
         }
 
-        const model = new Tidal(response.body);
+        const model = new Response(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -42,7 +42,7 @@ const tidal = http =>
           return normalizeError(messages);
         }
 
-        const model = new Tidal(response.body);
+        const model = new Response(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -71,7 +71,7 @@ const tidal = http =>
           return normalizeError(message);
         }
 
-        const model = new Tidal(response.body);
+        const model = new Response(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -100,7 +100,7 @@ const tidal = http =>
           return normalizeError(message);
         }
 
-        const model = new Tidal(response.body);
+        const model = new Response(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -125,7 +125,7 @@ const tidal = http =>
           return normalizeError(message);
         }
 
-        const model = new Tidal(response.body);
+        const model = new Response(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);
@@ -147,7 +147,7 @@ const tidal = http =>
           return normalizeError(message);
         }
 
-        const model = new Tidal(response.body);
+        const model = new Response(response.body);
         return model;
       } catch (e) {
         return normalizeError(null, e);

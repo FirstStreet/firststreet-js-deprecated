@@ -25,23 +25,14 @@ describe('mock', () => {
   });
 
   it('getDataByYear should return the correct results', () => {
-    expect(response.getDataByYear(2023).val).toBeDefined();
+    expect(response.getDataByYear(2023).data).toBeDefined();
   });
 
   it('getDataByFloodID should return the correct results', () => {
-    expect(response.getDataByFloodID('c1').val).toBeDefined();
+    expect(response.getDataByFloodID('c1').data).toBeDefined();
   });
 
   it('method chaining should return the correct results', () => {
-    expect(response.getDataByYear(2023).getDataByFloodID('c1').val).toBeDefined();
-  });
-
-  it('getData() should return the correct results', () => {
-    const mockedData = {
-      type: 'maxdepth',
-      unit: 'meters',
-      value: 0,
-    };
-    expect(response.getData('maxdepth', 'c1', 2023)).toEqual(mockedData);
+    expect(response.getDataByYear(2023).getDataByFloodID('c1').data).toBeDefined();
   });
 });

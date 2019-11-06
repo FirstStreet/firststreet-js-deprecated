@@ -1,0 +1,326 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mock should initialize a base model 1`] = `
+Response {
+  "data": Object {
+    "FSID": 450350219571,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 0,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 0,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.17557,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.09307,
+              ***REMOVED***,
+            ],
+            "year": 2018,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 0,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 0,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.18321,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.09554,
+              ***REMOVED***,
+            ],
+            "year": 2023,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 0,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 0,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.19847,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.09909,
+              ***REMOVED***,
+            ],
+            "year": 2028,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 0,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 0,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.20992,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.10318,
+              ***REMOVED***,
+            ],
+            "year": 2033,
+          ***REMOVED***,
+        ],
+        "floodID": "c1",
+      ***REMOVED***,
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 11,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+            ],
+            "year": 2018,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 11,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+            ],
+            "year": 2023,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 11,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+            ],
+            "year": 2028,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 11,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+            ],
+            "year": 2033,
+          ***REMOVED***,
+        ],
+        "floodID": "c5",
+      ***REMOVED***,
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 7,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.98092,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.90534,
+              ***REMOVED***,
+            ],
+            "year": 2018,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 7,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.98092,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.9098,
+              ***REMOVED***,
+            ],
+            "year": 2023,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 7,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.98092,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.91659,
+              ***REMOVED***,
+            ],
+            "year": 2028,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "maxdepth",
+                "unit": "meters",
+                "value": 7,
+              ***REMOVED***,
+              Object {
+                "type": "lot",
+                "unit": "percent",
+                "value": 1,
+              ***REMOVED***,
+              Object {
+                "type": "neighborhood",
+                "unit": "percent",
+                "value": 0.98473,
+              ***REMOVED***,
+              Object {
+                "type": "road",
+                "unit": "percent",
+                "value": 0.92386,
+              ***REMOVED***,
+            ],
+            "year": 2033,
+          ***REMOVED***,
+        ],
+        "floodID": "c3",
+      ***REMOVED***,
+    ],
+  ***REMOVED***,
+***REMOVED***
+`;

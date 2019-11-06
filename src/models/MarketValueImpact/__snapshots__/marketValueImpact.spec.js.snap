@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarketValueImpact should initialize 1`] = `
+MarketValueImpact {
+  "data": Object {
+    "FSID": 450350219571,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_total",
+                "unit": "dollars",
+                "value": 2008,
+              ***REMOVED***,
+            ],
+            "year": 2018,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_total",
+                "unit": "dollars",
+                "value": 2033,
+              ***REMOVED***,
+            ],
+            "year": 2033,
+          ***REMOVED***,
+        ],
+        "floodID": "kt",
+      ***REMOVED***,
+    ],
+  ***REMOVED***,
+***REMOVED***
+`;

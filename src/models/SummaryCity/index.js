@@ -1,4 +1,4 @@
-const Response = require('../Response');
+const ResponseSummary = require('../ResponseSummary');
 
 /**
  * @typedef {import('../../Api/parcel').default} LocationGeometry
@@ -13,7 +13,7 @@ const Response = require('../Response');
  * @property {LocationGeometry} geometry - The viewport and bounding box of a location
 */
 
-class City extends Response {
+class City extends ResponseSummary {
   constructor(data) {
     super(data);
     this.data = data;

@@ -1,4 +1,4 @@
-const Response = require('../Response');
+const ResponseSummary = require('../ResponseSummary');
 
 /**
  * @typedef {import('../../Api/summary').default} LocationGeometry
@@ -53,7 +53,7 @@ const Response = require('../Response');
  * @property {number} countyFips - The county federal information processing standards code
 */
 
-class SummaryProperty extends Response {
+class SummaryProperty extends ResponseSummary {
   constructor(data) {
     super(data);
     this.data = data;

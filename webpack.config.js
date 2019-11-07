@@ -19,6 +19,8 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: 'firststreet.js',
     publicPath: '/',
+    library: 'FirstStreet',
+    libraryTarget: 'umd',
   ***REMOVED***,
   target: 'node',
   plugins: [

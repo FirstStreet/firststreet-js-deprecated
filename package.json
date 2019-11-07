@@ -8,7 +8,7 @@
     "test:dev": "jest --watch",
     "test:coverage": "jest --coverage -u",
     "test": "jest --coverage",
-    "build": "NODE_ENV=production rm -rf dist && webpack -p --config ./webpack.config.js --mode=production",
+    "build": "rm -rf dist && NODE_ENV=production webpack -p --config ./webpack.config.js --mode=production",
     "lint": "eslint src"
   },
   "repository": {

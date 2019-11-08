@@ -1,7 +1,7 @@
 const MarketValueImpact = require('../../models/MarketValueImpact');
 const { normalizeError ***REMOVED*** = require('../../Error');
 
-const SUMMARY_VERSION = 'v1.0';
+const SUMMARY_VERSION = 'v0.1';
 const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION***REMOVED***/market-value-impact`;
 
 const mvi = http =>

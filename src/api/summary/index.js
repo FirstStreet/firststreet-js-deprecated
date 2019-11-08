@@ -2,7 +2,7 @@ const Property = require('../../models/SummaryProperty/index.js');
 const City = require('../../models/SummaryCity/index.js');
 const { normalizeError ***REMOVED*** = require('../../Error');
 
-const SUMMARY_VERSION = 'v1.0';
+const SUMMARY_VERSION = 'v0.1';
 
 /**
  * @typedef {import('../models/Property').default***REMOVED*** SummaryProperty

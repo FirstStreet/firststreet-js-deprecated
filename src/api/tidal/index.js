@@ -1,7 +1,7 @@
 const Tidal = require('../../models/Tidal');
 const { normalizeError } = require('../../Error');
 
-const SUMMARY_VERSION = 'v1.0';
+const SUMMARY_VERSION = 'v0.1';
 const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION}/tidal`;
 
 const tidal = http =>

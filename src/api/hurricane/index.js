@@ -1,7 +1,7 @@
 const Hurricane = require('../../models/Hurricane');
 const { normalizeError ***REMOVED*** = require('../../Error');
 
-const SUMMARY_VERSION = 'v1.0';
+const SUMMARY_VERSION = 'v0.1';
 const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION***REMOVED***/hurricane`;
 
 const hurricane = http =>

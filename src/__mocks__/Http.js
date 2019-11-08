@@ -106,98 +106,98 @@ class Http {
     requestOptions.url += endpoint;
 
     return new Promise((resolve, reject) => {
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/property/100032470544?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/property/100032470544?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: summaryMockData,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/property/1001400?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/property/1001400?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: cityById,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/property?lat=39.4419892114799&lng=-75.6453718684964&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/property?lat=39.4419892114799&lng=-75.6453718684964&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: summaryMockData,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: cityById,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: summaryMockData,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/hurricane/property/450350219571?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/property/450350219571?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: hurricaneProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/hurricane/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: hurricaneProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/hurricane/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: hurricaneProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/tidal/property/450350219571?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/property/450350219571?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: tidalProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/tidal/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: tidalProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/tidal/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: tidalProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/market-value-impact/property/450350219571?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/property/450350219571?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: mviProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/market-value-impact/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: mviProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v1.0/market-value-impact/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: mviProperty,

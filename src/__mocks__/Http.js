@@ -165,14 +165,14 @@ class Http {
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/property?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: hurricaneProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/city?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: hurricaneCity,
@@ -207,14 +207,14 @@ class Http {
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/property?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: tidalProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/city?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: tidalCity,
@@ -249,14 +249,14 @@ class Http {
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/property?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: mviProperty,
         });
       }
       
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: mviCity,

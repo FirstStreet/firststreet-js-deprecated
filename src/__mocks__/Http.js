@@ -9,6 +9,7 @@ const cityById = require('./cityByID');
 const hurricaneProperty = require('./hurricaneProperty');
 const tidalProperty = require('./tidalProperty');
 const mviProperty = require('./mviProperty');
+const tidalCity = require('./tidalCity');
 const mviCity = require('./mviCity');
 
 const defaults = {
@@ -170,10 +171,24 @@ class Http {
         });
       }
 
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/city/1222175?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: tidalCity,
+        });
+      }
+
       if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/property?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: tidalProperty,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/city?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: tidalCity,
         });
       }
 
@@ -184,10 +199,24 @@ class Http {
         });
       }
 
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/city?address=middletown,%20delware&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: tidalCity,
+        });
+      }
+
       if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/property/450350219571?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: mviProperty,
+        });
+      }
+      
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city/1222175?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: mviCity,
         });
       }
 
@@ -197,25 +226,18 @@ class Http {
           body: mviProperty,
         });
       }
+      
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: mviCity,
+        });
+      }
 
       if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
         return resolve({
           error: false,
           body: mviProperty,
-        });
-      }
-
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city/1222175?key=aa.bb.cc') {
-        return resolve({
-          error: false,
-          body: mviCity,
-        });
-      }
-
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
-        return resolve({
-          error: false,
-          body: mviCity,
         });
       }
 

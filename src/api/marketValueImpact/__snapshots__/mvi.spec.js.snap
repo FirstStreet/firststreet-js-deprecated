@@ -1,5 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mvi .getCityByAddress should get city by address lookup 1`] = `
+MarketValueImpact {
+  "data": Object {
+    "FSID": 1222175,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_historic",
+                "unit": "dollars",
+                "value": -5993339.8641536,
+              ***REMOVED***,
+            ],
+            "year": 2018,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_future",
+                "unit": "dollars",
+                "value": -6915392.15094647,
+              ***REMOVED***,
+            ],
+            "year": 2033,
+          ***REMOVED***,
+        ],
+        "floodID": "kt",
+      ***REMOVED***,
+    ],
+  ***REMOVED***,
+***REMOVED***
+`;
+
+exports[`mvi .getCityByFSID should get city by ID 1`] = `
+MarketValueImpact {
+  "data": Object {
+    "FSID": 1222175,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_historic",
+                "unit": "dollars",
+                "value": -5993339.8641536,
+              ***REMOVED***,
+            ],
+            "year": 2018,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_future",
+                "unit": "dollars",
+                "value": -6915392.15094647,
+              ***REMOVED***,
+            ],
+            "year": 2033,
+          ***REMOVED***,
+        ],
+        "floodID": "kt",
+      ***REMOVED***,
+    ],
+  ***REMOVED***,
+***REMOVED***
+`;
+
+exports[`mvi .getCityByLatLng should get city by lat, lng 1`] = `
+MarketValueImpact {
+  "data": Object {
+    "FSID": 1222175,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_historic",
+                "unit": "dollars",
+                "value": -5993339.8641536,
+              ***REMOVED***,
+            ],
+            "year": 2018,
+          ***REMOVED***,
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_future",
+                "unit": "dollars",
+                "value": -6915392.15094647,
+              ***REMOVED***,
+            ],
+            "year": 2033,
+          ***REMOVED***,
+        ],
+        "floodID": "kt",
+      ***REMOVED***,
+    ],
+  ***REMOVED***,
+***REMOVED***
+`;
+
 exports[`mvi .getPropertyByAddress should get property by address lookup 1`] = `
 MarketValueImpact {
   "data": Object {

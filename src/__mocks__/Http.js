@@ -4,12 +4,13 @@ const {
 ***REMOVED*** = require('../Error');
 
 // Mock Data
-const summaryMockData = require('./summary');
-const cityById = require('./cityByID');
+const summaryProperty = require('./summaryProperty');
+const summaryCity = require('./summaryCity');
 const hurricaneProperty = require('./hurricaneProperty');
+const hurricaneCity = require('./hurricaneCity');
 const tidalProperty = require('./tidalProperty');
-const mviProperty = require('./mviProperty');
 const tidalCity = require('./tidalCity');
+const mviProperty = require('./mviProperty');
 const mviCity = require('./mviCity');
 
 const defaults = {
@@ -108,45 +109,59 @@ class Http {
     requestOptions.url += endpoint;
 
     return new Promise((resolve, reject) => {
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/property/100032470544?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/summary/property/100032470544?key=aa.bb.cc') {
         return resolve({
           error: false,
-          body: summaryMockData,
+          body: summaryProperty,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/city/1001400?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/summary/city/1001400?key=aa.bb.cc') {
         return resolve({
           error: false,
-          body: cityById,
+          body: summaryCity,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/property?lat=39.4419892114799&lng=-75.6453718684964&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/summary/property?lat=39.4419892115&lng=-75.6453718685&key=aa.bb.cc') {
         return resolve({
           error: false,
-          body: summaryMockData,
+          body: summaryProperty,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/summary/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
         return resolve({
           error: false,
-          body: cityById,
+          body: summaryCity,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/summary/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
         return resolve({
           error: false,
-          body: summaryMockData,
+          body: summaryProperty,
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/property/450350219571?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/summary/city?address=middletown,%20delware&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: summaryCity,
+        ***REMOVED***);
+      ***REMOVED***
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/property/100032470544?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: hurricaneProperty,
+        ***REMOVED***);
+      ***REMOVED***
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/city/1222175?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: hurricaneCity,
         ***REMOVED***);
       ***REMOVED***
 
@@ -157,6 +172,13 @@ class Http {
         ***REMOVED***);
       ***REMOVED***
 
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/city?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: hurricaneCity,
+        ***REMOVED***);
+      ***REMOVED***
+
       if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
         return resolve({
           error: false,
@@ -164,7 +186,14 @@ class Http {
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/property/450350219571?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/hurricane/city?address=middletown,%20delware&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: hurricaneCity,
+        ***REMOVED***);
+      ***REMOVED***
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/tidal/property/100032470544?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: tidalProperty,

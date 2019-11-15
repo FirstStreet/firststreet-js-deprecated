@@ -82,15 +82,11 @@ class SummaryProperty extends ResponseSummary {
 
   get city() {
     // this field is a relationship to a city parcel
-    return this.location.city.Name;
+    return this.location.city.name;
   ***REMOVED***
 
   get cityID() {
     return this.location.city.ID;
-  ***REMOVED***
-
-  get uspsCity() {
-    return this.location.uspsCity;
   ***REMOVED***
 
   get state() {
@@ -120,15 +116,11 @@ class SummaryProperty extends ResponseSummary {
 
   get bounds() {
     // todo: parse nested coordinates arrays
-    return this.location.geometry.bounds.coordinates;
+    return this.location.geometry.bbox.coordinates;
   ***REMOVED***
 
   get boundsGeoJSON() {
-    return this.location.geometry.bounds;
-  ***REMOVED***
-
-  get elevation() {
-    return this.location.elevation;
+    return this.location.geometry.bbox;
   ***REMOVED***
 
   get femaZone() {
@@ -137,10 +129,6 @@ class SummaryProperty extends ResponseSummary {
 
   get lotSize() {
     return this.location.lotSize;
-  ***REMOVED***
-
-  get countyFips() {
-    return this.location.countyFips;
   ***REMOVED***
 
   get firstFloodRisk() {

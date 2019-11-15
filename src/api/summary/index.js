@@ -156,12 +156,13 @@ const dataSummary = http =>
       ***REMOVED***
     ***REMOVED***,
     async getCityByAddress(address) {
+      
       if (!address) {
         return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
       ***REMOVED***
-
+      
       const path = `${ENDPOINT_PREFIX***REMOVED***/city?address=${encodeURI(address)***REMOVED***&key=${http.getKey()***REMOVED***`;
-
+      
       try {
         const response = await http.execute('GET', path);
 
@@ -172,6 +173,7 @@ const dataSummary = http =>
         ***REMOVED***
 
         const model = new City(response.body);
+        
         return model;
       ***REMOVED*** catch (e) {
         return normalizeError(null, e);

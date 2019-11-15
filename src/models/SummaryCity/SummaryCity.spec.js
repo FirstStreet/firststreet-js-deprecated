@@ -1,10 +1,10 @@
 const City = require('./index');
-const summaryMock = require('../../__mocks__/cityByID');
+const summaryCityMock = require('../../__mocks__/summaryCity');
 
 let summary = null;
 describe('City', () => {
   beforeEach(() => {
-    summary = new City(summaryMock);
+    summary = new City(summaryCityMock);
   ***REMOVED***);
 
   it('should initialize', () => {

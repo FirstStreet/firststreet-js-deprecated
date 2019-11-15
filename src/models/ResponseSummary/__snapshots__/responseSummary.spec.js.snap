@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`summaryMock should initialize a base model 1`] = `
+exports[`summaryPropertyMock should initialize a base model 1`] = `
 Response {
   "data": Object {
     "FSID": 100032470544,

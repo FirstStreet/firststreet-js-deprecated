@@ -9,6 +9,7 @@ const cityById = require('./cityByID');
 const hurricaneProperty = require('./hurricaneProperty');
 const tidalProperty = require('./tidalProperty');
 const mviProperty = require('./mviProperty');
+const mviCity = require('./mviCity');
 
 const defaults = {
   host: 'https://FAKE-HOST-FOR-TESTING.com/',
@@ -113,7 +114,7 @@ class Http {
         ***REMOVED***);
       ***REMOVED***
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/property/1001400?key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/city/1001400?key=aa.bb.cc') {
         return resolve({
           error: false,
           body: cityById,
@@ -201,6 +202,27 @@ class Http {
         return resolve({
           error: false,
           body: mviProperty,
+        ***REMOVED***);
+      ***REMOVED***
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city/1222175?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: mviCity,
+        ***REMOVED***);
+      ***REMOVED***
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city?lat=-75.6451595133313&lng=-75.6451595133313&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: mviCity,
+        ***REMOVED***);
+      ***REMOVED***
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/data/v0.1/market-value-impact/city?address=middletown,%20delware&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: mviCity,
         ***REMOVED***);
       ***REMOVED***
 

@@ -1425,6 +1425,14 @@ City {
 ***REMOVED***
 `;
 
+exports[`dataSummary .getCityByAddress should throw an error if incorrect address lookup 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getCityByAddress should throw an error if no address lookup 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getCityByFSID should throw error if incorrect ID 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getCityByFSID should throw error if no ID 1`] = `"received is not a function"`;
+
 exports[`dataSummary .getCityById should get city by ID 1`] = `
 Object {
   "errors": true,
@@ -1439,6 +1447,12 @@ Object {
   "messages": null,
 ***REMOVED***
 `;
+
+exports[`dataSummary .getCityByLatLng should throw error if incorrect lat and lng 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getCityByLatLng should throw error if no lat or lng 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getCityByLatLng should throw error if no lat or lng 2`] = `"received is not a function"`;
 
 exports[`dataSummary .getPropertyByAddress should get property by address lookup 1`] = `
 SummaryProperty {
@@ -1694,6 +1708,10 @@ SummaryProperty {
 ***REMOVED***
 `;
 
+exports[`dataSummary .getPropertyByAddress should throw an error if incorrect address lookup 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getPropertyByAddress should throw an error if no address lookup 1`] = `"received is not a function"`;
+
 exports[`dataSummary .getPropertyByFSID should get property by ID 1`] = `
 SummaryProperty {
   "data": Object {
@@ -1948,6 +1966,10 @@ SummaryProperty {
 ***REMOVED***
 `;
 
+exports[`dataSummary .getPropertyByFSID should throw error if incorrect ID 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getPropertyByFSID should throw error if no ID 1`] = `"received is not a function"`;
+
 exports[`dataSummary .getPropertyByLatLng should get property by lat, lng 1`] = `
 SummaryProperty {
   "data": Object {
@@ -2201,3 +2223,9 @@ SummaryProperty {
   ***REMOVED***,
 ***REMOVED***
 `;
+
+exports[`dataSummary .getPropertyByLatLng should throw error if incorrect lat and lng 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getPropertyByLatLng should throw error if no lat or lng 1`] = `"received is not a function"`;
+
+exports[`dataSummary .getPropertyByLatLng should throw error if no lat or lng 2`] = `"received is not a function"`;

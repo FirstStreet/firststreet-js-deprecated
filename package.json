@@ -1,6 +1,6 @@
 {
   "name": "firststreet-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "\"A Javascript API Client for the First Street Foundation API\"",
   "main": "index.js",
   "scripts": {

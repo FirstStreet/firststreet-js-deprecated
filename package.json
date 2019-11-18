@@ -25,7 +25,7 @@
     "url": "https://github.com/FirstStreet/firststreet-js/issues"
   },
   "files": [
-    "./dist/*"
+    "dist/*"
   ],
   "homepage": "https://github.com/FirstStreet/firststreet-js#readme",
   "devDependencies": {

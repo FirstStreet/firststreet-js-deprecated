@@ -6,7 +6,48 @@ City {
     "FSID": 1222175,
     "results": Object {
       "firstFloodRisk": null,
-      "floodRisks": null,
+      "floodRisks": Array [
+        Object {
+          "floodID": Array [
+            "c1",
+            "c3",
+            "c5",
+            "kt",
+            "em",
+          ],
+          "year": 2033,
+        },
+        Object {
+          "floodID": Array [
+            "c1",
+            "c3",
+            "c5",
+            "kt",
+            "em",
+          ],
+          "year": 2018,
+        },
+        Object {
+          "floodID": Array [
+            "c1",
+            "c3",
+            "c5",
+            "kt",
+            "em",
+          ],
+          "year": 2023,
+        },
+        Object {
+          "floodID": Array [
+            "c1",
+            "c3",
+            "c5",
+            "kt",
+            "em",
+          ],
+          "year": 2028,
+        },
+      ],
       "location": Object {
         "FSID": 1222175,
         "geometry": Object {

@@ -156,12 +156,13 @@ const dataSummary = http =>
       }
     },
     async getCityByAddress(address) {
+      
       if (!address) {
         return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
       }
-
+      
       const path = `${ENDPOINT_PREFIX}/city?address=${encodeURI(address)}&key=${http.getKey()}`;
-
+      
       try {
         const response = await http.execute('GET', path);
 
@@ -172,6 +173,7 @@ const dataSummary = http =>
         }
 
         const model = new City(response.body);
+        
         return model;
       } catch (e) {
         return normalizeError(null, e);

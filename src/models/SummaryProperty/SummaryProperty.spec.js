@@ -1,11 +1,11 @@
 const Property = require('./index');
-const summaryMock = require('../../__mocks__/summary');
+const summaryPropertyMock = require('../../__mocks__/summaryProperty');
 
 let summary = null;
 
 describe('Property', () => {
   beforeEach(() => {
-    summary = new Property(summaryMock);
+    summary = new Property(summaryPropertyMock);
   });
 
   it('should initalize', () => {
@@ -36,10 +36,6 @@ describe('Property', () => {
     expect(summary.city).toBeDefined();
   });
 
-  it('should have uspsCity', () => {
-    expect(summary.uspsCity).toBeDefined();
-  });
-
   it('should have state', () => {
     expect(summary.state).toBeDefined();
   });
@@ -68,20 +64,12 @@ describe('Property', () => {
     expect(summary.boundsGeoJSON).toBeDefined();
   });
 
-  it('should have elevation', () => {
-    expect(summary.elevation).toBeDefined();
-  });
-
   it('should have femaZone', () => {
     expect(summary.femaZone).toBeDefined();
   });
 
   it('should have lotSize', () => {
     expect(summary.lotSize).toBeDefined();
-  });
-
-  it('should have countyFips', () => {
-    expect(summary.countyFips).toBeDefined();
   });
 
   it('should have firstFloodRisk', () => {

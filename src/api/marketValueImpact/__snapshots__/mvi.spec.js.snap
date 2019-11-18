@@ -1,5 +1,124 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mvi .getCityByAddress should get city by address lookup 1`] = `
+MarketValueImpact {
+  "data": Object {
+    "FSID": 1222175,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_historic",
+                "unit": "dollars",
+                "value": -5993339.8641536,
+              },
+            ],
+            "year": 2018,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_future",
+                "unit": "dollars",
+                "value": -6915392.15094647,
+              },
+            ],
+            "year": 2033,
+          },
+        ],
+        "floodID": "kt",
+      },
+    ],
+  },
+}
+`;
+
+exports[`mvi .getCityByAddress should throw an error if incorrect address lookup 1`] = `"received is not a function"`;
+
+exports[`mvi .getCityByAddress should throw an error if no address lookup 1`] = `"received is not a function"`;
+
+exports[`mvi .getCityByFSID should get city by ID 1`] = `
+MarketValueImpact {
+  "data": Object {
+    "FSID": 1222175,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_historic",
+                "unit": "dollars",
+                "value": -5993339.8641536,
+              },
+            ],
+            "year": 2018,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_future",
+                "unit": "dollars",
+                "value": -6915392.15094647,
+              },
+            ],
+            "year": 2033,
+          },
+        ],
+        "floodID": "kt",
+      },
+    ],
+  },
+}
+`;
+
+exports[`mvi .getCityByFSID should throw error if incorrect ID 1`] = `"received is not a function"`;
+
+exports[`mvi .getCityByFSID should throw error if no ID 1`] = `"received is not a function"`;
+
+exports[`mvi .getCityByLatLng should get city by lat, lng 1`] = `
+MarketValueImpact {
+  "data": Object {
+    "FSID": 1222175,
+    "results": Array [
+      Object {
+        "floodData": Array [
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_historic",
+                "unit": "dollars",
+                "value": -5993339.8641536,
+              },
+            ],
+            "year": 2018,
+          },
+          Object {
+            "data": Array [
+              Object {
+                "type": "loss_future",
+                "unit": "dollars",
+                "value": -6915392.15094647,
+              },
+            ],
+            "year": 2033,
+          },
+        ],
+        "floodID": "kt",
+      },
+    ],
+  },
+}
+`;
+
+exports[`mvi .getCityByLatLng should throw error if incorrect lat and lng 1`] = `"received is not a function"`;
+
+exports[`mvi .getCityByLatLng should throw error if no lat or lng 1`] = `"received is not a function"`;
+
+exports[`mvi .getCityByLatLng should throw error if no lat or lng 2`] = `"received is not a function"`;
+
 exports[`mvi .getPropertyByAddress should get property by address lookup 1`] = `
 MarketValueImpact {
   "data": Object {
@@ -34,6 +153,10 @@ MarketValueImpact {
   },
 }
 `;
+
+exports[`mvi .getPropertyByAddress should throw an error if incorrect address lookup 1`] = `"received is not a function"`;
+
+exports[`mvi .getPropertyByAddress should throw an error if no address lookup 1`] = `"received is not a function"`;
 
 exports[`mvi .getPropertyByFSID should get property by ID 1`] = `
 MarketValueImpact {
@@ -70,6 +193,10 @@ MarketValueImpact {
 }
 `;
 
+exports[`mvi .getPropertyByFSID should throw error if incorrect ID 1`] = `"received is not a function"`;
+
+exports[`mvi .getPropertyByFSID should throw error if no ID 1`] = `"received is not a function"`;
+
 exports[`mvi .getPropertyByLatLng should get property by lat, lng 1`] = `
 MarketValueImpact {
   "data": Object {
@@ -104,3 +231,9 @@ MarketValueImpact {
   },
 }
 `;
+
+exports[`mvi .getPropertyByLatLng should throw error if incorrect lat and lng 1`] = `"received is not a function"`;
+
+exports[`mvi .getPropertyByLatLng should throw error if no lat or lng 1`] = `"received is not a function"`;
+
+exports[`mvi .getPropertyByLatLng should throw error if no lat or lng 2`] = `"received is not a function"`;

@@ -1,10 +1,14 @@
 const Http = require('./index');
 const { UNAUTHORIZED, UNKNOWN ***REMOVED*** = require('../Error');
 
+const SUMMARY_VERSION = 'v0.1';
+
+const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION***REMOVED***/summary`
+
 describe('Http', () => {
-  const key = 'aabadfadasf';
+  const key = 'aa.bb.cc';
   const options = {
-    option: 'lots of options',
+    host: 'https://FAKE-HOST-FOR-TESTING.com',
   ***REMOVED***;
 
   const http = new Http(key, options);

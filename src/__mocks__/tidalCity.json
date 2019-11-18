@@ -1,0 +1,924 @@
+{
+  "FSID": 1222175,
+  "results": [{
+      "floodID": "kt",
+      "floodData": [{
+          "year": 2018,
+          "data": [{
+              "type": "landuse-count-police",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-police",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-religious",
+              "unit": "parcels",
+              "value": 40
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-religious",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-education",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-education",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-medical",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-medical",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-fire",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-fire",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-museum_library",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "com-total",
+              "unit": "parcels",
+              "value": 5404
+            ***REMOVED***,
+            {
+              "type": "com-tax-value",
+              "unit": "dollars",
+              "value": 70124635
+            ***REMOVED***,
+            {
+              "type": "com-total-affected",
+              "unit": "parcels",
+              "value": 221
+            ***REMOVED***,
+            {
+              "type": "com-tax-max",
+              "unit": "dollars",
+              "value": 1305740567
+            ***REMOVED***,
+            {
+              "type": "res-total",
+              "unit": "parcels",
+              "value": 218
+            ***REMOVED***,
+            {
+              "type": "res-tax-value",
+              "unit": "dollars",
+              "value": 517665
+            ***REMOVED***,
+            {
+              "type": "res-total-affected",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "res-tax-max",
+              "unit": "dollars",
+              "value": 143950561
+            ***REMOVED***
+          ]
+        ***REMOVED***,
+        {
+          "year": 2023,
+          "data": [{
+              "type": "landuse-count-police",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-police",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-religious",
+              "unit": "parcels",
+              "value": 40
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-religious",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-education",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-education",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-medical",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-medical",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-fire",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-fire",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-museum_library",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "com-total",
+              "unit": "parcels",
+              "value": 5404
+            ***REMOVED***,
+            {
+              "type": "com-tax-value",
+              "unit": "dollars",
+              "value": 71960003
+            ***REMOVED***,
+            {
+              "type": "com-total-affected",
+              "unit": "parcels",
+              "value": 228
+            ***REMOVED***,
+            {
+              "type": "com-tax-max",
+              "unit": "dollars",
+              "value": 1305740567
+            ***REMOVED***,
+            {
+              "type": "res-total",
+              "unit": "parcels",
+              "value": 218
+            ***REMOVED***,
+            {
+              "type": "res-tax-value",
+              "unit": "dollars",
+              "value": 928890
+            ***REMOVED***,
+            {
+              "type": "res-total-affected",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "res-tax-max",
+              "unit": "dollars",
+              "value": 143950561
+            ***REMOVED***
+          ]
+        ***REMOVED***,
+        {
+          "year": 2028,
+          "data": [{
+              "type": "landuse-count-police",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-police",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-religious",
+              "unit": "parcels",
+              "value": 40
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-religious",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-education",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-education",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-medical",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-medical",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-fire",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-fire",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-museum_library",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "com-total",
+              "unit": "parcels",
+              "value": 5404
+            ***REMOVED***,
+            {
+              "type": "com-tax-value",
+              "unit": "dollars",
+              "value": 75925960
+            ***REMOVED***,
+            {
+              "type": "com-total-affected",
+              "unit": "parcels",
+              "value": 244
+            ***REMOVED***,
+            {
+              "type": "com-tax-max",
+              "unit": "dollars",
+              "value": 1305740567
+            ***REMOVED***,
+            {
+              "type": "res-total",
+              "unit": "parcels",
+              "value": 218
+            ***REMOVED***,
+            {
+              "type": "res-tax-value",
+              "unit": "dollars",
+              "value": 2300852
+            ***REMOVED***,
+            {
+              "type": "res-total-affected",
+              "unit": "parcels",
+              "value": 5
+            ***REMOVED***,
+            {
+              "type": "res-tax-max",
+              "unit": "dollars",
+              "value": 143950561
+            ***REMOVED***
+          ]
+        ***REMOVED***,
+        {
+          "year": 2033,
+          "data": [{
+              "type": "landuse-count-police",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-police",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-religious",
+              "unit": "parcels",
+              "value": 40
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-religious",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-education",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-education",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-medical",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-medical",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-fire",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-fire",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-museum_library",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "com-total",
+              "unit": "parcels",
+              "value": 5404
+            ***REMOVED***,
+            {
+              "type": "com-tax-value",
+              "unit": "dollars",
+              "value": 84386934
+            ***REMOVED***,
+            {
+              "type": "com-total-affected",
+              "unit": "parcels",
+              "value": 278
+            ***REMOVED***,
+            {
+              "type": "com-tax-max",
+              "unit": "dollars",
+              "value": 1305740567
+            ***REMOVED***,
+            {
+              "type": "res-total",
+              "unit": "parcels",
+              "value": 218
+            ***REMOVED***,
+            {
+              "type": "res-tax-value",
+              "unit": "dollars",
+              "value": 7376136
+            ***REMOVED***,
+            {
+              "type": "res-total-affected",
+              "unit": "parcels",
+              "value": 15
+            ***REMOVED***,
+            {
+              "type": "res-tax-max",
+              "unit": "dollars",
+              "value": 143950561
+            ***REMOVED***
+          ]
+        ***REMOVED***
+      ]
+    ***REMOVED***,
+    {
+      "floodID": "em",
+      "floodData": [{
+          "year": 2018,
+          "data": [{
+              "type": "landuse-count-police",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-police",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-religious",
+              "unit": "parcels",
+              "value": 40
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-religious",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-education",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-education",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-medical",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-medical",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-fire",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-fire",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-museum_library",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "com-total",
+              "unit": "parcels",
+              "value": 5404
+            ***REMOVED***,
+            {
+              "type": "com-tax-value",
+              "unit": "dollars",
+              "value": 105213503
+            ***REMOVED***,
+            {
+              "type": "com-total-affected",
+              "unit": "parcels",
+              "value": 347
+            ***REMOVED***,
+            {
+              "type": "com-tax-max",
+              "unit": "dollars",
+              "value": 1305740567
+            ***REMOVED***,
+            {
+              "type": "res-total",
+              "unit": "parcels",
+              "value": 218
+            ***REMOVED***,
+            {
+              "type": "res-tax-value",
+              "unit": "dollars",
+              "value": 13242664
+            ***REMOVED***,
+            {
+              "type": "res-total-affected",
+              "unit": "parcels",
+              "value": 27
+            ***REMOVED***,
+            {
+              "type": "res-tax-max",
+              "unit": "dollars",
+              "value": 143950561
+            ***REMOVED***
+          ]
+        ***REMOVED***,
+        {
+          "year": 2023,
+          "data": [{
+              "type": "landuse-count-police",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-police",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-religious",
+              "unit": "parcels",
+              "value": 40
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-religious",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-education",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-education",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-medical",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-medical",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-fire",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-fire",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-museum_library",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "com-total",
+              "unit": "parcels",
+              "value": 5404
+            ***REMOVED***,
+            {
+              "type": "com-tax-value",
+              "unit": "dollars",
+              "value": 118927838
+            ***REMOVED***,
+            {
+              "type": "com-total-affected",
+              "unit": "parcels",
+              "value": 395
+            ***REMOVED***,
+            {
+              "type": "com-tax-max",
+              "unit": "dollars",
+              "value": 1305740567
+            ***REMOVED***,
+            {
+              "type": "res-total",
+              "unit": "parcels",
+              "value": 218
+            ***REMOVED***,
+            {
+              "type": "res-tax-value",
+              "unit": "dollars",
+              "value": 14143760
+            ***REMOVED***,
+            {
+              "type": "res-total-affected",
+              "unit": "parcels",
+              "value": 29
+            ***REMOVED***,
+            {
+              "type": "res-tax-max",
+              "unit": "dollars",
+              "value": 143950561
+            ***REMOVED***
+          ]
+        ***REMOVED***,
+        {
+          "year": 2028,
+          "data": [{
+              "type": "landuse-count-police",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-police",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-religious",
+              "unit": "parcels",
+              "value": 40
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-religious",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-education",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-education",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-medical",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-medical",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-fire",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-fire",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "com-total",
+              "unit": "parcels",
+              "value": 5404
+            ***REMOVED***,
+            {
+              "type": "com-tax-value",
+              "unit": "dollars",
+              "value": 142493839
+            ***REMOVED***,
+            {
+              "type": "com-total-affected",
+              "unit": "parcels",
+              "value": 485
+            ***REMOVED***,
+            {
+              "type": "com-tax-max",
+              "unit": "dollars",
+              "value": 1305740567
+            ***REMOVED***,
+            {
+              "type": "res-total",
+              "unit": "parcels",
+              "value": 218
+            ***REMOVED***,
+            {
+              "type": "res-tax-value",
+              "unit": "dollars",
+              "value": 14776147
+            ***REMOVED***,
+            {
+              "type": "res-total-affected",
+              "unit": "parcels",
+              "value": 31
+            ***REMOVED***,
+            {
+              "type": "res-tax-max",
+              "unit": "dollars",
+              "value": 143950561
+            ***REMOVED***
+          ]
+        ***REMOVED***,
+        {
+          "year": 2033,
+          "data": [{
+              "type": "landuse-count-police",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-police",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-religious",
+              "unit": "parcels",
+              "value": 40
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-religious",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-education",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-education",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-medical",
+              "unit": "parcels",
+              "value": 6
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-medical",
+              "unit": "parcels",
+              "value": 1
+            ***REMOVED***,
+            {
+              "type": "landuse-count-fire",
+              "unit": "parcels",
+              "value": 2
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-fire",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-museum_library",
+              "unit": "parcels",
+              "value": 3
+            ***REMOVED***,
+            {
+              "type": "landuse-count-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "landuse-count-flooding-superfund",
+              "unit": "parcels",
+              "value": 0
+            ***REMOVED***,
+            {
+              "type": "com-total",
+              "unit": "parcels",
+              "value": 5404
+            ***REMOVED***,
+            {
+              "type": "com-tax-value",
+              "unit": "dollars",
+              "value": 164733960
+            ***REMOVED***,
+            {
+              "type": "com-total-affected",
+              "unit": "parcels",
+              "value": 573
+            ***REMOVED***,
+            {
+              "type": "com-tax-max",
+              "unit": "dollars",
+              "value": 1305740567
+            ***REMOVED***,
+            {
+              "type": "res-total",
+              "unit": "parcels",
+              "value": 218
+            ***REMOVED***,
+            {
+              "type": "res-tax-value",
+              "unit": "dollars",
+              "value": 15827441
+            ***REMOVED***,
+            {
+              "type": "res-total-affected",
+              "unit": "parcels",
+              "value": 35
+            ***REMOVED***,
+            {
+              "type": "res-tax-max",
+              "unit": "dollars",
+              "value": 143950561
+            ***REMOVED***
+          ]
+        ***REMOVED***
+      ]
+    ***REMOVED***
+  ]
+***REMOVED***

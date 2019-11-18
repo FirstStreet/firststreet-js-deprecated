@@ -3,7 +3,7 @@
 [![CircleCI](https://circleci.com/gh/FirstStreet/firststreet-js.svg?style=svg&circle-token=168be542d7448e05f502e123f0f3dbe0f9f8f66b)](https://circleci.com/gh/FirstStreet/firststreet-js)
 [![codecov](https://codecov.io/gh/firststreet/firststreet-js/branch/master/graph/badge.svg?token=TATSnMXhTx)](https://codecov.io/gh/firststreet/firststreet-js)
 
-This is the official implementation of the First Street Foundation API in JavaScript. Please use this client if you are using JavaScript to interact with the First Street Foundation API.
+This is the official implementation of the First Street Foundation API in JavaScript. Please use this client if you are using JavaScript to interact with the First Street Foundation API. **Note that this client and the API is currently in beta and subject to change**.
 
 For more in-depth guides, usage and API access, please see the documentation at [docs.firststreet.dev](https://docs.firststreet.dev).
 

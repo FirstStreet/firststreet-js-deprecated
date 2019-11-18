@@ -2,7 +2,7 @@
   "name": "firststreet-js",
   "version": "0.1.2",
   "description": "\"A Javascript API Client for the First Street Foundation API\"",
-  "main": "index.js",
+  "main": "dist/firststreet.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack --watch --mode=development",
     "test:dev": "jest --watch",

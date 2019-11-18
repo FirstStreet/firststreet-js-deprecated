@@ -1,5 +1,5 @@
 {
-  "FSID": 450350219571,
+  "FSID": 100032470544,
   "results": [{
       "floodID": "em",
       "floodData": [{
@@ -17,12 +17,12 @@
             {
               "type": "neighborhood",
               "unit": "percent",
-              "value": 0.09542
+              "value": 0
             ***REMOVED***,
             {
               "type": "road",
               "unit": "percent",
-              "value": 0.05723
+              "value": 0
             ***REMOVED***
           ]
         ***REMOVED***,
@@ -41,12 +41,12 @@
             {
               "type": "neighborhood",
               "unit": "percent",
-              "value": 0.09924
+              "value": 0
             ***REMOVED***,
             {
               "type": "road",
               "unit": "percent",
-              "value": 0.0619
+              "value": 0
             ***REMOVED***
           ]
         ***REMOVED***,
@@ -65,12 +65,12 @@
             {
               "type": "neighborhood",
               "unit": "percent",
-              "value": 0.12977
+              "value": 0
             ***REMOVED***,
             {
               "type": "road",
               "unit": "percent",
-              "value": 0.06892
+              "value": 0
             ***REMOVED***
           ]
         ***REMOVED***,
@@ -89,12 +89,12 @@
             {
               "type": "neighborhood",
               "unit": "percent",
-              "value": 0.14885
+              "value": 0
             ***REMOVED***,
             {
               "type": "road",
               "unit": "percent",
-              "value": 0.07514
+              "value": 0
             ***REMOVED***
           ]
         ***REMOVED***
@@ -117,12 +117,12 @@
             {
               "type": "neighborhood",
               "unit": "percent",
-              "value": 0.05725
+              "value": 0
             ***REMOVED***,
             {
               "type": "road",
               "unit": "percent",
-              "value": 0.02527
+              "value": 0
             ***REMOVED***
           ]
         ***REMOVED***,
@@ -141,12 +141,12 @@
             {
               "type": "neighborhood",
               "unit": "percent",
-              "value": 0.05725
+              "value": 0
             ***REMOVED***,
             {
               "type": "road",
               "unit": "percent",
-              "value": 0.02921
+              "value": 0
             ***REMOVED***
           ]
         ***REMOVED***,
@@ -165,12 +165,12 @@
             {
               "type": "neighborhood",
               "unit": "percent",
-              "value": 0.0687
+              "value": 0
             ***REMOVED***,
             {
               "type": "road",
               "unit": "percent",
-              "value": 0.03647
+              "value": 0
             ***REMOVED***
           ]
         ***REMOVED***,
@@ -189,12 +189,12 @@
             {
               "type": "neighborhood",
               "unit": "percent",
-              "value": 0.08015
+              "value": 0
             ***REMOVED***,
             {
               "type": "road",
               "unit": "percent",
-              "value": 0.04438
+              "value": 0
             ***REMOVED***
           ]
         ***REMOVED***

@@ -1,3 +1,5 @@
+# This package is currently not compatiable with v1.0.0+ of the First Street Foundation API. Please expect an update in the near future.
+
 # First Street JavaScript
 
 [![CircleCI](https://circleci.com/gh/FirstStreet/firststreet-js.svg?style=svg&circle-token=168be542d7448e05f502e123f0f3dbe0f9f8f66b)](https://circleci.com/gh/FirstStreet/firststreet-js)

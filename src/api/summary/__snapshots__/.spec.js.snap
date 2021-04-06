@@ -4,7 +4,7 @@ exports[`summary .getCityById should get city by ID 1`] = `
 Object {
   "errors": true,
   "messages": "Expected required id. Usage: .getCityByID(id)",
-***REMOVED***
+}
 `;
 
 exports[`summary .getCityByLatLng should get city by lat, lng 1`] = `
@@ -12,7 +12,7 @@ Object {
   "error": "data not found",
   "errors": true,
   "messages": null,
-***REMOVED***
+}
 `;
 
 exports[`summary .getPropertyByAddress should get property by address lookup 1`] = `
@@ -20,7 +20,7 @@ Object {
   "error": "data not found",
   "errors": true,
   "messages": null,
-***REMOVED***
+}
 `;
 
 exports[`summary .getPropertyByFSID should get property by ID 1`] = `
@@ -28,7 +28,7 @@ Object {
   "error": "data not found",
   "errors": true,
   "messages": null,
-***REMOVED***
+}
 `;
 
 exports[`summary .getPropertyByLatLng should get property by lat, lng 1`] = `
@@ -36,5 +36,5 @@ Object {
   "error": "data not found",
   "errors": true,
   "messages": null,
-***REMOVED***
+}
 `;

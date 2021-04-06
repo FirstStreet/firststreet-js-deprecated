@@ -650,14 +650,14 @@
               ]
             ]
           ]
-        ***REMOVED***,
+        },
         "center": {
           "type": "Point",
           "coordinates": [
             -81.4499316280516,
             30.6589162194187
           ]
-        ***REMOVED***,
+        },
         "bbox": {
           "type": "Polygon",
           "coordinates": [
@@ -684,9 +684,9 @@
               ]
             ]
           ]
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***,
+        }
+      }
+    },
     "firstFloodRisk": null,
     "floodRisks": [{
         "year": 2033,
@@ -697,7 +697,7 @@
           "kt",
           "em"
         ]
-      ***REMOVED***,
+      },
       {
         "year": 2018,
         "floodID": [
@@ -707,7 +707,7 @@
           "kt",
           "em"
         ]
-      ***REMOVED***,
+      },
       {
         "year": 2023,
         "floodID": [
@@ -717,7 +717,7 @@
           "kt",
           "em"
         ]
-      ***REMOVED***,
+      },
       {
         "year": 2028,
         "floodID": [
@@ -727,7 +727,7 @@
           "kt",
           "em"
         ]
-      ***REMOVED***
+      }
     ]
-  ***REMOVED***
-***REMOVED***
+  }
+}

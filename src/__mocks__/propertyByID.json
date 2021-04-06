@@ -10,7 +10,7 @@
   "city": {
     "FSID": 1047030,
     "name": "Middletown"
-  ***REMOVED***,
+  },
   "state": "Delaware",
   "geometry": {
     "polygon": {
@@ -77,14 +77,14 @@
           ]
         ]
       ]
-    ***REMOVED***,
+    },
     "center": {
       "type": "Point",
       "coordinates": [
         -75.6453718685,
         39.4419892115
       ]
-    ***REMOVED***,
+    },
     "bbox": {
       "type": "Polygon",
       "coordinates": [
@@ -111,11 +111,11 @@
           ]
         ]
       ]
-    ***REMOVED***
-  ***REMOVED***,
+    }
+  },
   "femaZone": null,
   "lotSize": null,
   "floorArea": null,
   "landUse": null,
   "distance": 0
-***REMOVED***
+}

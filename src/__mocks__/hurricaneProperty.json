@@ -8,98 +8,98 @@
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2023,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2028,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2033,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***
+        }
       ]
-    ***REMOVED***,
+    },
     {
       "floodID": "c3",
       "floodData": [{
@@ -108,98 +108,98 @@
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2023,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2028,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2033,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***
+        }
       ]
-    ***REMOVED***,
+    },
     {
       "floodID": "c1",
       "floodData": [{
@@ -208,97 +208,97 @@
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2023,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2028,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***,
+        },
         {
           "year": 2033,
           "data": [{
               "type": "maxdepth",
               "unit": "meters",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "lot",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "neighborhood",
               "unit": "percent",
               "value": 0
-            ***REMOVED***,
+            },
             {
               "type": "road",
               "unit": "percent",
               "value": 0
-            ***REMOVED***
+            }
           ]
-        ***REMOVED***
+        }
       ]
-    ***REMOVED***
+    }
   ]
-***REMOVED***
+}

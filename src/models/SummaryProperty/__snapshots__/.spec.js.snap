@@ -12,7 +12,7 @@ Property {
         "city": Object {
           "FSID": null,
           "Name": null,
-        ***REMOVED***,
+        },
         "countyFips": 10003,
         "distance": 0,
         "elevation": 1085,
@@ -45,14 +45,14 @@ Property {
               ],
             ],
             "type": "Polygon",
-          ***REMOVED***,
+          },
           "center": Object {
             "coordinates": Array [
               -75.6453718684964,
               39.4419892114799,
             ],
             "type": "Point",
-          ***REMOVED***,
+          },
           "polygon": Object {
             "coordinates": Array [
               Array [
@@ -117,8 +117,8 @@ Property {
               ],
             ],
             "type": "MultiPolygon",
-          ***REMOVED***,
-        ***REMOVED***,
+          },
+        },
         "landUse": "residential",
         "lastUpdated": "2019-06-04T15:55:08.566254Z",
         "lotSize": 861,
@@ -128,16 +128,16 @@ Property {
         "state": "Delaware",
         "streetName": "APPOQUIN",
         "zipCode": 19734,
-      ***REMOVED***,
-    ***REMOVED***,
+      },
+    },
     "type": "property",
-  ***REMOVED***,
+  },
   "location": Object {
     "FSID": 100032470544,
     "city": Object {
       "FSID": null,
       "Name": null,
-    ***REMOVED***,
+    },
     "countyFips": 10003,
     "distance": 0,
     "elevation": 1085,
@@ -170,14 +170,14 @@ Property {
           ],
         ],
         "type": "Polygon",
-      ***REMOVED***,
+      },
       "center": Object {
         "coordinates": Array [
           -75.6453718684964,
           39.4419892114799,
         ],
         "type": "Point",
-      ***REMOVED***,
+      },
       "polygon": Object {
         "coordinates": Array [
           Array [
@@ -242,8 +242,8 @@ Property {
           ],
         ],
         "type": "MultiPolygon",
-      ***REMOVED***,
-    ***REMOVED***,
+      },
+    },
     "landUse": "residential",
     "lastUpdated": "2019-06-04T15:55:08.566254Z",
     "lotSize": 861,
@@ -253,6 +253,6 @@ Property {
     "state": "Delaware",
     "streetName": "APPOQUIN",
     "zipCode": 19734,
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;

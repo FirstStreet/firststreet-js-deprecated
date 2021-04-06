@@ -12,7 +12,7 @@ SummaryProperty {
         "city": Object {
           "FSID": 1047030,
           "name": "Middletown",
-        ***REMOVED***,
+        },
         "distance": 0,
         "femaZone": null,
         "floorArea": null,
@@ -43,14 +43,14 @@ SummaryProperty {
               ],
             ],
             "type": "Polygon",
-          ***REMOVED***,
+          },
           "center": Object {
             "coordinates": Array [
               -75.6453718685,
               39.4419892115,
             ],
             "type": "Point",
-          ***REMOVED***,
+          },
           "polygon": Object {
             "coordinates": Array [
               Array [
@@ -115,8 +115,8 @@ SummaryProperty {
               ],
             ],
             "type": "MultiPolygon",
-          ***REMOVED***,
-        ***REMOVED***,
+          },
+        },
         "landUse": null,
         "lastUpdated": "2019-11-03T06:54:02.787801Z",
         "lotSize": null,
@@ -127,15 +127,15 @@ SummaryProperty {
         "streetName": "APPOQUIN",
         "streetSuffix": "DR",
         "zipCode": 19709,
-      ***REMOVED***,
-    ***REMOVED***,
-  ***REMOVED***,
+      },
+    },
+  },
   "location": Object {
     "FSID": 100032470544,
     "city": Object {
       "FSID": 1047030,
       "name": "Middletown",
-    ***REMOVED***,
+    },
     "distance": 0,
     "femaZone": null,
     "floorArea": null,
@@ -166,14 +166,14 @@ SummaryProperty {
           ],
         ],
         "type": "Polygon",
-      ***REMOVED***,
+      },
       "center": Object {
         "coordinates": Array [
           -75.6453718685,
           39.4419892115,
         ],
         "type": "Point",
-      ***REMOVED***,
+      },
       "polygon": Object {
         "coordinates": Array [
           Array [
@@ -238,8 +238,8 @@ SummaryProperty {
           ],
         ],
         "type": "MultiPolygon",
-      ***REMOVED***,
-    ***REMOVED***,
+      },
+    },
     "landUse": null,
     "lastUpdated": "2019-11-03T06:54:02.787801Z",
     "lotSize": null,
@@ -250,6 +250,6 @@ SummaryProperty {
     "streetName": "APPOQUIN",
     "streetSuffix": "DR",
     "zipCode": 19709,
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;

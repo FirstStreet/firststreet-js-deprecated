@@ -6,7 +6,7 @@ const Http = require('./Http');
  * @constructor
  * @param {string***REMOVED*** apiKey - A string with the base URL for account.
  * @param {Object***REMOVED*** options - A configuration object.
-*/
+ */
 class FirstStreet {
   constructor(apiKey = null, options = {***REMOVED***) {
     if (!apiKey) {

@@ -2,13 +2,13 @@ const webpack = require('webpack');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 const path = require('path');
 
-const { NODE_ENV = '' ***REMOVED*** = process.env || {***REMOVED***;
+const {NODE_ENV = ''***REMOVED*** = process.env || {***REMOVED***;
 const getHost = () => {
   if (NODE_ENV === 'production') {
     return JSON.stringify('http://api.firststreet.org');
   ***REMOVED***
   // * for dev: return JSON.stringify('http://10.1.0.5');
-  return JSON.stringify('http://apidev.firststreet.org');
+  return JSON.stringify('http://astg.firststreet.org');
 ***REMOVED***;
 
 module.exports = {

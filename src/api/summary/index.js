@@ -2,7 +2,7 @@ const Property = require('../../models/SummaryProperty/index.js');
 const City = require('../../models/SummaryCity/index.js');
 const { normalizeError ***REMOVED*** = require('../../Error');
 
-const SUMMARY_VERSION = 'v0.1';
+const SUMMARY_VERSION = 'v1';
 
 /**
  * @typedef {import('../models/Property').default***REMOVED*** SummaryProperty
@@ -24,17 +24,19 @@ const SUMMARY_VERSION = 'v0.1';
  * @property {string***REMOVED*** bounds - The bounds of the location
 */
 
-const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION***REMOVED***/summary`;
+const ENDPOINT_PREFIX = `/${SUMMARY_VERSION***REMOVED***/location/summary`;
 
 const dataSummary = http =>
   // eslint-disable-next-line
    ({
-    async getPropertyByFSID(id) {
-      if (!id) {
+    async getPropertyByFSID(params) {
+      const { fsid ***REMOVED*** = params;
+      if (!fsid) {
         return normalizeError('Expected required FSID. Usage: .getPropertyByFSID(fsid)');
       ***REMOVED***
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***/property/${id***REMOVED***?key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX***REMOVED***/property/${fsid***REMOVED***?key=${http.getKey()***REMOVED***`;
+
       try {
         const response = await http.execute('GET', path);
         const { errors, messages ***REMOVED*** = response;
@@ -51,12 +53,13 @@ const dataSummary = http =>
         return normalizeError(null, e);
       ***REMOVED***
     ***REMOVED***,
-    async getCityByFSID(id) {
-      if (!id) {
+    async getCityByFSID(params) {
+      const { fsid ***REMOVED*** = params;
+      if (!fsid) {
         return normalizeError('Expected required FSID. Usage: .getCityByFSID(fsid)');
       ***REMOVED***
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***/city/${id***REMOVED***?key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX***REMOVED***/city/${fsid***REMOVED***?key=${http.getKey()***REMOVED***`;
 
       try {
         const response = await http.execute('GET', path);
@@ -72,7 +75,8 @@ const dataSummary = http =>
         return normalizeError(null, e);
       ***REMOVED***
     ***REMOVED***,
-    async getPropertyByLatLng(lat, lng) {
+    async getPropertyByLatLng(params) {
+      const { lat, lng ***REMOVED*** = params;
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
       ***REMOVED***
@@ -101,7 +105,8 @@ const dataSummary = http =>
         return normalizeError(null, e);
       ***REMOVED***
     ***REMOVED***,
-    async getCityByLatLng(lat, lng) {
+    async getCityByLatLng(params) {
+      const { lat, lng ***REMOVED*** = params;
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getCityByLatLng(lat, lng)');
       ***REMOVED***
@@ -130,7 +135,9 @@ const dataSummary = http =>
         return normalizeError(null, e);
       ***REMOVED***
     ***REMOVED***,
-    async getPropertyByAddress(address) {
+    async getPropertyByAddress(params) {
+      const { address ***REMOVED*** = params;
+
       if (!address) {
         return normalizeError('Expected required address. Usage: .getPropertyByAddress(address)');
       ***REMOVED***
@@ -155,14 +162,15 @@ const dataSummary = http =>
         return normalizeError(null, e);
       ***REMOVED***
     ***REMOVED***,
-    async getCityByAddress(address) {
-      
+    async getCityByAddress(params) {
+      const { address ***REMOVED*** = params;
+
       if (!address) {
         return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
       ***REMOVED***
-      
+
       const path = `${ENDPOINT_PREFIX***REMOVED***/city?address=${encodeURI(address)***REMOVED***&key=${http.getKey()***REMOVED***`;
-      
+
       try {
         const response = await http.execute('GET', path);
 
@@ -173,7 +181,7 @@ const dataSummary = http =>
         ***REMOVED***
 
         const model = new City(response.body);
-        
+
         return model;
       ***REMOVED*** catch (e) {
         return normalizeError(null, e);

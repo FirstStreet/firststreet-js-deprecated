@@ -1,15 +1,16 @@
 const ResponseSummary = require('../ResponseSummary');
 
+// todo: update jsdocs
 /**
  * @typedef {import('../../Api/summary').default***REMOVED*** LocationGeometry
-*/
+ */
 
 /**
  * FirstFloodRisk defines a first risk for a location
  * @typedef {Object***REMOVED*** FirstFloodRisk
  * @property {string***REMOVED*** floodID
  * @property {number***REMOVED*** year
-*/
+ */
 
 /**
  * @typedef {Object***REMOVED*** FloodRisk
@@ -20,7 +21,7 @@ const ResponseSummary = require('../ResponseSummary');
 /**
  * @typedef {Array***REMOVED*** FloodRisks
  * @property {FloodRisk***REMOVED*** floodRisks
-*/
+ */
 
 /**
  * The recommended city of which is based on the property's zip code from the United States
@@ -28,7 +29,7 @@ const ResponseSummary = require('../ResponseSummary');
  * @typedef {Object***REMOVED*** USPSCity
  * @property {string***REMOVED*** name
  * @property {string***REMOVED*** state
-*/
+ */
 
 /**
  * A Property
@@ -51,92 +52,36 @@ const ResponseSummary = require('../ResponseSummary');
  * @property {number***REMOVED*** elevation - The elevation of a property
  * @property {number***REMOVED*** lotSize - The size of the property
  * @property {number***REMOVED*** countyFips - The county federal information processing standards code
-*/
+ */
 
 class SummaryProperty extends ResponseSummary {
   constructor(data) {
     super(data);
     this.data = data;
-    this.location = this.results.location;
   ***REMOVED***
 
   get FSID() {
-    return this.location.FSID;
+    return this.data.fsid;
   ***REMOVED***
 
-  get primaryNumber() {
-    return this.location.primaryNumber;
+  get floodFactor() {
+    return this.data.floodFactor;
   ***REMOVED***
 
-  get lastUpdated() {
-    return this.location.lastUpdated;
+  get riskDirection() {
+    return this.data.riskDirection;
   ***REMOVED***
 
-  get streetName() {
-    return this.location.streetName;
+  get environmentalRisk() {
+    return this.data.environmentalRisk;
   ***REMOVED***
 
-  get zipCode() {
-    return this.location.zipCode;
+  get historic() {
+    return this.data.historic;
   ***REMOVED***
 
-  get city() {
-    // this field is a relationship to a city parcel
-    return this.location.city.name;
-  ***REMOVED***
-
-  get cityID() {
-    return this.location.city.ID;
-  ***REMOVED***
-
-  get state() {
-    return this.location.state;
-  ***REMOVED***
-
-  get geometry() {
-    return this.location.geometry;
-  ***REMOVED***
-
-  get polygon() {
-    // todo: parse nested coordinates arrays
-    return this.location.geometry.polygon.coordinates;
-  ***REMOVED***
-
-  get polygonGeoJSON() {
-    return this.location.geometry.polygon;
-  ***REMOVED***
-
-  get center() {
-    return this.location.geometry.center.coordinates;
-  ***REMOVED***
-
-  get centerGeoJSON() {
-    return this.location.geometry.center;
-  ***REMOVED***
-
-  get bounds() {
-    // todo: parse nested coordinates arrays
-    return this.location.geometry.bbox.coordinates;
-  ***REMOVED***
-
-  get boundsGeoJSON() {
-    return this.location.geometry.bbox;
-  ***REMOVED***
-
-  get femaZone() {
-    return this.location.femaZone;
-  ***REMOVED***
-
-  get lotSize() {
-    return this.location.lotSize;
-  ***REMOVED***
-
-  get firstFloodRisk() {
-    return this.results.firstFloodRisk;
-  ***REMOVED***
-
-  get floodRisks() {
-    return this.results.floodRisks;
+  get adaptation() {
+    return this.data.adaptation;
   ***REMOVED***
 ***REMOVED***
 

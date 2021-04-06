@@ -2,7 +2,7 @@ const Property = require('../../models/SummaryProperty/index.js');
 const City = require('../../models/SummaryCity/index.js');
 const { normalizeError } = require('../../Error');
 
-const SUMMARY_VERSION = 'v0.1';
+const SUMMARY_VERSION = 'v1';
 
 /**
  * @typedef {import('../models/Property').default} SummaryProperty
@@ -24,17 +24,19 @@ const SUMMARY_VERSION = 'v0.1';
  * @property {string} bounds - The bounds of the location
 */
 
-const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION}/summary`;
+const ENDPOINT_PREFIX = `/${SUMMARY_VERSION}/location/summary`;
 
 const dataSummary = http =>
   // eslint-disable-next-line
    ({
-    async getPropertyByFSID(id) {
-      if (!id) {
+    async getPropertyByFSID(params) {
+      const { fsid } = params;
+      if (!fsid) {
         return normalizeError('Expected required FSID. Usage: .getPropertyByFSID(fsid)');
       }
 
-      const path = `${ENDPOINT_PREFIX}/property/${id}?key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/property/${fsid}?key=${http.getKey()}`;
+
       try {
         const response = await http.execute('GET', path);
         const { errors, messages } = response;
@@ -51,12 +53,13 @@ const dataSummary = http =>
         return normalizeError(null, e);
       }
     },
-    async getCityByFSID(id) {
-      if (!id) {
+    async getCityByFSID(params) {
+      const { fsid } = params;
+      if (!fsid) {
         return normalizeError('Expected required FSID. Usage: .getCityByFSID(fsid)');
       }
 
-      const path = `${ENDPOINT_PREFIX}/city/${id}?key=${http.getKey()}`;
+      const path = `${ENDPOINT_PREFIX}/city/${fsid}?key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -72,7 +75,8 @@ const dataSummary = http =>
         return normalizeError(null, e);
       }
     },
-    async getPropertyByLatLng(lat, lng) {
+    async getPropertyByLatLng(params) {
+      const { lat, lng } = params;
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
       }
@@ -101,7 +105,8 @@ const dataSummary = http =>
         return normalizeError(null, e);
       }
     },
-    async getCityByLatLng(lat, lng) {
+    async getCityByLatLng(params) {
+      const { lat, lng } = params;
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getCityByLatLng(lat, lng)');
       }
@@ -130,7 +135,9 @@ const dataSummary = http =>
         return normalizeError(null, e);
       }
     },
-    async getPropertyByAddress(address) {
+    async getPropertyByAddress(params) {
+      const { address } = params;
+
       if (!address) {
         return normalizeError('Expected required address. Usage: .getPropertyByAddress(address)');
       }
@@ -155,14 +162,15 @@ const dataSummary = http =>
         return normalizeError(null, e);
       }
     },
-    async getCityByAddress(address) {
-      
+    async getCityByAddress(params) {
+      const { address } = params;
+
       if (!address) {
         return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
       }
-      
+
       const path = `${ENDPOINT_PREFIX}/city?address=${encodeURI(address)}&key=${http.getKey()}`;
-      
+
       try {
         const response = await http.execute('GET', path);
 
@@ -173,7 +181,7 @@ const dataSummary = http =>
         }
 
         const model = new City(response.body);
-        
+
         return model;
       } catch (e) {
         return normalizeError(null, e);

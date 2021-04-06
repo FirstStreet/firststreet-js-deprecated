@@ -8,7 +8,7 @@ const getHost = () => {
     return JSON.stringify('http://api.firststreet.org');
   }
   // * for dev: return JSON.stringify('http://10.1.0.5');
-  return JSON.stringify('http://apidev.firststreet.org');
+  return JSON.stringify('http://astg.firststreet.org');
 };
 
 module.exports = {

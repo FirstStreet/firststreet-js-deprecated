@@ -1,4 +1,4 @@
-const { normalizeError ***REMOVED*** = require('./index');
+const { normalizeError } = require('./index');
 
 describe('Error', () => {
   it('Populates with error and message properties', () => {
@@ -7,5 +7,5 @@ describe('Error', () => {
 
     expect(error).toHaveProperty('errors', true);
     expect(error).toHaveProperty('messages', message);
-  ***REMOVED***);
-***REMOVED***);
+  });
+});

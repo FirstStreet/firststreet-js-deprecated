@@ -1,8 +1,8 @@
 const Hurricane = require('../../models/Hurricane');
-const { normalizeError ***REMOVED*** = require('../../Error');
+const { normalizeError } = require('../../Error');
 
 const SUMMARY_VERSION = 'v0.1';
-const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION***REMOVED***/hurricane`;
+const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION}/hurricane`;
 
 const hurricane = http =>
   // eslint-disable-next-line
@@ -10,54 +10,54 @@ const hurricane = http =>
     async getPropertyByFSID(id) {
       if (!id) {
         return normalizeError('Expected required FSID. Usage: .getPropertyByFSID(fsid)');
-      ***REMOVED***
+      }
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***/property/${id***REMOVED***?key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX}/property/${id}?key=${http.getKey()}`;
       try {
         const response = await http.execute('GET', path);
-        const { errors, messages ***REMOVED*** = response;
+        const { errors, messages } = response;
 
         if (errors) {
           return normalizeError(messages);
-        ***REMOVED***
+        }
 
         const model = new Hurricane(response.body);
         return model;
-      ***REMOVED*** catch (e) {
+      } catch (e) {
         return normalizeError(null, e);
-      ***REMOVED***
-    ***REMOVED***,
+      }
+    },
     async getCityByFSID(id) {
       if (!id) {
         return normalizeError('Expected required FSID. Usage: .getCityByFSID(fsid)');
-      ***REMOVED***
+      }
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***/city/${id***REMOVED***?key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX}/city/${id}?key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
-        const { errors, messages ***REMOVED*** = response;
+        const { errors, messages } = response;
 
         if (errors) {
           return normalizeError(messages);
-        ***REMOVED***
+        }
 
         const model = new Hurricane(response.body);
         return model;
-      ***REMOVED*** catch (e) {
+      } catch (e) {
         return normalizeError(null, e);
-      ***REMOVED***
-    ***REMOVED***,
+      }
+    },
     async getPropertyByLatLng(lat, lng) {
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
-      ***REMOVED***
+      }
 
       if (!lng) {
         return normalizeError('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
-      ***REMOVED***
+      }
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***/property?lat=${lat***REMOVED***&lng=${lng***REMOVED***&key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX}/property?lat=${lat}&lng=${lng}&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -65,28 +65,28 @@ const hurricane = http =>
         const {
           errors,
           message,
-        ***REMOVED*** = response;
+        } = response;
 
         if (errors) {
           return normalizeError(message);
-        ***REMOVED***
+        }
 
         const model = new Hurricane(response.body);
         return model;
-      ***REMOVED*** catch (e) {
+      } catch (e) {
         return normalizeError(null, e);
-      ***REMOVED***
-    ***REMOVED***,
+      }
+    },
     async getCityByLatLng(lat, lng) {
       if (!lat) {
         return normalizeError('Expected required lat. Usage: .getCityByLatLng(lat, lng)');
-      ***REMOVED***
+      }
 
       if (!lng) {
         return normalizeError('Expected required lng. Usage: .getCityByLatLng(lat, lng)');
-      ***REMOVED***
+      }
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***/city?lat=${lat***REMOVED***&lng=${lng***REMOVED***&key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX}/city?lat=${lat}&lng=${lng}&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -94,24 +94,24 @@ const hurricane = http =>
         const {
           errors,
           message,
-        ***REMOVED*** = response;
+        } = response;
 
         if (errors) {
           return normalizeError(message);
-        ***REMOVED***
+        }
 
         const model = new Hurricane(response.body);
         return model;
-      ***REMOVED*** catch (e) {
+      } catch (e) {
         return normalizeError(null, e);
-      ***REMOVED***
-    ***REMOVED***,
+      }
+    },
     async getPropertyByAddress(address) {
       if (!address) {
         return normalizeError('Expected required address. Usage: .getPropertyByAddress(address)');
-      ***REMOVED***
+      }
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***/property?address=${encodeURI(address)***REMOVED***&key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX}/property?address=${encodeURI(address)}&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
@@ -119,40 +119,40 @@ const hurricane = http =>
         const {
           errors,
           message,
-        ***REMOVED*** = response;
+        } = response;
 
         if (errors) {
           return normalizeError(message);
-        ***REMOVED***
+        }
 
         const model = new Hurricane(response.body);
         return model;
-      ***REMOVED*** catch (e) {
+      } catch (e) {
         return normalizeError(null, e);
-      ***REMOVED***
-    ***REMOVED***,
+      }
+    },
     async getCityByAddress(address) {
       if (!address) {
         return normalizeError('Expected required address. Usage: .getCityByAddress(address)');
-      ***REMOVED***
+      }
 
-      const path = `${ENDPOINT_PREFIX***REMOVED***/city?address=${encodeURI(address)***REMOVED***&key=${http.getKey()***REMOVED***`;
+      const path = `${ENDPOINT_PREFIX}/city?address=${encodeURI(address)}&key=${http.getKey()}`;
 
       try {
         const response = await http.execute('GET', path);
 
-        const { errors, message ***REMOVED*** = response;
+        const { errors, message } = response;
 
         if (errors) {
           return normalizeError(message);
-        ***REMOVED***
+        }
 
         const model = new Hurricane(response.body);
         return model;
-      ***REMOVED*** catch (e) {
+      } catch (e) {
         return normalizeError(null, e);
-      ***REMOVED***
-    ***REMOVED***,
-  ***REMOVED***);
+      }
+    },
+  });
 
 module.exports = hurricane;

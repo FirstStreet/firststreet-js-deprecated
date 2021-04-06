@@ -31,14 +31,14 @@ City {
           ],
         ],
         "type": "Polygon",
-      ***REMOVED***,
+      },
       "center": Object {
         "coordinates": Array [
           -75.4886086625372,
           39.811250630443,
         ],
         "type": "Point",
-      ***REMOVED***,
+      },
       "polygon": Object {
         "coordinates": Array [
           Array [
@@ -607,10 +607,10 @@ City {
           ],
         ],
         "type": "MultiPolygon",
-      ***REMOVED***,
-    ***REMOVED***,
+      },
+    },
     "name": "Arden",
     "state": "Delaware",
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;

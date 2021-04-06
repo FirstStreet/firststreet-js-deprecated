@@ -13,26 +13,26 @@ MarketValueImpact {
                 "type": "loss_historic",
                 "unit": "dollars",
                 "value": -5993339.8641536,
-              ***REMOVED***,
+              },
             ],
             "year": 2018,
-          ***REMOVED***,
+          },
           Object {
             "data": Array [
               Object {
                 "type": "loss_future",
                 "unit": "dollars",
                 "value": -6915392.15094647,
-              ***REMOVED***,
+              },
             ],
             "year": 2033,
-          ***REMOVED***,
+          },
         ],
         "floodID": "kt",
-      ***REMOVED***,
+      },
     ],
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;
 
 exports[`mvi .getCityByAddress should throw an error if incorrect address lookup 1`] = `"received is not a function"`;
@@ -52,26 +52,26 @@ MarketValueImpact {
                 "type": "loss_historic",
                 "unit": "dollars",
                 "value": -5993339.8641536,
-              ***REMOVED***,
+              },
             ],
             "year": 2018,
-          ***REMOVED***,
+          },
           Object {
             "data": Array [
               Object {
                 "type": "loss_future",
                 "unit": "dollars",
                 "value": -6915392.15094647,
-              ***REMOVED***,
+              },
             ],
             "year": 2033,
-          ***REMOVED***,
+          },
         ],
         "floodID": "kt",
-      ***REMOVED***,
+      },
     ],
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;
 
 exports[`mvi .getCityByFSID should throw error if incorrect ID 1`] = `"received is not a function"`;
@@ -91,26 +91,26 @@ MarketValueImpact {
                 "type": "loss_historic",
                 "unit": "dollars",
                 "value": -5993339.8641536,
-              ***REMOVED***,
+              },
             ],
             "year": 2018,
-          ***REMOVED***,
+          },
           Object {
             "data": Array [
               Object {
                 "type": "loss_future",
                 "unit": "dollars",
                 "value": -6915392.15094647,
-              ***REMOVED***,
+              },
             ],
             "year": 2033,
-          ***REMOVED***,
+          },
         ],
         "floodID": "kt",
-      ***REMOVED***,
+      },
     ],
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;
 
 exports[`mvi .getCityByLatLng should throw error if incorrect lat and lng 1`] = `"received is not a function"`;
@@ -132,26 +132,26 @@ MarketValueImpact {
                 "type": "loss_total",
                 "unit": "dollars",
                 "value": 2008,
-              ***REMOVED***,
+              },
             ],
             "year": 2018,
-          ***REMOVED***,
+          },
           Object {
             "data": Array [
               Object {
                 "type": "loss_total",
                 "unit": "dollars",
                 "value": 2033,
-              ***REMOVED***,
+              },
             ],
             "year": 2033,
-          ***REMOVED***,
+          },
         ],
         "floodID": "kt",
-      ***REMOVED***,
+      },
     ],
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;
 
 exports[`mvi .getPropertyByAddress should throw an error if incorrect address lookup 1`] = `"received is not a function"`;
@@ -171,26 +171,26 @@ MarketValueImpact {
                 "type": "loss_total",
                 "unit": "dollars",
                 "value": 2008,
-              ***REMOVED***,
+              },
             ],
             "year": 2018,
-          ***REMOVED***,
+          },
           Object {
             "data": Array [
               Object {
                 "type": "loss_total",
                 "unit": "dollars",
                 "value": 2033,
-              ***REMOVED***,
+              },
             ],
             "year": 2033,
-          ***REMOVED***,
+          },
         ],
         "floodID": "kt",
-      ***REMOVED***,
+      },
     ],
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;
 
 exports[`mvi .getPropertyByFSID should throw error if incorrect ID 1`] = `"received is not a function"`;
@@ -210,26 +210,26 @@ MarketValueImpact {
                 "type": "loss_total",
                 "unit": "dollars",
                 "value": 2008,
-              ***REMOVED***,
+              },
             ],
             "year": 2018,
-          ***REMOVED***,
+          },
           Object {
             "data": Array [
               Object {
                 "type": "loss_total",
                 "unit": "dollars",
                 "value": 2033,
-              ***REMOVED***,
+              },
             ],
             "year": 2033,
-          ***REMOVED***,
+          },
         ],
         "floodID": "kt",
-      ***REMOVED***,
+      },
     ],
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;
 
 exports[`mvi .getPropertyByLatLng should throw error if incorrect lat and lng 1`] = `"received is not a function"`;

@@ -1,17 +1,19 @@
-***REMOVED***
+// module.exports = require('./FirstStreet');
 
-***REMOVED***
+const FirstStreet = require('./FirstStreet');
 
-const fs = new FirstStreet('owr9ate7jid6ayzc7fhq65qfaaez49np');
+const API_KEY = '';
 
-***REMOVED***
-***REMOVED***
-    .lookup('property', { fsid: '4802819013' ***REMOVED***)
-***REMOVED***
+const fs = new FirstStreet(API_KEY);
 
-***REMOVED***
+async function test() {
+  const res = await fs
+    .lookup('property', {fsid: '4802819013'})
+    .location('summary');
 
-***REMOVED***
-***REMOVED***
+  console.log('test', res);
 
-***REMOVED***
+  return res;
+}
+
+test();

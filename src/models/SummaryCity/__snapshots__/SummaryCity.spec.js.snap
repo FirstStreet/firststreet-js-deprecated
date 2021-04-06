@@ -16,7 +16,7 @@ City {
             "em",
           ],
           "year": 2033,
-        ***REMOVED***,
+        },
         Object {
           "floodID": Array [
             "c1",
@@ -26,7 +26,7 @@ City {
             "em",
           ],
           "year": 2018,
-        ***REMOVED***,
+        },
         Object {
           "floodID": Array [
             "c1",
@@ -36,7 +36,7 @@ City {
             "em",
           ],
           "year": 2023,
-        ***REMOVED***,
+        },
         Object {
           "floodID": Array [
             "c1",
@@ -46,7 +46,7 @@ City {
             "em",
           ],
           "year": 2028,
-        ***REMOVED***,
+        },
       ],
       "location": Object {
         "FSID": 1222175,
@@ -77,14 +77,14 @@ City {
               ],
             ],
             "type": "Polygon",
-          ***REMOVED***,
+          },
           "center": Object {
             "coordinates": Array [
               -81.4499316280516,
               30.6589162194187,
             ],
             "type": "Point",
-          ***REMOVED***,
+          },
           "polygon": Object {
             "coordinates": Array [
               Array [
@@ -729,13 +729,13 @@ City {
               ],
             ],
             "type": "MultiPolygon",
-          ***REMOVED***,
-        ***REMOVED***,
+          },
+        },
         "name": "Fernandina Beach",
         "state": "Florida",
-      ***REMOVED***,
-    ***REMOVED***,
-  ***REMOVED***,
+      },
+    },
+  },
   "location": Object {
     "FSID": 1222175,
     "geometry": Object {
@@ -765,14 +765,14 @@ City {
           ],
         ],
         "type": "Polygon",
-      ***REMOVED***,
+      },
       "center": Object {
         "coordinates": Array [
           -81.4499316280516,
           30.6589162194187,
         ],
         "type": "Point",
-      ***REMOVED***,
+      },
       "polygon": Object {
         "coordinates": Array [
           Array [
@@ -1417,10 +1417,10 @@ City {
           ],
         ],
         "type": "MultiPolygon",
-      ***REMOVED***,
-    ***REMOVED***,
+      },
+    },
     "name": "Fernandina Beach",
     "state": "Florida",
-  ***REMOVED***,
-***REMOVED***
+  },
+}
 `;

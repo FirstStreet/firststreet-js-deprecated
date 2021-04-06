@@ -12,12 +12,12 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
       - restore_cache: # restore dependency cache
-          key: dependency-cache-v2-{{ checksum "package.json" ***REMOVED******REMOVED***
+          key: dependency-cache-v2-{{ checksum "package.json" }}
       - run:
           name: install-npm-wee
           command: npm install
       - save_cache: # save dependency cache
-          key: dependency-cache-v2-{{ checksum "package.json" ***REMOVED******REMOVED***
+          key: dependency-cache-v2-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run: # run code coverage

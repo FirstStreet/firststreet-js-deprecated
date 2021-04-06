@@ -8,13 +8,13 @@ const OFFLINE = 'API is currently offline, try again later.';
 const NOT_ACCEPTABLE = 'You requested a format that is\'t JSON';
 const NETWORK_ERROR = 'Network error, check host name.';
 
-function normalizeError(messages = 'Unknown Client error', attachments = {***REMOVED***) {
+function normalizeError(messages = 'Unknown Client error', attachments = {}) {
   return {
     errors: true,
     messages,
     ...attachments,
-  ***REMOVED***;
-***REMOVED***
+  };
+}
 module.exports = {
   RATE_LIMIT,
   UNAUTHORIZED,
@@ -26,4 +26,4 @@ module.exports = {
   NOT_ACCEPTABLE,
   NETWORK_ERROR,
   normalizeError,
-***REMOVED***;
+};

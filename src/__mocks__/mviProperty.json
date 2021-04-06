@@ -8,16 +8,16 @@
           "type": "loss_total",
           "unit": "dollars",
           "value": 2008
-        ***REMOVED***]
-      ***REMOVED***,
+        }]
+      },
       {
         "year": 2033,
         "data": [{
           "type": "loss_total",
           "unit": "dollars",
           "value": 2033
-        ***REMOVED***]
-      ***REMOVED***
+        }]
+      }
     ]
-  ***REMOVED***]
-***REMOVED***
+  }]
+}

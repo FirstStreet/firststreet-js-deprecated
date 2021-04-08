@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`location service detail .getPropertyByFSID should get property by fsid 1`] = `
+DetailCity {
+  "data": Object {
+    "building": Object {
+      "basement": false,
+      "stories": 2,
+      "units": 1,
+    },
+    "cd": Object {
+      "fsid": 1219,
+      "name": "Florida Congressional District 19",
+    },
+    "city": Object {
+      "fsid": 1263700,
+      "name": "Sanibel",
+    },
+    "county": Object {
+      "fsid": 12071,
+      "name": "Lee County",
+    },
+    "elevation": 121,
+    "fema": "VE",
+    "floodType": "coastal",
+    "floorElevation": 244,
+    "footprintId": 738376544,
+    "fsid": 1202672032,
+    "geometry": Object {
+      "bbox": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              -82.149435799,
+              26.454598727,
+            ],
+            Array [
+              -82.149435799,
+              26.457285704,
+            ],
+            Array [
+              -82.148046398,
+              26.457285704,
+            ],
+            Array [
+              -82.148046398,
+              26.454598727,
+            ],
+            Array [
+              -82.149435799,
+              26.454598727,
+            ],
+          ],
+        ],
+        "type": "Polygon",
+      },
+      "center": Object {
+        "coordinates": Array [
+          -82.14859,
+          26.45632,
+        ],
+        "type": "Point",
+      },
+      "polygon": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              Array [
+                -82.149183604,
+                26.454598727,
+              ],
+              Array [
+                -82.149385129,
+                26.45473917,
+              ],
+              Array [
+                -82.149435799,
+                26.454775571,
+              ],
+              Array [
+                -82.148707733,
+                26.45636858,
+              ],
+              Array [
+                -82.148262468,
+                26.457285704,
+              ],
+              Array [
+                -82.148046398,
+                26.457127734,
+              ],
+              Array [
+                -82.148432931,
+                26.456290629,
+              ],
+              Array [
+                -82.149183604,
+                26.454598727,
+              ],
+            ],
+          ],
+        ],
+        "type": "MultiPolygon",
+      },
+    },
+    "neighborhood": Array [
+      Object {
+        "fsid": 156067,
+        "name": "West End",
+      },
+      Object {
+        "fsid": 804732,
+        "name": "Gulf Ridge",
+      },
+    ],
+    "residential": true,
+    "route": "JOEWOOD DR",
+    "state": Object {
+      "fsid": 12,
+      "name": "Florida",
+    },
+    "streetNumber": "5055",
+    "tract": Object {
+      "fsid": 12071080204,
+      "name": null,
+    },
+    "zcta": Object {
+      "fsid": 33957,
+      "name": "33957",
+    },
+    "zipCode": "33957",
+  },
+}
+`;

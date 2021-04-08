@@ -43,7 +43,6 @@ describe('location service summary', () => {
 
   it('.getPropertyByLatLng should get property by lat, lng', async () => {
     const property = await fsf.lookup('property', { lat: summaryPropertyMock.geometry.center.coordinates[1], lng: summaryPropertyMock.geometry.center.coordinates[0] }).location('summary');
-    
     expect(property).toMatchSnapshot();
     expect(property.data.primaryNumber).toBe(summaryPropertyMock.primaryNumber);
   });
@@ -54,9 +53,9 @@ describe('location service summary', () => {
     const propertyNoLng = await fsf.lookup('property', { lat: summaryPropertyMock.geometry.center.coordinates[0], lng: null }).location('summary');
 
     expect(propertyNoLat).toThrowErrorMatchingSnapshot();
-    expect(propertyNoLat.messages).toBe('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
+    expect(propertyNoLat.messages).toBe('Expected required lat. Usage: .getLocationByLatLng(lat, lng)');
     expect(propertyNoLng).toThrowErrorMatchingSnapshot();
-    expect(propertyNoLng.messages).toBe('Expected required lng. Usage: .getPropertyByLatLng(lat, lng)');
+    expect(propertyNoLng.messages).toBe('Expected required lng. Usage: .getLocationByLatLng(lat, lng)');
   });
 
   it('.getPropertyByLatLng should throw error if incorrect lat and lng', async () => {
@@ -79,9 +78,9 @@ describe('location service summary', () => {
     const cityNoLng = await fsf.lookup('city', { lat: summaryCityMock.geometry.center.coordinates[0], lng: null }).location('summary');
 
     expect(cityNoLat).toThrowErrorMatchingSnapshot();
-    expect(cityNoLat.messages).toBe('Expected required lat. Usage: .getCityByLatLng(lat, lng)');
+    expect(cityNoLat.messages).toBe('Expected required lat. Usage: .getLocationByLatLng(lat, lng)');
     expect(cityNoLng).toThrowErrorMatchingSnapshot();
-    expect(cityNoLng.messages).toBe('Expected required lng. Usage: .getCityByLatLng(lat, lng)');
+    expect(cityNoLng.messages).toBe('Expected required lng. Usage: .getLocationByLatLng(lat, lng)');
   });
 
   it('.getCityByLatLng should throw error if incorrect lat and lng', async () => {
@@ -117,5 +116,26 @@ describe('location service summary', () => {
 
     expect(city).toThrowErrorMatchingSnapshot();
     expect(city.error).toBe('data not found');
+  });
+
+  it('.getCityByFSID should throw error if no ID', async () => {
+    const city = await fsf.lookup('city', { fsid: null }).location('summary');
+
+    expect(city).toThrowErrorMatchingSnapshot();
+    expect(city.messages).toBe('Expected required FSID. Usage: .getLocationByFSID(fsid)');
+  });
+
+  it('.getPropertyByFSID should throw error if no ID', async () => {
+    const city = await fsf.lookup('property', { fsid: null }).location('summary');
+
+    expect(city).toThrowErrorMatchingSnapshot();
+    expect(city.messages).toBe('Expected required FSID. Usage: .getLocationByFSID(fsid)');
+  });
+
+  it('.getCountyByFSID should throw error if no ID', async () => {
+    const city = await fsf.lookup('county', { fsid: null }).location('summary');
+
+    expect(city).toThrowErrorMatchingSnapshot();
+    expect(city.messages).toBe('Expected required FSID. Usage: .getLocationByFSID(fsid)');
   });
 });

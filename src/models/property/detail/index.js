@@ -1,11 +1,6 @@
 const ResponseSummary = require('../..//ResponseSummary');
 
 class DetailProperty extends ResponseSummary {
-  constructor(data) {
-    super(data);
-    this.data = data;
-  }
-
   get FSID() {
     return this.data.fsid;
   }

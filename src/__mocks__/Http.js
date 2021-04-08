@@ -6,10 +6,9 @@ const {
 // Mock Data
 const summaryProperty = require('./summaryProperty');
 const summaryCity = require('./summaryCity');
+const detailProperty = require('./propertyDetail');
 
-// models
-const PropertySummary = require('../models/property/summary');
-const CitySummary = require('../models/city/summary');
+const DetailProperty = require('../models/property/detail/index');
 
 const defaults = {
   host: 'https://FAKE-HOST-FOR-TESTING.com/',
@@ -111,6 +110,13 @@ class Http {
         return resolve({
           error: false,
           body: summaryProperty,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/property/1202672032?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: detailProperty,
         });
       }
 

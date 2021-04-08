@@ -695,6 +695,8 @@ exports[`location service summary .getCityByAddress should throw an error if inc
 
 exports[`location service summary .getCityByFSID should throw error if incorrect ID 1`] = `"received is not a function"`;
 
+exports[`location service summary .getCityByFSID should throw error if no ID 1`] = `"received is not a function"`;
+
 exports[`location service summary .getCityById should get city by ID 1`] = `
 City {
   "data": Object {
@@ -2083,6 +2085,8 @@ exports[`location service summary .getCityByLatLng should throw error if no lat 
 
 exports[`location service summary .getCityByLatLng should throw error if no lat or lng 2`] = `"received is not a function"`;
 
+exports[`location service summary .getCountyByFSID should throw error if no ID 1`] = `"received is not a function"`;
+
 exports[`location service summary .getPropertyByAddress should get property by address lookup 1`] = `
 SummaryProperty {
   "data": Object {
@@ -2330,6 +2334,8 @@ SummaryProperty {
 exports[`location service summary .getPropertyByFSID should throw error if incorrect ID 1`] = `"received is not a function"`;
 
 exports[`location service summary .getPropertyByFSID should throw error if no ID 1`] = `"received is not a function"`;
+
+exports[`location service summary .getPropertyByFSID should throw error if no ID 2`] = `"received is not a function"`;
 
 exports[`location service summary .getPropertyByLatLng should get property by lat, lng 1`] = `
 SummaryProperty {

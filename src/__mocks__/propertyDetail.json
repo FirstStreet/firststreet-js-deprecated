@@ -1,0 +1,127 @@
+{
+  "fsid": 1202672032,
+  "streetNumber": "5055",
+  "route": "JOEWOOD DR",
+  "zipCode": "33957",
+  "elevation": 121,
+  "footprintId": 738376544,
+  "city": {
+    "fsid": 1263700,
+    "name": "Sanibel"
+  },
+  "state": {
+    "fsid": 12,
+    "name": "Florida"
+  },
+  "county": {
+    "fsid": 12071,
+    "name": "Lee County"
+  },
+  "cd": {
+    "fsid": 1219,
+    "name": "Florida Congressional District 19"
+  },
+  "zcta": {
+    "fsid": 33957,
+    "name": "33957"
+  },
+  "tract": {
+    "fsid": 12071080204,
+    "name": null
+  },
+  "neighborhood": [{
+      "fsid": 156067,
+      "name": "West End"
+    },
+    {
+      "fsid": 804732,
+      "name": "Gulf Ridge"
+    }
+  ],
+  "fema": "VE",
+  "geometry": {
+    "polygon": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [
+          [
+            [
+              -82.149183604,
+              26.454598727
+            ],
+            [
+              -82.149385129,
+              26.45473917
+            ],
+            [
+              -82.149435799,
+              26.454775571
+            ],
+            [
+              -82.148707733,
+              26.45636858
+            ],
+            [
+              -82.148262468,
+              26.457285704
+            ],
+            [
+              -82.148046398,
+              26.457127734
+            ],
+            [
+              -82.148432931,
+              26.456290629
+            ],
+            [
+              -82.149183604,
+              26.454598727
+            ]
+          ]
+        ]
+      ]
+    },
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        -82.14859,
+        26.45632
+      ]
+    },
+    "bbox": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -82.149435799,
+            26.454598727
+          ],
+          [
+            -82.149435799,
+            26.457285704
+          ],
+          [
+            -82.148046398,
+            26.457285704
+          ],
+          [
+            -82.148046398,
+            26.454598727
+          ],
+          [
+            -82.149435799,
+            26.454598727
+          ]
+        ]
+      ]
+    }
+  },
+  "floorElevation": 244,
+  "building": {
+    "basement": false,
+    "units": 1,
+    "stories": 2
+  },
+  "residential": true,
+  "floodType": "coastal"
+}

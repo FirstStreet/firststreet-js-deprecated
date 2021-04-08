@@ -2,72 +2,56 @@ const FirstStreet = require('../../__mocks__/FirstStreet');
 const summaryPropertyMock = require('../../__mocks__/summaryProperty');
 const summaryCityMock = require('../../__mocks__/summaryCity');
 
-const validMethods = ['getPropertyByFSID', 'getCityByFSID', 'getPropertyByLatLng', 'getCityByLatLng', 'getPropertyByAddress', 'getCityByAddress'];
-
-describe('dataSummary', () => {
+describe('location service summary', () => {
   const fsf = new FirstStreet('aa.bb.cc', {
     host: 'https://FAKE-HOST-FOR-TESTING.com',
   });
 
-  it('should contain valid methods', () => {
-    validMethods.forEach((method) => {
-      expect(fsf.dataSummary[method]).toBeDefined();
-    });
-  });
-
-  it('.getPropertyByFSID should get property by ID', async () => {
-    const property = await fsf.dataSummary.getPropertyByFSID(summaryPropertyMock.FSID);
-
+  it('.getPropertyByFSID should get property by fsid', async () => {
+    const property = await fsf.lookup('property', { fsid: summaryPropertyMock.fsid }).location('summary');
     expect(property).toMatchSnapshot();
-    expect(property.primaryNumber).toBe(summaryPropertyMock.results.location.primaryNumber);
+    expect(property.data.primaryNumber).toBe(summaryPropertyMock.primaryNumber);
   });
 
   it('.getPropertyByFSID should throw error if no ID', async () => {
-    const property = await fsf.dataSummary.getPropertyByFSID();
+    const property = await fsf.lookup('property', { fsid: 1 }).location('summary');
 
     expect(property).toThrowErrorMatchingSnapshot();
-    expect(property.messages).toBe('Expected required FSID. Usage: .getPropertyByFSID(fsid)');
+    expect(property.error).toBe('data not found');
   });
 
   it('.getPropertyByFSID should throw error if incorrect ID', async () => {
-    const property = await fsf.dataSummary.getPropertyByFSID('1111111');
+    const property = await fsf.lookup('property', { fsid: '1111111' }).location('summary');
 
     expect(property).toThrowErrorMatchingSnapshot();
     expect(property.error).toBe('data not found');
   });
 
   it('.getCityById should get city by ID', async () => {
-    const city = await fsf.dataSummary.getCityByFSID(summaryCityMock.ID);
+    const city = await fsf.lookup('city', { fsid: summaryCityMock.fsid }).location('summary');
 
     expect(city).toMatchSnapshot();
-    expect(city.name).toBe(summaryCityMock.name);
-  });
-
-  it('.getCityByFSID should throw error if no ID', async () => {
-    const city = await fsf.dataSummary.getCityByFSID();
-
-    expect(city).toThrowErrorMatchingSnapshot();
-    expect(city.messages).toBe('Expected required FSID. Usage: .getCityByFSID(fsid)');
+    expect(city.data.name).toBe(summaryCityMock.name);
   });
 
   it('.getCityByFSID should throw error if incorrect ID', async () => {
-    const city = await fsf.dataSummary.getCityByFSID('1111111');
+    const city = await fsf.lookup('city', { fsid: '1111111'}).location('summary');
 
     expect(city).toThrowErrorMatchingSnapshot();
     expect(city.error).toBe('data not found');
   });
 
   it('.getPropertyByLatLng should get property by lat, lng', async () => {
-    const property = await fsf.dataSummary.getPropertyByLatLng(summaryPropertyMock.results.location.geometry.center.coordinates[1], summaryPropertyMock.results.location.geometry.center.coordinates[0]);
-
+    const property = await fsf.lookup('property', { lat: summaryPropertyMock.geometry.center.coordinates[1], lng: summaryPropertyMock.geometry.center.coordinates[0] }).location('summary');
+    
     expect(property).toMatchSnapshot();
-    expect(property.primaryNumber).toBe(summaryPropertyMock.results.location.primaryNumber);
+    expect(property.data.primaryNumber).toBe(summaryPropertyMock.primaryNumber);
   });
 
   it('.getPropertyByLatLng should throw error if no lat or lng', async () => {
-    const propertyNoLat = await fsf.dataSummary.getPropertyByLatLng(null,summaryPropertyMock.results.location.geometry.center.coordinates[1]);
+    const propertyNoLat = await fsf.lookup('property', { lat: null, lng: summaryPropertyMock.geometry.center.coordinates[1] }).location('summary');
 
-    const propertyNoLng = await fsf.dataSummary.getPropertyByLatLng(summaryPropertyMock.results.location.geometry.center.coordinates[0],null);
+    const propertyNoLng = await fsf.lookup('property', { lat: summaryPropertyMock.geometry.center.coordinates[0], lng: null }).location('summary');
 
     expect(propertyNoLat).toThrowErrorMatchingSnapshot();
     expect(propertyNoLat.messages).toBe('Expected required lat. Usage: .getPropertyByLatLng(lat, lng)');
@@ -76,22 +60,23 @@ describe('dataSummary', () => {
   });
 
   it('.getPropertyByLatLng should throw error if incorrect lat and lng', async () => {
-    const property = await fsf.dataSummary.getPropertyByLatLng('0000000','-000000');
+    const property = await fsf.lookup('property', { lat: '0000000', lng: '-000000' }).location('summary');
 
     expect(property).toThrowErrorMatchingSnapshot();
     expect(property.error).toBe('data not found');
   });
 
   it('.getCityByLatLng should get city by lat, lng', async () => {
-    const city = await fsf.dataSummary.getCityByLatLng(summaryCityMock.results.location.geometry.center.coordinates[1], summaryCityMock.results.location.geometry.center.coordinates[0]);
+    const city = await fsf.lookup('city', { lat: summaryCityMock.geometry.center.coordinates[1], lng: summaryCityMock.geometry.center.coordinates[0] }).location('summary');
+
     expect(city).toMatchSnapshot();
     expect(city.name).toBe(summaryCityMock.name);
   });
 
   it('.getCityByLatLng should throw error if no lat or lng', async () => {
-    const cityNoLat = await fsf.dataSummary.getCityByLatLng(null,summaryCityMock.results.location.geometry.center.coordinates[1]);
+    const cityNoLat = await fsf.lookup('city', { lat: null, lng: summaryCityMock.geometry.center.coordinates[1] }).location('summary');
 
-    const cityNoLng = await fsf.dataSummary.getCityByLatLng(summaryCityMock.results.location.geometry.center.coordinates[0],null);
+    const cityNoLng = await fsf.lookup('city', { lat: summaryCityMock.geometry.center.coordinates[0], lng: null }).location('summary');
 
     expect(cityNoLat).toThrowErrorMatchingSnapshot();
     expect(cityNoLat.messages).toBe('Expected required lat. Usage: .getCityByLatLng(lat, lng)');
@@ -100,49 +85,35 @@ describe('dataSummary', () => {
   });
 
   it('.getCityByLatLng should throw error if incorrect lat and lng', async () => {
-    const city = await fsf.dataSummary.getCityByLatLng('0000000','-000000');
+    const city = await fsf.lookup('city', { lat: '0000000', lng: '-000000' }).location('summary');
 
     expect(city).toThrowErrorMatchingSnapshot();
     expect(city.error).toBe('data not found');
   });
 
   it('.getPropertyByAddress should get property by address lookup', async () => {
-    const property = await fsf.dataSummary.getPropertyByAddress('212 appoquin s, middletown, delware');
+    const property = await fsf.lookup('property', { address: '212 appoquin s, middletown, delware' }).location('summary');
 
     expect(property).toMatchSnapshot();
-    expect(property.primaryNumber).toBe(summaryPropertyMock.results.location.primaryNumber);
-  });
-
-  it('.getPropertyByAddress should throw an error if no address lookup', async () => {
-    const property = await fsf.dataSummary.getPropertyByAddress();
-
-    expect(property).toThrowErrorMatchingSnapshot();
-    expect(property.messages).toBe('Expected required address. Usage: .getPropertyByAddress(address)');
+    expect(property.data.primaryNumber).toBe(summaryPropertyMock.primaryNumber);
   });
 
   it('.getPropertyByAddress should throw an error if incorrect address lookup', async () => {
-    const property = await fsf.dataSummary.getPropertyByAddress('1 appoquin s, middletown, delware');
+    const property = await fsf.lookup('property', { address: '1 appoquin s, middletown, delware' }).location('summary');
 
     expect(property).toThrowErrorMatchingSnapshot();
     expect(property.error).toBe('data not found');
   });
 
   it('.getCityByAddress should get city by address lookup', async () => {
-    const city = await fsf.dataSummary.getCityByAddress('middletown, delware');
+    const city = await fsf.lookup('city', { address: 'middletown, delware' }).location('summary');
 
     expect(city).toMatchSnapshot();
-    expect(city.name).toBe(summaryCityMock.results.location.name);
-  });
-
-  it('.getCityByAddress should throw an error if no address lookup', async () => {
-    const city = await fsf.dataSummary.getCityByAddress();
-
-    expect(city).toThrowErrorMatchingSnapshot();
-    expect(city.messages).toBe('Expected required address. Usage: .getCityByAddress(address)');
+    expect(city.name).toBe(summaryCityMock.name);
   });
 
   it('.getCityByAddress should throw an error if incorrect address lookup', async () => {
-    const city = await fsf.dataSummary.getCityByAddress('middle, delware');
+    const city = await fsf.lookup('city', { address: 'middle, delware' }).location('summary');
 
     expect(city).toThrowErrorMatchingSnapshot();
     expect(city.error).toBe('data not found');

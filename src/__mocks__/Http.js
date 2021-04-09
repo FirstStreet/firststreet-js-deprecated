@@ -7,8 +7,11 @@ const {
 const summaryProperty = require('./summaryProperty');
 const summaryCity = require('./summaryCity');
 const detailProperty = require('./propertyDetail');
-
-const DetailProperty = require('../models/property/detail/index');
+const detailCounty = require('./countyDetail.json');
+const detailTract = require('./tractDetail.json');
+const neighborhoodDetail = require('./neighborhoodDetail.json');
+const districtDetail = require('./districtDetail.json');
+const propertyCumulative = require('./probabilityCumulative.json');
 
 const defaults = {
   host: 'https://FAKE-HOST-FOR-TESTING.com/',
@@ -117,6 +120,41 @@ class Http {
         return resolve({
           error: false,
           body: detailProperty,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/tract/1001020802?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: detailTract,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/county/12071?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: detailCounty,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/neighborhood/156067?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: neighborhoodDetail,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/cd/4103?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: districtDetail,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/probability/cumulative/property/362788780?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: propertyCumulative,
         });
       }
 

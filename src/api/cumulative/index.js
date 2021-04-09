@@ -1,27 +1,10 @@
-const Property = require('../../models/city/detail/index.js');
-const City = require('../../models/property/detail/index.js');
-const County = require('../../models/county/detail/index.js');
-const Neighborhood = require('../../models/neighborhood/detail/index.js');
-const Zcta = require('../../models/zcta/detail/index.js');
-const State = require('../../models/zcta/detail/index.js');
-const District = require('../../models/district/detail/index.js');
-const Tract = require('../../models/tract/detail/index.js');
+const ProbabilityCumulative = require('../../models/ProbabilityCumulative');
 const { normalizeError } = require('../../Error');
 const { fetcher } = require('../../lib/fetcher');
 
 const API_VERSION = 'v1';
-const ENDPOINT_PREFIX = `/${API_VERSION}/location/detail`;
+const ENDPOINT_PREFIX = `/${API_VERSION}/probability/cumulative`;
 
-const models = {
-  property: Property,
-  city: City,
-  county: County,
-  neighborhood: Neighborhood,
-  zcta: Zcta,
-  state: State,
-  cd: District,
-  tract: Tract,
-};
 
 const locationDetail = http =>
   // eslint-disable-next-line
@@ -34,8 +17,7 @@ const locationDetail = http =>
 
       const path = `${ENDPOINT_PREFIX}/${type}/${fsid}?key=${http.getKey()}`;
 
-      const Model = models[type];
-      const res = await fetcher(http, path, Model);
+      const res = await fetcher(http, path, ProbabilityCumulative);
 
       return res;
     },
@@ -51,9 +33,7 @@ const locationDetail = http =>
 
       const path = `${ENDPOINT_PREFIX}/${type}?lat=${lat}&lng=${lng}&key=${http.getKey()}`;
 
-      const Model = models[type];
-
-      const res = await fetcher(http, path, Model);
+      const res = await fetcher(http, path, ProbabilityCumulative);
 
       return res;
     },
@@ -66,8 +46,7 @@ const locationDetail = http =>
 
       const path = `${ENDPOINT_PREFIX}/${type}?address=${encodeURI(address)}&key=${http.getKey()}`;
 
-      const Model = models[type];
-      const res = await fetcher(http, path, Model);
+      const res = await fetcher(http, path, ProbabilityCumulative);
 
       return res;
     },

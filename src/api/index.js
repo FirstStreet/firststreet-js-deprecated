@@ -1,10 +1,11 @@
 const summary = require('./summary');
 const detail = require('./detail');
+const cumulative = require('./cumulative');
 
 const COORDINATE = 'coordinate';
 const FSID = 'fsid';
 const ADDRESS = 'address';
-const TYPES = ['state', 'city', 'county', 'zcta', 'cd', 'neigbhorhood', 'property'];
+const TYPES = ['state', 'city', 'county', 'zcta', 'cd', 'neighborhood', 'tract', 'property'];
 
 /**
  * api wrapper
@@ -42,6 +43,10 @@ class Api {
         service = this.detail;
         break;
 
+      case 'cumulative':
+        service = this.cumulative;
+        break;
+
       default:
         return null;
     }
@@ -73,6 +78,14 @@ class Api {
     return this.fetchData(this.type, service);
   }
 
+  probability(service) {
+    if (!TYPES.includes(this.type)) {
+      throw new Error('Must provide a valid location type');
+    }
+
+    return this.fetchData(this.type, service);
+  }
+
   lookup(type, params) {
     // type equals the locationtype
     // params can be an fsid, lat & lng, or an address
@@ -96,11 +109,13 @@ class Api {
 
     ctx.lookup = this.lookup;
     ctx.location = this.location;
+    ctx.probability = this.probability;
     ctx.fetchData = this.fetchData;
     ctx.setLookupType = this.setLookupType;
 
     ctx.summary = summary(this.http);
     ctx.detail = detail(this.http);
+    ctx.cumulative = cumulative(this.http);
   }
 }
 

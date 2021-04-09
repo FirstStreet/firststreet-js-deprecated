@@ -36,6 +36,7 @@ const models = {
   zcta: LocalitySummary,
   state: LocalitySummary,
   cd: LocalitySummary,
+  tract: LocalitySummary,
 };
 
 const summary = http =>

@@ -1,0 +1,200 @@
+{
+  "fsid": 362788780,
+  "cumulative": [{
+      "year": 2020,
+      "data": [{
+          "threshold": 0,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 15,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 30,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "data": [{
+          "threshold": 0,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 15,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 30,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        }
+      ]
+    },
+    {
+      "year": 2030,
+      "data": [{
+          "threshold": 0,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 15,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 30,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        }
+      ]
+    },
+    {
+      "year": 2035,
+      "data": [{
+          "threshold": 0,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 15,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 30,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        }
+      ]
+    },
+    {
+      "year": 2040,
+      "data": [{
+          "threshold": 0,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 15,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 30,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        }
+      ]
+    },
+    {
+      "year": 2045,
+      "data": [{
+          "threshold": 0,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 15,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 30,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        }
+      ]
+    },
+    {
+      "year": 2050,
+      "data": [{
+          "threshold": 0,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 15,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        },
+        {
+          "threshold": 30,
+          "data": {
+            "low": 0,
+            "mid": 0,
+            "high": 0
+          }
+        }
+      ]
+    }
+  ]
+}

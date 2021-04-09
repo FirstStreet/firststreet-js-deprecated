@@ -5,7 +5,8 @@ const {
 } = require('../Error');
 
 const defaults = {
-  host: process.env.HTTP_HOST,
+  host: process.env.HTTP_HOST || 'https://api.firststreet.org',
+  apiVersion: 'v1',
 };
 
 /**
@@ -19,7 +20,7 @@ class Http {
     const requestOptions = { ...defaults, ...options };
     this.key = apiKey;
     this.options = {
-      url: `${requestOptions.host}`,
+      url: `${requestOptions.host}/${requestOptions.apiVersion}`,
       headers: {
         'Content-Encoding': 'gzip',
         'Content-Type': 'application/json',

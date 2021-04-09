@@ -9,8 +9,7 @@ const Tract = require('../../models/tract/detail/index.js');
 const { normalizeError } = require('../../Error');
 const { fetcher } = require('../../lib/fetcher');
 
-const API_VERSION = 'v1';
-const ENDPOINT_PREFIX = `/${API_VERSION}/location/detail`;
+const ENDPOINT_PREFIX = `/location/detail`;
 
 const models = {
   property: Property,

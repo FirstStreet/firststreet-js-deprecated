@@ -2,9 +2,7 @@ const Property = require('../../models/property/summary/index.js');
 const City = require('../../models/city/summary/index.js');
 const LocalitySummary = require('../../models/LocalitySummary');
 const { normalizeError } = require('../../Error');
-const { fetcher } = require('../../lib/fetcher.js');
-
-const API_VERSION = 'v1';
+const { fetcher, resolver } = require('../../lib/fetcher.js');
 
 /**
  * @typedef {import('../models/Property').default} SummaryProperty
@@ -26,7 +24,7 @@ const API_VERSION = 'v1';
  * @property {string} bounds - The bounds of the location
 */
 
-const ENDPOINT_PREFIX = `/${API_VERSION}/location/summary`;
+const ENDPOINT_PREFIX = `/location/summary`;
 
 const models = {
   property: Property,
@@ -52,7 +50,8 @@ const summary = http =>
 
       const Model = models[type];
       const res = await fetcher(http, path, Model);
-
+      const r = await resolver(res)
+      
       return res;
     },
     async getLocationByLatLng(type, params) {

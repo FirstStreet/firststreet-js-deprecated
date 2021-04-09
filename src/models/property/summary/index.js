@@ -60,7 +60,7 @@ class SummaryProperty extends ResponseSummary {
     this.data = data;
   }
 
-  get FSID() {
+  get fsid() {
     return this.data.fsid;
   }
 

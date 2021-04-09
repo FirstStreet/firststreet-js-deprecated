@@ -2,8 +2,7 @@ const ProbabilityCumulative = require('../../models/ProbabilityCumulative');
 const { normalizeError } = require('../../Error');
 const { fetcher } = require('../../lib/fetcher');
 
-const API_VERSION = 'v1';
-const ENDPOINT_PREFIX = `/${API_VERSION}/probability/cumulative`;
+const ENDPOINT_PREFIX = `/probability/cumulative`;
 
 
 const locationDetail = http =>

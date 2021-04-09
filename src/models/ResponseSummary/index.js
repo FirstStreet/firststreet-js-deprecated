@@ -15,11 +15,6 @@ class Response {
     return this.data.FSID;
   }
 
-  // results is an object of data that is associated with the data call
-  get results() {
-    return this.data.results;
-  }
-
   // raw is the literal response
   get raw() {
     return this.data;

@@ -1,4 +1,4 @@
-const summary = require('./summary');
+const summary = require('./resolver');
 const detail = require('./detail');
 const cumulative = require('./cumulative');
 
@@ -35,31 +35,31 @@ class Api {
     let service = null;
 
     switch (serviceName) {
-      case 'summary':
-        service = this.summary;
-        break;
+    case 'summary':
+      service = this.summary;
+      break;
 
-      case 'detail':
-        service = this.detail;
-        break;
+    case 'detail':
+      service = this.detail;
+      break;
 
-      case 'cumulative':
-        service = this.cumulative;
-        break;
+    case 'cumulative':
+      service = this.cumulative;
+      break;
 
-      default:
-        return null;
+    default:
+      return null;
     }
 
     if (service) {
       if (this.lookupType === FSID) {
-        response = service.getLocationByFSID(type, this.params);
+        response = service.getByFSID(type, this.params);
       }
       if (this.lookupType === ADDRESS) {
-        response = service.getLocationByAddress(type, this.params);
+        response = service.getByAddress(type, this.params);
       }
       if (this.lookupType === COORDINATE) {
-        response = service.getLocationByLatLng(type, this.params);
+        response = service.getByLatLng(type, this.params);
       }
     } else {
       throw new Error('Must provide a service');

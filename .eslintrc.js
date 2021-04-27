@@ -10,6 +10,7 @@ module.exports = {
   ],
   rules: {
     'class-methods-use-this': 'off',
+    "indent": ["error", 2],
     'no-underscore-dangle': 'off',
     'no-restricted-syntax': 'off',
     'prefer-promise-reject-errors': 'off',

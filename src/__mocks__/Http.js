@@ -14,7 +14,7 @@ const districtDetail = require('./districtDetail.json');
 const propertyCumulative = require('./probabilityCumulative.json');
 
 const defaults = {
-  host: 'https://FAKE-HOST-FOR-TESTING.com/',
+  host: 'https://FAKE-HOST-FOR-TESTING.com/v1',
 };
 
 class Http {
@@ -61,34 +61,34 @@ class Http {
       error: true,
     };
     switch (status) {
-      case 401:
-        return {
-          ...err, messages: UNAUTHORIZED,
-        };
-      case 404:
-        return {
-          ...err, messages: NOT_FOUND,
-        };
-      case 500:
-        return {
-          ...err, messages: INTERNAL,
-        };
-      case 429:
-        return {
-          ...err, messages: RATE_LIMIT,
-        };
-      case 503:
-        return {
-          ...err, messages: OFFLINE,
-        };
-      case 406:
-        return {
-          ...err, messages: NOT_ACCEPTABLE,
-        };
-      default:
-        return {
-          ...err, messages: UNKNOWN,
-        };
+    case 401:
+      return {
+        ...err, messages: UNAUTHORIZED,
+      };
+    case 404:
+      return {
+        ...err, messages: NOT_FOUND,
+      };
+    case 500:
+      return {
+        ...err, messages: INTERNAL,
+      };
+    case 429:
+      return {
+        ...err, messages: RATE_LIMIT,
+      };
+    case 503:
+      return {
+        ...err, messages: OFFLINE,
+      };
+    case 406:
+      return {
+        ...err, messages: NOT_ACCEPTABLE,
+      };
+    default:
+      return {
+        ...err, messages: UNKNOWN,
+      };
     }
   }
 
@@ -172,6 +172,20 @@ class Http {
         });
       }
 
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/property?lat=39.4419892115&lng=-75.6453718685&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: detailProperty,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/probability/cumulative/property?lat=39.4419892115&lng=-75.6453718685&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: propertyCumulative,
+        });
+      }
+
       if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/city?lat=30.6589162194187&lng=-81.4499316280516&key=aa.bb.cc') {
         return resolve({
           error: false,
@@ -190,6 +204,13 @@ class Http {
         return resolve({
           error: false,
           body: summaryProperty,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: detailProperty,
         });
       }
 

@@ -19,9 +19,4 @@ async function fetcher(http, path, model) {
   }
 }
 
-async function resolver(fetcher) {
-  const r = await fetcher
-  return r
-}
-
-module.exports = { fetcher, resolver };
+module.exports = { fetcher };

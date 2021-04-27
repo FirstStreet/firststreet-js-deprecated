@@ -1,9 +1,12 @@
+import fetch from 'node-fetch';
+
+const { Response } = jest.requireActual('node-fetch');
+
 const Http = require('./index');
+
 const { UNAUTHORIZED, UNKNOWN } = require('../Error');
 
-const SUMMARY_VERSION = 'v0.1';
-
-const ENDPOINT_PREFIX = `/data/${SUMMARY_VERSION}/summary`
+jest.mock('node-fetch');
 
 describe('Http', () => {
   const key = 'aa.bb.cc';
@@ -39,5 +42,52 @@ describe('Http', () => {
 
   it('.getKey should return the user API key', () => {
     expect(http.getKey()).toBe(key);
+  });
+
+  it('can resolve http result', (done) => {
+    fetch.mockReturnValue(Promise.resolve(new Response('42')));
+    return http.execute('GET', '/test').then((data) => {
+      expect(data.body).toBe(42);
+      done();
+    });
+  });
+
+  it('when error status code then returns an error', (done) => {
+    fetch.mockReturnValue(Promise.resolve(new Response(null, { status: 400 })));
+    http.execute('GET', '/test')
+      .then(() => {
+        done('should throw error');
+      })
+      .catch((e) => {
+        expect(e.errors).toBe(true);
+        expect(e.messages).toEqual('Unknown error, please check your request and try again.');
+        done();
+      });
+  });
+
+  it('when empty response body then returns an error', (done) => {
+    fetch.mockReturnValue(Promise.resolve(new Response('null')));
+    http.execute('GET', '/test')
+      .then(() => {
+        done('should throw error');
+      })
+      .catch((e) => {
+        expect(e.errors).toBe(true);
+        expect(e.messages).toEqual('No body returned from response.');
+        done();
+      });
+  });
+
+  it('when unexpected error then returns an error', (done) => {
+    fetch.mockReturnValue(Promise.resolve(new Response('')));
+    http.execute('GET', '/test')
+      .then(() => {
+        done('should throw error');
+      })
+      .catch((e) => {
+        expect(e.errors).toBe(true);
+        expect(e.messages).toEqual('Network error, check host name.');
+        done();
+      });
   });
 });

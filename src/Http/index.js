@@ -48,34 +48,34 @@ class Http {
     const err = { errors: true };
 
     switch (status) {
-      case 401:
-        return {
-          ...err, messages: UNAUTHORIZED, debug: requestOptions, rateLimit, ...res,
-        };
-      case 404:
-        return {
-          ...err, messages: NOT_FOUND, debug: requestOptions, rateLimit, ...res,
-        };
-      case 500:
-        return {
-          ...err, messages: INTERNAL, debug: requestOptions, rateLimit, ...res,
-        };
-      case 429:
-        return {
-          ...err, messages: RATE_LIMIT, debug: requestOptions, rateLimit, ...res,
-        };
-      case 503:
-        return {
-          ...err, messages: OFFLINE, debug: requestOptions, rateLimit, ...res,
-        };
-      case 406:
-        return {
-          ...err, messages: NOT_ACCEPTABLE, debug: requestOptions, rateLimit, ...res,
-        };
-      default:
-        return {
-          ...err, messages: UNKNOWN, debug: requestOptions, rateLimit, ...res,
-        };
+    case 401:
+      return {
+        ...err, messages: UNAUTHORIZED, debug: requestOptions, rateLimit, ...res,
+      };
+    case 404:
+      return {
+        ...err, messages: NOT_FOUND, debug: requestOptions, rateLimit, ...res,
+      };
+    case 500:
+      return {
+        ...err, messages: INTERNAL, debug: requestOptions, rateLimit, ...res,
+      };
+    case 429:
+      return {
+        ...err, messages: RATE_LIMIT, debug: requestOptions, rateLimit, ...res,
+      };
+    case 503:
+      return {
+        ...err, messages: OFFLINE, debug: requestOptions, rateLimit, ...res,
+      };
+    case 406:
+      return {
+        ...err, messages: NOT_ACCEPTABLE, debug: requestOptions, rateLimit, ...res,
+      };
+    default:
+      return {
+        ...err, messages: UNKNOWN, debug: requestOptions, rateLimit, ...res,
+      };
     }
   }
 

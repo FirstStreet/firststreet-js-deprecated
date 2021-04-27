@@ -78,6 +78,12 @@ describe('Http', () => {
       });
   });
 
+  it('when endpoint missing then returns an error', () => {
+    fetch.mockReturnValue(Promise.resolve(new Response('null')));
+    const res = http.execute('GET');
+    expect(res).toEqual(Error('HTTP Error: No endpoint to provide a request to.'));
+  });
+
   it('when unexpected error then returns an error', (done) => {
     fetch.mockReturnValue(Promise.resolve(new Response('')));
     http.execute('GET', '/test')

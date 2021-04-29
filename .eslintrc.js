@@ -3,11 +3,13 @@ module.exports = {
     browser: true,
     commonjs: true,
     es6: true,
-    jest: true
+    jest: true,
+    node: true
   },
   extends: [
     'airbnb-base'
   ],
+  parser: "@babel/eslint-parser",
   rules: {
     'class-methods-use-this': 'off',
     "indent": ["error", 2],
@@ -23,6 +25,6 @@ module.exports = {
     SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
-    ecmaVersion: 2018
-  },
+    ecmaVersion: 12
+  }
 };

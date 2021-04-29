@@ -17,7 +17,7 @@ describe('summaryPropertyMock', () => {
   });
 
   it('should return the correct id', () => {
-    expect(summary.FSID).toBe(summaryPropertyMock.FSID);
+    expect(summary.FSID).toBe(summaryPropertyMock.fsid);
   });
   it('should return the correct results', () => {
     expect(summary.results).toBe(summaryPropertyMock.results);

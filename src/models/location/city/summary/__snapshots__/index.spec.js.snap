@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`City should initialize 1`] = `LocationCitySummary {}`;

@@ -1,24 +1,22 @@
-// readonly
+class ResponseSummary {
+  #data
 
-/**
- * Response Model
- * @typedef {Object} Response
- * @property {number} FSID - The location unique identifier
- * @property {Object} results - Results of the query
-*/
-class Response {
   constructor(data) {
-    this.data = data;
+    this.#data = data;
   }
 
   get FSID() {
-    return this.data.FSID;
+    return this.#data.fsid;
+  }
+
+  get fsid() {
+    return this.#data.fsid;
   }
 
   // raw is the literal response
   get raw() {
-    return this.data;
+    return this.#data;
   }
 }
 
-module.exports = Response;
+module.exports = ResponseSummary;

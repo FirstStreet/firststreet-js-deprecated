@@ -1,0 +1,15 @@
+{
+  "fsid": 240652458,
+  "data": [
+    {
+      "estimate": 225,
+      "building": 125000,
+      "contents": 50000
+    },
+    {
+      "estimate": 376,
+      "building": 250000,
+      "contents": 125000
+    }
+  ]
+}

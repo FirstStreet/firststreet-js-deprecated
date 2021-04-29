@@ -2,19 +2,19 @@ const LocalityDetail = require('../../LocalityDetail.js');
 
 class LocationNeighborhoodDetail extends LocalityDetail {
   get subtype() {
-    return this.data.subtype;
+    return this._data.subtype;
   }
 
   get state() {
-    return this.data.state;
+    return this._data.state;
   }
 
   get city() {
-    return this.data.city;
+    return this._data.city;
   }
 
   get county() {
-    return this.data.county;
+    return this._data.county;
   }
 }
 

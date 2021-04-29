@@ -2,19 +2,19 @@ const LocalityDetail = require('../../LocalityDetail.js');
 
 class LocationDistrictDetail extends LocalityDetail {
   get district() {
-    return this.data.district;
+    return this._data.district;
   }
 
   get congress() {
-    return this.data.congress;
+    return this._data.congress;
   }
 
   get state() {
-    return this.data.state;
+    return this._data.state;
   }
 
   get county() {
-    return this.data.county;
+    return this._data.county;
   }
 }
 

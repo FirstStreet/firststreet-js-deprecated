@@ -1,8 +1,8 @@
 const { isArray } = require('lodash');
-const ResponseSummary = require('../../../ResponseSummary');
+const FsidResponse = require('../FsidResponse');
 const HistoricProperty = require('./HistoricProperty');
 
-class HistoricPropertySummary extends ResponseSummary {
+class HistoricPropertySummary extends FsidResponse {
   #historic = []
 
   constructor(data) {

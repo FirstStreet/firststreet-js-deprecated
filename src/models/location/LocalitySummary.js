@@ -1,28 +1,28 @@
-const ResponseSummary = require('../ResponseSummary');
+const FsidResponse = require('../FsidResponse');
 
-class LocalitySummary extends ResponseSummary {
+class LocalitySummary extends FsidResponse {
   get riskDirection() {
-    return this.data.riskDirection;
+    return this._data.riskDirection;
   }
 
   get environmentalRisk() {
-    return this.data.environmentalRisk;
+    return this._data.environmentalRisk;
   }
 
   get propertiesTotal() {
-    return this.data.properties.total;
+    return this._data.properties.total;
   }
 
   get propertiesAtRisk() {
-    return this.data.properties.atRisk;
+    return this._data.properties.atRisk;
   }
 
   get historic() {
-    return this.data.historic;
+    return this._data.historic;
   }
 
   get adaptation() {
-    return this.data.adaptation;
+    return this._data.adaptation;
   }
 }
 

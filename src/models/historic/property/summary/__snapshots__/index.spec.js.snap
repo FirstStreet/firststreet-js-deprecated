@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`historic property summary should construct object 1`] = `HistoricPropertySummary {}`;

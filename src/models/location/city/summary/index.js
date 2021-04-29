@@ -1,28 +1,28 @@
-const ResponseSummary = require('../../../ResponseSummary');
+const FsidResponse = require('../../../FsidResponse');
 
-class LocationCitySummary extends ResponseSummary {
+class LocationCitySummary extends FsidResponse {
   get name() {
-    return this.data.name;
+    return this._data.name;
   }
 
   get state() {
-    return this.data.state;
+    return this._data.state;
   }
 
   get polygon() {
-    return this.data.geometry.polygon.coordinates;
+    return this._data.geometry.polygon.coordinates;
   }
 
   get polygonGeoJSON() {
-    return this.data.geometry.polygon;
+    return this._data.geometry.polygon;
   }
 
   get center() {
-    return this.data.geometry.center.coordinates;
+    return this._data.geometry.center.coordinates;
   }
 
   get bounds() {
-    return this.data.geometry.bbox.coordinates;
+    return this._data.geometry.bbox.coordinates;
   }
 }
 

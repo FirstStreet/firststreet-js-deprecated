@@ -1,72 +1,72 @@
-const ResponseSummary = require('../../../ResponseSummary');
+const FsidResponse = require('../../../FsidResponse');
 
-class LocationPropertyDetail extends ResponseSummary {
+class LocationPropertyDetail extends FsidResponse {
   get streetNumber() {
-    return this.data.streetNumber;
+    return this._data.streetNumber;
   }
 
   get route() {
-    return this.data.route;
+    return this._data.route;
   }
 
   get elevation() {
-    return this.data.elevation;
+    return this._data.elevation;
   }
 
   get footprintId() {
-    return this.data.footprintId;
+    return this._data.footprintId;
   }
 
   get city() {
-    return this.data.city;
+    return this._data.city;
   }
 
   get state() {
-    return this.data.state;
+    return this._data.state;
   }
 
   get county() {
-    return this.data.county;
+    return this._data.county;
   }
 
   get cd() {
-    return this.data.cd;
+    return this._data.cd;
   }
 
   get zcta() {
-    return this.data.zcta;
+    return this._data.zcta;
   }
 
   get tract() {
-    return this.data.tract;
+    return this._data.tract;
   }
 
   get neighborhood() {
-    return this.data.neighborhood;
+    return this._data.neighborhood;
   }
 
   get fema() {
-    return this.data.fema;
+    return this._data.fema;
   }
 
   get geometry() {
-    return this.data.geometry;
+    return this._data.geometry;
   }
 
   get floorElevation() {
-    return this.data.floorElevation;
+    return this._data.floorElevation;
   }
 
   get building() {
-    return this.data.building;
+    return this._data.building;
   }
 
   get residential() {
-    return this.data.residential;
+    return this._data.residential;
   }
 
   get floodType() {
-    return this.data.floodType;
+    return this._data.floodType;
   }
 }
 

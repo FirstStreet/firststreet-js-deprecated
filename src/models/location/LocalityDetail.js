@@ -1,12 +1,12 @@
-const ResponseSummary = require('../ResponseSummary');
+const FsidResponse = require('../FsidResponse');
 
-class LocalityDetail extends ResponseSummary {
+class LocalityDetail extends FsidResponse {
   get name() {
-    return this.data.name;
+    return this._data.name;
   }
 
   get geometry() {
-    return this.data.geometry;
+    return this._data.geometry;
   }
 }
 

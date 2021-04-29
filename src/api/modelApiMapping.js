@@ -9,61 +9,75 @@ const ZctaDetail = require('../models/location/zcta/detail/index.js');
 const StateDetail = require('../models/location/state/detail/index.js');
 const DistrictDetail = require('../models/location/district/detail/index.js');
 const TractDetail = require('../models/location/tract/detail/index.js');
-const ProbabilityCumulative = require('../models/probability/cumulative');
+const ProbabilityCumulative = require('../models/probability/ProbabilityCumulative');
+const HistoricEvent = require('../models/historic/HistoricEvent');
+const AALLocalitySummary = require('../models/economic/AALLocalitySummary');
+const AALPropertySummary = require('../models/economic/AALPropertySummary');
 
 const mapping = {
   location: {
     detail: {
-      property: PropertyDetail,
-      city: CityDetail,
-      county: CountyDetail,
-      neighborhood: NeighborhoodDetail,
-      zcta: ZctaDetail,
-      state: StateDetail,
-      cd: DistrictDetail,
-      tract: TractDetail,
+      model: {
+        property: PropertyDetail,
+        city: CityDetail,
+        county: CountyDetail,
+        neighborhood: NeighborhoodDetail,
+        zcta: ZctaDetail,
+        state: StateDetail,
+        cd: DistrictDetail,
+        tract: TractDetail,
+      },
       endpointPrefix: '/location/detail',
       needsLocation: true,
     },
     summary: {
-      property: PropertySummary,
-      city: CitySummary,
-      county: LocalitySummary,
-      neighborhood: LocalitySummary,
-      zcta: LocalitySummary,
-      state: LocalitySummary,
-      cd: LocalitySummary,
-      tract: LocalitySummary,
+      model: {
+        property: PropertySummary,
+        city: CitySummary,
+        county: LocalitySummary,
+        neighborhood: LocalitySummary,
+        zcta: LocalitySummary,
+        state: LocalitySummary,
+        cd: LocalitySummary,
+        tract: LocalitySummary,
+      },
       endpointPrefix: '/location/summary',
       needsLocation: true,
     },
   },
   probability: {
     cumulative: {
-      property: ProbabilityCumulative,
-      city: ProbabilityCumulative,
-      county: ProbabilityCumulative,
-      neighborhood: ProbabilityCumulative,
-      zcta: ProbabilityCumulative,
-      state: ProbabilityCumulative,
-      cd: ProbabilityCumulative,
-      tract: ProbabilityCumulative,
+      model: ProbabilityCumulative,
       endpointPrefix: '/probability/cumulative',
       needsLocation: true,
     },
   },
   historic: {
-    summary: {
-      property: ProbabilityCumulative,
-      city: ProbabilityCumulative,
-      county: ProbabilityCumulative,
-      neighborhood: ProbabilityCumulative,
-      zcta: ProbabilityCumulative,
-      state: ProbabilityCumulative,
-      cd: ProbabilityCumulative,
-      tract: ProbabilityCumulative,
-      endpointPrefix: '/probability/cumulative',
-      needsLocation: true,
+    event: {
+      model: HistoricEvent,
+      endpointPrefix: '/historic/event',
+      needsLocation: false,
+    },
+  },
+  economic: {
+    aal: {
+      summary: {
+        model: {
+          property: AALPropertySummary,
+          city: AALLocalitySummary,
+          county: AALLocalitySummary,
+          neighborhood: AALLocalitySummary,
+          zcta: AALLocalitySummary,
+          state: AALLocalitySummary,
+          cd: AALLocalitySummary,
+          tract: AALLocalitySummary,
+        },
+        endpointPrefix: '/economic/aal/summary',
+        needsLocation: true,
+      },
+    },
+    nfip: {
+
     },
   },
 };

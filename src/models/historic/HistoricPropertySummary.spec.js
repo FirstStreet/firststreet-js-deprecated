@@ -1,7 +1,7 @@
 const { isArray } = require('lodash');
-const Historic = require('./index.js');
+const Historic = require('./HistoricPropertySummary.js');
 
-const mock = require('../../../../__mocks__/historicPropertySummary.json');
+const mock = require('../../__mocks__/historicPropertySummary.json');
 
 describe('historic property summary', () => {
   it('should construct object', () => {

@@ -1,15 +1,15 @@
-const BaseModel = require('./index');
+const FsidResponse = require('./index');
 const summaryPropertyMock = require('../../__mocks__/summaryProperty');
 
 let summary = null;
 
 describe('summaryPropertyMock', () => {
   beforeEach(() => {
-    summary = new BaseModel(summaryPropertyMock);
+    summary = new FsidResponse(summaryPropertyMock);
   });
 
   it('should initialize a base model', () => {
-    expect(summary).toMatchSnapshot();
+    expect(summary.raw).toMatchSnapshot();
   });
 
   it('should return a raw response', () => {
@@ -17,8 +17,9 @@ describe('summaryPropertyMock', () => {
   });
 
   it('should return the correct id', () => {
-    expect(summary.FSID).toBe(summaryPropertyMock.fsid);
+    expect(summary.fsid).toBe(summaryPropertyMock.fsid);
   });
+
   it('should return the correct results', () => {
     expect(summary.results).toBe(summaryPropertyMock.results);
   });

@@ -2,15 +2,15 @@ const LocalityDetail = require('../../LocalityDetail.js');
 
 class LocationZctaDetail extends LocalityDetail {
   get city() {
-    return this.data.city;
+    return this._data.city;
   }
 
   get state() {
-    return this.data.state;
+    return this._data.state;
   }
 
   get county() {
-    return this.data.county;
+    return this._data.county;
   }
 }
 

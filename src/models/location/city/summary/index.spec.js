@@ -12,11 +12,11 @@ describe('City', () => {
   });
 
   it('should have FSID', () => {
-    expect(summary.FSID).toBeDefined();
+    expect(summary.fsid).toBeDefined();
   });
 
   it('should have FSID val', () => {
-    const res = summary.FSID;
+    const res = summary.fsid;
     expect(res).toBe(summaryCityMock.fsid);
   });
 

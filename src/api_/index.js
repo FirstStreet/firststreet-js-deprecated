@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const _ = require('lodash/core');
 const assert = require('assert');
 const resolver = require('./resolver');
 

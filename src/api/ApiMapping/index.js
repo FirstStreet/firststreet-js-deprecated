@@ -68,34 +68,34 @@ const mapping = {
   },
   probability: {
     cumulative: {
-      model: ProbabilityCumulative,
+      model: { all: ProbabilityCumulative },
       endpointPrefix: '/probability/cumulative',
       needsLocation: true,
     },
     depth: {
-      model: ProbabilityDepth,
+      model: { all: ProbabilityDepth },
       endpointPrefix: '/probability/depth',
       needsLocation: true,
     },
     count: {
-      model: ProbabilityCount,
+      model: { all: ProbabilityCount },
       endpointPrefix: '/probability/count',
       needsLocation: true,
     },
     chance: {
-      model: ProbabilityChance,
+      model: { all: ProbabilityChance },
       endpointPrefix: '/probability/chance',
       needsLocation: true,
     },
     'count-summary': {
-      model: ProbabilityCountSummary,
+      model: { all: ProbabilityCountSummary },
       endpointPrefix: '/probability/count-summary',
       needsLocation: true,
     },
   },
   historic: {
     event: {
-      model: HistoricEvent,
+      model: { all: HistoricEvent },
       endpointPrefix: '/historic/event',
       needsLocation: false,
       allowedParameters: ['id'],
@@ -118,7 +118,7 @@ const mapping = {
       allowedParameters: ['depth', 'stories', 'basement', 'floorElevation', 'untis', 'avm'],
     },
     nfip: {
-      model: NFIPPropertySummary,
+      model: { all: NFIPPropertySummary },
       endpointPrefix: '/economic/nfip/summary',
       needsLocation: true,
     },

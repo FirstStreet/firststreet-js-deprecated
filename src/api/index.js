@@ -22,10 +22,13 @@ class Api {
     assert(detailLevel, 'Detail level is required');
 
     const endpointMapping = mapping(service, detailLevel);
+    assert(endpointMapping, `Internal error: cannot find mapping for ${service}/${detailLevel}`);
     assert(endpointMapping.needsLocation && localities.includes(this._locationType), `Please set lookup parameters prior to calling service "${service}"`);
 
     return this._resolver.getServiceResponse(
-      service, detailLevel, endpointMapping, this._lookupParams, serviceParams,
+      endpointMapping,
+      _.concat(this._lookupParams, serviceParams),
+      this._locationType,
     );
   }
 
@@ -43,9 +46,7 @@ class Api {
     } else if (params.address) {
       this._lookupType = ADDRESS;
     } else if (params[LAT] || params[LNG]) {
-      if (!params[LAT] || !params[LNG]) {
-        throw new Error('Must provide both latitude and longitude for coordinate lookup');
-      }
+      assert(params[LAT] && params[LNG], 'Must provide both latitude and longitude for coordinate lookup');
       this._lookupType = COORDINATE;
     } else {
       throw new Error(`Must provide a valid lookup parameter(${allowedLookupParameters.join(', ')})`);

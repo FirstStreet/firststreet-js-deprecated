@@ -1,7 +1,7 @@
 const FsidResponse = require('../FsidResponse');
 
 class ProbabilityCountSummary extends FsidResponse {
-_data
+_data;
 
 constructor(data) {
   super(data);

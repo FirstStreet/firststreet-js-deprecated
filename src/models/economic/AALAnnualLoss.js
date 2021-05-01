@@ -1,5 +1,5 @@
 class AALAnnualLoss {
-  #data
+  #data;
 
   constructor(data) {
     this.#data = data;

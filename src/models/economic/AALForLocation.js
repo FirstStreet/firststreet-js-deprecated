@@ -1,5 +1,5 @@
 class AALForLocation {
-  #data
+  #data;
 
   constructor(data) {
     this.#data = data;

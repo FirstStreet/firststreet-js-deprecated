@@ -3,7 +3,7 @@ const FsidResponse = require('../FsidResponse');
 const HistoricData = require('./HistoricData');
 
 class HistoricLocalitySummary extends FsidResponse {
-  #historic = []
+  #historic = [];
 
   constructor(data) {
     super(data);

@@ -12,7 +12,7 @@ const ZctaDetail = require('../../models/location/zcta/detail/index.js');
 const StateDetail = require('../../models/location/state/detail/index.js');
 const DistrictDetail = require('../../models/location/district/detail/index.js');
 const TractDetail = require('../../models/location/tract/detail/index.js');
-const ProbabilityCumulative = require('../../models/probability/cumulative');
+const ProbabilityCumulative = require('../../models/probability/ProbabilityCumulative');
 
 const { normalizeError } = require('../../Error');
 const { fetcher } = require('../../lib/fetcher.js');

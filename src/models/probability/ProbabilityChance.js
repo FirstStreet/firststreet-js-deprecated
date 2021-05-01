@@ -5,7 +5,7 @@ const ProbabilityData = require('./ProbabilityData');
 
 
 class ProbabilityChance extends FsidResponse {
-  #chance=[]
+  #chance=[];
 
   constructor(data) {
     super(data);

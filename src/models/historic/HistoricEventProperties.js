@@ -1,6 +1,6 @@
 
 class HistoricEventProperties {
-  #data
+  #data;
 
   constructor(data) {
     this.#data = data;

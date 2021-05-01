@@ -1,5 +1,5 @@
 class HistoricProperty {
-  #data
+  #data;
 
   constructor(data) {
     this.#data = data;

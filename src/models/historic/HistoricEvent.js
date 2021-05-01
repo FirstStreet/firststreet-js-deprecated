@@ -2,7 +2,7 @@ const ApiResponse = require('../ApiResponse');
 const HistoricEventProperties = require('./HistoricEventProperties');
 
 class HistoricEvent extends ApiResponse {
-  #properties
+  #properties;
 
   constructor(data) {
     super(data);

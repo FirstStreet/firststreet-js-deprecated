@@ -3,7 +3,7 @@ const ApiResponse = require('../ApiResponse');
 const AALForLocation = require('./AALForLocation');
 
 class AALLocalitySummary extends ApiResponse {
-  #annualLoss
+  #annualLoss;
 
   constructor(data) {
     super(data);

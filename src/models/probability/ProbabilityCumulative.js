@@ -5,7 +5,7 @@ const ProbabilityData = require('./ProbabilityData');
 
 
 class ProbabilityCumulative extends FsidResponse {
-  #cumulative=[]
+  #cumulative=[];
 
   constructor(data) {
     super(data);

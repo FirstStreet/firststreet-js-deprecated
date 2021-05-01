@@ -3,7 +3,7 @@ const FsidResponse = require('../FsidResponse');
 const NFIPEstimate = require('./NFIPEstimate');
 
 class NFIPPropertySummary extends FsidResponse {
-  #data
+  #data;
 
   constructor(data) {
     super(data);

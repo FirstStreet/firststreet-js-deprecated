@@ -31,6 +31,9 @@ const ProbabilityCountSummary = require('../../models/probability/ProbabilityCou
   needsLocation - whether endpoint takes locationtype parameter
 
   endpointPrefix - fsf-probability endpoint path
+
+  allowedParameters - a list of parameters that the operation can take
+
 */
 const mapping = {
   location: {
@@ -95,6 +98,7 @@ const mapping = {
       model: HistoricEvent,
       endpointPrefix: '/historic/event',
       needsLocation: false,
+      allowedParameters: ['id'],
     },
   },
   economic: {
@@ -111,6 +115,7 @@ const mapping = {
       },
       endpointPrefix: '/economic/aal/summary',
       needsLocation: true,
+      allowedParameters: ['depth', 'stories', 'basement', 'floorElevation', 'untis', 'avm'],
     },
     nfip: {
       model: NFIPPropertySummary,

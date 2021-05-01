@@ -1,5 +1,5 @@
 class ProbabilityData {
-  #data
+  #data;
 
   constructor(data) {
     this.#data = data;

@@ -5,7 +5,7 @@ const ProbabilityData = require('./ProbabilityData');
 
 
 class ProbabilityDepth extends FsidResponse {
-  #depth=[]
+  #depth=[];
 
   constructor(data) {
     super(data);

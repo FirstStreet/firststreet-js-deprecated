@@ -1,24 +1,24 @@
 class HistoricProperty {
-  _data;
+  _historicData;
 
   constructor(data) {
-    this._data = data;
+    this._historicData = data;
   }
 
   get eventId() {
-    return this._data.eventId;
+    return this._historicData.eventId;
   }
 
   get name() {
-    return this._data.name;
+    return this._historicData.name;
   }
 
   get type() {
-    return this._data.type;
+    return this._historicData.type;
   }
 
   get depth() {
-    return this._data.depth;
+    return this._historicData.depth;
   }
 }
 

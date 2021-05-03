@@ -1,17 +1,16 @@
-
 class HistoricEventProperties {
-  _data;
+  _eventData;
 
   constructor(data) {
-    this._data = data;
+    this._eventData = data;
   }
 
   get total() {
-    return this._data.total;
+    return this._eventData.total;
   }
 
   get affected() {
-    return this._data.affected;
+    return this._eventData.affected;
   }
 }
 module.exports = HistoricEventProperties;

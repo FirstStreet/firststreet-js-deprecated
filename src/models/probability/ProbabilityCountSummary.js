@@ -1,39 +1,39 @@
 const FsidResponse = require('../FsidResponse');
 
 class ProbabilityCountSummary extends FsidResponse {
-_data;
+_probabilityData;
 
 constructor(data) {
   super(data);
-  this._data = data;
+  this._probabilityData = data;
 }
 
 get state() {
-  return this._data.state;
+  return this._probabilityData.state;
 }
 
 get city() {
-  return this._data.city;
+  return this._probabilityData.city;
 }
 
 get county() {
-  return this._data.county;
+  return this._probabilityData.county;
 }
 
 get zcta() {
-  return this._data.zcta;
+  return this._probabilityData.zcta;
 }
 
 get cd() {
-  return this._data.cd;
+  return this._probabilityData.cd;
 }
 
 get neighborhood() {
-  return this._data.neighborhood;
+  return this._probabilityData.neighborhood;
 }
 
 get tract() {
-  return this._data.tract;
+  return this._probabilityData.tract;
 }
 }
 module.exports = ProbabilityCountSummary;

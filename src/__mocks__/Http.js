@@ -5,13 +5,14 @@ const {
 
 // Mock Data
 const summaryProperty = require('./summaryProperty');
-const summaryCity = require('./summaryCity');
+const summaryCity = require('./summaryCity.json');
 const detailProperty = require('./propertyDetail');
 const detailCounty = require('./countyDetail.json');
 const detailTract = require('./tractDetail.json');
 const neighborhoodDetail = require('./neighborhoodDetail.json');
 const districtDetail = require('./districtDetail.json');
 const propertyCumulative = require('./probabilityCumulative.json');
+const historicEvent = require('./historicEvent.json');
 
 const defaults = {
   host: 'https://FAKE-HOST-FOR-TESTING.com/v1',
@@ -218,6 +219,13 @@ class Http {
         return resolve({
           error: false,
           body: summaryCity,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/historic/event/12?key=aa.bb.cc') {
+        return resolve({
+          error: false,
+          body: historicEvent,
         });
       }
 

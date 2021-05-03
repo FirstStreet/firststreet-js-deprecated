@@ -1,0 +1,222 @@
+{
+  "fsid": 240652458,
+  "state": [
+    {
+      "fsid": 24,
+      "name": "Maryland",
+      "count": [
+        {
+          "data": {
+            "low": 169345,
+            "mid": 183193,
+            "high": 189289
+          },
+          "year": 2020
+        },
+        {
+          "data": {
+            "low": 209649,
+            "mid": 216517,
+            "high": 235151
+          },
+          "year": 2035
+        },
+        {
+          "data": {
+            "low": 204435,
+            "mid": 216390,
+            "high": 234972
+          },
+          "year": 2050
+        }
+      ]
+    }
+  ],
+  "city": [
+    {
+      "fsid": 2425575,
+      "name": "Eldersburg",
+      "count": [
+        {
+          "data": {
+            "low": 303,
+            "mid": 346,
+            "high": 351
+          },
+          "year": 2020
+        },
+        {
+          "data": {
+            "low": 341,
+            "mid": 359,
+            "high": 389
+          },
+          "year": 2035
+        },
+        {
+          "data": {
+            "low": 327,
+            "mid": 358,
+            "high": 388
+          },
+          "year": 2050
+        }
+      ]
+    }
+  ],
+  "county": [
+    {
+      "fsid": 24013,
+      "name": "Carroll County",
+      "count": [
+        {
+          "data": {
+            "low": 2820,
+            "mid": 3082,
+            "high": 3153
+          },
+          "year": 2020
+        },
+        {
+          "data": {
+            "low": 3010,
+            "mid": 3168,
+            "high": 3468
+          },
+          "year": 2035
+        },
+        {
+          "data": {
+            "low": 2903,
+            "mid": 3162,
+            "high": 3461
+          },
+          "year": 2050
+        }
+      ]
+    }
+  ],
+  "zcta": [
+    {
+      "fsid": 21784,
+      "name": "21784",
+      "count": [
+        {
+          "data": {
+            "low": 453,
+            "mid": 540,
+            "high": 552
+          },
+          "year": 2020
+        },
+        {
+          "data": {
+            "low": 529,
+            "mid": 561,
+            "high": 615
+          },
+          "year": 2035
+        },
+        {
+          "data": {
+            "low": 506,
+            "mid": 560,
+            "high": 614
+          },
+          "year": 2050
+        }
+      ]
+    }
+  ],
+  "cd": [
+    {
+      "fsid": 2408,
+      "name": "Maryland Congressional District 8",
+      "count": [
+        {
+          "data": {
+            "low": 11857,
+            "mid": 13393,
+            "high": 13903
+          },
+          "year": 2020
+        },
+        {
+          "data": {
+            "low": 13019,
+            "mid": 14025,
+            "high": 15683
+          },
+          "year": 2035
+        },
+        {
+          "data": {
+            "low": 12312,
+            "mid": 14012,
+            "high": 15667
+          },
+          "year": 2050
+        }
+      ]
+    }
+  ],
+  "neighborhood": [
+    [
+      {
+        "fsid": 1173635,
+        "name": "Eldersburg",
+        "count": [
+          {
+            "data": {
+              "low": 297,
+              "mid": 340,
+              "high": 345
+            },
+            "year": 2020
+          },
+          {
+            "data": {
+              "low": 321,
+              "mid": 349,
+              "high": 379
+            },
+            "year": 2050
+          }
+        ],
+        "subtype": "M"
+      }
+    ]
+  ],
+  "tract": [
+    {
+      "fsid": 24013505207,
+      "name": null,
+      "count": [
+        {
+          "data": {
+            "low": 39,
+            "mid": 46,
+            "high": 46
+          },
+          "year": 2020
+        },
+        {
+          "data": {
+            "low": 47,
+            "mid": 47,
+            "high": 49
+          },
+          "year": 2035
+        },
+        {
+          "data": {
+            "low": 46,
+            "mid": 47,
+            "high": 49
+          },
+          "year": 2050
+        }
+      ]
+    }
+  ]
+}

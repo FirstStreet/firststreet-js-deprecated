@@ -21,14 +21,37 @@ class Api {
   callService(service, detailLevel, serviceParams) {
     assert(detailLevel, 'Detail level is required');
 
+    // find mapping for the endpoint
     const endpointMapping = mapping(service, detailLevel);
-    assert(endpointMapping, `Internal error: cannot find mapping for ${service}/${detailLevel}`);
-    assert(endpointMapping.needsLocation && localities.includes(this._locationType), `Please set lookup parameters prior to calling service "${service}"`);
 
+    assert(endpointMapping, `Internal error: cannot find mapping for ${service}/${detailLevel}`);
+    assert(
+      !endpointMapping.needsLocation
+      || (endpointMapping.needsLocation && localities.includes(this._locationType)),
+      `Please set lookup parameters prior to calling service "${service}"`,
+    );
+
+    // validate there's no unknonw parameters
+    const params = serviceParams || {};
+    const allowedParameters = endpointMapping.allowedParameters || [];
+    assert(
+      _.difference(Object.keys(params), allowedParameters).length <= 0,
+      `Unknown parameter(s): ${_.difference(Object.keys(params), allowedParameters)}`,
+    );
+
+    // if not location lookup then check lookup type
+    let lookupType = this._lookupType;
+    if (!endpointMapping.needsLocation) {
+      assert(_.intersection(Object.keys(params), allowedParameters).length > 0, `Service ${service}/${detailLevel} parameter(s) are missing. Required: ${allowedParameters.join(', ')}`);
+      [lookupType] = endpointMapping.allowedParameters;
+    }
+
+    // get response
     return this._resolver.getServiceResponse(
       endpointMapping,
-      _.concat(this._lookupParams, serviceParams),
+      _.merge(this._lookupParams || {}, params),
       this._locationType,
+      lookupType,
     );
   }
 
@@ -70,6 +93,7 @@ class Api {
     ctx.lookup = this.lookup;
     ctx.location = _.partial(this.callService, 'locaton');
     ctx.probability = _.partial(this.callService, 'probability');
+    ctx.historic = _.partial(this.callService, 'historic');
     ctx.setLookupType = this.setLookupType;
     ctx._resolver = this._resolver;
   }

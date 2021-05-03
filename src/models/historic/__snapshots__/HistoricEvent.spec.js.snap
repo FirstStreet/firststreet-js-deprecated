@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`historic locality summary should construct object 1`] = `
+HistoricEvent {
+  "_data": Object {
+    "eventId": 12,
+    "geometry": Object {
+      "bbox": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              -92.048065999,
+              40.066381,
+            ],
+            Array [
+              -90.585979,
+              40.066381,
+            ],
+            Array [
+              -90.585979,
+              42.238395,
+            ],
+            Array [
+              -92.048065999,
+              42.238395,
+            ],
+            Array [
+              -92.048065999,
+              40.066381,
+            ],
+          ],
+        ],
+        "type": "Polygon",
+      },
+      "center": Object {
+        "coordinates": Array [
+          -91.273823509,
+          41.182344093,
+        ],
+        "type": "Point",
+      },
+      "polygon": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              Array [
+                -91.402935999,
+                42.238395,
+              ],
+              Array [
+                -91.417797,
+                42.238394,
+              ],
+              Array [
+                -91.417755,
+                42.235025,
+              ],
+              Array [
+                -91.427211001,
+                42.234807,
+              ],
+              Array [
+                -91.427216,
+                42.23105,
+              ],
+              Array [
+                -91.432397,
+                42.230953,
+              ],
+              Array [
+                -91.432386,
+                42.22507,
+              ],
+              Array [
+                -91.437132001,
+                42.223333999,
+              ],
+              Array [
+                -91.437135001,
+                42.216679,
+              ],
+              Array [
+                -91.439218,
+                42.214434999,
+              ],
+              Array [
+                -91.441044,
+                42.210333,
+              ],
+              Array [
+                -91.440952,
+                42.209671,
+              ],
+              Array [
+                -91.437405,
+                42.208679,
+              ],
+              Array [
+                -91.433594,
+                42.205915,
+              ],
+              Array [
+                -91.383449001,
+                42.230956,
+              ],
+              Array [
+                -91.401413,
+                42.23107,
+              ],
+              Array [
+                -91.402946,
+                42.230955,
+              ],
+              Array [
+                -91.402935999,
+                42.238395,
+              ],
+            ],
+          ],
+        ],
+        "type": "MultiPolygon",
+      },
+    },
+    "month": 6,
+    "name": "river flood across eastern Iowa",
+    "properties": Object {
+      "affected": 15813,
+      "total": 354640,
+    },
+    "returnPeriod": 2733,
+    "type": "fluvial",
+    "year": 2008,
+  },
+  "_properties": HistoricEventProperties {
+    "_eventData": Object {
+      "affected": 15813,
+      "total": 354640,
+    },
+  },
+}
+`;

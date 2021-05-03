@@ -1,16 +1,16 @@
 class ProbabilityData {
-  _data;
+  _probabilityData;
 
   constructor(data) {
-    this._data = data;
+    this._probabilityData = data;
   }
 
   get year() {
-    return this._data.year;
+    return this._probabilityData.year;
   }
 
   get data() {
-    return this._data.data;
+    return this._probabilityData.data;
   }
 }
 

@@ -144,7 +144,7 @@ class Http {
           debug: requestOptions,
           rateLimit,
         });
-      }).catch(err => reject({
+      }).catch((err) => reject({
         errors: true,
         messages: NETWORK_ERROR,
         details: err,

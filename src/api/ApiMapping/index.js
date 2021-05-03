@@ -131,7 +131,7 @@ module.exports = (service, detailLevel) => {
   }
 
   if (!Object.keys(mapping[service]).includes(detailLevel)) {
-    throw new Error(`Invalid detail level ${detailLevel}. Allowed: ${Object.keys(mapping[service]).join(', ')}`);
+    throw new Error(`Invalid detail level ${detailLevel} for service ${service}. Allowed: ${Object.keys(mapping[service]).join(', ')}`);
   }
 
   return mapping[service][detailLevel];

@@ -1,14 +1,16 @@
 class Resolver {
+  mockFn;
+
   constructor(cannedResponses) {
-    const mockFn = jest.fn();
+    this.mockFn = jest.fn();
     if (cannedResponses) {
-      cannedResponses.map(r => mockFn.mockReturnValueOnce(r));
+      cannedResponses.map((r) => this.mockFn.mockReturnValueOnce(r));
     }
-    this.mockServiceResponse = mockFn;
+    this.mockServiceResponse = this.mockFn;
   }
 
-  getServiceResponse() {
-    return this.mockServiceResponse();
+  getServiceResponse(mapping, params, locationType) {
+    return this.mockServiceResponse(mapping, params, locationType);
   }
 }
 module.exports = Resolver;

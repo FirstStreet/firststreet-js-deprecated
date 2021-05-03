@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const FirstStreet = require('../__mocks__/FirstStreet');
 const Resolver = require('../__mocks__/Resolver');
 const propertyDetailMock = require('../__mocks__/propertyDetail.json');
@@ -89,6 +91,7 @@ describe('Api', () => {
     expect(mockResolver.mockFn.mock.calls[0][0]).toEqual(expectedModel);
     expect(mockResolver.mockFn.mock.calls[0][1]).toEqual(params);
     expect(mockResolver.mockFn.mock.calls[0][2]).toBeUndefined();
+    expect(mockResolver.mockFn.mock.calls[0][3]).toEqual('id');
   });
 
   it('should now allow undocumented parameter', async () => {
@@ -113,5 +116,21 @@ describe('Api', () => {
     const mockResolver = new Resolver([obj]);
     const fs = new FirstStreet('aa.bb.cc', null, mockResolver);
     expect(() => fs.historic('event', params)).toThrow('Service historic/event parameter(s) are missing. Required: id');
+  });
+
+  it('should call aal resolver', async () => {
+    const obj = {};
+    const params = { basement: true, depth: 100 };
+    const locationParams = { fsid: 12345 };
+    const expectedModel = mapping('economic', 'aal');
+    const mockResolver = new Resolver([obj]);
+    const fs = new FirstStreet('aa.bb.cc', null, mockResolver);
+    const result = fs.lookup('city', locationParams).economic('aal', params);
+    expect(result).toEqual(obj);
+    expect(mockResolver.mockFn.mock.calls.length).toEqual(1);
+    expect(mockResolver.mockFn.mock.calls[0][0]).toEqual(expectedModel);
+    expect(mockResolver.mockFn.mock.calls[0][1]).toEqual(_.merge(params, locationParams));
+    expect(mockResolver.mockFn.mock.calls[0][2]).toEqual('city');
+    expect(mockResolver.mockFn.mock.calls[0][3]).toEqual('fsid');
   });
 });

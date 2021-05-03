@@ -1,4 +1,5 @@
 const assert = require('assert');
+const _ = require('lodash');
 
 const { fetcher } = require('../lib/fetcher.js');
 
@@ -7,6 +8,11 @@ class Resolver {
 
   constructor(http) {
     this._http = http;
+  }
+
+  _concatParametersForUrl(params, excludeParams) {
+    const restOfParams = _.omit(params, excludeParams);
+    return _.reduce(restOfParams, (res, val, key) => `${res}&${key}=${val}`, '');
   }
 
   async getServiceResponse(mapping, params, locationType, lookupType) {
@@ -24,9 +30,16 @@ class Resolver {
     switch (lookupType) {
     case 'fsid':
       path = `${path}/${params.fsid}?key=${this._http.getKey()}`;
+      path = `${path}${this._concatParametersForUrl(params, ['fsid'])}`;
+      break;
+    case 'coordinate':
+    case 'address':
+      path = `${path}?key=${this._http.getKey()}`;
+      path = `${path}${this._concatParametersForUrl(params, [])}`;
       break;
     case 'id':
       path = `${path}/${params.id}?key=${this._http.getKey()}`;
+      path = `${path}${this._concatParametersForUrl(params, ['id'])}`;
       break;
     default:
       throw new Error(`Internal error: lookup by ${lookupType} is not implemented`);

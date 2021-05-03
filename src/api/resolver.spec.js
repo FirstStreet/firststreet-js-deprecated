@@ -5,6 +5,7 @@ const Http = require('../__mocks__/Http');
 const probabilityCumulativeMock = require('../__mocks__/probabilityCumulative.json');
 const propertyMock = require('../__mocks__/propertyDetail.json');
 const historicEventMock = require('../__mocks__/historicEvent.json');
+const aalPropertySummary = require('../__mocks__/aalPropertySummary.json');
 
 describe('resolver', () => {
   const http = new Http('aa.bb.cc');
@@ -20,6 +21,20 @@ describe('resolver', () => {
   it('should get location detail by fsid (has various models per endpoint)', async () => {
     const propertyMapping = mapping('location', 'detail');
     const property = await resolverObj.getServiceResponse(propertyMapping, { fsid: 1202672032 }, 'property', 'fsid');
+    expect(property).toMatchSnapshot();
+    expect(property.raw).toEqual(propertyMock);
+  });
+
+  it('should get location detail by address', async () => {
+    const propertyMapping = mapping('location', 'detail');
+    const property = await resolverObj.getServiceResponse(propertyMapping, { address: '212%20appoquin%20s,%20middletown,%20delware' }, 'property', 'address');
+    expect(property).toMatchSnapshot();
+    expect(property.raw).toEqual(propertyMock);
+  });
+
+  it('should get location detail by coordinate', async () => {
+    const propertyMapping = mapping('location', 'detail');
+    const property = await resolverObj.getServiceResponse(propertyMapping, { lat: 39.4419892115, lng: -75.6453718685 }, 'property', 'coordinate');
     expect(property).toMatchSnapshot();
     expect(property.raw).toEqual(propertyMock);
   });
@@ -49,5 +64,12 @@ describe('resolver', () => {
         expect(e.message).toEqual('Internal error: lookup by unknown is not implemented');
         done();
       });
+  });
+
+  it('should get property aal by fsid(has additional parameters)', async () => {
+    const aalMapping = mapping('economic', 'aal');
+    const property = await resolverObj.getServiceResponse(aalMapping, { fsid: 12345, depth: 100, basement: true }, 'property', 'fsid');
+    expect(property).toMatchSnapshot();
+    expect(property.raw).toEqual(aalPropertySummary);
   });
 });

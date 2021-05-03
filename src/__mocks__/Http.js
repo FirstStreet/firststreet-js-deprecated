@@ -13,6 +13,7 @@ const neighborhoodDetail = require('./neighborhoodDetail.json');
 const districtDetail = require('./districtDetail.json');
 const propertyCumulative = require('./probabilityCumulative.json');
 const historicEvent = require('./historicEvent.json');
+const aalPropertySummary = require('./aalPropertySummary.json');
 
 const defaults = {
   host: 'https://FAKE-HOST-FOR-TESTING.com/v1',
@@ -166,56 +167,56 @@ class Http {
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/property?lat=39.4419892115&lng=-75.6453718685&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/property?key=aa.bb.cc&lat=39.4419892115&lng=-75.6453718685') {
         return resolve({
           error: false,
           body: summaryProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/property?lat=39.4419892115&lng=-75.6453718685&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/property?key=aa.bb.cc&lat=39.4419892115&lng=-75.6453718685') {
         return resolve({
           error: false,
           body: detailProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/probability/cumulative/property?lat=39.4419892115&lng=-75.6453718685&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/probability/cumulative/property?key=aa.bb.cc&lat=39.4419892115&lng=-75.6453718685') {
         return resolve({
           error: false,
           body: propertyCumulative,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/city?lat=30.6589162194187&lng=-81.4499316280516&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/city?key=aa.bb.cc&lat=30.6589162194187&lng=-81.4499316280516') {
         return resolve({
           error: false,
           body: summaryCity,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/city?lat=39.811250630443&lng=-75.4886086625372&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/city?key=aa.bb.cc&lat=39.811250630443&lng=-75.4886086625372') {
         return resolve({
           error: false,
           body: summaryCity,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/property?key=aa.bb.cc&address=212%20appoquin%20s,%20middletown,%20delware') {
         return resolve({
           error: false,
           body: summaryProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/property?address=212%20appoquin%20s,%20middletown,%20delware&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/detail/property?key=aa.bb.cc&address=212%20appoquin%20s,%20middletown,%20delware') {
         return resolve({
           error: false,
           body: detailProperty,
         });
       }
 
-      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/city?address=middletown,%20delware&key=aa.bb.cc') {
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/location/summary/city?key=aa.bb.cc&address=middletown,%20delware') {
         return resolve({
           error: false,
           body: summaryCity,
@@ -226,6 +227,13 @@ class Http {
         return resolve({
           error: false,
           body: historicEvent,
+        });
+      }
+
+      if (requestOptions.url === 'https://FAKE-HOST-FOR-TESTING.com/v1/economic/aal/summary/property/12345?key=aa.bb.cc&depth=100&basement=true') {
+        return resolve({
+          error: false,
+          body: aalPropertySummary,
         });
       }
 

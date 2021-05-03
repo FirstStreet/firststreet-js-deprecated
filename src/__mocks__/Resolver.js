@@ -9,8 +9,8 @@ class Resolver {
     this.mockServiceResponse = this.mockFn;
   }
 
-  getServiceResponse(mapping, params, locationType) {
-    return this.mockServiceResponse(mapping, params, locationType);
+  getServiceResponse(mapping, params, locationType, lookupType) {
+    return this.mockServiceResponse(mapping, params, locationType, lookupType);
   }
 }
 module.exports = Resolver;

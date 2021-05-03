@@ -94,6 +94,8 @@ class Api {
     ctx.location = _.partial(this.callService, 'locaton');
     ctx.probability = _.partial(this.callService, 'probability');
     ctx.historic = _.partial(this.callService, 'historic');
+    ctx.economic = _.partial(this.callService, 'economic');
+
     ctx.setLookupType = this.setLookupType;
     ctx._resolver = this._resolver;
   }

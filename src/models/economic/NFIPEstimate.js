@@ -1,20 +1,20 @@
 class NFIPEstimate {
-  #data;
+  _data;
 
   constructor(data) {
-    this.#data = data;
+    this._data = data;
   }
 
   get estimate() {
-    return this.#data.estimate;
+    return this._data.estimate;
   }
 
   get building() {
-    return this.#data.building;
+    return this._data.building;
   }
 
   get contents() {
-    return this.#data.contents;
+    return this._data.contents;
   }
 }
 

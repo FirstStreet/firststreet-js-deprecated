@@ -2,12 +2,12 @@ const ApiResponse = require('../ApiResponse');
 const HistoricEventProperties = require('./HistoricEventProperties');
 
 class HistoricEvent extends ApiResponse {
-  #properties;
+  _properties;
 
   constructor(data) {
     super(data);
     if (data.properties) {
-      this.#properties = new HistoricEventProperties(data.properties);
+      this._properties = new HistoricEventProperties(data.properties);
     }
   }
 
@@ -36,7 +36,7 @@ class HistoricEvent extends ApiResponse {
   }
 
   get properties() {
-    return this.#properties;
+    return this._properties;
   }
 
   get geometry() {

@@ -1,24 +1,24 @@
 class HistoricData {
-  #data;
+  _data;
 
   constructor(data) {
-    this.#data = data;
+    this._data = data;
   }
 
   get eventId() {
-    return this.#data.eventId;
+    return this._data.eventId;
   }
 
   get name() {
-    return this.#data.name;
+    return this._data.name;
   }
 
   get type() {
-    return this.#data.type;
+    return this._data.type;
   }
 
   get data() {
-    return this.#data.data;
+    return this._data.data;
   }
 }
 

@@ -4,26 +4,26 @@ const AALDepthLoss = require('./AALDepthLoss');
 const AALAnnualLoss = require('./AALAnnualLoss');
 
 class AALPropertySummary extends ApiResponse {
-  #depthLoss;
+  _depthLoss;
 
-  #annualLoss;
+  _annualLoss;
 
   constructor(data) {
     super(data);
     if (data.depthLoss && isArray(data.depthLoss)) {
-      this.#depthLoss = data.depthLoss.map(r => new AALDepthLoss(r));
+      this._depthLoss = data.depthLoss.map(r => new AALDepthLoss(r));
     }
     if (data.annualLoss && isArray(data.annualLoss)) {
-      this.#annualLoss = data.annualLoss.map(r => new AALAnnualLoss(r));
+      this._annualLoss = data.annualLoss.map(r => new AALAnnualLoss(r));
     }
   }
 
   get depthLoss() {
-    return this.#depthLoss;
+    return this._depthLoss;
   }
 
   get annualLoss() {
-    return this.#annualLoss;
+    return this._annualLoss;
   }
 }
 

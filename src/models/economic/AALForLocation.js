@@ -1,24 +1,24 @@
 class AALForLocation {
-  #data;
+  _data;
 
   constructor(data) {
-    this.#data = data;
+    this._data = data;
   }
 
   get year() {
-    return this.#data.year;
+    return this._data.year;
   }
 
   get totalLoss() {
-    return this.#data.totalLoss;
+    return this._data.totalLoss;
   }
 
   get count() {
-    return this.#data.count;
+    return this._data.count;
   }
 
   get floodFactor() {
-    return this.#data.floodFactor;
+    return this._data.floodFactor;
   }
 }
 

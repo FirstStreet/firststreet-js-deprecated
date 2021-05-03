@@ -3,17 +3,17 @@ const ApiResponse = require('../ApiResponse');
 const AALForLocation = require('./AALForLocation');
 
 class AALLocalitySummary extends ApiResponse {
-  #annualLoss;
+  _annualLoss;
 
   constructor(data) {
     super(data);
     if (data.annualLoss && isArray(data.annualLoss)) {
-      this.#annualLoss = data.annualLoss.map(r => new AALForLocation(r));
+      this._annualLoss = data.annualLoss.map(r => new AALForLocation(r));
     }
   }
 
   get annualLoss() {
-    return this.#annualLoss;
+    return this._annualLoss;
   }
 }
 

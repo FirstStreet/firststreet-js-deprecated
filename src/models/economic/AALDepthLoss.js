@@ -1,16 +1,16 @@
 class AALDepthLoss {
-  #data;
+  _data;
 
   constructor(data) {
-    this.#data = data;
+    this._data = data;
   }
 
   get depth() {
-    return this.#data.depth;
+    return this._data.depth;
   }
 
   get data() {
-    return this.#data.data;
+    return this._data.data;
   }
 }
 

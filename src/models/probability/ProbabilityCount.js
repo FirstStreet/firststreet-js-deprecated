@@ -5,17 +5,17 @@ const ProbabilityData = require('./ProbabilityData');
 
 
 class ProbabilityCount extends FsidResponse {
-  #count=[];
+  _count=[];
 
   constructor(data) {
     super(data);
     if (data.count && isArray(data.count)) {
-      this.#count = data.count.map(r => new ProbabilityData(r));
+      this._count = data.count.map(r => new ProbabilityData(r));
     }
   }
 
   get count() {
-    return this.#count;
+    return this._count;
   }
 }
 

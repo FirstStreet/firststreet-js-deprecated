@@ -1,17 +1,17 @@
 
 class HistoricEventProperties {
-  #data;
+  _data;
 
   constructor(data) {
-    this.#data = data;
+    this._data = data;
   }
 
   get total() {
-    return this.#data.total;
+    return this._data.total;
   }
 
   get affected() {
-    return this.#data.affected;
+    return this._data.affected;
   }
 }
 module.exports = HistoricEventProperties;

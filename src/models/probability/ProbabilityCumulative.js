@@ -5,17 +5,17 @@ const ProbabilityData = require('./ProbabilityData');
 
 
 class ProbabilityCumulative extends FsidResponse {
-  #cumulative=[];
+  _cumulative=[];
 
   constructor(data) {
     super(data);
     if (data.cumulative && isArray(data.cumulative)) {
-      this.#cumulative = data.cumulative.map(r => new ProbabilityData(r));
+      this._cumulative = data.cumulative.map(r => new ProbabilityData(r));
     }
   }
 
   get cumulative() {
-    return this.#cumulative;
+    return this._cumulative;
   }
 }
 

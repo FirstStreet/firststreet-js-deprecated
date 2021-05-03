@@ -1,16 +1,16 @@
 class AALAnnualLoss {
-  #data;
+  _data;
 
   constructor(data) {
-    this.#data = data;
+    this._data = data;
   }
 
   get year() {
-    return this.#data.year;
+    return this._data.year;
   }
 
   get data() {
-    return this.#data.data;
+    return this._data.data;
   }
 }
 

@@ -52,11 +52,8 @@
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "<rootDir>/src/__mockes__/",
+      "<rootDir>/src/__mocks__/",
       "<rootDir>/node_modules/"
     ]
-  },
-  "standard": {
-    "parser": "@babel/eslint-parser"
   }
 }

@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/floodiq-javascript
     docker:
-      - image: circleci/node:latest
+      - image: cimg/node:14.16.1
     steps:
       - checkout
       - run:

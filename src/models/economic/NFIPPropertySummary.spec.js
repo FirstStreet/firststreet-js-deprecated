@@ -12,6 +12,7 @@ describe('NFIP property summary', () => {
     expect(result.data.length).toBe(2);
     expect(result.data[0].constructor.name).toBe('NFIPEstimate');
     expect(result.data[1].estimate).toEqual(376);
+    expect(result.fsid).toEqual(mock.fsid)
   });
 
   it('should construct object without child nodes', () => {

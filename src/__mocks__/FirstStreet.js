@@ -1,6 +1,6 @@
 const Http = require('./Http');
 const Api = require('../api');
-const Resolver = require('../api/resolver');
+const Resolver = require('../resolver');
 
 class FirstStreet {
   constructor(apiKey = null, options = {}, resolver = null) {

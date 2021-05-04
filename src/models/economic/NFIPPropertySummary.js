@@ -6,7 +6,7 @@ class NFIPPropertySummary extends FsidResponse {
   constructor(data) {
     super(data);
     if (data.data && isArray(data.data)) {
-      this._nfipData = data.data.map(r => new NFIPEstimate(r));
+      this._nfipData = data.data.map((r) => new NFIPEstimate(r));
     }
   }
 

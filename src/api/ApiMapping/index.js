@@ -18,6 +18,8 @@ const ProbabilityDepth = require('../../models/probability/ProbabilityDepth');
 const ProbabilityCount = require('../../models/probability/ProbabilityCount');
 const ProbabilityChance = require('../../models/probability/ProbabilityChance');
 const ProbabilityCountSummary = require('../../models/probability/ProbabilityCountSummary.js');
+const AvmProvider = require('../../models/economic/AvmProvider.js');
+const AvmProperty = require('../../models/economic/AvmProperty.js');
 
 /*
   Mapping between fsf-probability and the client code is done through two-level object:
@@ -35,6 +37,7 @@ const ProbabilityCountSummary = require('../../models/probability/ProbabilityCou
   allowedParameters - a list of parameters that the operation can take
 
 */
+// all models need to exend ApiResponse class
 const mapping = {
   location: {
     detail: {
@@ -119,7 +122,18 @@ const mapping = {
     },
     nfip: {
       model: { all: NFIPPropertySummary },
-      endpointPrefix: '/economic/nfip/summary',
+      endpointPrefix: '/economic/nfip',
+      needsLocation: true,
+    },
+    avmProvider: {
+      model: { all: AvmProvider },
+      endpointPrefix: '/economic/avm/provider',
+      needsLocation: false,
+      allowedParameters: ['id'],
+    },
+    avmProperty: {
+      model: { all: AvmProperty },
+      endpointPrefix: '/economic/avm',
       needsLocation: true,
     },
   },

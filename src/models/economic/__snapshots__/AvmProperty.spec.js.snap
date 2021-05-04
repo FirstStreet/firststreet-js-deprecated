@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AVM property should construct object 1`] = `
+Object {
+  "avm": Object {
+    "mid": 144500,
+  },
+  "fsid": 4801470191,
+  "providerID": 2,
+}
+`;
+
+exports[`AVM property should construct object 2`] = `
+Avm {
+  "_avmRecord": Object {
+    "mid": 144500,
+  },
+}
+`;
+
+exports[`AVM property should construct when there's no AVM 1`] = `
+Object {
+  "fsid": 4801470191,
+  "providerID": 2,
+}
+`;

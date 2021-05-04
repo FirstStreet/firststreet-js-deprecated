@@ -91,7 +91,7 @@ class Api {
     const ctx = context;
 
     ctx.lookup = this.lookup;
-    ctx.location = _.partial(this.callService, 'locaton');
+    ctx.location = _.partial(this.callService, 'location');
     ctx.probability = _.partial(this.callService, 'probability');
     ctx.historic = _.partial(this.callService, 'historic');
     ctx.economic = _.partial(this.callService, 'economic');

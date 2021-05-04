@@ -1,6 +1,8 @@
 const Api = require('./api');
 const Http = require('./Http');
 
+const Resolver = require('./resolver');
+
 /**
  * Create a FirstStreet class
  * @constructor
@@ -13,7 +15,8 @@ class FirstStreet {
       throw new Error('Missing API Key.');
     }
 
-    const api = new Api(new Http(apiKey, options));
+    const resolverObj = new Resolver(new Http(apiKey, options));
+    const api = new Api(resolverObj);
     api.bindTo(this);
   }
 }

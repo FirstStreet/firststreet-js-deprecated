@@ -1,5 +1,5 @@
-const mapping = require('./ApiMapping');
-const Resolver = require('./resolver');
+const mapping = require('../api/ApiMapping');
+const Resolver = require('.');
 
 const Http = require('../__mocks__/Http');
 const probabilityCumulativeMock = require('../__mocks__/probabilityCumulative.json');

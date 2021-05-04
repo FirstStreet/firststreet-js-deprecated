@@ -48,7 +48,7 @@ describe('Api', () => {
     expect(() => fs.lookup('unknown', { fsid: 1 })).toThrow('Must provide a valid location type(state, city, county, zcta, cd, neighborhood, tract, property)');
   });
 
-  it('should not allow unknown parameters', async () => {
+  it('should not allow unknown lookup parameters', async () => {
     const fs = new FirstStreet('aa.bb.cc');
 
     expect(() => fs.lookup('property', { unknown: 1 })).toThrow('Unknown parameter(s): unknown');
@@ -71,6 +71,12 @@ describe('Api', () => {
     const mockResolver = new Resolver([propertyDetailMock]);
     const fs = new FirstStreet('aa.bb.cc', null, mockResolver);
     expect(() => fs.lookup('property', { fsid: 1234 }).probability()).toThrow('Detail level is required');
+  });
+
+  it('should only pass through known detail levels', async () => {
+    const mockResolver = new Resolver([propertyDetailMock]);
+    const fs = new FirstStreet('aa.bb.cc', null, mockResolver);
+    expect(() => fs.lookup('property', { fsid: 1234 }).probability('someDetailLevel')).toThrow('Invalid detail level someDetailLevel for service probability. Allowed: cumulative, depth, count, chance, count-summary');
   });
 
   it('should ensure lookup type is set', async () => {

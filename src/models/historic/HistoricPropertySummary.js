@@ -7,8 +7,8 @@ class HistoricPropertySummary extends FsidResponse {
 
   constructor(data) {
     super(data);
-    if (data.historic && isArray(data.historic)) {
-      this._historic = data.historic.map(r => new HistoricProperty(r));
+    if (data && data.historic && isArray(data.historic)) {
+      this._historic = data.historic.map((r) => new HistoricProperty(r));
     }
   }
 

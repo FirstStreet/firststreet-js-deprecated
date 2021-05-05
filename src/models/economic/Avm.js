@@ -6,15 +6,24 @@ class Avm {
   }
 
   get low() {
-    return this._avmRecord.low;
+    if (this._avmRecord) {
+      return this._avmRecord.low;
+    }
+    return undefined;
   }
 
   get mid() {
-    return this._avmRecord.mid;
+    if (this._avmRecord) {
+      return this._avmRecord.mid;
+    }
+    return undefined;
   }
 
   get high() {
-    return this._avmRecord.high;
+    if (this._avmRecord) {
+      return this._avmRecord.high;
+    }
+    return undefined;
   }
 }
 module.exports = Avm;

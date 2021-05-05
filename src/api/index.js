@@ -31,7 +31,7 @@ class Api {
       `Please set lookup parameters prior to calling service "${service}"`,
     );
 
-    // validate there's no unknonw parameters
+    // validate there's no unknown parameters
     const params = serviceParams || {};
     const allowedParameters = endpointMapping.allowedParameters || [];
     assert(

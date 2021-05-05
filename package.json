@@ -21,9 +21,9 @@
   "main": "dist/firststreet.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack --watch --mode=development",
-    "test:dev": "jest --watch",
-    "test:coverage": "jest --coverage -u",
-    "test": "jest --coverage",
+    "test:dev": "jest --watch  --updateSnapshot --coverage",
+    "test:coverage": "jest --coverage ",
+    "test": "jest --coverage ",
     "build": "rm -rf dist && NODE_ENV=production webpack --mode production --config ./webpack.config.js --mode=production",
     "lint": "eslint src",
     "prepare": "npm run build",

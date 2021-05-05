@@ -1,9 +1,9 @@
 const { isArray } = require('lodash');
 const ApiResponse = require('../ApiResponse');
-const AALDepthLoss = require('./AALDepthLoss');
-const AALAnnualLoss = require('./AALAnnualLoss');
+const AalDepthLoss = require('./AalDepthLoss');
+const AalAnnualLoss = require('./AalAnnualLoss');
 
-class AALPropertySummary extends ApiResponse {
+class AalPropertySummary extends ApiResponse {
   _depthLoss;
 
   _annualLoss;
@@ -11,10 +11,10 @@ class AALPropertySummary extends ApiResponse {
   constructor(data) {
     super(data);
     if (data.depthLoss && isArray(data.depthLoss)) {
-      this._depthLoss = data.depthLoss.map((r) => new AALDepthLoss(r));
+      this._depthLoss = data.depthLoss.map((r) => new AalDepthLoss(r));
     }
     if (data.annualLoss && isArray(data.annualLoss)) {
-      this._annualLoss = data.annualLoss.map((r) => new AALAnnualLoss(r));
+      this._annualLoss = data.annualLoss.map((r) => new AalAnnualLoss(r));
     }
   }
 
@@ -27,4 +27,4 @@ class AALPropertySummary extends ApiResponse {
   }
 }
 
-module.exports = AALPropertySummary;
+module.exports = AalPropertySummary;

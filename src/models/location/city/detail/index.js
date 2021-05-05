@@ -1,20 +1,32 @@
-const LocalityDetail = require('./../../LocalityDetail.js');
+const LocalityDetail = require('../../LocalityDetail.js');
 
 class LocationCityDetail extends LocalityDetail {
   get state() {
-    return this._data.state;
+    if (this._data) {
+      return this._data.state;
+    }
+    return undefined;
   }
 
   get county() {
-    return this._data.county;
+    if (this._data) {
+      return this._data.county;
+    }
+    return undefined;
   }
 
   get zcta() {
-    return this._data.zcta;
+    if (this._data) {
+      return this._data.zcta;
+    }
+    return undefined;
   }
 
   get neighborhood() {
-    return this._data.neighborhood;
+    if (this._data) {
+      return this._data.neighborhood;
+    }
+    return undefined;
   }
 }
 

@@ -2,11 +2,17 @@ const FsidResponse = require('../FsidResponse');
 
 class LocalityDetail extends FsidResponse {
   get name() {
-    return this._data.name;
+    if (this._data) {
+      return this._data.name;
+    }
+    return undefined;
   }
 
   get geometry() {
-    return this._data.geometry;
+    if (this._data) {
+      return this._data.geometry;
+    }
+    return undefined;
   }
 }
 

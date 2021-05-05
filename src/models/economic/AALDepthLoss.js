@@ -1,4 +1,4 @@
-class AALDepthLoss {
+class AalDepthLoss {
   _aalData;
 
   constructor(data) {
@@ -6,12 +6,18 @@ class AALDepthLoss {
   }
 
   get depth() {
-    return this._aalData.depth;
+    if (this._aalData) {
+      return this._aalData.depth;
+    }
+    return undefined;
   }
 
   get data() {
-    return this._aalData.data;
+    if (this._aalData) {
+      return this._aalData.data;
+    }
+    return undefined;
   }
 }
 
-module.exports = AALDepthLoss;
+module.exports = AalDepthLoss;

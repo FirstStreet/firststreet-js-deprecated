@@ -1,4 +1,4 @@
-class NFIPEstimate {
+class NfipEstimate {
   _nfipData;
 
   constructor(data) {
@@ -6,16 +6,25 @@ class NFIPEstimate {
   }
 
   get estimate() {
-    return this._nfipData.estimate;
+    if (this._nfipData) {
+      return this._nfipData.estimate;
+    }
+    return undefined;
   }
 
   get building() {
-    return this._nfipData.building;
+    if (this._nfipData) {
+      return this._nfipData.building;
+    }
+    return undefined;
   }
 
   get contents() {
-    return this._nfipData.contents;
+    if (this._nfipData) {
+      return this._nfipData.contents;
+    }
+    return undefined;
   }
 }
 
-module.exports = NFIPEstimate;
+module.exports = NfipEstimate;

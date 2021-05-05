@@ -6,7 +6,7 @@ class AvmProperty extends FsidResponse {
 
   constructor(data) {
     super(data);
-    if (data.avm) {
+    if (data && data.avm) {
       this._avm = new Avm(data.avm);
     }
   }
@@ -16,7 +16,10 @@ class AvmProperty extends FsidResponse {
   }
 
   get providerId() {
-    return this._data.ProviderID;
+    if (this._data) {
+      return this._data.ProviderID;
+    }
+    return undefined;
   }
 }
 

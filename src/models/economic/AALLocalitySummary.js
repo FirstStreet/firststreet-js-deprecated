@@ -1,14 +1,14 @@
-const { isArray } = require('lodash');
+const isArray = require('lodash/isArray');
 const ApiResponse = require('../ApiResponse');
-const AALForLocation = require('./AALForLocation');
+const AalForLocation = require('./AalForLocation');
 
-class AALLocalitySummary extends ApiResponse {
+class AalLocalitySummary extends ApiResponse {
   _annualLoss;
 
   constructor(data) {
     super(data);
     if (data.annualLoss && isArray(data.annualLoss)) {
-      this._annualLoss = data.annualLoss.map((r) => new AALForLocation(r));
+      this._annualLoss = data.annualLoss.map((r) => new AalForLocation(r));
     }
   }
 
@@ -17,4 +17,4 @@ class AALLocalitySummary extends ApiResponse {
   }
 }
 
-module.exports = AALLocalitySummary;
+module.exports = AalLocalitySummary;

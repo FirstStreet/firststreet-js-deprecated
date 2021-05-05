@@ -2,7 +2,10 @@ const ApiResponse = require('../ApiResponse');
 
 class FsidResponse extends ApiResponse {
   get fsid() {
-    return this._data.fsid;
+    if (this._data) {
+      return this._data.fsid;
+    }
+    return undefined;
   }
 }
 

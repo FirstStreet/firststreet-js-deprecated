@@ -1,4 +1,4 @@
-class AALAnnualLoss {
+class AalAnnualLoss {
   _aalData;
 
   constructor(data) {
@@ -6,12 +6,18 @@ class AALAnnualLoss {
   }
 
   get year() {
-    return this._aalData.year;
+    if (this._aalData) {
+      return this._aalData.year;
+    }
+    return undefined;
   }
 
   get data() {
-    return this._aalData.data;
+    if (this._aalData) {
+      return this._aalData.data;
+    }
+    return undefined;
   }
 }
 
-module.exports = AALAnnualLoss;
+module.exports = AalAnnualLoss;

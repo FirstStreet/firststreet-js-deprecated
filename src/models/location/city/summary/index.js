@@ -2,27 +2,45 @@ const FsidResponse = require('../../../FsidResponse');
 
 class LocationCitySummary extends FsidResponse {
   get name() {
-    return this._data.name;
+    if (this._data) {
+      return this._data.name;
+    }
+    return undefined;
   }
 
   get state() {
-    return this._data.state;
+    if (this._data) {
+      return this._data.state;
+    }
+    return undefined;
   }
 
   get polygon() {
-    return this._data.geometry.polygon.coordinates;
+    if (this._data && this._data.geometry && this._data.geometry.polygon) {
+      return this._data.geometry.polygon.coordinates;
+    }
+    return undefined;
   }
 
   get polygonGeoJSON() {
-    return this._data.geometry.polygon;
+    if (this._data && this._data.geometry && this._data.geometry.polygon) {
+      return this._data.geometry.polygon;
+    }
+    return undefined;
   }
 
   get center() {
-    return this._data.geometry.center.coordinates;
+    if (this._data && this._data.geometry && this._data.geometry.polygon) {
+      return this._data.geometry.center.coordinates;
+    }
+    return undefined;
   }
 
   get bounds() {
-    return this._data.geometry.bbox.coordinates;
+    if (this._data && this._data.geometry && this._data.geometry.polygon) {
+      return this._data.geometry.bbox.coordinates;
+    }
+    return undefined;
   }
 }
 

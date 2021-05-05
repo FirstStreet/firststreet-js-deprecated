@@ -1,9 +1,9 @@
 const { isArray } = require('lodash');
-const Sut = require('./AALPropertySummary.js');
+const Sut = require('./AalPropertySummary.js');
 
 const mock = require('../../__mocks__/aalPropertySummary.json');
 
-describe('AAL property summary', () => {
+describe('AALproperty summary', () => {
   it('should construct object', () => {
     const result = new Sut(mock);
     expect(result.raw).toMatchSnapshot();
@@ -13,8 +13,8 @@ describe('AAL property summary', () => {
     expect(result.depthLoss.length).toBe(3);
     expect(isArray(result.annualLoss)).toBe(true);
     expect(result.annualLoss.length).toBe(2);
-    expect(result.depthLoss[0].constructor.name).toBe('AALDepthLoss');
-    expect(result.annualLoss[0].constructor.name).toBe('AALAnnualLoss');
+    expect(result.depthLoss[0].constructor.name).toBe('AalDepthLoss');
+    expect(result.annualLoss[0].constructor.name).toBe('AalAnnualLoss');
     expect(result.depthLoss[0].data).toEqual(25081);
   });
 

@@ -8,7 +8,7 @@ class ProbabilityChance extends FsidResponse {
 
   constructor(data) {
     super(data);
-    if (data.chance && isArray(data.chance)) {
+    if (data && data.chance && isArray(data.chance)) {
       this._chance = data.chance.map((r) => new ProbabilityData(r));
     }
   }

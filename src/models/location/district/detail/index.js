@@ -6,15 +6,24 @@ class LocationDistrictDetail extends LocalityDetail {
   }
 
   get congress() {
-    return this._data.congress;
+    if (this._data) {
+      return this._data.congress;
+    }
+    return undefined;
   }
 
   get state() {
-    return this._data.state;
+    if (this._data) {
+      return this._data.state;
+    }
+    return undefined;
   }
 
   get county() {
-    return this._data.county;
+    if (this._data) {
+      return this._data.county;
+    }
+    return undefined;
   }
 }
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AAL property summary should construct object 1`] = `
+exports[`AALproperty summary should construct object 1`] = `
 Object {
   "annualLoss": Array [
     Object {
@@ -37,11 +37,11 @@ Object {
 }
 `;
 
-exports[`AAL property summary should construct object with empty child nodes 1`] = `
+exports[`AALproperty summary should construct object with empty child nodes 1`] = `
 Object {
   "annualLoss": Array [],
   "depthLoss": Array [],
 }
 `;
 
-exports[`AAL property summary should construct object without child nodes 1`] = `Object {}`;
+exports[`AALproperty summary should construct object without child nodes 1`] = `Object {}`;

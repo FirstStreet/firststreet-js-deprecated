@@ -8,7 +8,7 @@ class ProbabilityDepth extends FsidResponse {
 
   constructor(data) {
     super(data);
-    if (data.depth && isArray(data.depth)) {
+    if (data && data.depth && isArray(data.depth)) {
       this._depth = data.depth.map((r) => new ProbabilityData(r));
     }
   }

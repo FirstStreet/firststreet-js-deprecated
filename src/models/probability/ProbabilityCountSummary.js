@@ -9,31 +9,52 @@ constructor(data) {
 }
 
 get state() {
-  return this._probabilityData.state;
+  if (this._probabilityData) {
+    return this._probabilityData.state;
+  }
+  return undefined;
 }
 
 get city() {
-  return this._probabilityData.city;
+  if (this._probabilityData) {
+    return this._probabilityData.city;
+  }
+  return undefined;
 }
 
 get county() {
-  return this._probabilityData.county;
+  if (this._probabilityData) {
+    return this._probabilityData.county;
+  }
+  return undefined;
 }
 
 get zcta() {
-  return this._probabilityData.zcta;
+  if (this._probabilityData) {
+    return this._probabilityData.zcta;
+  }
+  return undefined;
 }
 
 get cd() {
-  return this._probabilityData.cd;
+  if (this._probabilityData) {
+    return this._probabilityData.cd;
+  }
+  return undefined;
 }
 
 get neighborhood() {
-  return this._probabilityData.neighborhood;
+  if (this._probabilityData) {
+    return this._probabilityData.neighborhood;
+  }
+  return undefined;
 }
 
 get tract() {
-  return this._probabilityData.tract;
+  if (this._probabilityData) {
+    return this._probabilityData.tract;
+  }
+  return undefined;
 }
 }
 module.exports = ProbabilityCountSummary;

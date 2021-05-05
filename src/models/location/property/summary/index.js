@@ -1,25 +1,39 @@
 const FsidResponse = require('../../../FsidResponse');
 
-
 class LocationPropertySummary extends FsidResponse {
   get floodFactor() {
-    return this._data.floodFactor;
+    if (this._data) {
+      return this._data.floodFactor;
+    }
+    return undefined;
   }
 
   get riskDirection() {
-    return this._data.riskDirection;
+    if (this._data) {
+      return this._data.riskDirection;
+    }
+    return undefined;
   }
 
   get environmentalRisk() {
-    return this._data.environmentalRisk;
+    if (this._data) {
+      return this._data.environmentalRisk;
+    }
+    return undefined;
   }
 
   get historic() {
-    return this._data.historic;
+    if (this._data) {
+      return this._data.historic;
+    }
+    return undefined;
   }
 
   get adaptation() {
-    return this._data.adaptation;
+    if (this._data) {
+      return this._data.adaptation;
+    }
+    return undefined;
   }
 }
 

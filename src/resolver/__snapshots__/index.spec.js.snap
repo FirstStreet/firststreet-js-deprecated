@@ -972,9 +972,9 @@ ProbabilityCumulative {
 `;
 
 exports[`resolver should get property aal by fsid(has additional parameters) 1`] = `
-AALPropertySummary {
+AalPropertySummary {
   "_annualLoss": Array [
-    AALAnnualLoss {
+    AalAnnualLoss {
       "_aalData": Object {
         "data": Object {
           "high": 9244,
@@ -984,7 +984,7 @@ AALPropertySummary {
         "year": 2020,
       },
     },
-    AALAnnualLoss {
+    AalAnnualLoss {
       "_aalData": Object {
         "data": Object {
           "high": 9950,
@@ -1030,19 +1030,19 @@ AALPropertySummary {
     ],
   },
   "_depthLoss": Array [
-    AALDepthLoss {
+    AalDepthLoss {
       "_aalData": Object {
         "data": 25081,
         "depth": 3,
       },
     },
-    AALDepthLoss {
+    AalDepthLoss {
       "_aalData": Object {
         "data": 28472,
         "depth": 15,
       },
     },
-    AALDepthLoss {
+    AalDepthLoss {
       "_aalData": Object {
         "data": 32827,
         "depth": 31,

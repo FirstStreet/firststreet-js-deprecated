@@ -6,11 +6,17 @@ class ProbabilityData {
   }
 
   get year() {
-    return this._probabilityData.year;
+    if (this._probabilityData) {
+      return this._probabilityData.year;
+    }
+    return undefined;
   }
 
   get data() {
-    return this._probabilityData.data;
+    if (this._probabilityData) {
+      return this._probabilityData.data;
+    }
+    return undefined;
   }
 }
 

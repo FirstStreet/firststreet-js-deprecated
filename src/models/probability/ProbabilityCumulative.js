@@ -8,7 +8,7 @@ class ProbabilityCumulative extends FsidResponse {
 
   constructor(data) {
     super(data);
-    if (data.cumulative && isArray(data.cumulative)) {
+    if (data && data.cumulative && isArray(data.cumulative)) {
       this._cumulative = data.cumulative.map((r) => new ProbabilityData(r));
     }
   }

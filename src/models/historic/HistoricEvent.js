@@ -6,33 +6,51 @@ class HistoricEvent extends ApiResponse {
 
   constructor(data) {
     super(data);
-    if (data.properties) {
+    if (data && data.properties) {
       this._properties = new HistoricEventProperties(data.properties);
     }
   }
 
   get eventId() {
-    return this._data.eventId;
+    if (this._data) {
+      return this._data.eventId;
+    }
+    return undefined;
   }
 
   get name() {
-    return this._data.name;
+    if (this._data) {
+      return this._data.name;
+    }
+    return undefined;
   }
 
   get type() {
-    return this._data.type;
+    if (this._data) {
+      return this._data.type;
+    }
+    return undefined;
   }
 
   get month() {
-    return this._data.month;
+    if (this._data) {
+      return this._data.month;
+    }
+    return undefined;
   }
 
   get year() {
-    return this._data.year;
+    if (this._data) {
+      return this._data.year;
+    }
+    return undefined;
   }
 
   get returnPeriod() {
-    return this._data.returnPeriod;
+    if (this._data) {
+      return this._data.returnPeriod;
+    }
+    return undefined;
   }
 
   get properties() {
@@ -40,7 +58,10 @@ class HistoricEvent extends ApiResponse {
   }
 
   get geometry() {
-    return this._data.geometry;
+    if (this._data) {
+      return this._data.geometry;
+    }
+    return undefined;
   }
 }
 

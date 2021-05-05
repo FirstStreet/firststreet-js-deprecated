@@ -6,11 +6,17 @@ class AvmProvider extends ApiResponse {
   }
 
   get providerName() {
-    return this._data.providerName;
+    if (this._data) {
+      return this._data.providerName;
+    }
+    return undefined;
   }
 
   get providerLogo() {
-    return this._data.providerLogo;
+    if (this._data) {
+      return this._data.providerLogo;
+    }
+    return undefined;
   }
 }
 module.exports = AvmProvider;

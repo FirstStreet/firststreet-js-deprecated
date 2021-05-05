@@ -2,71 +2,122 @@ const FsidResponse = require('../../../FsidResponse');
 
 class LocationPropertyDetail extends FsidResponse {
   get streetNumber() {
-    return this._data.streetNumber;
+    if (this._data) {
+      return this._data.streetNumber;
+    }
+    return undefined;
   }
 
   get route() {
-    return this._data.route;
+    if (this._data) {
+      return this._data.route;
+    }
+    return undefined;
   }
 
   get elevation() {
-    return this._data.elevation;
+    if (this._data) {
+      return this._data.elevation;
+    }
+    return undefined;
   }
 
   get footprintId() {
-    return this._data.footprintId;
+    if (this._data) {
+      return this._data.footprintId;
+    }
+    return undefined;
   }
 
   get city() {
-    return this._data.city;
+    if (this._data) {
+      return this._data.city;
+    }
+    return undefined;
   }
 
   get state() {
-    return this._data.state;
+    if (this._data) {
+      return this._data.state;
+    }
+    return undefined;
   }
 
   get county() {
-    return this._data.county;
+    if (this._data) {
+      return this._data.county;
+    }
+    return undefined;
   }
 
   get cd() {
-    return this._data.cd;
+    if (this._data) {
+      return this._data.cd;
+    }
+    return undefined;
   }
 
   get zcta() {
-    return this._data.zcta;
+    if (this._data) {
+      return this._data.zcta;
+    }
+    return undefined;
   }
 
   get tract() {
-    return this._data.tract;
+    if (this._data) {
+      return this._data.tract;
+    }
+    return undefined;
   }
 
   get neighborhood() {
-    return this._data.neighborhood;
+    if (this._data) {
+      return this._data.neighborhood;
+    }
+    return undefined;
   }
 
   get fema() {
-    return this._data.fema;
+    if (this._data) {
+      return this._data.fema;
+    }
+    return undefined;
   }
 
   get geometry() {
-    return this._data.geometry;
+    if (this._data) {
+      return this._data.geometry;
+    }
+    return undefined;
   }
 
   get floorElevation() {
-    return this._data.floorElevation;
+    if (this._data) {
+      return this._data.floorElevation;
+    }
+    return undefined;
   }
 
   get building() {
-    return this._data.building;
+    if (this._data) {
+      return this._data.building;
+    }
+    return undefined;
   }
 
   get residential() {
-    return this._data.residential;
+    if (this._data) {
+      return this._data.residential;
+    }
+    return undefined;
   }
 
   get floodType() {
-    return this._data.floodType;
+    if (this._data) {
+      return this._data.floodType;
+    }
+    return undefined;
   }
 }
 

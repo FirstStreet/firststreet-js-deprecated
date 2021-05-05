@@ -1,12 +1,12 @@
 const { isArray } = require('lodash');
 const FsidResponse = require('../FsidResponse');
-const NFIPEstimate = require('./NFIPEstimate');
+const NfipEstimate = require('./NfipEstimate');
 
-class NFIPPropertySummary extends FsidResponse {
+class NfipPropertySummary extends FsidResponse {
   constructor(data) {
     super(data);
     if (data.data && isArray(data.data)) {
-      this._nfipData = data.data.map((r) => new NFIPEstimate(r));
+      this._nfipData = data.data.map((r) => new NfipEstimate(r));
     }
   }
 
@@ -15,4 +15,4 @@ class NFIPPropertySummary extends FsidResponse {
   }
 }
 
-module.exports = NFIPPropertySummary;
+module.exports = NfipPropertySummary;

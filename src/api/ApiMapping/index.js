@@ -11,9 +11,9 @@ const DistrictDetail = require('../../models/location/district/detail/index.js')
 const TractDetail = require('../../models/location/tract/detail/index.js');
 const ProbabilityCumulative = require('../../models/probability/ProbabilityCumulative');
 const HistoricEvent = require('../../models/historic/HistoricEvent');
-const AALLocalitySummary = require('../../models/economic/AALLocalitySummary');
-const AALPropertySummary = require('../../models/economic/AALPropertySummary');
-const NFIPPropertySummary = require('../../models/economic/NFIPPropertySummary');
+const AalLocalitySummary = require('../../models/economic/AalLocalitySummary');
+const AalPropertySummary = require('../../models/economic/AalPropertySummary');
+const NfipPropertySummary = require('../../models/economic/NfipPropertySummary');
 const ProbabilityDepth = require('../../models/probability/ProbabilityDepth');
 const ProbabilityCount = require('../../models/probability/ProbabilityCount');
 const ProbabilityChance = require('../../models/probability/ProbabilityChance');
@@ -107,21 +107,21 @@ const mapping = {
   economic: {
     aal: {
       model: {
-        property: AALPropertySummary,
-        city: AALLocalitySummary,
-        county: AALLocalitySummary,
-        neighborhood: AALLocalitySummary,
-        zcta: AALLocalitySummary,
-        state: AALLocalitySummary,
-        cd: AALLocalitySummary,
-        tract: AALLocalitySummary,
+        property: AalPropertySummary,
+        city: AalLocalitySummary,
+        county: AalLocalitySummary,
+        neighborhood: AalLocalitySummary,
+        zcta: AalLocalitySummary,
+        state: AalLocalitySummary,
+        cd: AalLocalitySummary,
+        tract: AalLocalitySummary,
       },
       endpointPrefix: '/economic/aal/summary',
       needsLocation: true,
       allowedParameters: ['depth', 'stories', 'basement', 'floorElevation', 'untis', 'avm'],
     },
     nfip: {
-      model: { all: NFIPPropertySummary },
+      model: { all: NfipPropertySummary },
       endpointPrefix: '/economic/nfip',
       needsLocation: true,
     },

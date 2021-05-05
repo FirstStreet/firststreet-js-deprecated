@@ -2,27 +2,45 @@ const FsidResponse = require('../FsidResponse');
 
 class LocalitySummary extends FsidResponse {
   get riskDirection() {
-    return this._data.riskDirection;
+    if (this._data) {
+      return this._data.riskDirection;
+    }
+    return undefined;
   }
 
   get environmentalRisk() {
-    return this._data.environmentalRisk;
+    if (this._data) {
+      return this._data.environmentalRisk;
+    }
+    return undefined;
   }
 
   get propertiesTotal() {
-    return this._data.properties.total;
+    if (this._data && this._data.properties) {
+      return this._data.properties.total;
+    }
+    return undefined;
   }
 
   get propertiesAtRisk() {
-    return this._data.properties.atRisk;
+    if (this._data && this._data.properties) {
+      return this._data.properties.atRisk;
+    }
+    return undefined;
   }
 
   get historic() {
-    return this._data.historic;
+    if (this._data) {
+      return this._data.historic;
+    }
+    return undefined;
   }
 
   get adaptation() {
-    return this._data.adaptation;
+    if (this._data) {
+      return this._data.adaptation;
+    }
+    return undefined;
   }
 }
 

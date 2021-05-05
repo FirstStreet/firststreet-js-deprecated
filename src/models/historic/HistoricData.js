@@ -6,19 +6,31 @@ class HistoricData {
   }
 
   get eventId() {
-    return this._historicData.eventId;
+    if (this._historicData) {
+      return this._historicData.eventId;
+    }
+    return undefined;
   }
 
   get name() {
-    return this._historicData.name;
+    if (this._historicData) {
+      return this._historicData.name;
+    }
+    return undefined;
   }
 
   get type() {
-    return this._historicData.type;
+    if (this._historicData) {
+      return this._historicData.type;
+    }
+    return undefined;
   }
 
   get data() {
-    return this._historicData.data;
+    if (this._historicData) {
+      return this._historicData.data;
+    }
+    return undefined;
   }
 }
 

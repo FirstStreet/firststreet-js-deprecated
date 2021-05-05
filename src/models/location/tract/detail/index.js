@@ -2,15 +2,24 @@ const LocalityDetail = require('../../LocalityDetail.js');
 
 class LocationTractDetail extends LocalityDetail {
   get state() {
-    return this._data.state;
+    if (this._data) {
+      return this._data.state;
+    }
+    return undefined;
   }
 
   get city() {
-    return this._data.city;
+    if (this._data) {
+      return this._data.city;
+    }
+    return undefined;
   }
 
   get county() {
-    return this._data.county;
+    if (this._data) {
+      return this._data.county;
+    }
+    return undefined;
   }
 }
 

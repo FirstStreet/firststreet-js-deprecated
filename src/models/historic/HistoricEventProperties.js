@@ -6,11 +6,17 @@ class HistoricEventProperties {
   }
 
   get total() {
-    return this._eventData.total;
+    if (this._eventData) {
+      return this._eventData.total;
+    }
+    return undefined;
   }
 
   get affected() {
-    return this._eventData.affected;
+    if (this._eventData) {
+      return this._eventData.affected;
+    }
+    return undefined;
   }
 }
 module.exports = HistoricEventProperties;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AAL locality summary should construct object 1`] = `
+exports[`AALlocality summary should construct object 1`] = `
 Object {
   "annualLoss": Array [
     Object {
@@ -273,11 +273,11 @@ Object {
 }
 `;
 
-exports[`AAL locality summary should construct object with empty child nodes 1`] = `
+exports[`AALlocality summary should construct object with empty child nodes 1`] = `
 Object {
   "annualLoss": Array [],
   "depthLoss": Array [],
 }
 `;
 
-exports[`AAL locality summary should construct object without child nodes 1`] = `Object {}`;
+exports[`AALlocality summary should construct object without child nodes 1`] = `Object {}`;

@@ -2,31 +2,52 @@ const LocalityDetail = require('../../LocalityDetail.js');
 
 class LocationCountyDetail extends LocalityDetail {
   get fips() {
-    return this._data.fips;
+    if (this._data) {
+      return this._data.fips;
+    }
+    return undefined;
   }
 
   get isCoastal() {
-    return this._data.isCoastal;
+    if (this._data) {
+      return this._data.isCoastal;
+    }
+    return undefined;
   }
 
   get state() {
-    return this._data.state;
+    if (this._data) {
+      return this._data.state;
+    }
+    return undefined;
   }
 
   get city() {
-    return this._data.city;
+    if (this._data) {
+      return this._data.city;
+    }
+    return undefined;
   }
 
   get county() {
-    return this._data.county;
+    if (this._data) {
+      return this._data.county;
+    }
+    return undefined;
   }
 
   get cd() {
-    return this._data.cd;
+    if (this._data) {
+      return this._data.cd;
+    }
+    return undefined;
   }
 
   get zcta() {
-    return this._data.zcta;
+    if (this._data) {
+      return this._data.zcta;
+    }
+    return undefined;
   }
 }
 

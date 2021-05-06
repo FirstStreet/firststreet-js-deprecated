@@ -1,4 +1,4 @@
-const FsidResponse = require('../../../FsidResponse');
+const FsidResponse = require('../../../fsidResponse');
 
 class LocationPropertySummary extends FsidResponse {
   get floodFactor() {

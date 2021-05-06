@@ -1,4 +1,4 @@
-const ApiResponse = require('../ApiResponse');
+const ApiResponse = require('../apiResponse');
 
 class TideStationDetail extends ApiResponse {
   get name() {

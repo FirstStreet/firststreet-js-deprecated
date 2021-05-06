@@ -1,7 +1,7 @@
 const fetch = require('node-fetch').default;
 const {
   UNKNOWN, NETWORK_ERROR, NO_BODY,
-} = require('../Error');
+} = require('../error');
 
 const defaults = {
   host: process.env.HTTP_HOST || 'https://api.firststreet.org',

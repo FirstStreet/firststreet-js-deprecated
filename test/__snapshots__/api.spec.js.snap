@@ -971,7 +971,7 @@ HistoricLocalitySummary {
     "fsid": 4808860,
     "historic": null,
   },
-  "_historic": Array [],
+  "_historic": null,
 }
 `;
 

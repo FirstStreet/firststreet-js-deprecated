@@ -1,4 +1,4 @@
-const FsidResponse = require('../FsidResponse');
+const FsidResponse = require('../fsidResponse');
 const Avm = require('./Avm');
 
 class AvmProperty extends FsidResponse {

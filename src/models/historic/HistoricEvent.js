@@ -1,4 +1,4 @@
-const ApiResponse = require('../ApiResponse');
+const ApiResponse = require('../apiResponse');
 const HistoricEventProperties = require('./HistoricEventProperties');
 
 class HistoricEvent extends ApiResponse {

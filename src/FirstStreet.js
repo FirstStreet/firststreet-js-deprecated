@@ -1,5 +1,5 @@
 const Api = require('./api');
-const Http = require('./Http');
+const Http = require('./http');
 
 const Resolver = require('./resolver');
 

@@ -1,4 +1,4 @@
-const { isArray } = require('lodash');
+const isArray = require('lodash/isArray');
 const Historic = require('./HistoricLocalitySummary.js');
 
 const mock = require('../../__mocks__/historicCitySummary.json');

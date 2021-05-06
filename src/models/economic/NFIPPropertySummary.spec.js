@@ -1,4 +1,4 @@
-const { isArray } = require('lodash');
+const isArray = require('lodash/isArray');
 const Sut = require('./NfipPropertySummary');
 
 const mock = require('../../__mocks__/nfipPropertySummary.json');

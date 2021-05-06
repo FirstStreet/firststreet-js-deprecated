@@ -1,4 +1,4 @@
-const { isArray } = require('lodash');
+const isArray = require('lodash/isArray');
 const ProbabilityCountSummary = require('./ProbabilityCountSummary');
 
 const mock = require('../../__mocks__/probabilityCountSummary.json');

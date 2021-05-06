@@ -1,15 +1,17 @@
 const isArray = require('lodash/isArray');
 
-const FsidResponse = require('../FsidResponse');
+const FsidResponse = require('../fsidResponse');
 const TideStation = require('./TideStation');
 
 class SeaLevel extends FsidResponse {
-  _tideStations=[];
+  _tideStations;
 
   constructor(data) {
     super(data);
     if (data && data.tideStation && isArray(data.tideStation)) {
       this._tideStations = data.tideStation.map((r) => new TideStation(r));
+    } else if (data && data.tideStation === null) {
+      this._tideStations = null;
     }
   }
 

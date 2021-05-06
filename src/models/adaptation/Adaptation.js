@@ -1,4 +1,4 @@
-const ApiResponse = require('../ApiResponse');
+const ApiResponse = require('../apiResponse');
 const ServingLocations = require('./ServingLocations');
 
 class Adaptation extends ApiResponse {

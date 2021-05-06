@@ -1,4 +1,4 @@
-const ApiResponse = require('../ApiResponse');
+const ApiResponse = require('../apiResponse');
 
 class FsidResponse extends ApiResponse {
   get fsid() {

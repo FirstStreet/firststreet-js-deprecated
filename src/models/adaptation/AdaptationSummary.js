@@ -1,4 +1,4 @@
-const FsidResponse = require('../FsidResponse');
+const FsidResponse = require('../fsidResponse');
 
 class AdaptationSummary extends FsidResponse {
   get properties() {

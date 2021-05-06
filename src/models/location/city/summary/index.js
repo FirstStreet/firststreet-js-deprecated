@@ -1,4 +1,4 @@
-const FsidResponse = require('../../../FsidResponse');
+const FsidResponse = require('../../../fsidResponse');
 
 class LocationCitySummary extends FsidResponse {
   get name() {

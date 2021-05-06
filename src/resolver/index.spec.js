@@ -1,4 +1,4 @@
-const mapping = require('../api/ApiMapping');
+const mapping = require('../api/mapping');
 const Resolver = require('.');
 
 const Http = require('../__mocks__/Http');

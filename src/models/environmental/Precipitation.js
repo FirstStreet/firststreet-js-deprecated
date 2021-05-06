@@ -1,4 +1,4 @@
-const FsidResponse = require('../FsidResponse');
+const FsidResponse = require('../fsidResponse');
 
 class Precipitation extends FsidResponse {
   get projected() {

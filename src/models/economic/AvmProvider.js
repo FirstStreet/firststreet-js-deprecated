@@ -1,4 +1,4 @@
-const ApiResponse = require('../ApiResponse');
+const ApiResponse = require('../apiResponse');
 
 class AvmProvider extends ApiResponse {
   get providerId() {

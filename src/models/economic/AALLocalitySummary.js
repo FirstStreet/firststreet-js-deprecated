@@ -1,14 +1,16 @@
 const isArray = require('lodash/isArray');
-const ApiResponse = require('../ApiResponse');
+const ApiResponse = require('../apiResponse');
 const AalForLocation = require('./AalForLocation');
 
 class AalLocalitySummary extends ApiResponse {
-  _annualLoss=[];
+  _annualLoss;
 
   constructor(data) {
     super(data);
     if (data && data.annualLoss && isArray(data.annualLoss)) {
       this._annualLoss = data.annualLoss.map((r) => new AalForLocation(r));
+    } else if (data && data.annualLoss === null) {
+      this._annualLoss = null;
     }
   }
 

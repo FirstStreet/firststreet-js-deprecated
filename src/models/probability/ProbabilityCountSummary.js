@@ -1,4 +1,4 @@
-const FsidResponse = require('../FsidResponse');
+const FsidResponse = require('../fsidResponse');
 
 class ProbabilityCountSummary extends FsidResponse {
   get state() {

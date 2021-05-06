@@ -1,15 +1,17 @@
-const { isArray } = require('lodash');
+const isArray = require('lodash/isArray');
 
-const FsidResponse = require('../FsidResponse');
+const FsidResponse = require('../fsidResponse');
 const ProbabilityData = require('./ProbabilityData');
 
 class ProbabilityDepth extends FsidResponse {
-  _depth=[];
+  _depth;
 
   constructor(data) {
     super(data);
     if (data && data.depth && isArray(data.depth)) {
       this._depth = data.depth.map((r) => new ProbabilityData(r));
+    } else if (data && data.depth === null) {
+      this._depth = null;
     }
   }
 

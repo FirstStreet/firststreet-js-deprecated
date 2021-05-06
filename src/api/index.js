@@ -1,4 +1,4 @@
-import mapping from './ApiMapping';
+import mapping from './mapping';
 
 const assert = require('assert');
 const _ = require('lodash');

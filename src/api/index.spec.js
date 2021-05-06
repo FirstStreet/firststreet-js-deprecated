@@ -3,7 +3,7 @@ const _ = require('lodash');
 const FirstStreet = require('../__mocks__/FirstStreet');
 const Resolver = require('../__mocks__/Resolver');
 const propertyDetailMock = require('../__mocks__/propertyDetail.json');
-const mapping = require('./ApiMapping');
+const mapping = require('./mapping');
 
 describe('Api', () => {
   it('should setup lookup with fsid', async () => {

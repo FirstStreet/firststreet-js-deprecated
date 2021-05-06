@@ -1,15 +1,17 @@
-const { isArray } = require('lodash');
+const isArray = require('lodash/isArray');
 
-const FsidResponse = require('../FsidResponse');
+const FsidResponse = require('../fsidResponse');
 const ProbabilityData = require('./ProbabilityData');
 
 class ProbabilityCumulative extends FsidResponse {
-  _cumulative=[];
+  _cumulative;
 
   constructor(data) {
     super(data);
     if (data && data.cumulative && isArray(data.cumulative)) {
       this._cumulative = data.cumulative.map((r) => new ProbabilityData(r));
+    } else if (data && data.cumulative === null) {
+      this._cumulative = null;
     }
   }
 

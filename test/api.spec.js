@@ -19,6 +19,10 @@ const AvmProperty = require('../src/models/economic/AvmProperty.js');
 const Adaptation = require('../src/models/adaptation/Adaptation');
 const ServingLocations = require('../src/models/adaptation/ServingLocations');
 const AdaptationSummary = require('../src/models/adaptation/AdaptationSummary');
+const FemaNfip = require('../src/models/fema/FemaNfip');
+const TideStationDetail = require('../src/models/environmental/TideStationDetail');
+const SeaLevel = require('../src/models/environmental/SeaLevel');
+const Precipitation = require('../src/models/environmental/Precipitation');
 
 describe('Firststreet Api', () => {
   if (process.env.CI) {
@@ -252,5 +256,44 @@ describe('Firststreet Api', () => {
     expect(adaptation.errors).toBeUndefined();
     expect(adaptation instanceof AdaptationSummary).toBe(true);
     expect(adaptation).toMatchSnapshot();
+  });
+
+  it('should be able to get FEMA NFIP', async () => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('county', { fsid: 48029 });
+    const nfip = await lookup.fema('nfip');
+    expect(nfip.errors).toBeUndefined();
+    expect(nfip instanceof FemaNfip).toBe(true);
+    expect(nfip).toMatchSnapshot();
+  });
+
+  it('should be able to get environmental precipitation', async () => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('county', { fsid: 48029 });
+    const env = await lookup.environmental('precipitation');
+    expect(env.errors).toBeUndefined();
+    expect(env instanceof Precipitation).toBe(true);
+    expect(env).toMatchSnapshot();
+  });
+
+  it('should be able to get environmental sea-level', async () => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('city', { fsid: 4808860 });
+    const env = await lookup.environmental('sea-level');
+    expect(env.errors).toBeUndefined();
+    expect(env instanceof SeaLevel).toBe(true);
+    expect(env).toMatchSnapshot();
+  });
+
+  it('should be able to get environmental tide station', async () => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const env = await fs.environmental('tide-station', { id: 19 });
+    expect(env.errors).toBeUndefined();
+    expect(env instanceof TideStationDetail).toBe(true);
+    expect(env).toMatchSnapshot();
   });
 });

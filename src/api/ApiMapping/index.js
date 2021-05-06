@@ -24,6 +24,11 @@ const AvmProvider = require('../../models/economic/AvmProvider.js');
 const AvmProperty = require('../../models/economic/AvmProperty.js');
 const Adaptation = require('../../models/adaptation/Adaptation.js');
 const AdaptationSummary = require('../../models/adaptation/AdaptationSummary.js');
+const FemaNfip = require('../../models/fema/FemaNfip.js');
+const Precipitation = require('../../models/environmental/Precipitation.js');
+const SeaLevel = require('../../models/environmental/SeaLevel.js');
+const TideStationDetail = require('../../models/environmental/TideStationDetail');
+
 /*
   Mapping between fsf-probability and the client code is done through two-level object:
     first level is service, second level is 'detail level'
@@ -165,6 +170,31 @@ const mapping = {
       model: { all: AdaptationSummary },
       endpointPrefix: '/adaptation/summary',
       needsLocation: true,
+    },
+  },
+  fema: {
+    nfip: {
+      model: { all: FemaNfip },
+      needsLocation: true,
+      endpointPrefix: '/fema/nfip',
+    },
+  },
+  environmental: {
+    precipitation: {
+      model: { all: Precipitation },
+      needsLocation: true,
+      endpointPrefix: '/environmental/precipitation',
+    },
+    'sea-level': {
+      model: { all: SeaLevel },
+      needsLocation: true,
+      endpointPrefix: '/environmental/sea-level',
+    },
+    'tide-station': {
+      model: { all: TideStationDetail },
+      needsLocation: false,
+      endpointPrefix: '/environmental/tide-station',
+      allowedParameters: ['id'],
     },
   },
 };

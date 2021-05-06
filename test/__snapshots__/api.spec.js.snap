@@ -10,6 +10,21 @@ AvmProvider {
 }
 `;
 
+exports[`Firststreet Api should be able to get FEMA NFIP 1`] = `
+FemaNfip {
+  "_data": Object {
+    "buildingCoverage": 220893600,
+    "buildingPaid": 24527590,
+    "claimCount": 2180,
+    "contentCoverage": 71228200,
+    "contentPaid": 6184853,
+    "fsid": 48029,
+    "iccPaid": 45000,
+    "policyCount": 2180,
+  },
+}
+`;
+
 exports[`Firststreet Api should be able to get aal with custom parameters 1`] = `
 AalPropertySummary {
   "_annualLoss": Array [],
@@ -532,6 +547,420 @@ AdaptationSummary {
     "adaptation": Array [],
     "fsid": 4801470191,
     "properties": null,
+  },
+}
+`;
+
+exports[`Firststreet Api should be able to get environmental precipitation 1`] = `
+Precipitation {
+  "_data": Object {
+    "fsid": 48029,
+    "projected": Array [
+      Object {
+        "data": Object {
+          "high": 1.044,
+          "low": 0.921,
+          "mid": 0.964,
+        },
+        "year": 2020,
+      },
+      Object {
+        "data": Object {
+          "high": 1.066,
+          "low": 0.882,
+          "mid": 0.947,
+        },
+        "year": 2035,
+      },
+      Object {
+        "data": Object {
+          "high": 1.088,
+          "low": 0.842,
+          "mid": 0.929,
+        },
+        "year": 2050,
+      },
+    ],
+  },
+}
+`;
+
+exports[`Firststreet Api should be able to get environmental sea-level 1`] = `
+SeaLevel {
+  "_data": Object {
+    "fsid": 4808860,
+    "tideStation": Array [
+      Object {
+        "name": "Galveston Pleasure Pier, TX",
+        "noaaId": "8771510",
+        "tideStationId": 19,
+      },
+      Object {
+        "name": "Port Isabel, TX",
+        "noaaId": "8779770",
+        "tideStationId": 25,
+      },
+      Object {
+        "name": "Galveston Pier 21, TX",
+        "noaaId": "8771450",
+        "tideStationId": 54,
+      },
+      Object {
+        "name": "Rockport, TX",
+        "noaaId": "8774770",
+        "tideStationId": 66,
+      },
+      Object {
+        "name": "Freeport, TX",
+        "noaaId": "8772440",
+        "tideStationId": 72,
+      },
+      Object {
+        "name": "Sabine Pass North",
+        "noaaId": "8770570",
+        "tideStationId": 202,
+      },
+      Object {
+        "name": "Morgans Point, Barbours Cut",
+        "noaaId": "8770613",
+        "tideStationId": 203,
+      },
+      Object {
+        "name": "Eagle Point, Galveston Bay",
+        "noaaId": "8771013",
+        "tideStationId": 208,
+      },
+      Object {
+        "name": "Bob Hall Pier, Corpus Christi",
+        "noaaId": "8775870",
+        "tideStationId": 226,
+      },
+    ],
+  },
+  "_tideStations": Array [
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Galveston Pleasure Pier, TX",
+        "noaaId": "8771510",
+        "tideStationId": 19,
+      },
+    },
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Port Isabel, TX",
+        "noaaId": "8779770",
+        "tideStationId": 25,
+      },
+    },
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Galveston Pier 21, TX",
+        "noaaId": "8771450",
+        "tideStationId": 54,
+      },
+    },
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Rockport, TX",
+        "noaaId": "8774770",
+        "tideStationId": 66,
+      },
+    },
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Freeport, TX",
+        "noaaId": "8772440",
+        "tideStationId": 72,
+      },
+    },
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Sabine Pass North",
+        "noaaId": "8770570",
+        "tideStationId": 202,
+      },
+    },
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Morgans Point, Barbours Cut",
+        "noaaId": "8770613",
+        "tideStationId": 203,
+      },
+    },
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Eagle Point, Galveston Bay",
+        "noaaId": "8771013",
+        "tideStationId": 208,
+      },
+    },
+    TideStation {
+      "_tideStnData": Object {
+        "name": "Bob Hall Pier, Corpus Christi",
+        "noaaId": "8775870",
+        "tideStationId": 226,
+      },
+    },
+  ],
+}
+`;
+
+exports[`Firststreet Api should be able to get environmental tide station 1`] = `
+TideStationDetail {
+  "_data": Object {
+    "center": Object {
+      "coordinates": Array [
+        -94.7894,
+        29.2853,
+      ],
+      "type": "Point",
+    },
+    "name": "Galveston Pleasure Pier, TX",
+    "noaaId": "8771510",
+    "slrHistoric": Array [],
+    "slrProjected": Array [
+      Object {
+        "data": Object {
+          "high": 521,
+          "low": 205,
+          "mid": 343,
+        },
+        "year": 2300,
+      },
+      Object {
+        "data": Object {
+          "high": 499,
+          "low": 205,
+          "mid": 333,
+        },
+        "year": 2290,
+      },
+      Object {
+        "data": Object {
+          "high": 477,
+          "low": 202,
+          "mid": 321,
+        },
+        "year": 2280,
+      },
+      Object {
+        "data": Object {
+          "high": 456,
+          "low": 199,
+          "mid": 311,
+        },
+        "year": 2270,
+      },
+      Object {
+        "data": Object {
+          "high": 435,
+          "low": 195,
+          "mid": 299,
+        },
+        "year": 2260,
+      },
+      Object {
+        "data": Object {
+          "high": 415,
+          "low": 192,
+          "mid": 289,
+        },
+        "year": 2250,
+      },
+      Object {
+        "data": Object {
+          "high": 396,
+          "low": 188,
+          "mid": 279,
+        },
+        "year": 2240,
+      },
+      Object {
+        "data": Object {
+          "high": 375,
+          "low": 183,
+          "mid": 267,
+        },
+        "year": 2230,
+      },
+      Object {
+        "data": Object {
+          "high": 355,
+          "low": 178,
+          "mid": 256,
+        },
+        "year": 2220,
+      },
+      Object {
+        "data": Object {
+          "high": 338,
+          "low": 173,
+          "mid": 246,
+        },
+        "year": 2210,
+      },
+      Object {
+        "data": Object {
+          "high": 320,
+          "low": 169,
+          "mid": 235,
+        },
+        "year": 2200,
+      },
+      Object {
+        "data": Object {
+          "high": 300,
+          "low": 164,
+          "mid": 224,
+        },
+        "year": 2190,
+      },
+      Object {
+        "data": Object {
+          "high": 282,
+          "low": 158,
+          "mid": 213,
+        },
+        "year": 2180,
+      },
+      Object {
+        "data": Object {
+          "high": 265,
+          "low": 152,
+          "mid": 202,
+        },
+        "year": 2170,
+      },
+      Object {
+        "data": Object {
+          "high": 247,
+          "low": 145,
+          "mid": 190,
+        },
+        "year": 2160,
+      },
+      Object {
+        "data": Object {
+          "high": 230,
+          "low": 140,
+          "mid": 179,
+        },
+        "year": 2150,
+      },
+      Object {
+        "data": Object {
+          "high": 213,
+          "low": 133,
+          "mid": 168,
+        },
+        "year": 2140,
+      },
+      Object {
+        "data": Object {
+          "high": 197,
+          "low": 126,
+          "mid": 157,
+        },
+        "year": 2130,
+      },
+      Object {
+        "data": Object {
+          "high": 182,
+          "low": 118,
+          "mid": 147,
+        },
+        "year": 2120,
+      },
+      Object {
+        "data": Object {
+          "high": 166,
+          "low": 110,
+          "mid": 136,
+        },
+        "year": 2110,
+      },
+      Object {
+        "data": Object {
+          "high": 150,
+          "low": 104,
+          "mid": 124,
+        },
+        "year": 2100,
+      },
+      Object {
+        "data": Object {
+          "high": 134,
+          "low": 96,
+          "mid": 113,
+        },
+        "year": 2090,
+      },
+      Object {
+        "data": Object {
+          "high": 120,
+          "low": 87,
+          "mid": 102,
+        },
+        "year": 2080,
+      },
+      Object {
+        "data": Object {
+          "high": 106,
+          "low": 79,
+          "mid": 91,
+        },
+        "year": 2070,
+      },
+      Object {
+        "data": Object {
+          "high": 92,
+          "low": 71,
+          "mid": 81,
+        },
+        "year": 2060,
+      },
+      Object {
+        "data": Object {
+          "high": 77,
+          "low": 62,
+          "mid": 69,
+        },
+        "year": 2050,
+      },
+      Object {
+        "data": Object {
+          "high": 65,
+          "low": 53,
+          "mid": 59,
+        },
+        "year": 2040,
+      },
+      Object {
+        "data": Object {
+          "high": 53,
+          "low": 44,
+          "mid": 48,
+        },
+        "year": 2030,
+      },
+      Object {
+        "data": Object {
+          "high": 42,
+          "low": 36,
+          "mid": 39,
+        },
+        "year": 2020,
+      },
+      Object {
+        "data": Object {
+          "high": 31,
+          "low": 27,
+          "mid": 29,
+        },
+        "year": 2010,
+      },
+    ],
+    "tideStationId": 19,
   },
 }
 `;
@@ -14709,220 +15138,6 @@ ProbabilityCount {
 exports[`Firststreet Api should be able to get probability count summary 1`] = `
 ProbabilityCountSummary {
   "_data": Object {
-    "cd": Array [
-      Object {
-        "count": Array [
-          Object {
-            "data": Object {
-              "high": 68151,
-              "low": 54815,
-              "mid": 62103,
-            },
-            "year": 2020,
-          },
-          Object {
-            "data": Object {
-              "high": 73691,
-              "low": 57900,
-              "mid": 63946,
-            },
-            "year": 2035,
-          },
-          Object {
-            "data": Object {
-              "high": 73663,
-              "low": 54565,
-              "mid": 63926,
-            },
-            "year": 2050,
-          },
-        ],
-        "fsid": 4823,
-        "name": "Texas Congressional District 23",
-      },
-    ],
-    "city": Array [],
-    "county": Array [
-      Object {
-        "count": Array [
-          Object {
-            "data": Object {
-              "high": 53369,
-              "low": 36822,
-              "mid": 44650,
-            },
-            "year": 2020,
-          },
-          Object {
-            "data": Object {
-              "high": 56577,
-              "low": 39814,
-              "mid": 46307,
-            },
-            "year": 2035,
-          },
-          Object {
-            "data": Object {
-              "high": 56557,
-              "low": 37978,
-              "mid": 46299,
-            },
-            "year": 2050,
-          },
-        ],
-        "fsid": 48029,
-        "name": "Bexar County",
-      },
-    ],
-    "fsid": 4801470191,
-    "neighborhood": Array [
-      Array [
-        Object {
-          "count": Array [
-            Object {
-              "data": Object {
-                "high": 4,
-                "low": 4,
-                "mid": 4,
-              },
-              "year": 2020,
-            },
-            Object {
-              "data": Object {
-                "high": 5,
-                "low": 4,
-                "mid": 5,
-              },
-              "year": 2050,
-            },
-          ],
-          "fsid": 991472,
-          "name": "Amhurst",
-          "subtype": "R",
-        },
-        Object {
-          "count": Array [
-            Object {
-              "data": Object {
-                "high": 7559,
-                "low": 4897,
-                "mid": 6121,
-              },
-              "year": 2020,
-            },
-            Object {
-              "data": Object {
-                "high": 8023,
-                "low": 5136,
-                "mid": 6397,
-              },
-              "year": 2050,
-            },
-          ],
-          "fsid": 1121154,
-          "name": "West San Antonio",
-          "subtype": "M",
-        },
-      ],
-    ],
-    "state": Array [
-      Object {
-        "count": Array [
-          Object {
-            "data": Object {
-              "high": 2310281,
-              "low": 1945832,
-              "mid": 2148453,
-            },
-            "year": 2020,
-          },
-          Object {
-            "data": Object {
-              "high": 2589881,
-              "low": 2116760,
-              "mid": 2279294,
-            },
-            "year": 2035,
-          },
-          Object {
-            "data": Object {
-              "high": 2588665,
-              "low": 2001703,
-              "mid": 2278312,
-            },
-            "year": 2050,
-          },
-        ],
-        "fsid": 48,
-        "name": "Texas",
-      },
-    ],
-    "tract": Array [
-      Object {
-        "count": Array [
-          Object {
-            "data": Object {
-              "high": 338,
-              "low": 244,
-              "mid": 292,
-            },
-            "year": 2020,
-          },
-          Object {
-            "data": Object {
-              "high": 354,
-              "low": 267,
-              "mid": 304,
-            },
-            "year": 2035,
-          },
-          Object {
-            "data": Object {
-              "high": 353,
-              "low": 255,
-              "mid": 304,
-            },
-            "year": 2050,
-          },
-        ],
-        "fsid": 48029172002,
-        "name": null,
-      },
-    ],
-    "zcta": Array [
-      Object {
-        "count": Array [
-          Object {
-            "data": Object {
-              "high": 1765,
-              "low": 1137,
-              "mid": 1426,
-            },
-            "year": 2020,
-          },
-          Object {
-            "data": Object {
-              "high": 1883,
-              "low": 1285,
-              "mid": 1494,
-            },
-            "year": 2035,
-          },
-          Object {
-            "data": Object {
-              "high": 1882,
-              "low": 1197,
-              "mid": 1494,
-            },
-            "year": 2050,
-          },
-        ],
-        "fsid": 78245,
-        "name": "78245",
-      },
-    ],
-  },
-  "_probabilityData": Object {
     "cd": Array [
       Object {
         "count": Array [

@@ -96,6 +96,9 @@ class Api {
     ctx.historic = _.partial(this.callService, 'historic');
     ctx.economic = _.partial(this.callService, 'economic');
     ctx.adaptation = _.partial(this.callService, 'adaptation');
+    ctx.fema = _.partial(this.callService, 'fema');
+    ctx.precipitation = _.partial(this.callService, 'precipitation');
+    ctx.environmental = _.partial(this.callService, 'environmental');
 
     ctx.setLookupType = this.setLookupType;
     ctx._resolver = this._resolver;

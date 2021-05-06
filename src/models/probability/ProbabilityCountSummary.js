@@ -1,60 +1,53 @@
 const FsidResponse = require('../FsidResponse');
 
 class ProbabilityCountSummary extends FsidResponse {
-_probabilityData;
-
-constructor(data) {
-  super(data);
-  this._probabilityData = data;
-}
-
-get state() {
-  if (this._probabilityData) {
-    return this._probabilityData.state;
+  get state() {
+    if (this._data) {
+      return this._data.state;
+    }
+    return undefined;
   }
-  return undefined;
-}
 
-get city() {
-  if (this._probabilityData) {
-    return this._probabilityData.city;
+  get city() {
+    if (this._data) {
+      return this._data.city;
+    }
+    return undefined;
   }
-  return undefined;
-}
 
-get county() {
-  if (this._probabilityData) {
-    return this._probabilityData.county;
+  get county() {
+    if (this._data) {
+      return this._data.county;
+    }
+    return undefined;
   }
-  return undefined;
-}
 
-get zcta() {
-  if (this._probabilityData) {
-    return this._probabilityData.zcta;
+  get zcta() {
+    if (this._data) {
+      return this._data.zcta;
+    }
+    return undefined;
   }
-  return undefined;
-}
 
-get cd() {
-  if (this._probabilityData) {
-    return this._probabilityData.cd;
+  get cd() {
+    if (this._data) {
+      return this._data.cd;
+    }
+    return undefined;
   }
-  return undefined;
-}
 
-get neighborhood() {
-  if (this._probabilityData) {
-    return this._probabilityData.neighborhood;
+  get neighborhood() {
+    if (this._data) {
+      return this._data.neighborhood;
+    }
+    return undefined;
   }
-  return undefined;
-}
 
-get tract() {
-  if (this._probabilityData) {
-    return this._probabilityData.tract;
+  get tract() {
+    if (this._data) {
+      return this._data.tract;
+    }
+    return undefined;
   }
-  return undefined;
-}
 }
 module.exports = ProbabilityCountSummary;

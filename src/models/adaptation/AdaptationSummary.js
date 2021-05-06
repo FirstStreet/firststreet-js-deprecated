@@ -2,11 +2,17 @@ const FsidResponse = require('../FsidResponse');
 
 class AdaptationSummary extends FsidResponse {
   get properties() {
-    return this._data.properties;
+    if (this._data) {
+      return this._data.properties;
+    }
+    return undefined;
   }
 
   get adaptation() {
-    return this._data.adaptation;
+    if (this._data) {
+      return this._data.adaptation;
+    }
+    return undefined;
   }
 }
 module.exports = AdaptationSummary;

@@ -4,9 +4,9 @@ const AalDepthLoss = require('./AalDepthLoss');
 const AalAnnualLoss = require('./AalAnnualLoss');
 
 class AalPropertySummary extends ApiResponse {
-  _depthLoss;
+  _depthLoss=[];
 
-  _annualLoss;
+  _annualLoss=[];
 
   constructor(data) {
     super(data);

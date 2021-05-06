@@ -2,7 +2,10 @@ const ApiResponse = require('../ApiResponse');
 
 class AvmProvider extends ApiResponse {
   get providerId() {
-    return this._data.providerID;
+    if (this._data) {
+      return this._data.providerID;
+    }
+    return undefined;
   }
 
   get providerName() {

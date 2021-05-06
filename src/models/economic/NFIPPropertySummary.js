@@ -5,7 +5,7 @@ const NfipEstimate = require('./NfipEstimate');
 class NfipPropertySummary extends FsidResponse {
   constructor(data) {
     super(data);
-    if (data.data && isArray(data.data)) {
+    if (data && data.data && isArray(data.data)) {
       this._nfipData = data.data.map((r) => new NfipEstimate(r));
     }
   }

@@ -95,6 +95,7 @@ class Api {
     ctx.probability = _.partial(this.callService, 'probability');
     ctx.historic = _.partial(this.callService, 'historic');
     ctx.economic = _.partial(this.callService, 'economic');
+    ctx.adaptation = _.partial(this.callService, 'adaptation');
 
     ctx.setLookupType = this.setLookupType;
     ctx._resolver = this._resolver;

@@ -1,7 +1,6 @@
 const fetch = require('node-fetch').default;
 const {
-  UNKNOWN, UNAUTHORIZED, RATE_LIMIT, NOT_FOUND, INTERNAL,
-  OFFLINE, NOT_ACCEPTABLE, NETWORK_ERROR, NO_BODY,
+  UNKNOWN, NETWORK_ERROR, NO_BODY,
 } = require('../Error');
 
 const defaults = {
@@ -37,49 +36,6 @@ class Http {
   }
 
   /**
-   * Return errors for common error code scenarios
-   * @param {Object} res - the response object
-   * @param {Object} requestOptions - the request options object
-   * @param {number} rateLimit - rate limit constant
-   * @return {Object} - request object with error messaging added
-  */
-  parseErrors(res, requestOptions, rateLimit) {
-    const { status } = res;
-    const err = { errors: true };
-
-    switch (status) {
-    case 401:
-      return {
-        ...err, messages: UNAUTHORIZED, debug: requestOptions, rateLimit, ...res,
-      };
-    case 404:
-      return {
-        ...err, messages: NOT_FOUND, debug: requestOptions, rateLimit, ...res,
-      };
-    case 500:
-      return {
-        ...err, messages: INTERNAL, debug: requestOptions, rateLimit, ...res,
-      };
-    case 429:
-      return {
-        ...err, messages: RATE_LIMIT, debug: requestOptions, rateLimit, ...res,
-      };
-    case 503:
-      return {
-        ...err, messages: OFFLINE, debug: requestOptions, rateLimit, ...res,
-      };
-    case 406:
-      return {
-        ...err, messages: NOT_ACCEPTABLE, debug: requestOptions, rateLimit, ...res,
-      };
-    default:
-      return {
-        ...err, messages: UNKNOWN, debug: requestOptions, rateLimit, ...res,
-      };
-    }
-  }
-
-  /**
    * format rate limit headers
    * @param {Object} headers - rate limit headers
    * @return {Object} formatted rate limit headers
@@ -108,14 +64,23 @@ class Http {
 
     return new Promise((resolve, reject) => {
       let rateLimit = null;
+      let statusCode = 200;
 
       fetch(requestOptions.url, {
         method: requestOptions.method,
         headers: requestOptions.headers,
       }).then((res) => {
+        if (res === null) {
+          reject({
+            errors: true,
+            messages: NETWORK_ERROR,
+            debug: requestOptions,
+            rateLimit,
+          });
+        }
         rateLimit = this.parseRateLimit(res.headers);
         if (res.status !== 200) {
-          return this.parseErrors(res, requestOptions, rateLimit);
+          statusCode = res.status;
         }
 
         return res.json();
@@ -129,24 +94,26 @@ class Http {
             rateLimit,
           });
         }
+
         // Status code not 200
-        if (body.errors) {
+        if (body.errors || body.error || statusCode !== 200) {
           return reject({
-            ...body,
+            errors: true,
+            body,
+            status: statusCode,
             debug: requestOptions,
             rateLimit,
           });
         }
 
         return resolve({
-          errors: null,
           body,
           debug: requestOptions,
           rateLimit,
         });
       }).catch((err) => reject({
         errors: true,
-        messages: NETWORK_ERROR,
+        messages: UNKNOWN,
         details: err,
         debug: requestOptions,
         rateLimit,

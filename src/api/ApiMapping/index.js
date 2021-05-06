@@ -11,6 +11,8 @@ const DistrictDetail = require('../../models/location/district/detail/index.js')
 const TractDetail = require('../../models/location/tract/detail/index.js');
 const ProbabilityCumulative = require('../../models/probability/ProbabilityCumulative');
 const HistoricEvent = require('../../models/historic/HistoricEvent');
+const HistoricLocalitySummary = require('../../models/historic/HistoricLocalitySummary');
+const HistoricPropertySummary = require('../../models/historic/HistoricPropertySummary');
 const AalLocalitySummary = require('../../models/economic/AalLocalitySummary');
 const AalPropertySummary = require('../../models/economic/AalPropertySummary');
 const NfipPropertySummary = require('../../models/economic/NfipPropertySummary');
@@ -20,7 +22,8 @@ const ProbabilityChance = require('../../models/probability/ProbabilityChance');
 const ProbabilityCountSummary = require('../../models/probability/ProbabilityCountSummary.js');
 const AvmProvider = require('../../models/economic/AvmProvider.js');
 const AvmProperty = require('../../models/economic/AvmProperty.js');
-
+const Adaptation = require('../../models/adaptation/Adaptation.js');
+const AdaptationSummary = require('../../models/adaptation/AdaptationSummary.js');
 /*
   Mapping between fsf-probability and the client code is done through two-level object:
     first level is service, second level is 'detail level'
@@ -103,6 +106,20 @@ const mapping = {
       needsLocation: false,
       allowedParameters: ['id'],
     },
+    summary: {
+      model: {
+        property: HistoricPropertySummary,
+        city: HistoricLocalitySummary,
+        county: HistoricLocalitySummary,
+        neighborhood: HistoricLocalitySummary,
+        zcta: HistoricLocalitySummary,
+        state: HistoricLocalitySummary,
+        cd: HistoricLocalitySummary,
+        tract: HistoricLocalitySummary,
+      },
+      endpointPrefix: '/historic/summary',
+      needsLocation: true,
+    },
   },
   economic: {
     aal: {
@@ -134,6 +151,19 @@ const mapping = {
     avmProperty: {
       model: { all: AvmProperty },
       endpointPrefix: '/economic/avm',
+      needsLocation: true,
+    },
+  },
+  adaptation: {
+    detail: {
+      model: { all: Adaptation },
+      endpointPrefix: '/adaptation/detail',
+      needsLocation: false,
+      allowedParameters: ['id'],
+    },
+    summary: {
+      model: { all: AdaptationSummary },
+      endpointPrefix: '/adaptation/summary',
       needsLocation: true,
     },
   },

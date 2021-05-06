@@ -7,7 +7,7 @@ class AalLocalitySummary extends ApiResponse {
 
   constructor(data) {
     super(data);
-    if (data.annualLoss && isArray(data.annualLoss)) {
+    if (data && data.annualLoss && isArray(data.annualLoss)) {
       this._annualLoss = data.annualLoss.map((r) => new AalForLocation(r));
     }
   }

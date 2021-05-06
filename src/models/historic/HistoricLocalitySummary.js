@@ -8,7 +8,7 @@ class HistoricLocalitySummary extends FsidResponse {
   constructor(data) {
     super(data);
     if (data && data.historic && isArray(data.historic)) {
-      this._historic = data.historic.map(r => new HistoricData(r));
+      this._historic = data.historic.map((r) => new HistoricData(r));
     }
   }
 

@@ -5,6 +5,8 @@ const CityDetail = require('../src/models/location/city/detail/index.js');
 const PropertyDetail = require('../src/models/location/property/detail/index.js');
 const ProbabilityCumulative = require('../src/models/probability/ProbabilityCumulative');
 const HistoricEvent = require('../src/models/historic/HistoricEvent');
+const HistoricLocalitySummary = require('../src/models/historic/HistoricLocalitySummary');
+const HistoricPropertySummary = require('../src/models/historic/HistoricPropertySummary');
 const AalLocalitySummary = require('../src/models/economic/AalLocalitySummary');
 const AalPropertySummary = require('../src/models/economic/AalPropertySummary');
 const NfipPropertySummary = require('../src/models/economic/NfipPropertySummary');
@@ -14,6 +16,9 @@ const ProbabilityChance = require('../src/models/probability/ProbabilityChance')
 const ProbabilityCountSummary = require('../src/models/probability/ProbabilityCountSummary.js');
 const AvmProvider = require('../src/models/economic/AvmProvider.js');
 const AvmProperty = require('../src/models/economic/AvmProperty.js');
+const Adaptation = require('../src/models/adaptation/Adaptation');
+const ServingLocations = require('../src/models/adaptation/ServingLocations');
+const AdaptationSummary = require('../src/models/adaptation/AdaptationSummary');
 
 describe('Firststreet Api', () => {
   if (process.env.CI) {
@@ -105,6 +110,22 @@ describe('Firststreet Api', () => {
     expect(probability).toMatchSnapshot();
   });
 
+  it('should be able to pass through api exception', (done) => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('property', { fsid: 4808860333 });
+    lookup.probability('count')
+      .then(() => {
+        done('Should throw an error here');
+      })
+      .catch((e) => {
+        expect(e.status).toEqual(404);
+        expect(e.body.error).toBeDefined();
+        expect(e.body.error).toEqual({ code: '404', message: 'Unsupported location type' });
+        done();
+      });
+  });
+
   it('should be able to get probability chance', async () => {
     const apiKey = process.env.FSF_API_KEY;
     const fs = new FirstStreet(apiKey);
@@ -131,6 +152,26 @@ describe('Firststreet Api', () => {
     const historic = await fs.historic('event', { id: 12 });
     expect(historic.errors).toBeUndefined();
     expect(historic instanceof HistoricEvent).toBe(true);
+    expect(historic).toMatchSnapshot();
+  });
+
+  it('should be able to get historic property summary', async () => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('property', { fsid: 4801470191 });
+    const historic = await lookup.historic('summary');
+    expect(historic.errors).toBeUndefined();
+    expect(historic instanceof HistoricPropertySummary).toBe(true);
+    expect(historic).toMatchSnapshot();
+  });
+
+  it('should be able to get historic city summary', async () => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('city', { fsid: 4808860 });
+    const historic = await lookup.historic('summary');
+    expect(historic.errors).toBeUndefined();
+    expect(historic instanceof HistoricLocalitySummary).toBe(true);
     expect(historic).toMatchSnapshot();
   });
 
@@ -191,5 +232,25 @@ describe('Firststreet Api', () => {
     expect(nfip.errors).toBeUndefined();
     expect(nfip instanceof NfipPropertySummary).toBe(true);
     expect(nfip).toMatchSnapshot();
+  });
+
+  it('should be able to get adaptation detail', async () => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const adaptation = await fs.adaptation('detail', { id: 2 });
+    expect(adaptation.errors).toBeUndefined();
+    expect(adaptation instanceof Adaptation).toBe(true);
+    expect(adaptation.serving).not.toBeUndefined();
+    expect(adaptation.serving instanceof ServingLocations).toBe(true);
+    expect(adaptation).toMatchSnapshot();
+  });
+  it('should be able to get adaptation summary', async () => {
+    const apiKey = process.env.FSF_API_KEY;
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('property', { fsid: 4801470191 });
+    const adaptation = await lookup.adaptation('summary');
+    expect(adaptation.errors).toBeUndefined();
+    expect(adaptation instanceof AdaptationSummary).toBe(true);
+    expect(adaptation).toMatchSnapshot();
   });
 });

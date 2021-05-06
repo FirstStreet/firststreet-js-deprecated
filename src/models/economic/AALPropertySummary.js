@@ -10,10 +10,10 @@ class AalPropertySummary extends ApiResponse {
 
   constructor(data) {
     super(data);
-    if (data.depthLoss && isArray(data.depthLoss)) {
+    if (data && data.depthLoss && isArray(data.depthLoss)) {
       this._depthLoss = data.depthLoss.map((r) => new AalDepthLoss(r));
     }
-    if (data.annualLoss && isArray(data.annualLoss)) {
+    if (data && data.annualLoss && isArray(data.annualLoss)) {
       this._annualLoss = data.annualLoss.map((r) => new AalAnnualLoss(r));
     }
   }

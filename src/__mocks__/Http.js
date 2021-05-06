@@ -1,7 +1,4 @@
 const fetch = require('node-fetch').default;
-const {
-  RATE_LIMIT, UNAUTHORIZED, UNKNOWN, NOT_FOUND, INTERNAL, OFFLINE, NOT_ACCEPTABLE,
-} = require('../Error');
 
 // Mock Data
 const summaryProperty = require('./summaryProperty');
@@ -56,42 +53,6 @@ class Http {
     }
 
     return body;
-  }
-
-  parseErrors(status) {
-    const err = {
-      error: true,
-    };
-    switch (status) {
-    case 401:
-      return {
-        ...err, messages: UNAUTHORIZED,
-      };
-    case 404:
-      return {
-        ...err, messages: NOT_FOUND,
-      };
-    case 500:
-      return {
-        ...err, messages: INTERNAL,
-      };
-    case 429:
-      return {
-        ...err, messages: RATE_LIMIT,
-      };
-    case 503:
-      return {
-        ...err, messages: OFFLINE,
-      };
-    case 406:
-      return {
-        ...err, messages: NOT_ACCEPTABLE,
-      };
-    default:
-      return {
-        ...err, messages: UNKNOWN,
-      };
-    }
   }
 
   status() {

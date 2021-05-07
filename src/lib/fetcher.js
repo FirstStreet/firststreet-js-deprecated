@@ -1,27 +1,13 @@
-const { normalizeError } = require('../Error');
-
 async function fetcher(http, path, model) {
   const Model = model;
 
-  try {
-    const response = await http.execute('GET', path);
-    const { errors, messages } = response;
+  const response = await http.execute('GET', path);
 
-    if (errors) {
-      return normalizeError(messages);
-    }
-
-    const m = new Model(response.body);
-
-    return m;
-  } catch (e) {
-    return normalizeError(null, e);
+  if (response.errors) {
+    return response;
   }
+
+  return new Model(response.body);
 }
 
-async function resolver(fetcher) {
-  const r = await fetcher
-  return r
-}
-
-module.exports = { fetcher, resolver };
+module.exports = { fetcher };

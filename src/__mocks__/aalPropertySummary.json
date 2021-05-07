@@ -1,0 +1,34 @@
+{
+  "depthLoss": [
+    {
+      "depth": 3,
+      "data": 25081
+    },
+    {
+      "depth": 15,
+      "data": 28472
+    },
+    {
+      "depth": 31,
+      "data": 32827
+    }
+  ],
+  "annualLoss": [
+    {
+      "year": 2020,
+      "data": {
+        "low": 7678,
+        "mid": 8469,
+        "high": 9244
+      }
+    },
+    {
+      "year": 2050,
+      "data": {
+        "low": 8366,
+        "mid": 9106,
+        "high": 9950
+      }
+    }
+  ]
+}

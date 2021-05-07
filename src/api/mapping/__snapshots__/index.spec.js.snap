@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`model mapping can return mapping 1`] = `
+Object {
+  "endpointPrefix": "/location/detail",
+  "model": Object {
+    "cd": [Function],
+    "city": [Function],
+    "county": [Function],
+    "neighborhood": [Function],
+    "property": [Function],
+    "state": [Function],
+    "tract": [Function],
+    "zcta": [Function],
+  },
+  "needsLocation": true,
+}
+`;

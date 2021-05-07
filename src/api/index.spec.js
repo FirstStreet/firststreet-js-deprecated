@@ -36,6 +36,24 @@ describe('Api', () => {
     expect(() => fs.lookup('property', { lng: 1234 })).toThrow('Must provide both latitude and longitude for coordinate lookup');
   });
 
+  it('should not allow more than one lookup type parameter', () => {
+    const testCases = [
+      { fsid: 123, lat: 123 },
+      { fsid: 123, address: 'asdf' },
+      {
+        fsid: 123, address: 'asdf', lat: 12, lng: 23,
+      },
+      { address: 'asdf', lat: 12 },
+      { address: 'asdf', lat: 12, lng: 23 },
+    ];
+    const fs = new FirstStreet('aa.bb.cc');
+
+    testCases.map((p) => {
+      expect(() => fs.lookup('property', p)).toThrow('Only one of fsid, address or coordinates must be provided');
+      return true;
+    });
+  });
+
   it('should require a parameter for lookup setup', async () => {
     const fs = new FirstStreet('aa.bb.cc');
 

@@ -65,8 +65,10 @@ class Api {
     Api.checkLookupParams(params);
 
     if (params.fsid) {
+      assert(!params.address && !params[LAT] && !params[LNG], 'Only one of fsid, address or coordinates must be provided');
       this._lookupType = FSID;
     } else if (params.address) {
+      assert(!params[LAT] && !params[LNG], 'Only one of fsid, address or coordinates must be provided');
       this._lookupType = ADDRESS;
     } else if (params[LAT] || params[LNG]) {
       assert(params[LAT] && params[LNG], 'Must provide both latitude and longitude for coordinate lookup');

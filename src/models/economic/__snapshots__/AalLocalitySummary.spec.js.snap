@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AALlocality summary should construct object 1`] = `
+Object {
+  "annualLoss": Array [
+    Object {
+      "count": Object {
+        "high": 2,
+        "low": 0,
+        "mid": 0,
+      },
+      "floodFactor": 1,
+      "totalLoss": Object {
+        "high": 143,
+        "low": 0,
+        "mid": 0,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 6,
+        "low": 0,
+        "mid": 1,
+      },
+      "floodFactor": 2,
+      "totalLoss": Object {
+        "high": 33,
+        "low": 0,
+        "mid": 3,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 682,
+        "low": 16,
+        "mid": 35,
+      },
+      "floodFactor": 2,
+      "totalLoss": Object {
+        "high": 10152,
+        "low": 109,
+        "mid": 329,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 100,
+        "low": 6,
+        "mid": 59,
+      },
+      "floodFactor": 3,
+      "totalLoss": Object {
+        "high": 2002,
+        "low": 33,
+        "mid": 822,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 446,
+        "low": 60,
+        "mid": 161,
+      },
+      "floodFactor": 3,
+      "totalLoss": Object {
+        "high": 12845,
+        "low": 1540,
+        "mid": 4393,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 310,
+        "low": 49,
+        "mid": 134,
+      },
+      "floodFactor": 4,
+      "totalLoss": Object {
+        "high": 6135,
+        "low": 492,
+        "mid": 2163,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 927,
+        "low": 171,
+        "mid": 253,
+      },
+      "floodFactor": 4,
+      "totalLoss": Object {
+        "high": 41361,
+        "low": 3383,
+        "mid": 8023,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 346,
+        "low": 91,
+        "mid": 147,
+      },
+      "floodFactor": 5,
+      "totalLoss": Object {
+        "high": 17866,
+        "low": 2039,
+        "mid": 6670,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 830,
+        "low": 225,
+        "mid": 314,
+      },
+      "floodFactor": 5,
+      "totalLoss": Object {
+        "high": 141057,
+        "low": 7887,
+        "mid": 25756,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 5212,
+        "low": 2776,
+        "mid": 3697,
+      },
+      "floodFactor": 6,
+      "totalLoss": Object {
+        "high": 765597,
+        "low": 312839,
+        "mid": 391542,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 6834,
+        "low": 4278,
+        "mid": 5154,
+      },
+      "floodFactor": 6,
+      "totalLoss": Object {
+        "high": 2467073,
+        "low": 742207,
+        "mid": 984903,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 743,
+        "low": 649,
+        "mid": 681,
+      },
+      "floodFactor": 7,
+      "totalLoss": Object {
+        "high": 256825,
+        "low": 96431,
+        "mid": 115383,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 765,
+        "low": 688,
+        "mid": 715,
+      },
+      "floodFactor": 7,
+      "totalLoss": Object {
+        "high": 635038,
+        "low": 135127,
+        "mid": 189113,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 206,
+        "low": 204,
+        "mid": 204,
+      },
+      "floodFactor": 8,
+      "totalLoss": Object {
+        "high": 124785,
+        "low": 81723,
+        "mid": 83497,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 207,
+        "low": 205,
+        "mid": 205,
+      },
+      "floodFactor": 8,
+      "totalLoss": Object {
+        "high": 354373,
+        "low": 130319,
+        "mid": 150672,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 2866,
+        "low": 2831,
+        "mid": 2832,
+      },
+      "floodFactor": 9,
+      "totalLoss": Object {
+        "high": 3774095,
+        "low": 3135075,
+        "mid": 3176796,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 2868,
+        "low": 2855,
+        "mid": 2857,
+      },
+      "floodFactor": 9,
+      "totalLoss": Object {
+        "high": 10143629,
+        "low": 5958534,
+        "mid": 6602505,
+      },
+      "year": 2050,
+    },
+    Object {
+      "count": Object {
+        "high": 1776,
+        "low": 1773,
+        "mid": 1773,
+      },
+      "floodFactor": 10,
+      "totalLoss": Object {
+        "high": 17733037,
+        "low": 16610169,
+        "mid": 16621526,
+      },
+      "year": 2020,
+    },
+    Object {
+      "count": Object {
+        "high": 1776,
+        "low": 1775,
+        "mid": 1775,
+      },
+      "floodFactor": 10,
+      "totalLoss": Object {
+        "high": 33130631,
+        "low": 27342285,
+        "mid": 28191456,
+      },
+      "year": 2050,
+    },
+  ],
+}
+`;
+
+exports[`AALlocality summary should construct object with empty child nodes 1`] = `
+Object {
+  "annualLoss": Array [],
+  "depthLoss": Array [],
+}
+`;
+
+exports[`AALlocality summary should construct object without child nodes 1`] = `Object {}`;

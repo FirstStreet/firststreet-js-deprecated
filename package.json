@@ -2,54 +2,62 @@
   "name": "firststreet-js",
   "version": "0.1.5",
   "description": "\"A Javascript API Client for the First Street Foundation API\"",
-  "main": "dist/firststreet.js",
-  "scripts": {
-    "dev": "NODE_ENV=development webpack --watch --mode=development",
-    "test:dev": "jest --watch",
-    "test:coverage": "jest --coverage -u",
-    "test": "jest --coverage",
-    "build": "rm -rf dist && NODE_ENV=production webpack -p --config ./webpack.config.js --mode=production",
-    "lint": "eslint src",
-    "prepublish": "npm run build"
-  },
+  "author": "First Street Foundation",
+  "license": "MIT",
+  "homepage": "https://github.com/FirstStreet/firststreet-js#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FirstStreet/firststreet-js.git"
   },
-  "bugs:": "https://github.com/firststreet/firststreet-js/issues",
   "keywords": [
     "firststreet"
   ],
-  "author": "First Street Foundation",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/FirstStreet/firststreet-js/issues"
   },
   "files": [
     "dist/firststreet.js"
   ],
-  "homepage": "https://github.com/FirstStreet/firststreet-js#readme",
+  "main": "dist/firststreet.js",
+  "scripts": {
+    "dev": "NODE_ENV=development webpack --watch --mode=development",
+    "test:dev": "jest --watch  --updateSnapshot --coverage",
+    "test:coverage": "jest --coverage ",
+    "test": "jest --coverage ",
+    "build": "rm -rf dist && NODE_ENV=production webpack --mode production --config ./webpack.config.js --mode=production",
+    "lint": "eslint src",
+    "prepare": "npm run build",
+    "publish": "npm run build"
+  },
+  "dependencies": {
+    "-": "0.0.1",
+    "@babel/runtime": "^7.14.0",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.1"
+  },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.18.0",
+    "@babel/core": "^7.14.0",
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/eslint-plugin": "^7.13.16",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.8.0",
     "jsdoc": "^3.6.2",
-    "nodemon-webpack-plugin": "^4.0.8",
+    "nodemon-webpack-plugin": "^4.5.2",
     "prettier": "^1.18.2",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0"
   },
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "<rootDir>/src/__mockes__/",
+      "<rootDir>/src/__mocks__/",
       "<rootDir>/node_modules/"
     ]
-  },
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "node-fetch": "^2.6.1"
   }
 }

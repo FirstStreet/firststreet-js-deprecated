@@ -1,17 +1,17 @@
-# This package is currently not compatiable with v1.0.0+ of the First Street Foundation API. Please expect an update in the near future.
+# This package is currently compatiable with v1.0.0+ of the First Street Foundation API.
 
 # First Street JavaScript
 
 [![CircleCI](https://circleci.com/gh/FirstStreet/firststreet-js.svg?style=svg&circle-token=168be542d7448e05f502e123f0f3dbe0f9f8f66b)](https://circleci.com/gh/FirstStreet/firststreet-js)
 [![codecov](https://codecov.io/gh/firststreet/firststreet-js/branch/master/graph/badge.svg?token=TATSnMXhTx)](https://codecov.io/gh/firststreet/firststreet-js)
 
-This is the official implementation of the First Street Foundation API in JavaScript. Please use this client if you are using JavaScript to interact with the First Street Foundation API. **Note that this client and the API is currently in beta and subject to change**.
+This is the official implementation of the First Street Foundation API in JavaScript. Please use this client if you are using JavaScript to interact with the First Street Foundation API.
 
 For more in-depth guides, usage and API access, please see the documentation at [docs.firststreet.dev](https://docs.firststreet.dev).
 
 ## Installation
 
-First install firststreet-js
+First install firststreet-js:
 
 ```bash
 npm install firststreet-js
@@ -39,88 +39,31 @@ In order to use the First Street Foundation API, you must register for an API ke
 const fs = new FirstStreet("api-key");
 ```
 
-### Risk Summary
+### Using the client
 
-The Risk Summary API provides metadata and risk summary for a given `location`.
+The client supports querying Firststreet API endpoints corresponding to documentation, extensive examples can be found in ```./tests``` directory.
 
-```javascript
-fs.dataSummary.<method>
+Generally, for endpoints that require location and fsid, first need to initialize lookup object as in below example, and then use it for querying the data:
+
+```
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('city', { fsid: 4808860 });
+    const probability = await lookup.probability('count');
 ```
 
-#### Property
+For endpoints that do not use fsid, please pass the parameter(s) directly to the endpoint call, as in this example:
 
-* getPropertyByFSID(FSID `string`) - Retrieves a `Property` by specific ID
-* getPropertyByLatLng(lat `number`, lng `number`) - Retrieves a `Property` by a coordinate
-* getPropertyByAddress(address `string`) - Retrieves a `Property` by address lookup
-
-#### City
-
-* getCityByFSID(FSID `string`) - Retrieves a `City` by specific ID
-* getCityByLatLng(lat `number`, lng `number`) - Retrieves a `City` by a coordinate
-* getCityByAddress(address `string`) - Retrieves a `City` by address lookup
-
-### Hurricane
-
-The Hurricane Risk API provides hurricane risk data for a given `location`.
-
-```javascript
-fs.hurricane.<method>
+```
+    const fs = new FirstStreet(apiKey);
+    const historic = await fs.historic('event', { id: 12 });
 ```
 
-#### Property
-
-* getPropertyByFSID(FSID `string`) - Retrieves Hurricane Risk data for a `Property` by specific ID
-* getPropertyByLatLng(lat `number`, lng `number`) - Retrieves Hurricane Risk data for a `Property` by a coordinate
-* getPropertyByAddress(address `string`) - Retrieves Hurricane Risk data for a `Property` by address lookup
-
-#### City
-
-* getCityByFSID(FSID `string`) - Retrieves Hurricane Risk data for a `City` by specific ID
-* getCityByLatLng(lat `number`, lng `number`) - Retrieves Hurricane Risk data for a `City` by a coordinate
-* getCityByAddress(address `string`) - Retrieves Hurricane Risk data for a `City` by address lookup
-
-### Tidal
-
-The Tidal Risk API provides tidal risk data for a given `location`.
-
-```javascript
-fs.tidal.<method>
+Similarly, if endpoint accepts other parameters in addition to location lookup, then these can be passed to the endpoint call directly:
+```
+    const fs = new FirstStreet(apiKey);
+    const lookup = fs.lookup('property', { fsid: 4801470191 });
+    const aal = await lookup.economic('aal', { basement: true, floorElevation: 122, depth: 100 });
 ```
 
-#### Property
-
-* getPropertyByFSID(FSID `string`) - Retrieves Tidal Risk data for a `Property` by specific ID
-* getPropertyByLatLng(lat `number`, lng `number`) - Retrieves Tidal Risk data for a `Property` by a coordinate
-* getPropertyByAddress(address `string`) - Retrieves Tidal Risk data for a `Property` by address lookup
-
-#### City
-
-* getCityByFSID(FSID `string`) - Retrieves Tidal Risk data for a `City` by specific ID
-* getCityByLatLng(lat `number`, lng `number`) - Retrieves Tidal Risk data for a `City` by a coordinate
-* getCityByAddress(address `string`) - Retrieves Tidal Risk data for a `City` by address lookup
-
-### Market Value Impact
-
-The Market Value Impact API provides market data for a given `location`.
-
-```javascript
-fs.mvi.<method>
-```
-
-#### Property
-
-* getPropertyByFSID(FSID `string`) - Retrieves Market Value Impact data for a `Property` by specific ID
-* getPropertyByLatLng(lat `number`, lng `number`) - Retrieves Market Value Impact data for a `Property` by a coordinate
-* getPropertyByAddress(address `string`) - Retrieves Market Value Impact data for a `Property` by address lookup
-
-#### City
-
-* getCityByFSID(FSID `string`) - Retrieves Market Value Impact data for a `City` by specific ID
-* getCityByLatLng(lat `number`, lng `number`) - Retrieves Market Value Impact data for a `City` by a coordinate
-* getCityByAddress(address `string`) - Retrieves Market Value Impact data for a `City` by address lookup
-
-#### Errors
-
-All errors will have a `Code`, `Status` and `Message` attached to it.
-
-
+### Errors
+Errors from the API and network errors are propagated to caller.

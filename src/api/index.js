@@ -1,104 +1,89 @@
-const summary = require('./summary');
-const detail = require('./detail');
-const cumulative = require('./cumulative');
+import mapping from './mapping';
+
+const assert = require('assert');
+const _ = require('lodash');
 
 const COORDINATE = 'coordinate';
 const FSID = 'fsid';
 const ADDRESS = 'address';
-const TYPES = ['state', 'city', 'county', 'zcta', 'cd', 'neighborhood', 'tract', 'property'];
+const LAT = 'lat';
+const LNG = 'lng';
 
-/**
- * api wrapper
- * @constructor
- * @param {Object} http - Http request module
- */
+const allowedLookupParameters = [FSID, ADDRESS, LAT, LNG];
+
+const localities = ['state', 'city', 'county', 'zcta', 'cd', 'neighborhood', 'tract', 'property'];
+
 class Api {
-  constructor(http) {
-    this.http = http;
-    this.type = null;
-    this.params = null;
-    this.lookupType = '';
+  constructor(resolver) {
+    this._resolver = resolver;
+  }
+
+  callService(service, detailLevel, serviceParams) {
+    assert(detailLevel, 'Detail level is required');
+
+    // find mapping for the endpoint
+    const endpointMapping = mapping(service, detailLevel);
+
+    assert(endpointMapping, `Internal error: cannot find mapping for ${service}/${detailLevel}`);
+    assert(
+      !endpointMapping.needsLocation
+      || (endpointMapping.needsLocation && localities.includes(this._locationType)),
+      `Please set lookup parameters prior to calling service "${service}"`,
+    );
+
+    // validate there's no unknown parameters
+    const params = serviceParams || {};
+    const allowedParameters = endpointMapping.allowedParameters || [];
+    assert(
+      _.difference(Object.keys(params), allowedParameters).length <= 0,
+      `Unknown parameter(s): ${_.difference(Object.keys(params), allowedParameters)}`,
+    );
+
+    // if not location lookup then check lookup type
+    let lookupType = this._lookupType;
+    if (!endpointMapping.needsLocation) {
+      assert(_.intersection(Object.keys(params), allowedParameters).length > 0, `Service ${service}/${detailLevel} parameter(s) are missing. Required: ${allowedParameters.join(', ')}`);
+      [lookupType] = endpointMapping.allowedParameters;
+    }
+
+    // get response
+    return this._resolver.getServiceResponse(
+      endpointMapping,
+      _.merge(this._lookupParams || {}, params),
+      this._locationType,
+      lookupType,
+    );
+  }
+
+  static checkLookupParams(params) {
+    assert(params, 'Missing lookup parameters');
+    assert(typeof params === 'object', 'Lookup parameters need to be in an object');
+    assert(_.difference(Object.keys(params), allowedLookupParameters).length <= 0, `Unknown parameter(s): ${_.difference(Object.keys(params), allowedLookupParameters)}`);
   }
 
   setLookupType(params) {
-    if (params.fsid || params.fsid === null) {
-      this.lookupType = FSID;
-    } else if ((params.lat || params.lat === null) || (params.lng || params.lng === null)) {
-      this.lookupType = COORDINATE;
-    } else if (params.address || params.address === null) {
-      this.lookupType = ADDRESS;
-    }
-  }
+    Api.checkLookupParams(params);
 
-  fetchData(type, serviceName) {
-    let response = null;
-    let service = null;
-
-    switch (serviceName) {
-      case 'summary':
-        service = this.summary;
-        break;
-
-      case 'detail':
-        service = this.detail;
-        break;
-
-      case 'cumulative':
-        service = this.cumulative;
-        break;
-
-      default:
-        return null;
-    }
-
-    if (service) {
-      if (this.lookupType === FSID) {
-        response = service.getLocationByFSID(type, this.params);
-      }
-      if (this.lookupType === ADDRESS) {
-        response = service.getLocationByAddress(type, this.params);
-      }
-      if (this.lookupType === COORDINATE) {
-        response = service.getLocationByLatLng(type, this.params);
-      }
+    if (params.fsid) {
+      assert(!params.address && !params[LAT] && !params[LNG], 'Only one of fsid, address or coordinates must be provided');
+      this._lookupType = FSID;
+    } else if (params.address) {
+      assert(!params[LAT] && !params[LNG], 'Only one of fsid, address or coordinates must be provided');
+      this._lookupType = ADDRESS;
+    } else if (params[LAT] || params[LNG]) {
+      assert(params[LAT] && params[LNG], 'Must provide both latitude and longitude for coordinate lookup');
+      this._lookupType = COORDINATE;
     } else {
-      throw new Error('Must provide a service');
+      throw new Error(`Must provide a valid lookup parameter(${allowedLookupParameters.join(', ')})`);
     }
-
-    return response;
   }
 
-  location(service) {
-    // service is a str mapping to api location services
-
-    if (!TYPES.includes(this.type)) {
-      throw new Error('Must provide a valid location type');
-    }
-
-    return this.fetchData(this.type, service);
-  }
-
-  probability(service) {
-    if (!TYPES.includes(this.type)) {
-      throw new Error('Must provide a valid location type');
-    }
-
-    return this.fetchData(this.type, service);
-  }
-
-  lookup(type, params) {
+  lookup(locationType, params) {
     // type equals the locationtype
     // params can be an fsid, lat & lng, or an address
-    if (!type) {
-      throw new Error('Missing location type.');
-    }
-
-    if (!params) {
-      throw new Error('Missing lookup parameters.');
-    }
-
-    this.type = type;
-    this.params = params;
+    assert(locationType && localities.includes(locationType), `Must provide a valid location type(${localities.join(', ')})`);
+    this._locationType = locationType;
+    this._lookupParams = params;
     this.setLookupType(params);
 
     return this;
@@ -108,14 +93,17 @@ class Api {
     const ctx = context;
 
     ctx.lookup = this.lookup;
-    ctx.location = this.location;
-    ctx.probability = this.probability;
-    ctx.fetchData = this.fetchData;
-    ctx.setLookupType = this.setLookupType;
+    ctx.location = _.partial(this.callService, 'location');
+    ctx.probability = _.partial(this.callService, 'probability');
+    ctx.historic = _.partial(this.callService, 'historic');
+    ctx.economic = _.partial(this.callService, 'economic');
+    ctx.adaptation = _.partial(this.callService, 'adaptation');
+    ctx.fema = _.partial(this.callService, 'fema');
+    ctx.precipitation = _.partial(this.callService, 'precipitation');
+    ctx.environmental = _.partial(this.callService, 'environmental');
 
-    ctx.summary = summary(this.http);
-    ctx.detail = detail(this.http);
-    ctx.cumulative = cumulative(this.http);
+    ctx.setLookupType = this.setLookupType;
+    ctx._resolver = this._resolver;
   }
 }
 

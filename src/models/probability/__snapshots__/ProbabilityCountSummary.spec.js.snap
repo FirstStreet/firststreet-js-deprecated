@@ -1,0 +1,228 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`probability count summary should construct object 1`] = `
+ProbabilityCountSummary {
+  "_data": Object {
+    "cd": Array [
+      Object {
+        "count": Array [
+          Object {
+            "data": Object {
+              "high": 13903,
+              "low": 11857,
+              "mid": 13393,
+            },
+            "year": 2020,
+          },
+          Object {
+            "data": Object {
+              "high": 15683,
+              "low": 13019,
+              "mid": 14025,
+            },
+            "year": 2035,
+          },
+          Object {
+            "data": Object {
+              "high": 15667,
+              "low": 12312,
+              "mid": 14012,
+            },
+            "year": 2050,
+          },
+        ],
+        "fsid": 2408,
+        "name": "Maryland Congressional District 8",
+      },
+    ],
+    "city": Array [
+      Object {
+        "count": Array [
+          Object {
+            "data": Object {
+              "high": 351,
+              "low": 303,
+              "mid": 346,
+            },
+            "year": 2020,
+          },
+          Object {
+            "data": Object {
+              "high": 389,
+              "low": 341,
+              "mid": 359,
+            },
+            "year": 2035,
+          },
+          Object {
+            "data": Object {
+              "high": 388,
+              "low": 327,
+              "mid": 358,
+            },
+            "year": 2050,
+          },
+        ],
+        "fsid": 2425575,
+        "name": "Eldersburg",
+      },
+    ],
+    "county": Array [
+      Object {
+        "count": Array [
+          Object {
+            "data": Object {
+              "high": 3153,
+              "low": 2820,
+              "mid": 3082,
+            },
+            "year": 2020,
+          },
+          Object {
+            "data": Object {
+              "high": 3468,
+              "low": 3010,
+              "mid": 3168,
+            },
+            "year": 2035,
+          },
+          Object {
+            "data": Object {
+              "high": 3461,
+              "low": 2903,
+              "mid": 3162,
+            },
+            "year": 2050,
+          },
+        ],
+        "fsid": 24013,
+        "name": "Carroll County",
+      },
+    ],
+    "fsid": 240652458,
+    "neighborhood": Array [
+      Array [
+        Object {
+          "count": Array [
+            Object {
+              "data": Object {
+                "high": 345,
+                "low": 297,
+                "mid": 340,
+              },
+              "year": 2020,
+            },
+            Object {
+              "data": Object {
+                "high": 379,
+                "low": 321,
+                "mid": 349,
+              },
+              "year": 2050,
+            },
+          ],
+          "fsid": 1173635,
+          "name": "Eldersburg",
+          "subtype": "M",
+        },
+      ],
+    ],
+    "state": Array [
+      Object {
+        "count": Array [
+          Object {
+            "data": Object {
+              "high": 189289,
+              "low": 169345,
+              "mid": 183193,
+            },
+            "year": 2020,
+          },
+          Object {
+            "data": Object {
+              "high": 235151,
+              "low": 209649,
+              "mid": 216517,
+            },
+            "year": 2035,
+          },
+          Object {
+            "data": Object {
+              "high": 234972,
+              "low": 204435,
+              "mid": 216390,
+            },
+            "year": 2050,
+          },
+        ],
+        "fsid": 24,
+        "name": "Maryland",
+      },
+    ],
+    "tract": Array [
+      Object {
+        "count": Array [
+          Object {
+            "data": Object {
+              "high": 46,
+              "low": 39,
+              "mid": 46,
+            },
+            "year": 2020,
+          },
+          Object {
+            "data": Object {
+              "high": 49,
+              "low": 47,
+              "mid": 47,
+            },
+            "year": 2035,
+          },
+          Object {
+            "data": Object {
+              "high": 49,
+              "low": 46,
+              "mid": 47,
+            },
+            "year": 2050,
+          },
+        ],
+        "fsid": 24013505207,
+        "name": null,
+      },
+    ],
+    "zcta": Array [
+      Object {
+        "count": Array [
+          Object {
+            "data": Object {
+              "high": 552,
+              "low": 453,
+              "mid": 540,
+            },
+            "year": 2020,
+          },
+          Object {
+            "data": Object {
+              "high": 615,
+              "low": 529,
+              "mid": 561,
+            },
+            "year": 2035,
+          },
+          Object {
+            "data": Object {
+              "high": 614,
+              "low": 506,
+              "mid": 560,
+            },
+            "year": 2050,
+          },
+        ],
+        "fsid": 21784,
+        "name": "21784",
+      },
+    ],
+  },
+}
+`;

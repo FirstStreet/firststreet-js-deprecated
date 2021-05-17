@@ -1,0 +1,1053 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`resolver should get location detail by address 1`] = `
+LocationPropertyDetail {
+  "_data": Object {
+    "building": Object {
+      "basement": false,
+      "stories": 2,
+      "units": 1,
+    },
+    "cd": Object {
+      "fsid": 1219,
+      "name": "Florida Congressional District 19",
+    },
+    "city": Object {
+      "fsid": 1263700,
+      "name": "Sanibel",
+    },
+    "county": Object {
+      "fsid": 12071,
+      "name": "Lee County",
+    },
+    "elevation": 121,
+    "fema": "VE",
+    "floodType": "coastal",
+    "floorElevation": 244,
+    "footprintId": 738376544,
+    "fsid": 1202672032,
+    "geometry": Object {
+      "bbox": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              -82.149435799,
+              26.454598727,
+            ],
+            Array [
+              -82.149435799,
+              26.457285704,
+            ],
+            Array [
+              -82.148046398,
+              26.457285704,
+            ],
+            Array [
+              -82.148046398,
+              26.454598727,
+            ],
+            Array [
+              -82.149435799,
+              26.454598727,
+            ],
+          ],
+        ],
+        "type": "Polygon",
+      },
+      "center": Object {
+        "coordinates": Array [
+          -82.14859,
+          26.45632,
+        ],
+        "type": "Point",
+      },
+      "polygon": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              Array [
+                -82.149183604,
+                26.454598727,
+              ],
+              Array [
+                -82.149385129,
+                26.45473917,
+              ],
+              Array [
+                -82.149435799,
+                26.454775571,
+              ],
+              Array [
+                -82.148707733,
+                26.45636858,
+              ],
+              Array [
+                -82.148262468,
+                26.457285704,
+              ],
+              Array [
+                -82.148046398,
+                26.457127734,
+              ],
+              Array [
+                -82.148432931,
+                26.456290629,
+              ],
+              Array [
+                -82.149183604,
+                26.454598727,
+              ],
+            ],
+          ],
+        ],
+        "type": "MultiPolygon",
+      },
+    },
+    "neighborhood": Array [
+      Object {
+        "fsid": 156067,
+        "name": "West End",
+      },
+      Object {
+        "fsid": 804732,
+        "name": "Gulf Ridge",
+      },
+    ],
+    "residential": true,
+    "route": "JOEWOOD DR",
+    "state": Object {
+      "fsid": 12,
+      "name": "Florida",
+    },
+    "streetNumber": "5055",
+    "tract": Object {
+      "fsid": 12071080204,
+      "name": null,
+    },
+    "zcta": Object {
+      "fsid": 33957,
+      "name": "33957",
+    },
+    "zipCode": "33957",
+  },
+}
+`;
+
+exports[`resolver should get location detail by coordinate 1`] = `
+LocationPropertyDetail {
+  "_data": Object {
+    "building": Object {
+      "basement": false,
+      "stories": 2,
+      "units": 1,
+    },
+    "cd": Object {
+      "fsid": 1219,
+      "name": "Florida Congressional District 19",
+    },
+    "city": Object {
+      "fsid": 1263700,
+      "name": "Sanibel",
+    },
+    "county": Object {
+      "fsid": 12071,
+      "name": "Lee County",
+    },
+    "elevation": 121,
+    "fema": "VE",
+    "floodType": "coastal",
+    "floorElevation": 244,
+    "footprintId": 738376544,
+    "fsid": 1202672032,
+    "geometry": Object {
+      "bbox": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              -82.149435799,
+              26.454598727,
+            ],
+            Array [
+              -82.149435799,
+              26.457285704,
+            ],
+            Array [
+              -82.148046398,
+              26.457285704,
+            ],
+            Array [
+              -82.148046398,
+              26.454598727,
+            ],
+            Array [
+              -82.149435799,
+              26.454598727,
+            ],
+          ],
+        ],
+        "type": "Polygon",
+      },
+      "center": Object {
+        "coordinates": Array [
+          -82.14859,
+          26.45632,
+        ],
+        "type": "Point",
+      },
+      "polygon": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              Array [
+                -82.149183604,
+                26.454598727,
+              ],
+              Array [
+                -82.149385129,
+                26.45473917,
+              ],
+              Array [
+                -82.149435799,
+                26.454775571,
+              ],
+              Array [
+                -82.148707733,
+                26.45636858,
+              ],
+              Array [
+                -82.148262468,
+                26.457285704,
+              ],
+              Array [
+                -82.148046398,
+                26.457127734,
+              ],
+              Array [
+                -82.148432931,
+                26.456290629,
+              ],
+              Array [
+                -82.149183604,
+                26.454598727,
+              ],
+            ],
+          ],
+        ],
+        "type": "MultiPolygon",
+      },
+    },
+    "neighborhood": Array [
+      Object {
+        "fsid": 156067,
+        "name": "West End",
+      },
+      Object {
+        "fsid": 804732,
+        "name": "Gulf Ridge",
+      },
+    ],
+    "residential": true,
+    "route": "JOEWOOD DR",
+    "state": Object {
+      "fsid": 12,
+      "name": "Florida",
+    },
+    "streetNumber": "5055",
+    "tract": Object {
+      "fsid": 12071080204,
+      "name": null,
+    },
+    "zcta": Object {
+      "fsid": 33957,
+      "name": "33957",
+    },
+    "zipCode": "33957",
+  },
+}
+`;
+
+exports[`resolver should get location detail by fsid (has various models per endpoint) 1`] = `
+LocationPropertyDetail {
+  "_data": Object {
+    "building": Object {
+      "basement": false,
+      "stories": 2,
+      "units": 1,
+    },
+    "cd": Object {
+      "fsid": 1219,
+      "name": "Florida Congressional District 19",
+    },
+    "city": Object {
+      "fsid": 1263700,
+      "name": "Sanibel",
+    },
+    "county": Object {
+      "fsid": 12071,
+      "name": "Lee County",
+    },
+    "elevation": 121,
+    "fema": "VE",
+    "floodType": "coastal",
+    "floorElevation": 244,
+    "footprintId": 738376544,
+    "fsid": 1202672032,
+    "geometry": Object {
+      "bbox": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              -82.149435799,
+              26.454598727,
+            ],
+            Array [
+              -82.149435799,
+              26.457285704,
+            ],
+            Array [
+              -82.148046398,
+              26.457285704,
+            ],
+            Array [
+              -82.148046398,
+              26.454598727,
+            ],
+            Array [
+              -82.149435799,
+              26.454598727,
+            ],
+          ],
+        ],
+        "type": "Polygon",
+      },
+      "center": Object {
+        "coordinates": Array [
+          -82.14859,
+          26.45632,
+        ],
+        "type": "Point",
+      },
+      "polygon": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              Array [
+                -82.149183604,
+                26.454598727,
+              ],
+              Array [
+                -82.149385129,
+                26.45473917,
+              ],
+              Array [
+                -82.149435799,
+                26.454775571,
+              ],
+              Array [
+                -82.148707733,
+                26.45636858,
+              ],
+              Array [
+                -82.148262468,
+                26.457285704,
+              ],
+              Array [
+                -82.148046398,
+                26.457127734,
+              ],
+              Array [
+                -82.148432931,
+                26.456290629,
+              ],
+              Array [
+                -82.149183604,
+                26.454598727,
+              ],
+            ],
+          ],
+        ],
+        "type": "MultiPolygon",
+      },
+    },
+    "neighborhood": Array [
+      Object {
+        "fsid": 156067,
+        "name": "West End",
+      },
+      Object {
+        "fsid": 804732,
+        "name": "Gulf Ridge",
+      },
+    ],
+    "residential": true,
+    "route": "JOEWOOD DR",
+    "state": Object {
+      "fsid": 12,
+      "name": "Florida",
+    },
+    "streetNumber": "5055",
+    "tract": Object {
+      "fsid": 12071080204,
+      "name": null,
+    },
+    "zcta": Object {
+      "fsid": 33957,
+      "name": "33957",
+    },
+    "zipCode": "33957",
+  },
+}
+`;
+
+exports[`resolver should get location detail by historic event (does not need location type) 1`] = `
+HistoricEvent {
+  "_data": Object {
+    "eventId": 12,
+    "geometry": Object {
+      "bbox": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              -92.048065999,
+              40.066381,
+            ],
+            Array [
+              -90.585979,
+              40.066381,
+            ],
+            Array [
+              -90.585979,
+              42.238395,
+            ],
+            Array [
+              -92.048065999,
+              42.238395,
+            ],
+            Array [
+              -92.048065999,
+              40.066381,
+            ],
+          ],
+        ],
+        "type": "Polygon",
+      },
+      "center": Object {
+        "coordinates": Array [
+          -91.273823509,
+          41.182344093,
+        ],
+        "type": "Point",
+      },
+      "polygon": Object {
+        "coordinates": Array [
+          Array [
+            Array [
+              Array [
+                -91.402935999,
+                42.238395,
+              ],
+              Array [
+                -91.417797,
+                42.238394,
+              ],
+              Array [
+                -91.417755,
+                42.235025,
+              ],
+              Array [
+                -91.427211001,
+                42.234807,
+              ],
+              Array [
+                -91.427216,
+                42.23105,
+              ],
+              Array [
+                -91.432397,
+                42.230953,
+              ],
+              Array [
+                -91.432386,
+                42.22507,
+              ],
+              Array [
+                -91.437132001,
+                42.223333999,
+              ],
+              Array [
+                -91.437135001,
+                42.216679,
+              ],
+              Array [
+                -91.439218,
+                42.214434999,
+              ],
+              Array [
+                -91.441044,
+                42.210333,
+              ],
+              Array [
+                -91.440952,
+                42.209671,
+              ],
+              Array [
+                -91.437405,
+                42.208679,
+              ],
+              Array [
+                -91.433594,
+                42.205915,
+              ],
+              Array [
+                -91.383449001,
+                42.230956,
+              ],
+              Array [
+                -91.401413,
+                42.23107,
+              ],
+              Array [
+                -91.402946,
+                42.230955,
+              ],
+              Array [
+                -91.402935999,
+                42.238395,
+              ],
+            ],
+          ],
+        ],
+        "type": "MultiPolygon",
+      },
+    },
+    "month": 6,
+    "name": "river flood across eastern Iowa",
+    "properties": Object {
+      "affected": 15813,
+      "total": 354640,
+    },
+    "returnPeriod": 2733,
+    "type": "fluvial",
+    "year": 2008,
+  },
+  "_properties": HistoricEventProperties {
+    "_eventData": Object {
+      "affected": 15813,
+      "total": 354640,
+    },
+  },
+}
+`;
+
+exports[`resolver should get probability cumulative by fsid(has one model per endpoint) 1`] = `
+ProbabilityCumulative {
+  "_cumulative": Array [
+    ProbabilityData {
+      "_probabilityData": Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2020,
+      },
+    },
+    ProbabilityData {
+      "_probabilityData": Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2025,
+      },
+    },
+    ProbabilityData {
+      "_probabilityData": Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2030,
+      },
+    },
+    ProbabilityData {
+      "_probabilityData": Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2035,
+      },
+    },
+    ProbabilityData {
+      "_probabilityData": Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2040,
+      },
+    },
+    ProbabilityData {
+      "_probabilityData": Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2045,
+      },
+    },
+    ProbabilityData {
+      "_probabilityData": Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2050,
+      },
+    },
+  ],
+  "_data": Object {
+    "cumulative": Array [
+      Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2020,
+      },
+      Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2025,
+      },
+      Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2030,
+      },
+      Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2035,
+      },
+      Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2040,
+      },
+      Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2045,
+      },
+      Object {
+        "data": Array [
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 0,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 15,
+          },
+          Object {
+            "data": Object {
+              "high": 0,
+              "low": 0,
+              "mid": 0,
+            },
+            "threshold": 30,
+          },
+        ],
+        "year": 2050,
+      },
+    ],
+    "fsid": 362788780,
+  },
+}
+`;
+
+exports[`resolver should get property aal by fsid(has additional parameters) 1`] = `
+AalPropertySummary {
+  "_annualLoss": Array [
+    AalAnnualLoss {
+      "_aalData": Object {
+        "data": Object {
+          "high": 9244,
+          "low": 7678,
+          "mid": 8469,
+        },
+        "year": 2020,
+      },
+    },
+    AalAnnualLoss {
+      "_aalData": Object {
+        "data": Object {
+          "high": 9950,
+          "low": 8366,
+          "mid": 9106,
+        },
+        "year": 2050,
+      },
+    },
+  ],
+  "_data": Object {
+    "annualLoss": Array [
+      Object {
+        "data": Object {
+          "high": 9244,
+          "low": 7678,
+          "mid": 8469,
+        },
+        "year": 2020,
+      },
+      Object {
+        "data": Object {
+          "high": 9950,
+          "low": 8366,
+          "mid": 9106,
+        },
+        "year": 2050,
+      },
+    ],
+    "depthLoss": Array [
+      Object {
+        "data": 25081,
+        "depth": 3,
+      },
+      Object {
+        "data": 28472,
+        "depth": 15,
+      },
+      Object {
+        "data": 32827,
+        "depth": 31,
+      },
+    ],
+  },
+  "_depthLoss": Array [
+    AalDepthLoss {
+      "_aalData": Object {
+        "data": 25081,
+        "depth": 3,
+      },
+    },
+    AalDepthLoss {
+      "_aalData": Object {
+        "data": 28472,
+        "depth": 15,
+      },
+    },
+    AalDepthLoss {
+      "_aalData": Object {
+        "data": 32827,
+        "depth": 31,
+      },
+    },
+  ],
+}
+`;

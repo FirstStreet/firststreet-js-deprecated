@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NFIP property summary should construct object 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "building": 125000,
+      "contents": 50000,
+      "estimate": 225,
+    },
+    Object {
+      "building": 250000,
+      "contents": 125000,
+      "estimate": 376,
+    },
+  ],
+  "fsid": 240652458,
+}
+`;
+
+exports[`NFIP property summary should construct object with empty child nodes 1`] = `
+Object {
+  "data": Array [],
+}
+`;
+
+exports[`NFIP property summary should construct object without child nodes 1`] = `Object {}`;

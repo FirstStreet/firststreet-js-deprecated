@@ -1,0 +1,246 @@
+{
+  "fsid": 3651000,
+  "historic": [
+    {
+      "eventId": 1009,
+      "name": "Hurricane Irene's storm surge",
+      "type": "hurricane",
+      "data": [
+        {
+          "bin": 40,
+          "count": 58
+        },
+        {
+          "bin": 45,
+          "count": 1033
+        },
+        {
+          "bin": 50,
+          "count": 910
+        },
+        {
+          "bin": 55,
+          "count": 770
+        },
+        {
+          "bin": 60,
+          "count": 594
+        },
+        {
+          "bin": 65,
+          "count": 553
+        },
+        {
+          "bin": 70,
+          "count": 469
+        },
+        {
+          "bin": 75,
+          "count": 405
+        },
+        {
+          "bin": 80,
+          "count": 316
+        },
+        {
+          "bin": 85,
+          "count": 303
+        },
+        {
+          "bin": 90,
+          "count": 267
+        },
+        {
+          "bin": 95,
+          "count": 238
+        },
+        {
+          "bin": 100,
+          "count": 254
+        },
+        {
+          "bin": 105,
+          "count": 217
+        },
+        {
+          "bin": 110,
+          "count": 141
+        },
+        {
+          "bin": 115,
+          "count": 143
+        },
+        {
+          "bin": 120,
+          "count": 107
+        },
+        {
+          "bin": 125,
+          "count": 428
+        }
+      ]
+    },
+    {
+      "eventId": 1019,
+      "name": "Hurricane Sandy's storm surge",
+      "type": "hurricane",
+      "data": [
+        {
+          "bin": 35,
+          "count": 21
+        },
+        {
+          "bin": 40,
+          "count": 1908
+        },
+        {
+          "bin": 45,
+          "count": 2837
+        },
+        {
+          "bin": 50,
+          "count": 2622
+        },
+        {
+          "bin": 55,
+          "count": 2225
+        },
+        {
+          "bin": 60,
+          "count": 2198
+        },
+        {
+          "bin": 65,
+          "count": 2286
+        },
+        {
+          "bin": 70,
+          "count": 2018
+        },
+        {
+          "bin": 75,
+          "count": 2006
+        },
+        {
+          "bin": 80,
+          "count": 1885
+        },
+        {
+          "bin": 85,
+          "count": 1905
+        },
+        {
+          "bin": 90,
+          "count": 1724
+        },
+        {
+          "bin": 95,
+          "count": 1499
+        },
+        {
+          "bin": 100,
+          "count": 1409
+        },
+        {
+          "bin": 105,
+          "count": 1282
+        },
+        {
+          "bin": 110,
+          "count": 1033
+        },
+        {
+          "bin": 115,
+          "count": 882
+        },
+        {
+          "bin": 120,
+          "count": 636
+        },
+        {
+          "bin": 125,
+          "count": 4343
+        }
+      ]
+    },
+    {
+      "eventId": 1027,
+      "name": "Nor'easter storm surge",
+      "type": "nor'easter",
+      "data": [
+        {
+          "bin": 40,
+          "count": 2
+        },
+        {
+          "bin": 45,
+          "count": 284
+        },
+        {
+          "bin": 50,
+          "count": 383
+        },
+        {
+          "bin": 55,
+          "count": 370
+        },
+        {
+          "bin": 60,
+          "count": 367
+        },
+        {
+          "bin": 65,
+          "count": 311
+        },
+        {
+          "bin": 70,
+          "count": 329
+        },
+        {
+          "bin": 75,
+          "count": 268
+        },
+        {
+          "bin": 80,
+          "count": 223
+        },
+        {
+          "bin": 85,
+          "count": 201
+        },
+        {
+          "bin": 90,
+          "count": 230
+        },
+        {
+          "bin": 95,
+          "count": 183
+        },
+        {
+          "bin": 100,
+          "count": 124
+        },
+        {
+          "bin": 105,
+          "count": 130
+        },
+        {
+          "bin": 110,
+          "count": 90
+        },
+        {
+          "bin": 115,
+          "count": 57
+        },
+        {
+          "bin": 120,
+          "count": 56
+        },
+        {
+          "bin": 125,
+          "count": 228
+        }
+      ]
+    }
+  ]
+}

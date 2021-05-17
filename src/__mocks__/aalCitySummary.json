@@ -1,0 +1,270 @@
+{
+  "annualLoss": [
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 0,
+        "mid": 0,
+        "high": 143
+      },
+      "count": {
+        "low": 0,
+        "mid": 0,
+        "high": 2
+      },
+      "floodFactor": 1
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 0,
+        "mid": 3,
+        "high": 33
+      },
+      "count": {
+        "low": 0,
+        "mid": 1,
+        "high": 6
+      },
+      "floodFactor": 2
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 109,
+        "mid": 329,
+        "high": 10152
+      },
+      "count": {
+        "low": 16,
+        "mid": 35,
+        "high": 682
+      },
+      "floodFactor": 2
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 33,
+        "mid": 822,
+        "high": 2002
+      },
+      "count": {
+        "low": 6,
+        "mid": 59,
+        "high": 100
+      },
+      "floodFactor": 3
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 1540,
+        "mid": 4393,
+        "high": 12845
+      },
+      "count": {
+        "low": 60,
+        "mid": 161,
+        "high": 446
+      },
+      "floodFactor": 3
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 492,
+        "mid": 2163,
+        "high": 6135
+      },
+      "count": {
+        "low": 49,
+        "mid": 134,
+        "high": 310
+      },
+      "floodFactor": 4
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 3383,
+        "mid": 8023,
+        "high": 41361
+      },
+      "count": {
+        "low": 171,
+        "mid": 253,
+        "high": 927
+      },
+      "floodFactor": 4
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 2039,
+        "mid": 6670,
+        "high": 17866
+      },
+      "count": {
+        "low": 91,
+        "mid": 147,
+        "high": 346
+      },
+      "floodFactor": 5
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 7887,
+        "mid": 25756,
+        "high": 141057
+      },
+      "count": {
+        "low": 225,
+        "mid": 314,
+        "high": 830
+      },
+      "floodFactor": 5
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 312839,
+        "mid": 391542,
+        "high": 765597
+      },
+      "count": {
+        "low": 2776,
+        "mid": 3697,
+        "high": 5212
+      },
+      "floodFactor": 6
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 742207,
+        "mid": 984903,
+        "high": 2467073
+      },
+      "count": {
+        "low": 4278,
+        "mid": 5154,
+        "high": 6834
+      },
+      "floodFactor": 6
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 96431,
+        "mid": 115383,
+        "high": 256825
+      },
+      "count": {
+        "low": 649,
+        "mid": 681,
+        "high": 743
+      },
+      "floodFactor": 7
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 135127,
+        "mid": 189113,
+        "high": 635038
+      },
+      "count": {
+        "low": 688,
+        "mid": 715,
+        "high": 765
+      },
+      "floodFactor": 7
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 81723,
+        "mid": 83497,
+        "high": 124785
+      },
+      "count": {
+        "low": 204,
+        "mid": 204,
+        "high": 206
+      },
+      "floodFactor": 8
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 130319,
+        "mid": 150672,
+        "high": 354373
+      },
+      "count": {
+        "low": 205,
+        "mid": 205,
+        "high": 207
+      },
+      "floodFactor": 8
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 3135075,
+        "mid": 3176796,
+        "high": 3774095
+      },
+      "count": {
+        "low": 2831,
+        "mid": 2832,
+        "high": 2866
+      },
+      "floodFactor": 9
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 5958534,
+        "mid": 6602505,
+        "high": 10143629
+      },
+      "count": {
+        "low": 2855,
+        "mid": 2857,
+        "high": 2868
+      },
+      "floodFactor": 9
+    },
+    {
+      "year": 2020,
+      "totalLoss": {
+        "low": 16610169,
+        "mid": 16621526,
+        "high": 17733037
+      },
+      "count": {
+        "low": 1773,
+        "mid": 1773,
+        "high": 1776
+      },
+      "floodFactor": 10
+    },
+    {
+      "year": 2050,
+      "totalLoss": {
+        "low": 27342285,
+        "mid": 28191456,
+        "high": 33130631
+      },
+      "count": {
+        "low": 1775,
+        "mid": 1775,
+        "high": 1776
+      },
+      "floodFactor": 10
+    }
+  ]
+}

@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/floodiq-javascript
     docker:
-      - image: circleci/node:latest
+      - image: cimg/node:14.16.1
     steps:
       - checkout
       - run:
@@ -14,7 +14,7 @@ jobs:
       - restore_cache: # restore dependency cache
           key: dependency-cache-v2-{{ checksum "package.json" }}
       - run:
-          name: install-npm-wee
+          name: install-dependencies
           command: npm install
       - save_cache: # save dependency cache
           key: dependency-cache-v2-{{ checksum "package.json" }}

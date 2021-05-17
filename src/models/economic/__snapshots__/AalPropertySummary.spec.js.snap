@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AALproperty summary should construct object 1`] = `
+Object {
+  "annualLoss": Array [
+    Object {
+      "data": Object {
+        "high": 9244,
+        "low": 7678,
+        "mid": 8469,
+      },
+      "year": 2020,
+    },
+    Object {
+      "data": Object {
+        "high": 9950,
+        "low": 8366,
+        "mid": 9106,
+      },
+      "year": 2050,
+    },
+  ],
+  "depthLoss": Array [
+    Object {
+      "data": 25081,
+      "depth": 3,
+    },
+    Object {
+      "data": 28472,
+      "depth": 15,
+    },
+    Object {
+      "data": 32827,
+      "depth": 31,
+    },
+  ],
+}
+`;
+
+exports[`AALproperty summary should construct object with empty child nodes 1`] = `
+Object {
+  "annualLoss": Array [],
+  "depthLoss": Array [],
+}
+`;
+
+exports[`AALproperty summary should construct object without child nodes 1`] = `Object {}`;

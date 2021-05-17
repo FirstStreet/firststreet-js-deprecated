@@ -36,8 +36,11 @@
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": [
-        "${fileBasenameNoExtension}"
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "--config",
+        "jest.config.js"
       ],
+      "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
